@@ -1,0 +1,139 @@
+{
+  "slug": "keeping-promise",
+  "title": {
+    "ko": "약속을 지킨 하루",
+    "en": "The Day a Promise Was Kept"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/keeping-promise-story-01.png",
+      "ko": {
+        "title": "새끼손가락 약속",
+        "body": "강아지 콩콩이는 친구 다람쥐와 새끼손가락을 걸었어요. 내일 아침 언덕에서 만나기로 약속했지요.",
+        "line": "\"꼭 만나는 거야, 약속!\""
+      },
+      "en": {
+        "title": "A Pinky Promise",
+        "body": "Kongkong the puppy hooked pinky fingers with his friend the squirrel. They promised to meet on the hill tomorrow morning.",
+        "line": "“We'll really meet, okay? Promise!”"
+      }
+    },
+    {
+      "image": "assets/images/keeping-promise-story-02.png",
+      "ko": {
+        "title": "도착한 새 장난감",
+        "body": "다음 날 아침, 콩콩이 집에 멋진 새 장난감이 도착했어요. 너무 신나서 약속이 깜빡 잊힐 뻔했지요.",
+        "line": "\"우와, 이거 진짜 갖고 싶었던 건데!\""
+      },
+      "en": {
+        "title": "A New Toy Arrives",
+        "body": "The next morning, a wonderful new toy arrived at Kongkong's house. He was so excited he nearly forgot the promise.",
+        "line": "“Wow, this is the one I really wanted!”"
+      }
+    },
+    {
+      "image": "assets/images/keeping-promise-story-03.png",
+      "ko": {
+        "title": "어떻게 하지?",
+        "body": "장난감도 갖고 싶고, 친구와의 약속도 떠올랐어요. 콩콩이는 잠시 고민에 빠졌지요.",
+        "line": "\"장난감? 아니면 약속?\""
+      },
+      "en": {
+        "title": "What Should I Do?",
+        "body": "He wanted the toy, but the promise with his friend came to mind too. Kongkong fell into a moment of worry.",
+        "line": "“The toy? Or the promise?”"
+      }
+    },
+    {
+      "image": "assets/images/keeping-promise-story-04.png",
+      "ko": {
+        "title": "기다릴 친구",
+        "body": "콩콩이는 언덕에서 혼자 기다릴 다람쥐를 떠올렸어요. 약속을 어기면 친구가 슬퍼할 게 분명했지요.",
+        "line": "\"다람쥐가 나만 기다리고 있을 거야.\""
+      },
+      "en": {
+        "title": "A Friend Waiting",
+        "body": "Kongkong pictured the squirrel waiting all alone on the hill. If he broke the promise, his friend would surely be sad.",
+        "line": "“The squirrel must be waiting just for me.”"
+      }
+    },
+    {
+      "image": "assets/images/keeping-promise-story-05.png",
+      "ko": {
+        "title": "약속을 택한 콩콩이",
+        "body": "콩콩이는 장난감을 살며시 내려놓고 문을 나섰어요. 약속은 장난감보다 더 소중하다고 생각했지요.",
+        "line": "\"장난감은 나중에! 약속이 먼저야.\""
+      },
+      "en": {
+        "title": "Kongkong Chooses the Promise",
+        "body": "Kongkong gently set the toy down and headed out the door. A promise, he thought, is more precious than any toy.",
+        "line": "“The toy can wait! The promise comes first.”"
+      }
+    },
+    {
+      "image": "assets/images/keeping-promise-story-06.png",
+      "ko": {
+        "title": "언덕을 향해",
+        "body": "콩콩이는 약속 시간에 늦지 않으려 힘차게 달렸어요. 바람을 가르며 언덕으로 올라갔지요.",
+        "line": "\"기다려, 내가 가고 있어!\""
+      },
+      "en": {
+        "title": "Toward the Hill",
+        "body": "Kongkong ran with all his might so he wouldn't be late. He raced up to the hill, slicing through the wind.",
+        "line": "“Wait for me, I'm coming!”"
+      }
+    },
+    {
+      "image": "assets/images/keeping-promise-story-07.png",
+      "ko": {
+        "title": "반가운 얼굴",
+        "body": "언덕 위에는 다람쥐가 환하게 웃으며 기다리고 있었어요. 콩콩이를 보자 폴짝폴짝 뛰며 반겼지요.",
+        "line": "\"올 줄 알았어! 고마워, 콩콩아.\""
+      },
+      "en": {
+        "title": "A Happy Face",
+        "body": "On top of the hill, the squirrel was waiting with a bright smile. The moment he saw Kongkong, he hopped for joy.",
+        "line": "“I knew you'd come! Thank you, Kongkong.”"
+      }
+    },
+    {
+      "image": "assets/images/keeping-promise-story-08.png",
+      "ko": {
+        "title": "신나는 언덕 놀이",
+        "body": "둘은 언덕에서 데굴데굴 구르며 신나게 놀았어요. 약속을 지킨 덕분에 즐거운 하루가 되었지요.",
+        "line": "\"역시 오길 정말 잘했어!\""
+      },
+      "en": {
+        "title": "Fun on the Hill",
+        "body": "The two rolled and tumbled down the hill, playing happily. Keeping the promise made it a wonderful day.",
+        "line": "“I'm so glad I came after all!”"
+      }
+    },
+    {
+      "image": "assets/images/keeping-promise-story-09.png",
+      "ko": {
+        "title": "믿음이 생겼어",
+        "body": "다람쥐는 콩콩이를 더욱 믿게 되었다고 말했어요. 약속을 지키니 둘 사이가 더 단단해졌지요.",
+        "line": "\"너랑 약속하면 마음이 놓여.\""
+      },
+      "en": {
+        "title": "Trust Has Grown",
+        "body": "The squirrel said he trusted Kongkong even more now. Keeping the promise made their friendship stronger.",
+        "line": "“When I make a promise with you, my heart feels safe.”"
+      }
+    },
+    {
+      "image": "assets/images/keeping-promise-story-10.png",
+      "ko": {
+        "title": "약속은 소중해",
+        "body": "콩콩이는 약속을 지키면 친구의 믿음을 얻는다는 걸 알았어요. 작은 약속도 끝까지 지키기로 마음먹었답니다.",
+        "line": "\"다음 약속도 꼭 지킬게!\""
+      },
+      "en": {
+        "title": "A Promise Is Precious",
+        "body": "Kongkong learned that keeping a promise earns a friend's trust. He decided to keep every promise, even the small ones.",
+        "line": "“I'll keep our next promise too!”"
+      }
+    }
+  ]
+}

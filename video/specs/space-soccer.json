@@ -1,0 +1,139 @@
+{
+  "slug": "space-soccer",
+  "title": {
+    "ko": "달나라 축구 시합",
+    "en": "The Soccer Match on the Moon"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/space-soccer-story-01.png",
+      "ko": {
+        "title": "둥실둥실 축구장",
+        "body": "태오는 축구공을 안고 잠들었어요. 꿈속에서 눈을 뜨자 발밑은 폭신한 달 모래였지요.",
+        "line": "달나라 친구들이 손을 흔들며 태오를 맞이했어요."
+      },
+      "en": {
+        "title": "A Floating Soccer Field",
+        "body": "Taeo fell asleep hugging his soccer ball. In his dream, he opened his eyes on soft moon sand.",
+        "line": "Moon friends waved their hands and welcomed Taeo."
+      }
+    },
+    {
+      "image": "assets/images/space-soccer-story-02.png",
+      "ko": {
+        "title": "너무 높이 날아간 공",
+        "body": "태오가 힘껏 찬 공은 골대보다 훨씬 높이 떠올랐어요. 달에서는 살짝 차도 공이 멀리 날아갔거든요.",
+        "line": "태오는 웃으며 다시 해 보기로 했어요."
+      },
+      "en": {
+        "title": "The Ball Flew Too High",
+        "body": "Taeo kicked the ball with all his strength, and it floated far above the goal. On the moon, even a soft kick sent the ball far away.",
+        "line": "Taeo laughed and decided to try again."
+      }
+    },
+    {
+      "image": "assets/images/space-soccer-story-03.png",
+      "ko": {
+        "title": "살살 차는 법",
+        "body": "작은 외계 코치가 태오에게 부드러운 발끝 슛을 알려 주었어요. 공은 천천히 빛나며 앞으로 굴러갔지요.",
+        "line": "새로운 곳에서는 새로운 방법이 필요했어요."
+      },
+      "en": {
+        "title": "How to Kick Gently",
+        "body": "A small alien coach taught Taeo a soft toe kick. The ball glowed slowly as it rolled forward.",
+        "line": "In a new place, a new way was needed."
+      }
+    },
+    {
+      "image": "assets/images/space-soccer-story-04.png",
+      "ko": {
+        "title": "첫 번째 패스",
+        "body": "태오는 혼자 달리지 않고 옆 친구에게 공을 보냈어요. 친구는 환하게 웃으며 다시 태오에게 패스했답니다.",
+        "line": "공이 오가자 마음도 가까워졌어요."
+      },
+      "en": {
+        "title": "The First Pass",
+        "body": "Taeo did not run alone. He passed the ball to a friend beside him. The friend smiled brightly and passed it back.",
+        "line": "As the ball moved back and forth, their hearts grew closer."
+      }
+    },
+    {
+      "image": "assets/images/space-soccer-story-05.png",
+      "ko": {
+        "title": "별빛 삼각 패스",
+        "body": "태오와 친구들은 삼각형으로 서서 공을 주고받았어요. 공은 별빛 꼬리를 남기며 둥실둥실 움직였지요.",
+        "line": "골보다 친구를 보는 눈이 더 중요했어요."
+      },
+      "en": {
+        "title": "Starlight Triangle Pass",
+        "body": "Taeo and his friends stood in a triangle and passed the ball. It floated along, leaving a tail of starlight.",
+        "line": "Watching friends mattered more than watching the goal."
+      }
+    },
+    {
+      "image": "assets/images/space-soccer-story-06.png",
+      "ko": {
+        "title": "혼자 있던 친구",
+        "body": "태오는 달 운동장 끝에 혼자 서 있는 친구를 보았어요. 그 친구는 공이 올까 봐 조금 긴장한 얼굴이었지요.",
+        "line": "태오는 손짓으로 함께하자고 불렀어요."
+      },
+      "en": {
+        "title": "The Friend Standing Alone",
+        "body": "Taeo saw a friend standing alone at the end of the moon field. The friend looked a little nervous that the ball might come.",
+        "line": "Taeo waved and invited the friend to join."
+      }
+    },
+    {
+      "image": "assets/images/space-soccer-story-07.png",
+      "ko": {
+        "title": "용기 패스",
+        "body": "태오는 아주 천천히 공을 찼어요. 수줍은 친구는 공을 받아 살짝 차 보았고, 얼굴에 미소가 피어났답니다.",
+        "line": "친구를 기다려 주는 것도 멋진 플레이였어요."
+      },
+      "en": {
+        "title": "The Brave Pass",
+        "body": "Taeo kicked the ball very slowly. The shy friend received it and tapped it gently, and a smile bloomed on the friend's face.",
+        "line": "Waiting for a friend was also a wonderful play."
+      }
+    },
+    {
+      "image": "assets/images/space-soccer-story-08.png",
+      "ko": {
+        "title": "골대 앞으로",
+        "body": "모두가 힘을 합치자 공은 골대 앞으로 천천히 굴러갔어요. 태오는 마지막 슛 대신 옆 친구를 바라보았지요.",
+        "line": "이번 골은 모두가 함께 만든 골이었어요."
+      },
+      "en": {
+        "title": "Toward the Goal",
+        "body": "When everyone worked together, the ball rolled slowly toward the goal. Instead of taking the last shot, Taeo looked at the friend beside him.",
+        "line": "This goal was made by everyone together."
+      }
+    },
+    {
+      "image": "assets/images/space-soccer-story-09.png",
+      "ko": {
+        "title": "모두의 골",
+        "body": "친구가 찬 공은 반짝이며 골대 안으로 들어갔어요. 태오와 달나라 친구들은 둥실둥실 뛰어올랐답니다.",
+        "line": "함께 넣은 골이라 더 크게 기뻤어요."
+      },
+      "en": {
+        "title": "Everyone's Goal",
+        "body": "The friend's kick sent the ball sparkling into the goal. Taeo and the moon friends floated up with joy.",
+        "line": "Because they scored together, they were even happier."
+      }
+    },
+    {
+      "image": "assets/images/space-soccer-story-10.png",
+      "ko": {
+        "title": "아침 운동장",
+        "body": "아침에 깬 태오는 축구공을 꼭 안고 있었어요. 그날 운동장에서 태오는 친구에게 먼저 패스했지요.",
+        "line": "달나라에서 배운 함께하는 마음이 태오의 진짜 실력이 되었어요."
+      },
+      "en": {
+        "title": "Morning Field",
+        "body": "In the morning, Taeo woke up hugging his soccer ball. That day on the field, he passed to a friend first.",
+        "line": "The teamwork he learned on the moon became Taeo's real skill."
+      }
+    }
+  ]
+}

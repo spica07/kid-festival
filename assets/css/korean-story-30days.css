@@ -1,0 +1,15 @@
+@import url("korean-30days-core.css");
+  /* 테마 색상만 이 파일에서 정의 */
+  :root {
+    --a1: #22d3ee; --a2: #0891b2;
+    --soft: #a5f3fc;
+    --wbg1: #ecfeff; --wbg2: #cffafe;
+    --wtext: #0e7490;
+    --bubBg: #ecfeff; --bubBorder: #a5f3fc; --bubText: #155e75;
+    --face: linear-gradient(135deg, #a5f3fc, #0891b2);
+    --badge: #0891b2;
+    --gt: linear-gradient(90deg, #06b6d4, #3b82f6, #22d3ee);
+    --pageBg: linear-gradient(135deg, #ecfeff 0%, #cffafe 45%, #e0f2fe 100%);
+    --doneBg: linear-gradient(135deg, #d1fae5, #a7f3d0); --doneBorder: #34d399; --doneText: #065f46;
+    --shadowA: rgba(8,145,178,0.4); --shadowB: rgba(8,145,178,0.3);
+  }

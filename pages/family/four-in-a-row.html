@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'self';">
+<title>사과·레몬 네 줄 서기</title>
+<link rel="stylesheet" href="../../assets/css/board-game.css">
+</head>
+<body>
+  <main class="game-page">
+    <div class="memory-topbar">
+      <a class="back-link" href="board-game-hub.html">← 보드게임 목록</a>
+      <div class="control-groups">
+        <div class="level-group" role="group" aria-label="놀이 방법" id="frModeGroup">
+          <button class="level-btn active" type="button" data-mode="pvp">👨‍👧 둘이서</button>
+          <button class="level-btn" type="button" data-mode="cpu">🤖 컴퓨터랑</button>
+        </div>
+        <div class="level-group">
+          <button class="level-btn active" type="button" id="frSoundBtn" aria-pressed="true">🔊 소리</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="hub-hero" style="margin-bottom:14px;">
+      <h1>🍎 사과·레몬 네 줄 서기 🍋</h1>
+      <p class="lead">떨어뜨리고 싶은 줄을 콕! 눌러서 과일을 떨어뜨려요. 가로·세로·대각선으로 <strong>네 개를 먼저 나란히</strong> 만들면 이겨요!</p>
+    </section>
+
+    <div class="dj-status" id="frStatus" aria-live="polite">🍎 사과팀부터 시작해요!</div>
+
+    <div class="fr-scores" aria-label="점수판">
+      <div class="fr-score apple" id="frScoreApple"><span class="fr-score-emoji">🍎</span><span class="fr-score-name">사과팀</span><span class="fr-score-num" id="frAppleWins">0</span></div>
+      <div class="fr-score-vs">VS</div>
+      <div class="fr-score lemon" id="frScoreLemon"><span class="fr-score-emoji">🍋</span><span class="fr-score-name" id="frLemonName">레몬팀</span><span class="fr-score-num" id="frLemonWins">0</span></div>
+    </div>
+
+    <div class="fr-board-wrap">
+      <div class="fr-board" id="frBoard" aria-label="네 줄 서기 놀이판"></div>
+    </div>
+
+    <div class="fr-actions">
+      <button class="play-again" id="frNewRound" type="button">한 판 더!</button>
+    </div>
+
+    <div class="memory-win" id="frWin" hidden>
+      <h2 id="frWinTitle">🎉</h2>
+      <p id="frWinText"></p>
+      <button class="play-again" id="frAgain" type="button">한 판 더!</button>
+    </div>
+  </main>
+
+  <div class="dj-confetti" id="frConfetti" aria-hidden="true"></div>
+
+  <script src="../../assets/js/course-common.js"></script>
+<script src="../../assets/js/pages/four-in-a-row.js"></script>
+</body>
+</html>

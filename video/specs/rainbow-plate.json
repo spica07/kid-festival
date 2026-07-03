@@ -1,0 +1,139 @@
+{
+  "slug": "rainbow-plate",
+  "title": {
+    "ko": "골고루 무지개 접시",
+    "en": "The Rainbow Plate"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/rainbow-plate-story-01.png",
+      "ko": {
+        "title": "채소는 싫어!",
+        "body": "아기 돼지 통통이는 초록 채소만 보면 인상을 찌푸렸어요. 접시 한쪽으로 쓱쓱 밀어내곤 했지요.",
+        "line": "\"난 고기랑 빵만 먹을래!\""
+      },
+      "en": {
+        "title": "I Don't Like Vegetables!",
+        "body": "Tongtong the little pig frowned at the sight of any green vegetable. He would push them off to the side of his plate.",
+        "line": "“I only want meat and bread!”"
+      }
+    },
+    {
+      "image": "assets/images/rainbow-plate-story-02.png",
+      "ko": {
+        "title": "축 처진 기운",
+        "body": "골고루 먹지 않으니 통통이는 금세 힘이 빠졌어요. 신나게 뛰어놀다가도 금방 지쳤지요.",
+        "line": "\"왜 이렇게 기운이 없지?\""
+      },
+      "en": {
+        "title": "Out of Energy",
+        "body": "Because he didn't eat a balanced meal, Tongtong ran out of energy fast. Even in the middle of playing, he grew tired quickly.",
+        "line": "“Why am I so worn out?”"
+      }
+    },
+    {
+      "image": "assets/images/rainbow-plate-story-03.png",
+      "ko": {
+        "title": "무지개 접시",
+        "body": "엄마 돼지가 알록달록 무지개 접시를 차려 주었어요. 빨강 토마토, 주황 당근, 초록 브로콜리가 가득했지요.",
+        "line": "\"색깔마다 다른 힘이 숨어 있대!\""
+      },
+      "en": {
+        "title": "The Rainbow Plate",
+        "body": "Mama Pig set down a colorful rainbow plate for him. It was full of red tomatoes, orange carrots, and green broccoli.",
+        "line": "“Every color hides a different kind of power!”"
+      }
+    },
+    {
+      "image": "assets/images/rainbow-plate-story-04.png",
+      "ko": {
+        "title": "빨강의 힘",
+        "body": "통통이는 용기를 내어 빨간 토마토를 한 입 먹었어요. 새콤달콤한 맛에 눈이 동그래졌지요.",
+        "line": "\"어? 생각보다 맛있는데!\""
+      },
+      "en": {
+        "title": "The Power of Red",
+        "body": "Tongtong gathered his courage and took a bite of red tomato. The sweet-and-tangy taste made his eyes go wide.",
+        "line": "“Oh! This is tastier than I thought!”"
+      }
+    },
+    {
+      "image": "assets/images/rainbow-plate-story-05.png",
+      "ko": {
+        "title": "주황의 힘",
+        "body": "다음은 아삭아삭 주황 당근을 먹었어요. 당근은 눈을 반짝반짝 밝게 해 준다고 했지요.",
+        "line": "\"아삭아삭 소리도 재밌어!\""
+      },
+      "en": {
+        "title": "The Power of Orange",
+        "body": "Next he munched on a crunchy orange carrot. Carrots, they said, make your eyes bright and sparkly.",
+        "line": "“Even the crunch is fun!”"
+      }
+    },
+    {
+      "image": "assets/images/rainbow-plate-story-06.png",
+      "ko": {
+        "title": "초록의 힘",
+        "body": "이번엔 초록 브로콜리를 콕 집어 먹었어요. 초록 채소는 튼튼한 몸을 만들어 준다고 했지요.",
+        "line": "\"초록도 먹을 만하네!\""
+      },
+      "en": {
+        "title": "The Power of Green",
+        "body": "This time he picked up a piece of green broccoli. Green vegetables, they said, build a strong and healthy body.",
+        "line": "“Green isn't so bad after all!”"
+      }
+    },
+    {
+      "image": "assets/images/rainbow-plate-story-07.png",
+      "ko": {
+        "title": "깨끗이 비운 접시",
+        "body": "어느새 통통이의 무지개 접시가 깨끗이 비워졌어요. 골고루 다 먹은 자신이 무척 대견했지요.",
+        "line": "\"내가 다 먹었어, 한 조각도 안 남겼어!\""
+      },
+      "en": {
+        "title": "A Clean Plate",
+        "body": "Before he knew it, Tongtong's rainbow plate was completely empty. He felt so proud that he had eaten every bit.",
+        "line": "“I ate it all, every last piece!”"
+      }
+    },
+    {
+      "image": "assets/images/rainbow-plate-story-08.png",
+      "ko": {
+        "title": "불끈 솟은 힘",
+        "body": "골고루 먹으니 몸에 힘이 불끈 솟았어요. 통통이는 친구들과 오래오래 뛰어놀 수 있었지요.",
+        "line": "\"이렇게 힘이 넘치다니!\""
+      },
+      "en": {
+        "title": "Bursting with Energy",
+        "body": "Eating every color filled his body with energy. Now Tongtong could run and play with his friends for ages.",
+        "line": "“I'm so full of energy now!”"
+      }
+    },
+    {
+      "image": "assets/images/rainbow-plate-story-09.png",
+      "ko": {
+        "title": "친구들에게 자랑",
+        "body": "통통이는 친구들에게 무지개 접시를 자랑했어요. 색깔마다 다른 힘이 있다고 신나게 알려 주었지요.",
+        "line": "\"너희도 무지개를 먹어 봐!\""
+      },
+      "en": {
+        "title": "Showing His Friends",
+        "body": "Tongtong showed off his rainbow plate to all his friends. He happily told them each color holds a different power.",
+        "line": "“You should try eating a rainbow too!”"
+      }
+    },
+    {
+      "image": "assets/images/rainbow-plate-story-10.png",
+      "ko": {
+        "title": "무지개를 먹는 통통이",
+        "body": "이제 통통이는 여러 색깔 음식을 골고루 먹어요. 무지개 접시가 자신을 튼튼하게 해 준다는 걸 알았답니다.",
+        "line": "\"오늘도 무지개 한 접시 뚝딱!\""
+      },
+      "en": {
+        "title": "Tongtong Eats a Rainbow",
+        "body": "Now Tongtong eats all sorts of colorful foods. He knows the rainbow plate is what keeps him strong.",
+        "line": "“Another rainbow plate, all gone today!”"
+      }
+    }
+  ]
+}

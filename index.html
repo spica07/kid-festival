@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; child-src 'self'; worker-src 'self'; manifest-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none';">
+<title>🎈 우리 동네 꼬마 놀이터</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#6B5B95">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/icons/favicon-64.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="꼬마 놀이터">
+<link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+
+<nav class="tab-bar" aria-label="페이지 전환">
+  <div class="tab-group">
+    <button class="tab-btn active" type="button" data-target="festival">동네 축제</button>
+    <button class="tab-btn" type="button" data-target="story">그림동화</button>
+    <button class="tab-btn" type="button" data-target="boardgame">보드게임</button>
+    <div class="more-menu">
+      <button class="more-btn" id="moreBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="더보기">⋯</button>
+      <div class="more-dropdown" id="moreDropdown" hidden>
+        <button class="tab-btn" type="button" data-target="healing">엄마 힐링</button>
+        <button class="tab-btn" type="button" data-target="guide">학습 가이드</button>
+        <!-- 메뉴 비노출 처리: 대시보드 · 진학 로드맵 · 공모전
+        <button class="tab-btn" type="button" data-target="dashboard">대시보드</button>
+        <button class="tab-btn" type="button" data-target="roadmap">진학 로드맵</button>
+        <button class="tab-btn" type="button" data-target="contest">공모전</button>
+        -->
+      </div>
+    </div>
+  </div>
+  <button class="tab-btn tab-icon" type="button" data-target="english" title="캐릭터와 함께하는 30일 영어" aria-label="영어 놀이">🔤</button>
+  <button class="tab-btn tab-icon" type="button" data-target="math" title="사고력 수학" aria-label="수학">🔢</button>
+  <button class="tab-btn tab-icon" type="button" data-target="korean" title="한글 글씨·문해력" aria-label="한글">가</button>
+  <button class="tab-btn tab-icon" type="button" data-target="about" title="사이트 소개" aria-label="사이트 소개">ℹ️</button>
+</nav>
+
+<div class="site-search" role="search">
+  <label class="search-label" for="siteSearchInput">검색</label>
+  <input id="siteSearchInput" type="search" autocomplete="off" placeholder="행사, 코스, 동화 검색">
+  <button id="siteSearchClear" class="search-clear" type="button" hidden>지우기</button>
+  <div id="siteSearchResults" class="site-search-results" hidden></div>
+</div>
+
+<div class="frame-wrap">
+  <iframe id="frame-festival" src="pages/family/kid-festival.html" title="우리 동네 꼬마 축제"></iframe>
+  <iframe id="frame-guide" class="hidden" src="pages/family/preschool-guide.html" title="미취학 학습 가이드" loading="lazy"></iframe>
+  <iframe id="frame-dashboard" class="hidden" src="pages/family/dashboard.html" title="학습 대시보드" loading="lazy"></iframe>
+  <iframe id="frame-english" class="hidden" src="pages/english/english-hub.html" title="영어 친구들 30일 영어" loading="lazy"></iframe>
+  <iframe id="frame-math" class="hidden" src="pages/math/math-hub.html" title="수학 친구들 사고력 수학" loading="lazy"></iframe>
+  <iframe id="frame-korean" class="hidden" src="pages/korean/korean-hub.html" title="한글 친구들 글씨·문해력" loading="lazy"></iframe>
+  <iframe id="frame-roadmap" class="hidden" src="pages/roadmap/roadmap.html" title="진학 로드맵 종합 비교" loading="lazy"></iframe>
+  <iframe id="frame-healing" class="hidden" src="pages/family/mom-healing.html" title="엄마를 위한 힐링 시간" loading="lazy"></iframe>
+  <iframe id="frame-contest" class="hidden" src="pages/family/contest.html" title="공모전" loading="lazy"></iframe>
+  <iframe id="frame-story" class="hidden" src="pages/family/picture-story-hub.html" title="그림동화" loading="lazy"></iframe>
+  <iframe id="frame-boardgame" class="hidden" src="pages/family/board-game-hub.html" title="보드게임" loading="lazy"></iframe>
+  <iframe id="frame-about" class="hidden" src="pages/about.html" title="사이트 소개" loading="lazy"></iframe>
+</div>
+
+<div class="site-notice" role="note">
+  © 2026 우리 동네 꼬마 놀이터 · 무단 복제를 금합니다. 본 사이트는 정보 공유 목적으로 제공됩니다. 상표·행사명·장소명의 권리는 해당 권리자에게 있습니다.
+</div>
+
+<script src="assets/data/festivals.js"></script>
+<script src="assets/data/site-catalog.js"></script>
+<script src="assets/js/pages/index.js"></script>
+
+</body>
+</html>

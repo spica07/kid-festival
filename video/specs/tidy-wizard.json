@@ -1,0 +1,139 @@
+{
+  "slug": "tidy-wizard",
+  "title": {
+    "ko": "정리 정돈 꼬마 마법사",
+    "en": "The Little Tidy-Up Wizard"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/tidy-wizard-story-01.png",
+      "ko": {
+        "title": "엉망진창 방",
+        "body": "아기 고양이 나나의 방은 장난감으로 발 디딜 틈이 없었어요. 블록도, 인형도 여기저기 흩어져 있었지요.",
+        "line": "\"어, 내 자동차가 어디 갔지?\""
+      },
+      "en": {
+        "title": "The Messy Room",
+        "body": "Nana the baby cat's room was so full of toys she could barely step anywhere. Blocks and dolls were scattered everywhere.",
+        "line": "“Huh, where did my car go?”"
+      }
+    },
+    {
+      "image": "assets/images/tidy-wizard-story-02.png",
+      "ko": {
+        "title": "앗, 따가워!",
+        "body": "나나는 바닥에 놓인 블록을 밟고 깡충 뛰었어요. 어질러진 방에서는 놀기도 불편했지요.",
+        "line": "\"찾고 싶은 게 하나도 안 보여.\""
+      },
+      "en": {
+        "title": "Ouch, That Hurts!",
+        "body": "Nana stepped on a block on the floor and hopped in pain. A messy room was no fun to play in.",
+        "line": "“I can't find anything I'm looking for.”"
+      }
+    },
+    {
+      "image": "assets/images/tidy-wizard-story-03.png",
+      "ko": {
+        "title": "마법의 상자",
+        "body": "엄마 고양이가 알록달록 정리 상자를 건네주었어요. 물건마다 자기 자리를 정해 주면 마법이 일어난다고 했지요.",
+        "line": "\"이건 정리 마법 상자란다.\""
+      },
+      "en": {
+        "title": "The Magic Box",
+        "body": "Mama cat handed her a colorful tidy-up box. She said magic happens when every thing gets its own place.",
+        "line": "“This is a magic tidy-up box.”"
+      }
+    },
+    {
+      "image": "assets/images/tidy-wizard-story-04.png",
+      "ko": {
+        "title": "블록은 파란 상자로",
+        "body": "나나는 블록을 모아 파란 상자에 쏙쏙 넣었어요. 같은 것끼리 모으니 금세 정리가 됐지요.",
+        "line": "\"블록은 여기가 네 집이야!\""
+      },
+      "en": {
+        "title": "Blocks in the Blue Box",
+        "body": "Nana gathered the blocks and dropped them into the blue box. Sorting like with like made tidying quick.",
+        "line": "“Blocks, this is your home!”"
+      }
+    },
+    {
+      "image": "assets/images/tidy-wizard-story-05.png",
+      "ko": {
+        "title": "인형은 선반 위로",
+        "body": "인형들은 선반 위에 나란히 앉혀 주었어요. 인형들이 줄지어 앉으니 방이 환해 보였지요.",
+        "line": "\"인형아, 여기서 편히 쉬어!\""
+      },
+      "en": {
+        "title": "Dolls on the Shelf",
+        "body": "She sat the dolls in a row up on the shelf. With the dolls lined up, the room looked brighter.",
+        "line": "“Rest here comfortably, dolls!”"
+      }
+    },
+    {
+      "image": "assets/images/tidy-wizard-story-06.png",
+      "ko": {
+        "title": "책은 책꽂이로",
+        "body": "흩어진 그림책은 책꽂이에 가지런히 꽂았어요. 책등이 줄을 맞추니 보기에도 좋았답니다.",
+        "line": "\"이제 읽고 싶은 책을 금방 찾겠다!\""
+      },
+      "en": {
+        "title": "Books on the Bookshelf",
+        "body": "She tucked the scattered picture books neatly onto the bookshelf. The lined-up spines looked so nice.",
+        "line": "“Now I can find the book I want right away!”"
+      }
+    },
+    {
+      "image": "assets/images/tidy-wizard-story-07.png",
+      "ko": {
+        "title": "반짝이는 방",
+        "body": "어느새 방은 반짝반짝 깨끗해졌어요. 나나는 넓어진 방 한가운데서 빙글빙글 돌았지요.",
+        "line": "\"마법이 진짜로 일어났어!\""
+      },
+      "en": {
+        "title": "A Sparkling Room",
+        "body": "Before long, the room was sparkling clean. Nana spun around and around in the open space.",
+        "line": "“The magic really happened!”"
+      }
+    },
+    {
+      "image": "assets/images/tidy-wizard-story-08.png",
+      "ko": {
+        "title": "찾았다, 내 자동차!",
+        "body": "정리하다 보니 잃어버린 자동차도 쏙 나타났어요. 제자리에 두니 물건이 사라지지 않았지요.",
+        "line": "\"여기 있었구나, 반가워!\""
+      },
+      "en": {
+        "title": "Found It, My Car!",
+        "body": "While tidying, her lost car popped right up. When things have a place, they don't disappear.",
+        "line": "“There you are, nice to see you!”"
+      }
+    },
+    {
+      "image": "assets/images/tidy-wizard-story-09.png",
+      "ko": {
+        "title": "놀러 온 친구",
+        "body": "깨끗해진 방에 친구가 놀러 왔어요. 넓은 바닥에서 둘은 마음껏 뛰어놀 수 있었지요.",
+        "line": "\"방이 넓으니까 더 신난다!\""
+      },
+      "en": {
+        "title": "A Friend Comes Over",
+        "body": "A friend came to play in the clean room. On the wide floor, the two could run around to their hearts' content.",
+        "line": "“A big room is even more fun!”"
+      }
+    },
+    {
+      "image": "assets/images/tidy-wizard-story-10.png",
+      "ko": {
+        "title": "정리 정돈 꼬마 마법사",
+        "body": "나나는 물건마다 자리를 정해 주면 방이 마법처럼 깨끗해진다는 걸 알았어요. 이제 놀고 나면 스스로 정리한답니다.",
+        "line": "\"놀았으면 제자리, 정리 마법!\""
+      },
+      "en": {
+        "title": "The Little Tidy-Up Wizard",
+        "body": "Nana learned that giving each thing a place makes a room magically clean. Now she tidies up by herself after playing.",
+        "line": "“Done playing? Back in place, tidy-up magic!”"
+      }
+    }
+  ]
+}

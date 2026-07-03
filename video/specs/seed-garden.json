@@ -1,0 +1,139 @@
+{
+  "slug": "seed-garden",
+  "title": {
+    "ko": "작은 정원사와 반짝 씨앗",
+    "en": "The Little Gardener and the Sparkling Seeds"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/seed-garden-story-01.png",
+      "ko": {
+        "title": "베란다에서 찾은 별빛",
+        "body": "하린이는 아침마다 베란다 화분을 들여다보는 것을 좋아했어요. 오늘은 빈 화분 곁에서 조그만 빛 하나가 반짝였지요.",
+        "line": "\"이건 씨앗일까, 작은 별일까?\" 하린이는 두 손으로 살며시 감싸 보았어요."
+      },
+      "en": {
+        "title": "Starlight on the Balcony",
+        "body": "Harin liked looking at the balcony flowerpots every morning. Today, a tiny light sparkled beside an empty pot.",
+        "line": "\"Is this a seed, or a little star?\" Harin gently held it in both hands."
+      }
+    },
+    {
+      "image": "assets/images/seed-garden-story-02.png",
+      "ko": {
+        "title": "폭신한 흙 이불",
+        "body": "하린이는 작은 화분에 부드러운 흙을 담고 씨앗을 눕혔어요. 흙을 너무 세게 누르지 않고 포근하게 덮어 주었지요.",
+        "line": "\"잘 자라렴. 내가 매일 찾아올게.\""
+      },
+      "en": {
+        "title": "A Soft Soil Blanket",
+        "body": "Harin filled a small pot with soft soil and laid the seed inside. She did not press too hard, but covered it warmly.",
+        "line": "\"Grow well. I will visit you every day.\""
+      }
+    },
+    {
+      "image": "assets/images/seed-garden-story-03.png",
+      "ko": {
+        "title": "또르르 물방울",
+        "body": "다음 날 하린이는 작은 물뿌리개로 물을 주었어요. 물방울이 흙 위를 또르르 굴러가자 연한 초록 새싹이 고개를 내밀었어요.",
+        "line": "새싹은 하린이에게 \"고마워\" 하고 인사하는 것 같았답니다."
+      },
+      "en": {
+        "title": "Rolling Water Drops",
+        "body": "The next day, Harin watered it with a small watering can. As drops rolled over the soil, a pale green sprout peeked out.",
+        "line": "The sprout seemed to say, \"Thank you,\" to Harin."
+      }
+    },
+    {
+      "image": "assets/images/seed-garden-story-04.png",
+      "ko": {
+        "title": "빛나는 꽃봉오리",
+        "body": "며칠 동안 햇빛과 물을 먹은 새싹은 쑥쑥 자랐어요. 줄기 끝에는 작은 등불처럼 빛나는 꽃봉오리가 생겼지요.",
+        "line": "하린이는 꽃봉오리가 놀라지 않게 조용히 웃어 주었어요."
+      },
+      "en": {
+        "title": "A Glowing Flower Bud",
+        "body": "After days of sunlight and water, the sprout grew taller and taller. At the end of its stem, a flower bud glowed like a little lamp.",
+        "line": "Harin smiled quietly so the flower bud would not be startled."
+      }
+    },
+    {
+      "image": "assets/images/seed-garden-story-05.png",
+      "ko": {
+        "title": "나비가 찾아온 아침",
+        "body": "햇살이 따뜻한 아침, 꽃봉오리가 활짝 열렸어요. 노랑 나비와 파랑 나비가 꽃잎 위를 가볍게 맴돌았지요.",
+        "line": "하린이는 나비들이 쉴 수 있도록 베란다 문을 조금 열어 두었어요."
+      },
+      "en": {
+        "title": "The Morning Butterflies Came",
+        "body": "On a warm sunny morning, the flower bud opened wide. Yellow and blue butterflies fluttered lightly over the petals.",
+        "line": "Harin opened the balcony door a little so the butterflies could rest."
+      }
+    },
+    {
+      "image": "assets/images/seed-garden-story-06.png",
+      "ko": {
+        "title": "목마른 화분들",
+        "body": "그날 오후, 옆 화분의 잎들이 축 늘어져 있었어요. 하린이는 반짝 꽃 말고 다른 화분도 돌봐야 한다는 것을 알았지요.",
+        "line": "\"모두 같이 건강해야 정원이 행복하지.\" 하린이는 화분마다 물을 나누어 주었어요."
+      },
+      "en": {
+        "title": "Thirsty Flowerpots",
+        "body": "That afternoon, the leaves in the next pots drooped. Harin learned that she should not care only for the sparkling flower.",
+        "line": "\"A garden is happy when everyone is healthy.\" Harin shared water with every pot."
+      }
+    },
+    {
+      "image": "assets/images/seed-garden-story-07.png",
+      "ko": {
+        "title": "작은 손님들",
+        "body": "꽃 향기를 맡고 꿀벌과 무당벌레도 찾아왔어요. 하린이는 가까이 손을 뻗지 않고, 눈으로 조용히 바라보았어요.",
+        "line": "작은 손님들도 정원에서 할 일이 있다는 것을 배웠답니다."
+      },
+      "en": {
+        "title": "Little Visitors",
+        "body": "Bees and ladybugs came after smelling the flowers. Harin did not reach out close. She watched quietly with her eyes.",
+        "line": "She learned that little visitors also have work to do in the garden."
+      }
+    },
+    {
+      "image": "assets/images/seed-garden-story-08.png",
+      "ko": {
+        "title": "꽃이 준 선물",
+        "body": "저녁이 되자 반짝 꽃은 꽃잎 사이에서 작은 씨앗들을 톡톡 떨어뜨렸어요. 씨앗들은 밤하늘 별처럼 은은하게 빛났지요.",
+        "line": "하린이는 그 씨앗들을 작은 종이 봉투에 조심히 담았어요."
+      },
+      "en": {
+        "title": "The Flower's Gift",
+        "body": "At evening, the sparkling flower dropped tiny seeds from between its petals. The seeds glowed softly like stars in the night sky.",
+        "line": "Harin carefully put the seeds into small paper envelopes."
+      }
+    },
+    {
+      "image": "assets/images/seed-garden-story-09.png",
+      "ko": {
+        "title": "이웃에게 나눈 씨앗",
+        "body": "하린이는 엘리베이터에서 만난 이웃들에게 씨앗 봉투를 건넸어요. \"햇빛이 드는 곳에 심고, 물을 조금씩 주세요.\"",
+        "line": "씨앗을 받은 사람들의 얼굴에도 작은 빛이 피어났어요."
+      },
+      "en": {
+        "title": "Seeds for Neighbors",
+        "body": "Harin gave seed envelopes to neighbors she met in the elevator. \"Plant them where sunlight comes in, and water them little by little.\"",
+        "line": "Small lights bloomed on the faces of the people who received the seeds."
+      }
+    },
+    {
+      "image": "assets/images/seed-garden-story-10.png",
+      "ko": {
+        "title": "반짝이는 우리 동네",
+        "body": "며칠 뒤, 아파트 여러 베란다에 작은 꽃들이 피었어요. 하린이의 씨앗은 모두의 정원이 되었지요.",
+        "line": "하린이는 오늘도 물뿌리개를 들고 말했어요. \"작은 마음도 나누면 이렇게 커지는구나.\""
+      },
+      "en": {
+        "title": "Our Sparkling Neighborhood",
+        "body": "A few days later, little flowers bloomed on many apartment balconies. Harin's seeds became everyone's garden.",
+        "line": "Holding her watering can, Harin said, \"Even a small heart grows big when we share it.\""
+      }
+    }
+  ]
+}

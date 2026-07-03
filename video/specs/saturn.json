@@ -1,0 +1,139 @@
+{
+  "slug": "saturn",
+  "title": {
+    "ko": "토성의 고리 음악회",
+    "en": "Saturn's Ring Concert"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/saturn-story-01.png",
+      "ko": {
+        "title": "반짝 고리 초대장",
+        "body": "하늘이는 책상 위에서 고리 모양 초대장을 발견했어요. 초대장에는 \"토성의 고리 음악회에 와 주세요\"라고 적혀 있었지요.",
+        "line": "하늘이는 우주 악보를 들고 출발했어요."
+      },
+      "en": {
+        "title": "The Sparkling Ring Invitation",
+        "body": "On his desk, Haneul found an invitation shaped like a ring. It read, “Please come to Saturn's ring concert.”",
+        "line": "Haneul set off with his space music sheet in hand."
+      }
+    },
+    {
+      "image": "assets/images/saturn-story-02.png",
+      "ko": {
+        "title": "얼음 조각 바이올린",
+        "body": "토성의 고리에는 작은 얼음 조각들이 반짝였어요. 얼음 조각은 딩딩, 맑은 바이올린 소리를 냈답니다.",
+        "line": "작은 조각도 예쁜 소리를 낼 수 있어요."
+      },
+      "en": {
+        "title": "The Ice-Chip Violins",
+        "body": "Little chips of ice sparkled in Saturn's rings. The ice chips played a clear, ringing violin sound.",
+        "line": "Even a tiny chip can make a pretty sound."
+      }
+    },
+    {
+      "image": "assets/images/saturn-story-03.png",
+      "ko": {
+        "title": "돌멩이 북",
+        "body": "둥근 돌멩이들은 통통 북소리를 냈어요. 하늘이는 손바닥으로 무릎을 두드리며 박자를 맞추었지요.",
+        "line": "다른 소리가 리듬을 만들었어요."
+      },
+      "en": {
+        "title": "The Pebble Drums",
+        "body": "The round pebbles played a bouncy drum beat. Haneul tapped his knees with his palms to keep the rhythm.",
+        "line": "Different sounds made a rhythm together."
+      }
+    },
+    {
+      "image": "assets/images/saturn-story-04.png",
+      "ko": {
+        "title": "먼지 알갱이 쉐이커",
+        "body": "먼지 알갱이들은 사각사각 작은 쉐이커가 되었어요. 너무 작아서 잘 안 들렸지만, 없으면 허전한 소리였답니다.",
+        "line": "작은 목소리도 음악의 한 부분이에요."
+      },
+      "en": {
+        "title": "The Dust-Speck Shakers",
+        "body": "The tiny specks of dust became soft little shakers. They were so small they were hard to hear, but the music felt empty without them.",
+        "line": "Even a small voice is part of the music."
+      }
+    },
+    {
+      "image": "assets/images/saturn-story-05.png",
+      "ko": {
+        "title": "어수선한 첫 연습",
+        "body": "처음에는 모두 제멋대로 소리를 냈어요. 하늘이는 귀를 막았다가 웃으며 말했지요. \"우리 서로 들어 보자!\"",
+        "line": "함께하려면 먼저 들어야 해요."
+      },
+      "en": {
+        "title": "The Messy First Rehearsal",
+        "body": "At first, everyone played whatever they wanted. Haneul covered his ears, then laughed and said, “Let's listen to each other!”",
+        "line": "To play together, you have to listen first."
+      }
+    },
+    {
+      "image": "assets/images/saturn-story-06.png",
+      "ko": {
+        "title": "토성의 천천히 박자",
+        "body": "토성은 고리를 천천히 돌리며 박자를 보여 주었어요. 딩딩, 통통, 사각사각 소리가 조금씩 자리를 찾았답니다.",
+        "line": "천천히 맞추면 마음도 맞춰져요."
+      },
+      "en": {
+        "title": "Saturn's Slow Beat",
+        "body": "Saturn turned the rings slowly to show the beat. Ding-ding, pat-pat, swish-swish, the sounds slowly found their places.",
+        "line": "When you match slowly, your hearts match too."
+      }
+    },
+    {
+      "image": "assets/images/saturn-story-07.png",
+      "ko": {
+        "title": "하늘이의 지휘봉",
+        "body": "하늘이는 별빛 지휘봉을 들었어요. 큰 소리와 작은 소리를 번갈아 부르자 고리 음악이 더 풍성해졌지요.",
+        "line": "모두가 주인공이 되는 순서가 있었어요."
+      },
+      "en": {
+        "title": "Haneul's Conductor's Baton",
+        "body": "Haneul picked up a starlight baton. As he called out the loud and soft sounds in turn, the ring music grew richer.",
+        "line": "There was a turn for everyone to be the star."
+      }
+    },
+    {
+      "image": "assets/images/saturn-story-08.png",
+      "ko": {
+        "title": "행성 관객들",
+        "body": "목성, 천왕성, 해왕성도 멀리서 음악을 들으러 왔어요. 토성은 부끄러웠지만 고리를 자랑스럽게 펼쳤답니다.",
+        "line": "자기만의 모습을 보여 주는 건 멋진 일이에요."
+      },
+      "en": {
+        "title": "The Planet Audience",
+        "body": "Jupiter, Uranus, and Neptune came from far away to hear the music. Saturn felt shy, but proudly spread its rings wide.",
+        "line": "Showing your own true self is a wonderful thing."
+      }
+    },
+    {
+      "image": "assets/images/saturn-story-09.png",
+      "ko": {
+        "title": "우주에 퍼진 노래",
+        "body": "고리 음악은 우주 먼 곳까지 퍼졌어요. 하늘이는 소리들이 서로 달라서 더 반짝인다는 걸 알게 되었지요.",
+        "line": "다름이 모이면 더 아름다운 노래가 돼요."
+      },
+      "en": {
+        "title": "The Song That Spread Through Space",
+        "body": "The ring music spread far across space. Haneul learned that the sounds sparkled even more because they were all different.",
+        "line": "When differences come together, the song is more beautiful."
+      }
+    },
+    {
+      "image": "assets/images/saturn-story-10.png",
+      "ko": {
+        "title": "동그란 약속",
+        "body": "아침에 깬 하늘이는 친구들과 노래를 부를 때 작은 목소리도 기다려 주기로 했어요. 토성의 고리처럼 모두를 담고 싶었거든요.",
+        "line": "그날 하늘이의 교실에도 작은 음악회가 열렸답니다."
+      },
+      "en": {
+        "title": "The Round Promise",
+        "body": "When Haneul woke up, he decided to wait for the quiet voices when singing with friends. He wanted to hold everyone, just like Saturn's rings.",
+        "line": "That day, a little concert was held in Haneul's classroom too."
+      }
+    }
+  ]
+}

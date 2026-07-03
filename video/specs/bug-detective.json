@@ -1,0 +1,139 @@
+{
+  "slug": "bug-detective",
+  "title": {
+    "ko": "곤충 탐정 태오",
+    "en": "Taeo the Bug Detective"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/bug-detective-story-01.png",
+      "ko": {
+        "title": "돋보기 탐정",
+        "body": "태오는 작은 돋보기를 들고 정원으로 나갔어요. 잎사귀 위에는 반짝 이슬이 하나도 남아 있지 않았지요.",
+        "line": "\"이슬은 어디로 갔을까?\""
+      },
+      "en": {
+        "title": "The Magnifying Glass Detective",
+        "body": "Taeo went out to the garden with a small magnifying glass. On the leaves, not a single sparkling drop of dew was left.",
+        "line": "\"Where did the dew go?\""
+      }
+    },
+    {
+      "image": "assets/images/bug-detective-story-02.png",
+      "ko": {
+        "title": "무당벌레의 힌트",
+        "body": "무당벌레는 빨간 날개를 살짝 펼치며 알려 주었어요. 해님이 뜨자 이슬이 반짝이며 위로 올라갔다고요.",
+        "line": "태오는 하늘을 올려다보며 첫 단서를 찾았어요."
+      },
+      "en": {
+        "title": "The Ladybug's Hint",
+        "body": "The ladybug gently opened its red wings and gave him a clue. When the sun came up, the dew sparkled and rose upward.",
+        "line": "Taeo looked up at the sky and found his first clue."
+      }
+    },
+    {
+      "image": "assets/images/bug-detective-story-03.png",
+      "ko": {
+        "title": "개미 길의 비밀",
+        "body": "개미들은 작은 물방울을 피해 줄지어 걸었어요. 태오는 곤충들이 아주 작은 변화도 잘 느낀다는 걸 알았지요.",
+        "line": "정원에는 우리가 못 보던 길이 많았어요."
+      },
+      "en": {
+        "title": "The Secret of the Ant Path",
+        "body": "The ants walked in a line, avoiding tiny drops of water. Taeo learned that insects notice even very small changes.",
+        "line": "The garden had many paths we could not see."
+      }
+    },
+    {
+      "image": "assets/images/bug-detective-story-04.png",
+      "ko": {
+        "title": "나비의 설명",
+        "body": "나비는 꽃 위에 앉아 말했어요. 이슬은 사라진 게 아니라 햇빛을 만나 여행을 떠난 거라고요.",
+        "line": "태오는 고개를 끄덕이며 다음 단서를 찾았어요."
+      },
+      "en": {
+        "title": "The Butterfly's Explanation",
+        "body": "The butterfly sat on a flower and said the dew had not disappeared. It had met the sunlight and gone on a journey.",
+        "line": "Taeo nodded and looked for the next clue."
+      }
+    },
+    {
+      "image": "assets/images/bug-detective-story-05.png",
+      "ko": {
+        "title": "작은 친구들의 아침",
+        "body": "애벌레와 딱정벌레는 잎 아래에서 천천히 움직였어요. 햇빛이 따뜻해질수록 이슬은 더 작아졌지요.",
+        "line": "태오는 자연이 조용히 변한다는 걸 보았어요."
+      },
+      "en": {
+        "title": "The Morning of Little Friends",
+        "body": "A caterpillar and beetle moved slowly under a leaf. As the sunlight grew warmer, the dew became smaller.",
+        "line": "Taeo saw that nature changes quietly."
+      }
+    },
+    {
+      "image": "assets/images/bug-detective-story-06.png",
+      "ko": {
+        "title": "하늘로 가는 이슬",
+        "body": "잎 끝의 작은 물방울이 햇빛 속에서 반짝였어요. 태오는 이슬이 하늘로 올라가는 것처럼 느꼈답니다.",
+        "line": "작은 정원도 커다란 과학 교실이었어요."
+      },
+      "en": {
+        "title": "Dew Going to the Sky",
+        "body": "A tiny water drop at the tip of a leaf sparkled in the sunlight. Taeo felt as if the dew were rising into the sky.",
+        "line": "Even a small garden was a big science classroom."
+      }
+    },
+    {
+      "image": "assets/images/bug-detective-story-07.png",
+      "ko": {
+        "title": "흙 위의 그림",
+        "body": "태오는 나뭇가지로 흙 위에 이슬의 여행을 그렸어요. 곤충 친구들은 잎 위에서 조용히 바라보았지요.",
+        "line": "태오는 답을 조금씩 이해하기 시작했어요."
+      },
+      "en": {
+        "title": "A Drawing on the Soil",
+        "body": "With a twig, Taeo drew the dew's journey on the soil. His insect friends watched quietly from the leaves.",
+        "line": "Taeo began to understand the answer little by little."
+      }
+    },
+    {
+      "image": "assets/images/bug-detective-story-08.png",
+      "ko": {
+        "title": "작은 구름",
+        "body": "정원 위로 하얀 구름이 둥실 떠 있었어요. 태오는 이슬이 언젠가 비가 되어 다시 돌아올 거라고 생각했지요.",
+        "line": "사라진 것이 아니라 여행 중인 거였어요."
+      },
+      "en": {
+        "title": "A Small Cloud",
+        "body": "A white cloud floated above the garden. Taeo thought the dew might someday return as rain.",
+        "line": "It had not vanished. It was traveling."
+      }
+    },
+    {
+      "image": "assets/images/bug-detective-story-09.png",
+      "ko": {
+        "title": "돌아온 반짝 단서",
+        "body": "다음 날 아침, 잎사귀 위에 이슬이 다시 반짝였어요. 무당벌레와 딱정벌레도 조용히 아침을 맞았답니다.",
+        "line": "태오의 추리는 맞았어요."
+      },
+      "en": {
+        "title": "The Sparkling Clue Returns",
+        "body": "The next morning, dew sparkled again on the leaves. The ladybug and beetle quietly welcomed the morning too.",
+        "line": "Taeo's guess was right."
+      }
+    },
+    {
+      "image": "assets/images/bug-detective-story-10.png",
+      "ko": {
+        "title": "곤충 탐정의 약속",
+        "body": "태오는 돋보기를 내려놓고 작은 친구들에게 인사했어요. 이제 정원을 볼 때마다 더 천천히, 더 조심히 보기로 했지요.",
+        "line": "곤충 탐정 태오는 자연을 아끼는 마음까지 발견했답니다."
+      },
+      "en": {
+        "title": "The Bug Detective's Promise",
+        "body": "Taeo put down his magnifying glass and greeted his little friends. From now on, he would look at the garden more slowly and carefully.",
+        "line": "Taeo the bug detective found a heart that cares for nature too."
+      }
+    }
+  ]
+}

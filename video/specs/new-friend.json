@@ -1,0 +1,139 @@
+{
+  "slug": "new-friend",
+  "title": {
+    "ko": "새 친구를 만난 날",
+    "en": "The Day I Made a New Friend"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/new-friend-story-01.png",
+      "ko": {
+        "title": "새로 온 마을",
+        "body": "아기 사슴 별이는 새 마을로 막 이사를 왔어요. 아는 친구가 하나도 없어 마음이 쓸쓸했지요.",
+        "line": "\"여기서 친구를 사귈 수 있을까?\""
+      },
+      "en": {
+        "title": "A New Town",
+        "body": "Byeoli the little deer had just moved to a new town. She didn't know a single friend, and her heart felt lonely.",
+        "line": "“Will I be able to make friends here?”"
+      }
+    },
+    {
+      "image": "assets/images/new-friend-story-02.png",
+      "ko": {
+        "title": "멀리서 바라보기",
+        "body": "놀이터에서는 친구들이 즐겁게 놀고 있었어요. 별이는 다가가고 싶었지만 발이 떨어지지 않았지요.",
+        "line": "\"끼워 달라고 해도 될까?\""
+      },
+      "en": {
+        "title": "Watching from Afar",
+        "body": "At the playground, the other children were playing happily. Byeoli wanted to join them, but her feet wouldn't move.",
+        "line": "“Could I ask to play too?”"
+      }
+    },
+    {
+      "image": "assets/images/new-friend-story-03.png",
+      "ko": {
+        "title": "혼자만의 그늘",
+        "body": "별이는 나무 그늘에 혼자 앉아 있었어요. 함께 놀고 싶은 마음이 가슴속에서 콩닥거렸답니다.",
+        "line": "용기가 조금만 더 있으면 좋겠어요."
+      },
+      "en": {
+        "title": "Alone in the Shade",
+        "body": "Byeoli sat by herself under the shade of a tree. Deep inside, her heart kept wishing to play with them.",
+        "line": "She wished she had just a little more courage."
+      }
+    },
+    {
+      "image": "assets/images/new-friend-story-04.png",
+      "ko": {
+        "title": "데구루루 굴러온 공",
+        "body": "그때 공 하나가 데구루루 굴러 별이 앞에 멈췄어요. 친구들이 \"공 좀 던져 줄래?\" 하고 외쳤지요.",
+        "line": "별이의 가슴이 두근거렸어요."
+      },
+      "en": {
+        "title": "A Ball Rolls Over",
+        "body": "Just then, a ball rolled over and stopped right in front of Byeoli. The children called out, “Can you throw it back?”",
+        "line": "Byeoli's heart began to flutter."
+      }
+    },
+    {
+      "image": "assets/images/new-friend-story-05.png",
+      "ko": {
+        "title": "용기 낸 한 번",
+        "body": "별이는 공을 두 손으로 들어 힘껏 던졌어요. 공은 친구들에게 정확히 도착했답니다.",
+        "line": "\"고마워! 같이 놀래?\""
+      },
+      "en": {
+        "title": "One Brave Try",
+        "body": "Byeoli picked up the ball with both hands and threw it with all her might. It landed right where her new friends stood.",
+        "line": "“Thanks! Want to play with us?”"
+      }
+    },
+    {
+      "image": "assets/images/new-friend-story-06.png",
+      "ko": {
+        "title": "먼저 건넨 인사",
+        "body": "별이는 용기를 내어 다가가 인사했어요. \"안녕, 나는 별이야\"라고 또박또박 말했지요.",
+        "line": "먼저 손을 내미니 마음이 가벼워졌어요."
+      },
+      "en": {
+        "title": "The First Hello",
+        "body": "Byeoli gathered her courage, walked over, and said hello. “Hi, I'm Byeoli,” she said clearly.",
+        "line": "Once she reached out first, her heart felt lighter."
+      }
+    },
+    {
+      "image": "assets/images/new-friend-story-07.png",
+      "ko": {
+        "title": "함께하는 놀이",
+        "body": "별이는 친구들과 신나게 공놀이를 했어요. 깔깔 웃음소리가 놀이터에 가득 퍼졌답니다.",
+        "line": "\"같이 노니까 백 배는 더 재밌어!\""
+      },
+      "en": {
+        "title": "Playing Together",
+        "body": "Byeoli played ball with her new friends and had so much fun. Bright laughter spread all across the playground.",
+        "line": "“Playing together is a hundred times more fun!”"
+      }
+    },
+    {
+      "image": "assets/images/new-friend-story-08.png",
+      "ko": {
+        "title": "이름을 나누며",
+        "body": "친구들은 별이의 이름을 부르며 함께 어울렸어요. 서로의 이름을 알자 더 가까워진 기분이었지요.",
+        "line": "\"별이야, 내일도 같이 놀자!\""
+      },
+      "en": {
+        "title": "Sharing Names",
+        "body": "The children called Byeoli by her name as they played along. Knowing each other's names made them feel even closer.",
+        "line": "“Byeoli, let's play again tomorrow!”"
+      }
+    },
+    {
+      "image": "assets/images/new-friend-story-09.png",
+      "ko": {
+        "title": "내일 또 만나",
+        "body": "해가 질 무렵 친구들과 손을 흔들며 헤어졌어요. 별이의 쓸쓸했던 마음은 어디론가 사라졌지요.",
+        "line": "\"내일이 벌써 기다려져!\""
+      },
+      "en": {
+        "title": "See You Tomorrow",
+        "body": "As the sun went down, they waved goodbye to one another. Byeoli's lonely feeling had melted clean away.",
+        "line": "“I can't wait for tomorrow already!”"
+      }
+    },
+    {
+      "image": "assets/images/new-friend-story-10.png",
+      "ko": {
+        "title": "먼저 다가가는 용기",
+        "body": "별이는 먼저 손을 내밀면 친구가 생긴다는 걸 알았어요. 작은 용기 하나가 새 친구들을 데려다주었답니다.",
+        "line": "\"먼저 인사하길 정말 잘했어!\""
+      },
+      "en": {
+        "title": "The Courage to Reach Out",
+        "body": "Byeoli learned that when you reach out first, friends come your way. One small bit of courage had brought her brand-new friends.",
+        "line": "“I'm so glad I said hello first!”"
+      }
+    }
+  ]
+}

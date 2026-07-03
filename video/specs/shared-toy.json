@@ -1,0 +1,139 @@
+{
+  "slug": "shared-toy",
+  "title": {
+    "ko": "둘이 갖고 싶은 장난감",
+    "en": "The Toy We Both Want"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/shared-toy-story-01.png",
+      "ko": {
+        "title": "빨간 자동차",
+        "body": "놀이방에 멋진 빨간 자동차가 딱 하나 있었어요. 곰돌이와 토끼가 동시에 그 자동차를 잡았지요.",
+        "line": "\"내가 먼저 봤어!\" \"아니, 내가 먼저야!\""
+      },
+      "en": {
+        "title": "The Red Car",
+        "body": "There was just one cool red car in the playroom. Bear and Rabbit grabbed it at the very same time.",
+        "line": "“I saw it first!” “No, I did!”"
+      }
+    },
+    {
+      "image": "assets/images/shared-toy-story-02.png",
+      "ko": {
+        "title": "잡아당기기",
+        "body": "둘은 자동차를 양쪽에서 힘껏 잡아당겼어요. 얼굴은 점점 빨개지고 마음은 답답해졌지요.",
+        "line": "\"이건 내 거야!\""
+      },
+      "en": {
+        "title": "A Tug of War",
+        "body": "The two pulled the car hard from either side. Their faces grew red and their hearts felt frustrated.",
+        "line": "“This one is mine!”"
+      }
+    },
+    {
+      "image": "assets/images/shared-toy-story-03.png",
+      "ko": {
+        "title": "덜컥, 빠진 바퀴",
+        "body": "그때 자동차 바퀴 하나가 덜컥 빠져 버렸어요. 둘은 깜짝 놀라 동시에 손을 멈췄답니다.",
+        "line": "\"어떡해… 망가졌어.\""
+      },
+      "en": {
+        "title": "Clunk, a Wheel Falls Off",
+        "body": "Just then, one of the car's wheels popped right off. Startled, they both let go at once.",
+        "line": "“Oh no… it's broken.”"
+      }
+    },
+    {
+      "image": "assets/images/shared-toy-story-04.png",
+      "ko": {
+        "title": "서로 등 돌리고",
+        "body": "둘은 시무룩하게 등을 돌리고 앉았어요. 다투고 나니 자동차도 마음도 즐겁지 않았지요.",
+        "line": "화를 내도 하나도 신나지 않았어요."
+      },
+      "en": {
+        "title": "Turning Their Backs",
+        "body": "The two sat down with their backs to each other, all glum. After the fight, neither the car nor their hearts felt happy.",
+        "line": "Being angry wasn't any fun at all."
+      }
+    },
+    {
+      "image": "assets/images/shared-toy-story-05.png",
+      "ko": {
+        "title": "선생님의 한마디",
+        "body": "선생님 고양이가 다가와 부드럽게 물었어요. 하나뿐인 장난감, 어떻게 하면 둘 다 즐거울까 하고요.",
+        "line": "\"같이 쓰는 방법은 없을까?\""
+      },
+      "en": {
+        "title": "The Teacher's Words",
+        "body": "Teacher Cat came over and gently asked them a question. With only one toy, how could they both be happy?",
+        "line": "“Isn't there a way to share it?”"
+      }
+    },
+    {
+      "image": "assets/images/shared-toy-story-06.png",
+      "ko": {
+        "title": "좋은 생각",
+        "body": "곰돌이가 먼저 \"번갈아 타면 어때?\"라고 말했어요. 토끼도 좋다며 고개를 끄덕였지요.",
+        "line": "\"차례를 정하면 둘 다 탈 수 있어!\""
+      },
+      "en": {
+        "title": "A Good Idea",
+        "body": "Bear spoke up first: “How about we take turns?” Rabbit liked the idea and nodded.",
+        "line": "“If we take turns, we can both ride!”"
+      }
+    },
+    {
+      "image": "assets/images/shared-toy-story-07.png",
+      "ko": {
+        "title": "같이 고치기",
+        "body": "둘은 머리를 맞대고 빠진 바퀴를 다시 끼웠어요. 함께 고치니 자동차가 금세 멀쩡해졌답니다.",
+        "line": "\"같이 하니까 금방 됐다!\""
+      },
+      "en": {
+        "title": "Fixing It Together",
+        "body": "Putting their heads together, they snapped the wheel back on. Fixing it together, the car was good as new in no time.",
+        "line": "“That was quick when we did it together!”"
+      }
+    },
+    {
+      "image": "assets/images/shared-toy-story-08.png",
+      "ko": {
+        "title": "번갈아 타기",
+        "body": "곰돌이가 먼저 자동차를 밀고, 다음엔 토끼가 탔어요. 차례를 지키니 다툼 없이 더 신났지요.",
+        "line": "\"이번엔 네 차례야, 자!\""
+      },
+      "en": {
+        "title": "Taking Turns",
+        "body": "Bear pushed the car first, and then it was Rabbit's turn. Taking turns, they had even more fun without any fighting.",
+        "line": "“Now it's your turn, here you go!”"
+      }
+    },
+    {
+      "image": "assets/images/shared-toy-story-09.png",
+      "ko": {
+        "title": "미안해, 고마워",
+        "body": "둘은 서로에게 미안하다고, 또 고맙다고 말했어요. 마음의 매듭이 사르르 풀렸답니다.",
+        "line": "\"아까는 미안했어.\" \"나도 미안해.\""
+      },
+      "en": {
+        "title": "Sorry and Thank You",
+        "body": "The two told each other they were sorry, and thank you too. The knot in their hearts came gently undone.",
+        "line": "“I'm sorry about before.” “Me too.”"
+      }
+    },
+    {
+      "image": "assets/images/shared-toy-story-10.png",
+      "ko": {
+        "title": "같이 노는 게 더 재밌어",
+        "body": "혼자 갖겠다고 다툴 때보다 같이 나눌 때 훨씬 즐거웠어요. 곰돌이와 토끼는 가장 친한 친구가 되었답니다.",
+        "line": "\"나눠 쓰니까 두 배로 재밌어!\""
+      },
+      "en": {
+        "title": "More Fun Together",
+        "body": "Sharing turned out to be far more fun than fighting to keep it alone. Bear and Rabbit became the very best of friends.",
+        "line": "“Sharing makes it twice as fun!”"
+      }
+    }
+  ]
+}

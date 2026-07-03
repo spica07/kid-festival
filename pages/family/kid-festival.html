@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'self'; form-action 'none'; frame-ancestors 'self';">
+<title>🎪 우리 동네 꼬마 축제 - 2026년 6월</title>
+<link rel="stylesheet" href="../../assets/css/kid-festival.css">
+</head>
+<body>
+
+<div class="floating">🎈</div>
+<div class="floating">⭐</div>
+<div class="floating">🌈</div>
+<div class="floating">🎀</div>
+<div class="floating">🦋</div>
+<div class="floating">🌸</div>
+
+<div class="container">
+
+  <header>
+    <div class="month-nav header-month-nav">
+      <button class="month-nav-btn" id="prevMonth" type="button" aria-label="이전 달">‹</button>
+      <select class="month-select" id="yearSelect" aria-label="년도 선택"></select>
+      <select class="month-select" id="monthSelect" aria-label="월 선택"></select>
+      <button class="month-nav-btn" id="nextMonth" type="button" aria-label="다음 달">›</button>
+    </div>
+    <h1>우리 동네 꼬마 축제</h1>
+    <div class="top-notice">💝 정보는 변동될 수 있어요 · 방문 전 공식 홈페이지 확인!</div>
+  </header>
+
+  <div class="sticky-filters filters-collapsed">
+    <div class="filter-toggle-row">
+      <div class="filter-quick-actions" aria-label="보기 옵션">
+        <button class="filter-collapse-btn" id="filterToggleBtn" type="button" title="필터 열기" aria-label="필터 열기" aria-expanded="false">🔽</button>
+        <button class="view-toggle-btn second-toggle quick-when-btn" id="todayBtn" data-quick="today" type="button" title="오늘 갈 만한 곳" aria-label="오늘 갈 만한 곳">오늘</button>
+        <button class="view-toggle-btn second-toggle quick-when-btn" id="weekendBtn" data-quick="weekend" type="button" title="이번 주말 갈 만한 곳" aria-label="이번 주말 갈 만한 곳">이번주말</button>
+        <button class="view-toggle-btn" id="viewToggleBtn" type="button" title="달력 보기로 전환" aria-label="달력 보기로 전환">달력보기</button>
+        <button class="view-toggle-btn second-toggle" id="favoriteOnlyBtn" type="button" title="찜한 카드만 보기" aria-label="찜한 카드만 보기">찜한카드</button>
+        <button class="view-toggle-btn second-toggle" id="hideAlwaysBtn" type="button" title="상시 행사 숨김" aria-label="상시 행사 숨김">상시행사</button>
+        <button class="view-toggle-btn second-toggle active" id="hidePastBtn" type="button" title="지난 날짜 숨김" aria-label="지난 날짜 숨김">지난날짜</button>
+      </div>
+    </div>
+    <div class="region-filters">
+      <button class="region-btn active" data-region="all">전체</button>
+      <button class="region-btn" data-region="seoul">서울</button>
+      <button class="region-btn" data-region="gyeonggi">경기</button>
+      <button class="region-btn" data-region="incheon">인천</button>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">전체</button>
+      <button class="filter-btn" data-filter="festival">축제</button>
+      <button class="filter-btn" data-filter="museum">박물관</button>
+      <button class="filter-btn" data-filter="themepark">테마파크</button>
+      <button class="filter-btn" data-filter="nature">자연</button>
+      <button class="filter-btn" data-filter="library">도서관</button>
+      <button class="filter-btn" data-filter="marathon">마라톤</button>
+      <button class="filter-btn" data-filter="galaxy">은하수</button>
+    </div>
+    <div class="filters price-venue-filters">
+      <button class="price-btn active" data-price="all">전체</button>
+      <button class="price-btn" data-price="free">무료</button>
+      <button class="price-btn" data-price="paid">유료</button>
+      <span class="filter-divider" aria-hidden="true"></span>
+      <button class="venue-btn active" data-venue="all">전체</button>
+      <button class="venue-btn" data-venue="실내">실내</button>
+      <button class="venue-btn" data-venue="실외">실외</button>
+    </div>
+  </div>
+
+  <div class="festival-grid" id="festivalGrid"></div>
+
+  <div class="calendar-section">
+    <h2 class="calendar-title" id="calendarTitle">2026년 6월 한눈에 보기</h2>
+    <p class="calendar-subtitle">날짜별 행사를 클릭하면 상세 정보가 열려요</p>
+    <div class="calendar" id="calendar">
+      <div class="day-header">일</div>
+      <div class="day-header">월</div>
+      <div class="day-header">화</div>
+      <div class="day-header">수</div>
+      <div class="day-header">목</div>
+      <div class="day-header">금</div>
+      <div class="day-header">토</div>
+    </div>
+    <div class="calendar-list" id="calendarList"></div>
+    <p style="text-align:center; margin-top:18px; color:#A89AC5; font-size:0.82rem;">
+      상시 운영 행사는 위 카드를 확인해주세요
+    </p>
+  </div>
+
+  <div class="hangang-section">
+    <h2 class="hangang-title">🏞️ 한강공원 공원별 행사 안내</h2>
+    <p class="hangang-subtitle">공원별 연간 행사 일정이에요. 선택한 달에 열리는 행사는 파란색으로 강조돼요! · 👶 = 가족·어린이 추천</p>
+    <p style="text-align:center; margin-bottom:14px;"><a href="https://hangang.seoul.go.kr/www/bbsPost/17/644/detail.do?mid=604" target="_blank" rel="noopener" style="color:#4A6FE8; font-weight:bold; font-size:0.85rem;">📋 서울시 한강공원 공원별 행사 안내 원문 보기 →</a></p>
+    <div class="hangang-grid" id="hangangParks"></div>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modalContent">
+      <button class="modal-close" id="modalClose">✕</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>💝 모든 정보는 변동될 수 있으니, 방문 전 공식 홈페이지에서 다시 한 번 확인해주세요!</p>
+    <p style="margin-top:15px;" id="footerGreeting">🎈 즐거운 6월 보내세요! 🎈</p>
+  </footer>
+
+</div>
+
+<script src="../../assets/data/festivals.js"></script>
+<script src="../../assets/js/pages/kid-festival.js"></script>
+
+</body>
+</html>

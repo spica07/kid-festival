@@ -1,0 +1,139 @@
+{
+  "slug": "angry-balloon",
+  "title": {
+    "ko": "화가 풍선처럼 부풀 때",
+    "en": "When Anger Puffs Up Like a Balloon"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/angry-balloon-story-01.png",
+      "ko": {
+        "title": "빨개진 얼굴",
+        "body": "다람쥐 토토는 쌓아 둔 도토리 탑이 와르르 무너지자 얼굴이 빨개졌어요. 가슴속에서 무언가 풍선처럼 부풀어 올랐지요.",
+        "line": "\"으아, 화가 나!\""
+      },
+      "en": {
+        "title": "A Red, Red Face",
+        "body": "Toto's tower of acorns came tumbling down, and his face turned bright red. Something puffed up inside his chest, like a balloon.",
+        "line": "“Ugh, I'm so angry!”"
+      }
+    },
+    {
+      "image": "assets/images/angry-balloon-story-02.png",
+      "ko": {
+        "title": "부푸는 화 풍선",
+        "body": "화가 나면 마음속 빨간 풍선이 점점 커졌어요. 풍선이 너무 커지면 토토는 발을 쿵쿵 굴렀지요.",
+        "line": "풍선은 자꾸자꾸 부풀기만 했어요."
+      },
+      "en": {
+        "title": "The Anger Balloon Grows",
+        "body": "When Toto got angry, a red balloon swelled bigger and bigger inside him. When it grew too big, he stomped his feet.",
+        "line": "The balloon just kept puffing up and up."
+      }
+    },
+    {
+      "image": "assets/images/angry-balloon-story-03.png",
+      "ko": {
+        "title": "엄마가 알려 준 비밀",
+        "body": "엄마 다람쥐가 다가와 조용히 말했어요. 화가 날 땐 풍선의 바람을 천천히 빼면 된다고요.",
+        "line": "\"후우, 숨을 길게 내쉬어 볼까?\""
+      },
+      "en": {
+        "title": "Mom's Little Secret",
+        "body": "Mom squirrel came close and spoke softly. When you're angry, she said, you can let the air out of the balloon slowly.",
+        "line": "“Let's breathe out, nice and long.”"
+      }
+    },
+    {
+      "image": "assets/images/angry-balloon-story-04.png",
+      "ko": {
+        "title": "깊은 숨 한 번",
+        "body": "토토는 코로 들이쉬고 입으로 후우 내쉬었어요. 한 번, 두 번, 세 번 숨을 쉬자 풍선이 조금 작아졌지요.",
+        "line": "\"어? 가슴이 조금 시원해졌어.\""
+      },
+      "en": {
+        "title": "One Deep Breath",
+        "body": "Toto breathed in through his nose and out through his mouth. One, two, three breaths, and the balloon grew a little smaller.",
+        "line": "“Oh? My chest feels lighter now.”"
+      }
+    },
+    {
+      "image": "assets/images/angry-balloon-story-05.png",
+      "ko": {
+        "title": "하나, 둘, 셋",
+        "body": "엄마는 마음속으로 숫자를 세어 보자고 했어요. 하나, 둘, 셋을 세는 동안 화가 천천히 가라앉았답니다.",
+        "line": "숫자를 셀수록 풍선은 더 작아졌어요."
+      },
+      "en": {
+        "title": "One, Two, Three",
+        "body": "Mom told him to count the numbers in his heart. As he counted one, two, three, the anger slowly settled down.",
+        "line": "The more he counted, the smaller the balloon became."
+      }
+    },
+    {
+      "image": "assets/images/angry-balloon-story-06.png",
+      "ko": {
+        "title": "마음을 말로",
+        "body": "토토는 \"탑이 무너져서 속상했어\"라고 말했어요. 기분을 말로 꺼내자 답답함이 사르르 풀렸지요.",
+        "line": "\"화났던 게 아니라 속상했던 거구나.\""
+      },
+      "en": {
+        "title": "Saying How I Feel",
+        "body": "Toto said, “I was sad because my tower fell.” When he put his feelings into words, the tightness melted away.",
+        "line": "“I wasn't really angry. I was just sad.”"
+      }
+    },
+    {
+      "image": "assets/images/angry-balloon-story-07.png",
+      "ko": {
+        "title": "작아진 풍선",
+        "body": "커다랗던 빨간 풍선이 손바닥만큼 작아졌어요. 토토의 얼굴빛도 다시 보송보송해졌답니다.",
+        "line": "발을 쿵쿵 구르지 않아도 괜찮았어요."
+      },
+      "en": {
+        "title": "The Smaller Balloon",
+        "body": "The big red balloon shrank until it was small as his palm. And Toto's face turned soft and calm again.",
+        "line": "He didn't need to stomp his feet anymore."
+      }
+    },
+    {
+      "image": "assets/images/angry-balloon-story-08.png",
+      "ko": {
+        "title": "다시 차곡차곡",
+        "body": "토토는 무너진 도토리를 하나씩 다시 쌓기 시작했어요. 천천히 쌓으니 탑은 더 튼튼해졌지요.",
+        "line": "화를 가라앉히니 좋은 생각이 떠올랐어요."
+      },
+      "en": {
+        "title": "Stacking Again, One by One",
+        "body": "Toto began to stack the fallen acorns again, one by one. Going slowly, the tower grew even stronger.",
+        "line": "Once his anger calmed, a good idea came to him."
+      }
+    },
+    {
+      "image": "assets/images/angry-balloon-story-09.png",
+      "ko": {
+        "title": "함께 쌓는 탑",
+        "body": "지나가던 친구가 함께 도토리를 올려 주었어요. 둘이 만든 탑은 가장 높고 멋졌답니다.",
+        "line": "\"같이 하니까 더 재밌다!\""
+      },
+      "en": {
+        "title": "A Tower Built Together",
+        "body": "A friend passing by helped him place the acorns on top. The tower they made together was the tallest and finest of all.",
+        "line": "“It's more fun when we do it together!”"
+      }
+    },
+    {
+      "image": "assets/images/angry-balloon-story-10.png",
+      "ko": {
+        "title": "화가 날 때면",
+        "body": "이제 토토는 화 풍선이 부풀면 후우 숨을 쉬어요. 그러면 풍선은 다시 작아진다는 걸 알았으니까요.",
+        "line": "\"후우, 하나, 둘, 셋. 이제 괜찮아.\""
+      },
+      "en": {
+        "title": "When I Feel Angry",
+        "body": "Now when his anger balloon puffs up, Toto breathes out slow. Because he knows the balloon will shrink down again.",
+        "line": "“Breathe out. One, two, three. I'm okay now.”"
+      }
+    }
+  ]
+}

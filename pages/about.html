@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'self'; form-action 'none'; frame-ancestors 'self';">
+<title>ℹ️ 우리 동네 꼬마 놀이터 - 소개</title>
+<link rel="stylesheet" href="../assets/css/kid-festival.css">
+<style>
+  .about-container { max-width: 820px; }
+
+  .about-lead {
+    text-align: center;
+    color: #6B5B95;
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 4px auto 0;
+    max-width: 660px;
+  }
+
+  .about-section-title {
+    font-size: 1.15rem;
+    color: #4A3F6B;
+    font-weight: 700;
+    margin: 26px 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .about-intro {
+    background: white;
+    border-radius: 22px;
+    padding: 22px 24px;
+    margin-bottom: 6px;
+    box-shadow: 0 8px 25px rgba(107, 91, 149, 0.08);
+    border: 1px solid #F3EEFA;
+  }
+  .about-intro p { color: #5B5B6B; line-height: 1.7; font-size: 0.96rem; }
+  .about-intro p + p { margin-top: 10px; }
+  .about-intro b { color: #4A3F6B; }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+  }
+
+  .menu-card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    background: white;
+    border: 1px solid #F3EEFA;
+    border-radius: 18px;
+    padding: 16px 18px;
+    box-shadow: 0 6px 18px rgba(107, 91, 149, 0.07);
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+  .menu-card:hover {
+    transform: translateY(-3px);
+    border-color: #E4D8F5;
+    box-shadow: 0 12px 26px rgba(107, 91, 149, 0.16);
+  }
+  .menu-card .mc-emoji {
+    flex: 0 0 auto;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, var(--mc-1, #FFE5F1), var(--mc-2, #E5F4FF));
+  }
+  .menu-card .mc-body { min-width: 0; }
+  .menu-card .mc-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #4A3F6B;
+    margin-bottom: 4px;
+  }
+  .menu-card .mc-desc {
+    font-size: 0.88rem;
+    color: #6B6B7B;
+    line-height: 1.5;
+  }
+
+  .about-note {
+    background: #FFF4E0;
+    color: #8B5A1F;
+    border: 1px solid #FFD8A8;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 6px;
+  }
+  .about-note.storage-note {
+    background: #E8F1FF;
+    color: #1A5490;
+    border-color: #B5D5FF;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .about-lead { font-size: 0.92rem; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .about-intro { padding: 18px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="floating">🎈</div>
+<div class="floating">⭐</div>
+<div class="floating">🌈</div>
+<div class="floating">🎀</div>
+<div class="floating">🦋</div>
+<div class="floating">🌸</div>
+
+<div class="container about-container">
+
+  <header>
+    <div class="title-row">
+      <h1>우리 동네 꼬마 놀이터</h1>
+    </div>
+    <p class="about-lead">미취학 아이와 부모님을 위한 <b>놀이 · 나들이 · 학습</b>을 한곳에 모은 공간이에요.<br>아래 메뉴를 누르면 바로 해당 코너로 이동해요. 🎈</p>
+  </header>
+
+  <div class="about-intro">
+    <p>👶 <b>누구를 위한 곳인가요?</b><br>서울·경기·인천에 사는 <b>미취학(5~7세) 아이와 부모님</b>을 주로 생각하며 만들었어요. 주말 나들이거리부터 집에서 즐기는 놀이·학습까지, 흩어져 있던 정보를 보기 좋게 모았어요.</p>
+    <p>🧭 <b>어떻게 둘러보나요?</b><br>맨 위 <b>상단 메뉴</b>에서 코너를 바꿀 수 있어요. 이 소개는 언제든 <b>ℹ️</b> 버튼으로 다시 열 수 있어요.</p>
+  </div>
+
+  <div class="about-section-title">🎪 놀이 · 나들이</div>
+  <div class="menu-grid">
+    <button class="menu-card" type="button" data-go="festival">
+      <span class="mc-emoji" style="--mc-1:#FFD9E8;--mc-2:#FFB5D8;">🎪</span>
+      <span class="mc-body">
+        <span class="mc-name">동네 축제</span>
+        <span class="mc-desc">서울·경기·인천, 이번 달·다음 달 갈 만한 어린이 축제·체험·나들이 달력</span>
+      </span>
+    </button>
+    <button class="menu-card" type="button" data-go="story">
+      <span class="mc-emoji" style="--mc-1:#FFF0C9;--mc-2:#FFE0A8;">📖</span>
+      <span class="mc-body">
+        <span class="mc-name">그림동화</span>
+        <span class="mc-desc">아이와 함께 읽는 그림동화 모음</span>
+      </span>
+    </button>
+    <button class="menu-card" type="button" data-go="contest">
+      <span class="mc-emoji" style="--mc-1:#E0F0FF;--mc-2:#B5E5FF;">🏆</span>
+      <span class="mc-body">
+        <span class="mc-name">공모전</span>
+        <span class="mc-desc">아이와 함께 참여할 수 있는 공모전·이벤트 정보</span>
+      </span>
+    </button>
+  </div>
+
+  <div class="about-section-title">📚 우리 아이 학습</div>
+  <div class="menu-grid">
+    <button class="menu-card" type="button" data-go="english">
+      <span class="mc-emoji" style="--mc-1:#E0F4FF;--mc-2:#A8E0FF;">🔤</span>
+      <span class="mc-body">
+        <span class="mc-name">영어 놀이</span>
+        <span class="mc-desc">캐릭터와 함께하는 30일 영어</span>
+      </span>
+    </button>
+    <button class="menu-card" type="button" data-go="math">
+      <span class="mc-emoji" style="--mc-1:#F0E5FF;--mc-2:#D4B5FF;">🔢</span>
+      <span class="mc-body">
+        <span class="mc-name">사고력 수학</span>
+        <span class="mc-desc">놀이로 익히는 수·도형·사고력</span>
+      </span>
+    </button>
+    <button class="menu-card" type="button" data-go="korean">
+      <span class="mc-emoji" style="--mc-1:#E8F8E8;--mc-2:#A8E6A8;">가</span>
+      <span class="mc-body">
+        <span class="mc-name">한글</span>
+        <span class="mc-desc">한글 글씨 연습과 문해력 키우기</span>
+      </span>
+    </button>
+    <button class="menu-card" type="button" data-go="guide">
+      <span class="mc-emoji" style="--mc-1:#FFF0E0;--mc-2:#FFD8A8;">📚</span>
+      <span class="mc-body">
+        <span class="mc-name">학습 가이드</span>
+        <span class="mc-desc">미취학 아이 학습을 어떻게 시작할지 길잡이</span>
+      </span>
+    </button>
+    <button class="menu-card" type="button" data-go="roadmap">
+      <span class="mc-emoji" style="--mc-1:#E5EAFF;--mc-2:#B5C0FF;">🗺️</span>
+      <span class="mc-body">
+        <span class="mc-name">진학 로드맵</span>
+        <span class="mc-desc">교육 과정·진학 경로를 한눈에 비교</span>
+      </span>
+    </button>
+  </div>
+
+  <div class="about-section-title">💆 부모님을 위해</div>
+  <div class="menu-grid">
+    <button class="menu-card" type="button" data-go="healing">
+      <span class="mc-emoji" style="--mc-1:#FFE5EC;--mc-2:#FFC4D6;">💆</span>
+      <span class="mc-body">
+        <span class="mc-name">엄마 힐링</span>
+        <span class="mc-desc">육아로 지친 마음을 위한 잠깐의 힐링 시간</span>
+      </span>
+    </button>
+  </div>
+
+  <p class="about-note">💝 행사·콘텐츠 정보는 <b>변동될 수 있어요</b>. 방문 전 각 공식 홈페이지에서 한 번 더 확인해주세요. 본 사이트는 정보 공유와 개인 학습 목적으로 제공되며, 상표·행사명·장소명의 권리는 해당 권리자에게 있어요.</p>
+
+  <p class="about-note storage-note">📱 학습 진행 상황 등 이 사이트에 <b>저장되는 정보는 이 기기(브라우저)에만</b> 보관돼요. 별도 서버에 전송되지 않으며, 브라우저의 <b>방문 기록·사이트 데이터를 삭제</b>하거나 시크릿(비공개) 모드를 사용하면 저장된 내용이 <b>사라질 수 있어요</b>.</p>
+
+  <footer>
+    <p>🎈 우리 동네 꼬마 놀이터 🎈</p>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.menu-card[data-go]').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var target = card.getAttribute('data-go');
+      if (window.parent && window.parent !== window && typeof window.parent.showSiteTab === 'function') {
+        window.parent.showSiteTab(target);
+      } else {
+        // 단독으로 열렸을 때는 메인으로 이동
+        window.location.href = '../index.html';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

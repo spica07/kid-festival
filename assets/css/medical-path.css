@@ -1,0 +1,380 @@
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 40%, #ede9fe 100%);
+    min-height: 100vh;
+    color: #1f2937;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Hero */
+  .hero { text-align: center; padding: 40px 0 30px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
+    padding: 8px 16px; border-radius: 999px;
+    font-size: 14px; color: #0369a1; font-weight: 500;
+    margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 48px); font-weight: 800;
+    color: #1f2937; margin-bottom: 16px; line-height: 1.2;
+  }
+  .gradient-text {
+    background: linear-gradient(90deg, #0ea5e9, #6366f1, #8b5cf6);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p { font-size: 17px; color: #4b5563; max-width: 660px; margin: 0 auto; }
+
+  /* Truth Banner */
+  .truth-banner {
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    border-left: 4px solid #dc2626;
+    border-radius: 16px; padding: 22px 26px; margin-bottom: 20px;
+  }
+  .truth-banner-title {
+    font-size: 17px; font-weight: 800; color: #991b1b; margin-bottom: 8px;
+  }
+  .truth-banner-body {
+    font-size: 14px; color: #7f1d1d; line-height: 1.7;
+  }
+  .truth-banner-body strong { color: #450a0a; }
+
+  /* Timeline of Child */
+  .timeline-card {
+    background: white; border-radius: 24px;
+    padding: 30px; margin-bottom: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+  }
+  .child-timeline {
+    position: relative;
+    padding: 30px 0 10px;
+  }
+  .child-timeline::before {
+    content: '';
+    position: absolute;
+    left: 5%; right: 5%; top: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #fef3c7, #dcfce7, #dbeafe, #ede9fe, #fce7f3, #fee2e2);
+    border-radius: 2px;
+  }
+  .timeline-points {
+    display: grid; grid-template-columns: repeat(6, 1fr);
+    gap: 8px; position: relative;
+  }
+  .timeline-point {
+    text-align: center; position: relative; padding-top: 36px;
+  }
+  .timeline-dot {
+    position: absolute; top: 22px; left: 50%; transform: translateX(-50%);
+    width: 20px; height: 20px; border-radius: 50%;
+    background: white; border: 4px solid #6366f1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 2;
+  }
+  .timeline-point.current .timeline-dot {
+    background: #6366f1; transform: translateX(-50%) scale(1.2);
+    box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.2);
+  }
+  .timeline-year { font-size: 14px; font-weight: 800; color: #1f2937; }
+  .timeline-age { font-size: 11px; color: #6b7280; margin-top: 2px; }
+  .timeline-stage { font-size: 11px; font-weight: 600; color: #4338ca; margin-top: 4px; }
+  .timeline-note {
+    font-size: 13px; color: #4b5563; margin-top: 24px; text-align: center;
+    background: #f9fafb; border-radius: 12px; padding: 14px;
+  }
+  .timeline-note strong { color: #1f2937; }
+
+  /* Card */
+  .card {
+    background: white; border-radius: 24px;
+    padding: 30px; margin-bottom: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+  }
+  .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .card-icon {
+    width: 48px; height: 48px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 22px;
+  }
+  .card-title { font-size: 22px; font-weight: 700; color: #1f2937; }
+  .card-subtitle { font-size: 14px; color: #6b7280; margin-top: 2px; }
+
+  /* Known vs Unknown */
+  .know-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .know-col { border-radius: 16px; padding: 20px; }
+  .know-known { background: linear-gradient(135deg, #ecfdf5, #d1fae5); }
+  .know-unknown { background: linear-gradient(135deg, #fef3c7, #fed7aa); }
+  .know-title {
+    font-size: 16px; font-weight: 800; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .know-list { display: flex; flex-direction: column; gap: 8px; }
+  .know-item {
+    background: rgba(255,255,255,0.8); border-radius: 10px;
+    padding: 10px 14px; font-size: 13px; color: #1f2937;
+  }
+  .know-item strong { color: #1f2937; }
+
+  /* Scenarios */
+  .scenarios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .scenario {
+    border-radius: 16px; padding: 18px;
+  }
+  .scenario-a { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+  .scenario-b { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
+  .scenario-c { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+  .scenario-prob {
+    font-size: 11px; font-weight: 700; color: #4b5563;
+    background: rgba(255,255,255,0.7); border-radius: 999px;
+    padding: 4px 10px; display: inline-block; margin-bottom: 10px;
+  }
+  .scenario-title {
+    font-size: 17px; font-weight: 800; margin-bottom: 6px; color: #1f2937;
+  }
+  .scenario-body {
+    font-size: 13px; color: #4b5563; margin-bottom: 12px;
+  }
+  .scenario-prep {
+    background: rgba(255,255,255,0.8); border-radius: 10px;
+    padding: 10px; font-size: 12px; color: #1f2937;
+  }
+  .scenario-prep strong { color: #1f2937; }
+
+  /* Essence */
+  .essence-intro {
+    font-size: 14px; color: #4b5563; margin-bottom: 20px;
+  }
+  .essence-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .essence-item {
+    border-radius: 16px; padding: 20px;
+    background: white;
+    border: 2px solid #f3f4f6;
+  }
+  .essence-num {
+    font-size: 32px; font-weight: 900;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1; margin-bottom: 8px;
+  }
+  .essence-name {
+    font-size: 17px; font-weight: 800; color: #1f2937; margin-bottom: 6px;
+  }
+  .essence-why {
+    font-size: 12px; color: #6b7280; margin-bottom: 12px;
+    font-style: italic;
+  }
+  .essence-actions {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .essence-action {
+    background: #f9fafb; border-radius: 8px;
+    padding: 8px 10px; font-size: 12px; color: #374151;
+  }
+
+  /* Phase Plan */
+  .phase-stages { display: flex; flex-direction: column; gap: 12px; }
+  .phase {
+    border-radius: 16px; padding: 20px;
+    display: grid; grid-template-columns: 140px 1fr; gap: 18px; align-items: start;
+  }
+  .phase-p1 { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+  .phase-p2 { background: linear-gradient(135deg, #dcfce7, #bbf7d0); }
+  .phase-p3 { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+  .phase-p4 { background: linear-gradient(135deg, #ede9fe, #ddd6fe); }
+  .phase-p5 { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
+  .phase-label {
+    background: white; border-radius: 12px; padding: 12px;
+    text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .phase-period {
+    font-size: 13px; font-weight: 800; color: #1f2937; line-height: 1.2;
+  }
+  .phase-age {
+    font-size: 11px; color: #6b7280; margin-top: 4px; font-weight: 600;
+  }
+  .phase-content h4 { font-size: 17px; font-weight: 700; margin-bottom: 6px; color: #1f2937; }
+  .phase-focus { font-size: 13px; color: #4b5563; margin-bottom: 10px; }
+  .phase-do {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .phase-do-col {
+    background: rgba(255,255,255,0.85); border-radius: 10px; padding: 10px 12px;
+    font-size: 12px;
+  }
+  .phase-do-label {
+    font-size: 11px; font-weight: 700; color: #4338ca;
+    text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;
+  }
+  .phase-do-text { color: #1f2937; }
+
+  /* Medical Profession Future */
+  .future-card {
+    background: linear-gradient(135deg, #fff7ed, #ffedd5);
+    border-radius: 24px; padding: 30px; margin-bottom: 24px;
+    border-left: 4px solid #f59e0b;
+  }
+  .future-title {
+    font-size: 18px; font-weight: 700; color: #7c2d12; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .future-desc { font-size: 14px; color: #7c2d12; margin-bottom: 14px; }
+  .future-list { display: flex; flex-direction: column; gap: 8px; }
+  .future-row {
+    background: rgba(255,255,255,0.8); border-radius: 10px;
+    padding: 12px 14px; font-size: 13px; color: #7c2d12;
+  }
+  .future-row strong { color: #1f2937; }
+
+  /* Parent Mindset */
+  .mindset-card {
+    background: linear-gradient(135deg, #ede9fe, #ddd6fe, #c7d2fe);
+    border-radius: 24px; padding: 30px; margin-bottom: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+  }
+  .mindset-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;
+  }
+  .mindset-item {
+    background: rgba(255,255,255,0.85); backdrop-filter: blur(10px);
+    border-radius: 16px; padding: 20px;
+  }
+  .mindset-item-title {
+    font-weight: 700; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .mindset-item-desc { font-size: 13px; color: #4b5563; }
+
+  /* Now Action Card — 지금 당장 무엇을 */
+  .now-card {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border-radius: 24px; padding: 30px; margin-bottom: 24px;
+    border-left: 4px solid #10b981;
+  }
+  .now-title {
+    font-size: 18px; font-weight: 800; color: #065f46; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .now-sub { font-size: 14px; color: #047857; margin-bottom: 16px; }
+  .now-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
+  .now-row {
+    background: rgba(255,255,255,0.9); border-radius: 10px;
+    padding: 12px 14px; font-size: 13px; color: #064e3b;
+  }
+  .now-row strong { color: #065f46; }
+
+  /* Path nav */
+  .path-nav-wrap {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 12px; margin-bottom: 20px; flex-wrap: wrap;
+  }
+  .back-btn {
+    background: white; color: #1f2937;
+    padding: 9px 14px; border-radius: 10px;
+    font-size: 13px; font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+  }
+  .back-btn:hover { transform: translateX(-2px); }
+  .path-tabs-nav { display: flex; gap: 6px; flex-wrap: wrap; }
+  .path-tab-link {
+    background: rgba(255,255,255,0.7); color: #4b5563;
+    padding: 9px 14px; border-radius: 10px;
+    font-size: 13px; font-weight: 600;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .path-tab-link:hover { background: white; color: #1f2937; }
+  .path-tab-active {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  }
+  .path-tab-active:hover { color: white; }
+
+  .footer {
+    text-align: center; padding: 30px 0;
+    color: #6b7280; font-size: 14px;
+  }
+  .footer p { margin-bottom: 8px; }
+
+  @media (max-width: 768px) {
+    body { padding: 12px; }
+    /* Hero */
+    .hero { padding: 24px 0 20px; }
+    .hero h1 { font-size: 26px; line-height: 1.25; }
+    .hero p { font-size: 14px; }
+    .hero-badge { font-size: 11px; padding: 6px 12px; }
+    /* Path nav */
+    .path-tab-link, .back-btn { padding: 7px 10px; font-size: 12px; }
+    .path-tabs-nav { gap: 5px; }
+    /* Cards */
+    .card, .mindset-card, .future-card, .timeline-card, .now-card { padding: 18px; border-radius: 18px; }
+    .card-header { gap: 10px; margin-bottom: 14px; }
+    .card-icon { width: 40px; height: 40px; font-size: 18px; border-radius: 10px; }
+    .card-title { font-size: 17px; }
+    .card-subtitle { font-size: 12px; }
+    /* Truth banner */
+    .truth-banner { padding: 16px 18px; }
+    .truth-banner-title { font-size: 15px; }
+    .truth-banner-body { font-size: 13px; line-height: 1.6; }
+    /* Now card */
+    .now-title { font-size: 16px; }
+    .now-sub { font-size: 12px; }
+    .now-row { font-size: 12px; padding: 10px 12px; }
+    /* Timeline visualization */
+    .timeline-points { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .child-timeline { padding: 16px 0 8px; }
+    .child-timeline::before { display: none; }
+    .timeline-dot { display: none; }
+    .timeline-point { padding-top: 0; }
+    .timeline-year { font-size: 13px; }
+    .timeline-age, .timeline-stage { font-size: 10px; }
+    .timeline-note { font-size: 12px; padding: 12px; }
+    /* Know-grid / scenarios */
+    .know-grid, .scenarios-grid { grid-template-columns: 1fr; }
+    .know-title { font-size: 14px; }
+    .know-item { font-size: 12px; padding: 9px 12px; }
+    .scenario-title { font-size: 15px; }
+    .scenario-body { font-size: 12px; }
+    .scenario-prep { font-size: 11px; padding: 9px; }
+    /* Essences */
+    .essence-item { padding: 16px; }
+    .essence-num { font-size: 26px; }
+    .essence-name { font-size: 15px; }
+    .essence-why { font-size: 11px; }
+    .essence-action { font-size: 11px; padding: 7px 9px; }
+    /* Phase plan */
+    .phase { grid-template-columns: 1fr; padding: 16px; gap: 12px; }
+    .phase-label { display: inline-block; padding: 8px 12px; }
+    .phase-period { font-size: 12px; }
+    .phase-age { font-size: 10px; }
+    .phase-content h4 { font-size: 15px; }
+    .phase-focus { font-size: 12px; }
+    .phase-do { grid-template-columns: 1fr; }
+    .phase-do-col { padding: 9px 11px; }
+    .phase-do-text { font-size: 11px; }
+    /* Future card */
+    .future-title { font-size: 16px; }
+    .future-desc { font-size: 13px; }
+    .future-row { font-size: 12px; padding: 10px 12px; }
+    /* Mindset */
+    .mindset-item { padding: 16px; }
+    .mindset-item-title { font-size: 14px; }
+    .mindset-item-desc { font-size: 12px; }
+  }
+  @media (max-width: 480px) {
+    body { padding: 8px; }
+    .card, .mindset-card, .future-card, .timeline-card, .now-card { padding: 14px; }
+    .hero h1 { font-size: 22px; }
+    .hero p { font-size: 13px; }
+    .timeline-points { grid-template-columns: repeat(2, 1fr); }
+    .path-tab-link, .back-btn { padding: 6px 9px; font-size: 11px; }
+    .essence-grid { grid-template-columns: 1fr; }
+  }

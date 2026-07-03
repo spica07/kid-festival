@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>숫자 쓰기 1~10 (획순)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/math-numbers-writing.css">
+</head>
+<body>
+<div class="container">
+  <div class="topbar"><a class="back-hub" href="math-hub.html">← 수학 허브</a><span class="page-title">✏️ 숫자 쓰기 1~10</span></div>
+  <div class="pick-toolbar">
+    <span class="pick-toolbar-label">📝 <b id="pickLabel">1</b> 쓰는 중</span>
+    <button class="pick-btn" id="pickBtn" type="button">숫자 선택 ⋯</button>
+  </div>
+  <div class="pick-panel" id="pickPanel" hidden>
+    <div class="strip" id="strip"></div>
+  </div>
+  <div class="practice">
+    <div class="reading">
+      <span class="big" id="bigCh">1</span>
+      <div class="info">
+        <div class="decomp" id="decomp">하나 · 일</div>
+        <div class="hintword" id="hintword">🍎</div>
+      </div>
+      <button class="say" id="sayBtn" title="소리 듣기">🔊</button>
+    </div>
+    <div class="stage" id="stage">
+      <canvas id="bg"></canvas>
+      <canvas id="fg"></canvas>
+    </div>
+    <div class="controls">
+      <button class="ctrl primary" id="demoBtn">✏️ 시범 보기</button>
+      <button class="ctrl" id="clearBtn">🧽 다시 쓰기</button>
+      <button class="ctrl done-btn" id="learnBtn">✓ 다 썼어요</button>
+    </div>
+    <div class="navrow">
+      <button class="navbtn" id="prevBtn">← 이전 숫자</button>
+      <button class="navbtn" id="nextBtn">다음 숫자 →</button>
+    </div>
+  </div>
+  <div class="progress-line">
+    <span class="lbl">✅ 쓴 숫자</span>
+    <div class="track"><div class="fill" id="pfill"></div></div>
+    <span class="num"><span id="pdone">0</span> / 10</span>
+  </div>
+  <div class="foot">
+    💡 <b>부모님께</b> · <b>✏️ 시범 보기</b>로 번호 순서를 본 뒤, 회색 선을 따라 써 보게 해주세요.
+    숫자는 보통 <b>위에서 아래로</b> 써요. 옆의 사과 그림으로 <b>수와 개수</b>를 함께 익혀요. 🔊로 소리도 들려 주세요.
+  </div>
+</div>
+<script src="../../assets/js/course-common.js"></script>
+<script src="../../assets/js/pages/math-numbers-writing.js"></script>
+</body>
+</html>

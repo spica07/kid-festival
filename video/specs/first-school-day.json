@@ -1,0 +1,139 @@
+{
+  "slug": "first-school-day",
+  "title": {
+    "ko": "처음 가는 학교 가는 길",
+    "en": "The First Walk to School"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/first-school-day-story-01.png",
+      "ko": {
+        "title": "두근두근 첫날",
+        "body": "아기 곰 보리는 새 책가방을 메고 거울 앞에 섰어요. 오늘은 학교에 처음 가는 날이었지요.",
+        "line": "\"설레는데 조금 떨리기도 해.\""
+      },
+      "en": {
+        "title": "A Fluttery First Day",
+        "body": "Baby bear Bori put on his new backpack and stood in front of the mirror. Today was his very first day of school.",
+        "line": "“I'm excited, but a little nervous too.”"
+      }
+    },
+    {
+      "image": "assets/images/first-school-day-story-02.png",
+      "ko": {
+        "title": "엄마와 함께 가는 길",
+        "body": "엄마 곰이 보리의 손을 따뜻하게 잡아 주었어요. 학교 가는 길에는 노란 민들레가 피어 있었지요.",
+        "line": "\"네가 잘할 거라고 엄마는 믿어.\""
+      },
+      "en": {
+        "title": "Walking with Mom",
+        "body": "Mom bear held Bori's hand, warm and gentle. Yellow dandelions bloomed along the way to school.",
+        "line": "“Mom believes you'll do just fine.”"
+      }
+    },
+    {
+      "image": "assets/images/first-school-day-story-03.png",
+      "ko": {
+        "title": "커다란 학교 문",
+        "body": "학교 문은 보리보다 훨씬 커 보였어요. 보리는 문 앞에서 잠시 발이 멈췄답니다.",
+        "line": "\"안에는 누가 있을까?\""
+      },
+      "en": {
+        "title": "The Big School Door",
+        "body": "The school door looked far bigger than Bori. He stopped in his tracks for a moment in front of it.",
+        "line": "“Who could be inside?”"
+      }
+    },
+    {
+      "image": "assets/images/first-school-day-story-04.png",
+      "ko": {
+        "title": "웃는 선생님",
+        "body": "문 안에서 토끼 선생님이 환하게 웃으며 인사했어요. 따뜻한 목소리에 보리의 마음이 살짝 풀렸지요.",
+        "line": "\"어서 와, 보리야. 기다렸어.\""
+      },
+      "en": {
+        "title": "A Smiling Teacher",
+        "body": "Inside the door, Teacher Rabbit greeted him with a bright smile. Her warm voice put Bori's heart a little more at ease.",
+        "line": "“Welcome, Bori. I've been waiting for you.”"
+      }
+    },
+    {
+      "image": "assets/images/first-school-day-story-05.png",
+      "ko": {
+        "title": "새로운 친구들",
+        "body": "교실에는 여우, 너구리, 고슴도치 친구들이 있었어요. 모두 보리처럼 조금씩 긴장한 얼굴이었지요.",
+        "line": "\"나만 떨린 게 아니었구나.\""
+      },
+      "en": {
+        "title": "New Friends",
+        "body": "In the classroom were a fox, a raccoon, and a hedgehog. They all looked a little nervous, just like Bori.",
+        "line": "“So I wasn't the only nervous one.”"
+      }
+    },
+    {
+      "image": "assets/images/first-school-day-story-06.png",
+      "ko": {
+        "title": "짝꿍과 인사",
+        "body": "옆자리 고슴도치가 먼저 이름을 알려 주었어요. 보리도 용기를 내어 인사를 건넸답니다.",
+        "line": "\"안녕, 나는 보리야. 같이 놀자.\""
+      },
+      "en": {
+        "title": "Hello, Seatmate",
+        "body": "The hedgehog beside him said his name first. Bori found his courage and said hello back.",
+        "line": "“Hi, I'm Bori. Let's play together.”"
+      }
+    },
+    {
+      "image": "assets/images/first-school-day-story-07.png",
+      "ko": {
+        "title": "다 함께 노래를",
+        "body": "선생님이 손뼉을 치며 노래를 가르쳐 주었어요. 모두 함께 부르니 교실이 즐거움으로 가득 찼지요.",
+        "line": "떨리던 마음이 노래 속으로 사라졌어요."
+      },
+      "en": {
+        "title": "A Song for Everyone",
+        "body": "The teacher clapped her hands and taught them a song. Singing it all together, the classroom filled with joy.",
+        "line": "His nervous feelings melted into the song."
+      }
+    },
+    {
+      "image": "assets/images/first-school-day-story-08.png",
+      "ko": {
+        "title": "신나는 운동장",
+        "body": "쉬는 시간에는 운동장에서 술래잡기를 했어요. 보리는 깔깔 웃으며 친구들과 뛰어다녔답니다.",
+        "line": "\"학교가 이렇게 재밌는 곳이었어!\""
+      },
+      "en": {
+        "title": "The Fun Playground",
+        "body": "At recess they played tag on the playground. Bori ran around with his friends, giggling all the way.",
+        "line": "“I didn't know school could be this fun!”"
+      }
+    },
+    {
+      "image": "assets/images/first-school-day-story-09.png",
+      "ko": {
+        "title": "내일 또 만나",
+        "body": "어느새 하교 시간이 되었어요. 보리는 새 친구들에게 손을 흔들며 인사했지요.",
+        "line": "\"내일 또 만나! 약속!\""
+      },
+      "en": {
+        "title": "See You Tomorrow",
+        "body": "Before he knew it, it was time to go home. Bori waved goodbye to all his new friends.",
+        "line": "“See you tomorrow! It's a promise!”"
+      }
+    },
+    {
+      "image": "assets/images/first-school-day-story-10.png",
+      "ko": {
+        "title": "씩씩하게 다녀왔어요",
+        "body": "집에 돌아온 보리는 엄마에게 오늘 이야기를 와르르 쏟아냈어요. 처음이라 떨렸지만 정말 멋진 하루였답니다.",
+        "line": "\"엄마, 나 학교 다닐 수 있어!\""
+      },
+      "en": {
+        "title": "I Did Great Today",
+        "body": "Back home, Bori spilled out the whole day's story to Mom. The first day was nerve-racking, but truly wonderful.",
+        "line": "“Mom, I can go to school!”"
+      }
+    }
+  ]
+}

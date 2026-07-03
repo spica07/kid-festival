@@ -1,0 +1,139 @@
+{
+  "slug": "mars",
+  "title": {
+    "ko": "붉은 모래 화성의 씨앗",
+    "en": "The Seed on Red-Sand Mars"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/mars-story-01.png",
+      "ko": {
+        "title": "붉은 모래 신발",
+        "body": "하늘이는 꿈속에서 붉은 모래 신발을 신고 화성에 도착했어요. 발밑에서는 바삭바삭 작은 소리가 났지요.",
+        "line": "\"여기는 붉은 행성 화성이야.\""
+      },
+      "en": {
+        "title": "Red Sandy Shoes",
+        "body": "In his dream, Haneul arrived on Mars wearing red sandy shoes. Under his feet came tiny crunch-crunch sounds.",
+        "line": "“This is Mars, the red planet.”"
+      }
+    },
+    {
+      "image": "assets/images/mars-story-02.png",
+      "ko": {
+        "title": "작은 탐사 로봇",
+        "body": "화성 언덕 너머에서 작은 탐사 로봇이 삐빅 인사했어요. 로봇은 하늘이에게 오래된 골짜기 지도를 보여 주었답니다.",
+        "line": "궁금한 마음은 로봇 친구도 움직였어요."
+      },
+      "en": {
+        "title": "The Little Explorer Robot",
+        "body": "Over a Martian hill, a little explorer robot beeped hello. The robot showed Haneul a map of an ancient valley.",
+        "line": "A curious heart moved a robot friend too."
+      }
+    },
+    {
+      "image": "assets/images/mars-story-03.png",
+      "ko": {
+        "title": "마른 골짜기",
+        "body": "하늘이는 골짜기를 따라 걸었어요. 로봇은 아주 먼 옛날 이곳에 물이 흘렀을지도 모른다고 알려 주었지요.",
+        "line": "마른 길에도 오래된 이야기가 남아 있었어요."
+      },
+      "en": {
+        "title": "The Dry Valley",
+        "body": "Haneul walked along the valley. The robot told him that long, long ago, water may have flowed here.",
+        "line": "Even a dry path holds an old story."
+      }
+    },
+    {
+      "image": "assets/images/mars-story-04.png",
+      "ko": {
+        "title": "주머니 속 씨앗",
+        "body": "하늘이 주머니에서 작은 씨앗 하나가 나왔어요. 씨앗은 붉은 모래 위에서 \"나도 자랄 수 있을까?\" 하고 묻는 것 같았답니다.",
+        "line": "하늘이는 씨앗을 조심히 감싸 쥐었어요."
+      },
+      "en": {
+        "title": "The Seed in His Pocket",
+        "body": "A tiny seed came out of Haneul's pocket. On the red sand, the seed seemed to ask, “Can I grow here too?”",
+        "line": "Haneul gently cupped the seed in his hands."
+      }
+    },
+    {
+      "image": "assets/images/mars-story-05.png",
+      "ko": {
+        "title": "얼음 반짝이",
+        "body": "로봇은 그늘진 곳에서 작은 얼음 조각을 찾았어요. 하늘이는 얼음이 녹아 물방울이 되도록 손바닥 햇빛을 모았지요.",
+        "line": "작은 물 한 방울도 귀한 선물이었어요."
+      },
+      "en": {
+        "title": "Sparkling Ice",
+        "body": "In a shady spot, the robot found a small piece of ice. Haneul gathered sunlight in his palm to melt the ice into a drop of water.",
+        "line": "Even a single drop of water was a precious gift."
+      }
+    },
+    {
+      "image": "assets/images/mars-story-06.png",
+      "ko": {
+        "title": "돌담 세우기",
+        "body": "하늘이와 로봇은 씨앗 주변에 작은 돌담을 만들었어요. 붉은 바람이 불어도 씨앗이 날아가지 않게요.",
+        "line": "희망은 돌봄을 만나야 자랄 수 있어요."
+      },
+      "en": {
+        "title": "Building a Stone Wall",
+        "body": "Haneul and the robot built a little stone wall around the seed. So that even when the red wind blew, the seed wouldn't fly away.",
+        "line": "Hope can only grow when it meets care."
+      }
+    },
+    {
+      "image": "assets/images/mars-story-07.png",
+      "ko": {
+        "title": "먼지 폭풍",
+        "body": "갑자기 먼지 폭풍이 몰려왔어요. 하늘이는 로봇과 함께 씨앗을 지키며 낮은 목소리로 노래했답니다.",
+        "line": "무서운 바람도 함께 있으면 견딜 수 있어요."
+      },
+      "en": {
+        "title": "The Dust Storm",
+        "body": "Suddenly a dust storm rolled in. Together with the robot, Haneul guarded the seed and sang in a low voice.",
+        "line": "Even a scary wind can be endured when you're together."
+      }
+    },
+    {
+      "image": "assets/images/mars-story-08.png",
+      "ko": {
+        "title": "초록 점 하나",
+        "body": "폭풍이 지나간 뒤, 붉은 모래 사이에서 아주 작은 초록 점이 올라왔어요. 하늘이는 숨을 참고 바라보았지요.",
+        "line": "\"작지만 진짜 싹이야!\""
+      },
+      "en": {
+        "title": "A Single Green Dot",
+        "body": "After the storm passed, a tiny green dot rose up among the red sand. Haneul held his breath and gazed at it.",
+        "line": "“It's small, but it's a real sprout!”"
+      }
+    },
+    {
+      "image": "assets/images/mars-story-09.png",
+      "ko": {
+        "title": "화성의 미소",
+        "body": "화성은 붉은 언덕을 환하게 물들이며 웃었어요. 작은 싹 하나가 차가운 풍경을 조금 따뜻하게 바꾸었답니다.",
+        "line": "희망은 아주 작은 색으로도 시작돼요."
+      },
+      "en": {
+        "title": "Mars's Smile",
+        "body": "Mars smiled, lighting up its red hills brightly. One little sprout had made the cold scenery a little bit warmer.",
+        "line": "Hope can begin with even the tiniest bit of color."
+      }
+    },
+    {
+      "image": "assets/images/mars-story-10.png",
+      "ko": {
+        "title": "빨간 노트",
+        "body": "아침에 깬 하늘이는 빨간 노트에 씨앗 그림을 그렸어요. 그리고 물 한 컵을 자기 화분에도 나누어 주었지요.",
+        "line": "화성에서 배운 돌봄이 하늘이의 방에서도 자라났답니다."
+      },
+      "en": {
+        "title": "The Red Notebook",
+        "body": "When he woke in the morning, Haneul drew the seed in his red notebook. Then he shared a cup of water with his own flowerpot too.",
+        "line": "The care Haneul learned on Mars grew in his room too."
+      }
+    }
+  ]
+}

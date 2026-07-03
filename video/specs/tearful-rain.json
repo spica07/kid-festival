@@ -1,0 +1,139 @@
+{
+  "slug": "tearful-rain",
+  "title": {
+    "ko": "눈물비가 내린 날",
+    "en": "The Day It Rained Tears"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/tearful-rain-story-01.png",
+      "ko": {
+        "title": "날아간 빨간 풍선",
+        "body": "아기 여우 단이가 아끼던 빨간 풍선이 손에서 쑥 빠져나갔어요. 풍선은 하늘 높이 둥실둥실 날아가 버렸지요.",
+        "line": "\"내 풍선… 가지 마!\""
+      },
+      "en": {
+        "title": "The Red Balloon Floats Away",
+        "body": "Dani the little fox's beloved red balloon slipped right out of his hand. It floated up, up, high into the sky.",
+        "line": "“My balloon… don't go!”"
+      }
+    },
+    {
+      "image": "assets/images/tearful-rain-story-02.png",
+      "ko": {
+        "title": "차오르는 눈물",
+        "body": "단이의 눈에 굵은 눈물이 그렁그렁 맺혔어요. 가슴속이 텅 빈 것처럼 슬펐답니다.",
+        "line": "눈물이 후드득 떨어졌어요."
+      },
+      "en": {
+        "title": "Tears Welling Up",
+        "body": "Big tears welled up in Dani's eyes. He felt so sad, as if his chest were empty inside.",
+        "line": "The tears came pattering down."
+      }
+    },
+    {
+      "image": "assets/images/tearful-rain-story-03.png",
+      "ko": {
+        "title": "울어도 괜찮아",
+        "body": "엄마 여우가 다가와 단이를 가만히 안아 주었어요. 울어도 괜찮다고, 슬픈 마음은 자연스러운 거라고 했지요.",
+        "line": "\"실컷 울어도 돼, 단아.\""
+      },
+      "en": {
+        "title": "It's Okay to Cry",
+        "body": "Mama Fox came over and held Dani gently. It's okay to cry, she said—feeling sad is only natural.",
+        "line": "“You can cry as much as you need, Dani.”"
+      }
+    },
+    {
+      "image": "assets/images/tearful-rain-story-04.png",
+      "ko": {
+        "title": "마음을 털어놓기",
+        "body": "단이는 풍선이 정말 좋았다고 엄마에게 말했어요. 슬픔을 말로 꺼내자 가슴이 조금 가벼워졌답니다.",
+        "line": "\"많이 아꼈던 거라 더 슬펐어.\""
+      },
+      "en": {
+        "title": "Sharing His Heart",
+        "body": "Dani told his mama how much he had loved that balloon. Once he put his sadness into words, his chest felt a little lighter.",
+        "line": "“I loved it so much, that's why it hurt more.”"
+      }
+    },
+    {
+      "image": "assets/images/tearful-rain-story-05.png",
+      "ko": {
+        "title": "눈물이 그치고",
+        "body": "한참 울고 나니 눈물이 조금씩 마르기 시작했어요. 단이는 손등으로 눈물을 쓱 닦았지요.",
+        "line": "마음의 비가 천천히 그쳤어요."
+      },
+      "en": {
+        "title": "The Tears Stop",
+        "body": "After crying for a while, his tears slowly began to dry. Dani wiped them away with the back of his hand.",
+        "line": "The rain in his heart slowly stopped."
+      }
+    },
+    {
+      "image": "assets/images/tearful-rain-story-06.png",
+      "ko": {
+        "title": "풍선의 여행",
+        "body": "엄마는 풍선이 멀리 여행을 떠난 거라고 말해 주었어요. 어쩌면 구름 친구들과 놀고 있을지도 모른다고요.",
+        "line": "\"내 풍선이 모험을 떠났구나.\""
+      },
+      "en": {
+        "title": "The Balloon's Journey",
+        "body": "Mama told him the balloon had gone off on a faraway journey. Maybe it was playing with its cloud friends, she said.",
+        "line": "“So my balloon went off on an adventure.”"
+      }
+    },
+    {
+      "image": "assets/images/tearful-rain-story-07.png",
+      "ko": {
+        "title": "친구의 토닥임",
+        "body": "지나가던 친구 토끼가 단이의 어깨를 토닥여 주었어요. 슬플 땐 곁에 있어 주는 친구가 큰 힘이 되었지요.",
+        "line": "\"내가 같이 있어 줄게.\""
+      },
+      "en": {
+        "title": "A Friend's Comfort",
+        "body": "Rabbit, passing by, patted Dani gently on the shoulder. When you're sad, a friend by your side is a great comfort.",
+        "line": "“I'll stay right here with you.”"
+      }
+    },
+    {
+      "image": "assets/images/tearful-rain-story-08.png",
+      "ko": {
+        "title": "새로 만든 놀이",
+        "body": "둘은 함께 색종이로 비행기를 접어 날렸어요. 슬픔이 가신 자리에 새로운 즐거움이 찾아왔답니다.",
+        "line": "\"이번엔 비행기를 꼭 잡고 있을래!\""
+      },
+      "en": {
+        "title": "A Brand-New Game",
+        "body": "Together they folded paper airplanes and sent them flying. Where the sadness had been, a new kind of fun arrived.",
+        "line": "“This time I'll hold onto my airplane tight!”"
+      }
+    },
+    {
+      "image": "assets/images/tearful-rain-story-09.png",
+      "ko": {
+        "title": "마음에 든 햇살",
+        "body": "구름 사이로 따뜻한 햇살이 비쳤어요. 단이의 마음에도 다시 환한 빛이 들어왔지요.",
+        "line": "슬픔 뒤에는 햇살이 찾아왔어요."
+      },
+      "en": {
+        "title": "Sunlight in His Heart",
+        "body": "Warm sunlight broke through between the clouds. A bright light came back into Dani's heart too.",
+        "line": "After the sadness came the sunshine."
+      }
+    },
+    {
+      "image": "assets/images/tearful-rain-story-10.png",
+      "ko": {
+        "title": "괜찮아진 마음",
+        "body": "단이는 슬픈 날도 지나간다는 걸 알았어요. 곁에 있어 주는 사람들 덕분에 마음이 다시 따뜻해졌답니다.",
+        "line": "\"슬퍼도 괜찮아. 다시 웃을 수 있으니까.\""
+      },
+      "en": {
+        "title": "A Heart Made Better",
+        "body": "Dani learned that even sad days come to an end. Thanks to the people beside him, his heart grew warm again.",
+        "line": "“It's okay to be sad. I can smile again.”"
+      }
+    }
+  ]
+}

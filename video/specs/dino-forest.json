@@ -1,0 +1,139 @@
+{
+  "slug": "dino-forest",
+  "title": {
+    "ko": "공룡 숲의 작은 탐험대",
+    "en": "The Little Expedition in Dinosaur Forest"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/dino-forest-story-01.png",
+      "ko": {
+        "title": "초록 숲의 발자국",
+        "body": "준서는 공룡 도감을 품에 안고 숲길을 걸었어요. 풀잎 사이로 동그란 발자국이 콕콕 이어져 있었지요.",
+        "line": "\"진짜 공룡 친구가 지나간 걸까?\""
+      },
+      "en": {
+        "title": "Footprints in the Green Forest",
+        "body": "Junseo walked along the forest path holding his dinosaur book. Round footprints dotted the grass.",
+        "line": "\"Did a real dinosaur friend pass by?\""
+      }
+    },
+    {
+      "image": "assets/images/dino-forest-story-02.png",
+      "ko": {
+        "title": "아기 트리케라",
+        "body": "커다란 고사리 뒤에서 아기 트리케라가 훌쩍이고 있었어요. 엄마를 찾다가 혼자 길을 잃은 거였어요.",
+        "line": "준서는 작게 말했어요. \"괜찮아. 내가 도와줄게.\""
+      },
+      "en": {
+        "title": "The Baby Tricera",
+        "body": "Behind a giant fern, a baby tricera was sniffling. It had lost its way while looking for its mom.",
+        "line": "Junseo whispered, \"It's okay. I will help you.\""
+      }
+    },
+    {
+      "image": "assets/images/dino-forest-story-03.png",
+      "ko": {
+        "title": "나뭇잎 지도",
+        "body": "준서는 넓은 나뭇잎에 숲길을 그렸어요. 아기 공룡은 눈물을 닦고 지도 옆에 코를 가까이 댔지요.",
+        "line": "작은 탐험대의 첫 준비가 끝났어요."
+      },
+      "en": {
+        "title": "A Leaf Map",
+        "body": "Junseo drew the forest path on a wide leaf. The baby dinosaur wiped its tears and brought its nose close to the map.",
+        "line": "The little expedition was ready to begin."
+      }
+    },
+    {
+      "image": "assets/images/dino-forest-story-04.png",
+      "ko": {
+        "title": "물소리를 따라",
+        "body": "둘은 졸졸 흐르는 냇가를 따라 걸었어요. 엄마 공룡의 발소리가 들리는지 귀를 기울였답니다.",
+        "line": "숲은 무섭지 않고, 단서를 가득 숨긴 친구 같았어요."
+      },
+      "en": {
+        "title": "Following the Water Sound",
+        "body": "The two walked beside a babbling stream. They listened carefully for the sound of the mother dinosaur's steps.",
+        "line": "The forest did not feel scary. It felt like a friend hiding many clues."
+      }
+    },
+    {
+      "image": "assets/images/dino-forest-story-05.png",
+      "ko": {
+        "title": "긴목 공룡의 도움",
+        "body": "햇살 가득한 빈터에서 긴목 공룡들이 잎을 먹고 있었어요. 준서는 조심히 다가가 길을 물었지요.",
+        "line": "긴목 공룡은 꼬리로 남쪽 들판을 가리켰어요."
+      },
+      "en": {
+        "title": "Help from the Long-Neck Dinosaurs",
+        "body": "In a sunny clearing, long-neck dinosaurs were eating leaves. Junseo carefully walked over and asked for directions.",
+        "line": "A long-neck dinosaur pointed its tail toward the southern field."
+      }
+    },
+    {
+      "image": "assets/images/dino-forest-story-06.png",
+      "ko": {
+        "title": "진흙 발자국",
+        "body": "진흙길에는 깊고 둥근 발자국이 남아 있었어요. 아기 트리케라는 냄새를 맡고 눈을 반짝였어요.",
+        "line": "\"엄마 발자국이야!\" 준서도 함께 기뻐했어요."
+      },
+      "en": {
+        "title": "Muddy Footprints",
+        "body": "Deep round footprints marked the muddy path. The baby tricera sniffed them and its eyes sparkled.",
+        "line": "\"Mom's footprints!\" Junseo was happy too."
+      }
+    },
+    {
+      "image": "assets/images/dino-forest-story-07.png",
+      "ko": {
+        "title": "징검돌 건너기",
+        "body": "얕은 냇물이 길을 막았지만 둘은 서두르지 않았어요. 준서는 먼저 건너고, 아기 공룡은 준서를 따라왔지요.",
+        "line": "서로 기다려 주니 어려운 길도 쉬워졌어요."
+      },
+      "en": {
+        "title": "Crossing the Stepping Stones",
+        "body": "A shallow stream blocked the way, but the two did not hurry. Junseo crossed first, and the baby dinosaur followed.",
+        "line": "When they waited for each other, even a hard path became easier."
+      }
+    },
+    {
+      "image": "assets/images/dino-forest-story-08.png",
+      "ko": {
+        "title": "들판 끝의 그림자",
+        "body": "숲이 끝나는 곳에 커다란 트리케라가 서 있었어요. 아기 공룡은 반가운 소리를 내며 앞으로 달려갔지요.",
+        "line": "준서의 마음도 같이 뛰기 시작했어요."
+      },
+      "en": {
+        "title": "A Shadow at the Edge of the Field",
+        "body": "At the end of the forest, a big tricera was standing. The baby dinosaur made a joyful sound and ran forward.",
+        "line": "Junseo's heart began to run with it."
+      }
+    },
+    {
+      "image": "assets/images/dino-forest-story-09.png",
+      "ko": {
+        "title": "따뜻한 재회",
+        "body": "아기 공룡은 엄마 품으로 쏙 들어갔어요. 엄마 공룡은 준서에게 고맙다는 듯 고개를 낮게 숙였지요.",
+        "line": "준서는 손을 흔들며 활짝 웃었어요."
+      },
+      "en": {
+        "title": "A Warm Reunion",
+        "body": "The baby dinosaur tucked itself into its mother's arms. The mother dinosaur lowered her head as if thanking Junseo.",
+        "line": "Junseo waved and smiled brightly."
+      }
+    },
+    {
+      "image": "assets/images/dino-forest-story-10.png",
+      "ko": {
+        "title": "탐험대장의 공책",
+        "body": "집으로 돌아온 준서는 공룡 공책에 오늘의 모험을 그렸어요. 가장 크게 그린 것은 공룡보다 친구를 도운 마음이었답니다.",
+        "line": "다음 탐험에서도 준서는 먼저 친구의 마음을 살피기로 했어요."
+      },
+      "en": {
+        "title": "The Explorer Captain's Notebook",
+        "body": "Back home, Junseo drew the day's adventure in his dinosaur notebook. The biggest thing he drew was not the dinosaur, but the heart that helped a friend.",
+        "line": "On his next expedition, Junseo promised to notice his friends' feelings first."
+      }
+    }
+  ]
+}

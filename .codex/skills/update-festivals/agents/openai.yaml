@@ -1,0 +1,4 @@
+interface:
+  display_name: "Update Festivals"
+  short_description: "Refresh project festival event data"
+  default_prompt: "Use $update-festivals to refresh C:\\kid festival data for the current 3-month window."

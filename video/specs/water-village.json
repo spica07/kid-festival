@@ -1,0 +1,139 @@
+{
+  "slug": "water-village",
+  "title": {
+    "ko": "물을 아끼는 마을",
+    "en": "The Village That Saved Water"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/water-village-story-01.png",
+      "ko": {
+        "title": "졸졸 마을 샘",
+        "body": "두꺼비 마을 한가운데에는 맑은 샘이 졸졸 흘렀어요. 마을 친구들은 그 물로 마시고 씻으며 살았지요.",
+        "line": "\"우리 샘은 언제나 맑아!\""
+      },
+      "en": {
+        "title": "The Trickling Village Spring",
+        "body": "In the middle of the toad village, a clear spring trickled along. The friends drank and washed with its water.",
+        "line": "“Our spring is always so clear!”"
+      }
+    },
+    {
+      "image": "assets/images/water-village-story-02.png",
+      "ko": {
+        "title": "펑펑 쓰는 물",
+        "body": "하지만 친구들은 물을 펑펑 틀어 놓고 흘려보냈어요. 쓰지 않을 때도 물은 콸콸 흘러갔지요.",
+        "line": "\"물은 끝없이 나오는걸, 뭐.\""
+      },
+      "en": {
+        "title": "Water Running Wild",
+        "body": "But the friends left the water running and let it pour away. Even when they weren't using it, the water gushed on.",
+        "line": "“There's endless water, so why worry?”"
+      }
+    },
+    {
+      "image": "assets/images/water-village-story-03.png",
+      "ko": {
+        "title": "바짝 마른 샘",
+        "body": "어느 여름날, 샘이 바짝 말라 바닥을 드러냈어요. 마을 친구들은 깜짝 놀라 발만 동동 굴렀지요.",
+        "line": "\"물이 한 방울도 안 나와!\""
+      },
+      "en": {
+        "title": "The Dried-Up Spring",
+        "body": "One summer day, the spring dried up and showed its bare bottom. The friends were shocked and stamped their feet.",
+        "line": "“Not even one drop is coming out!”"
+      }
+    },
+    {
+      "image": "assets/images/water-village-story-04.png",
+      "ko": {
+        "title": "할머니의 이야기",
+        "body": "지혜로운 할머니 두꺼비가 친구들을 불러 모았어요. 물은 소중하니 아껴 쓰면 다시 차오른다고 했지요.",
+        "line": "\"한 방울도 아껴 쓰자꾸나.\""
+      },
+      "en": {
+        "title": "Grandma's Story",
+        "body": "Wise Grandma toad gathered the friends together. Water is precious, she said, and if they used it carefully, it would fill up again.",
+        "line": "“Let's save every single drop.”"
+      }
+    },
+    {
+      "image": "assets/images/water-village-story-05.png",
+      "ko": {
+        "title": "컵에 받아서",
+        "body": "친구들은 양치할 때 컵에 물을 받아 썼어요. 틀어 놓지 않으니 물이 훨씬 덜 들었지요.",
+        "line": "\"이렇게만 해도 많이 아껴져!\""
+      },
+      "en": {
+        "title": "Caught in a Cup",
+        "body": "The friends caught water in a cup when they brushed their teeth. With the tap off, they used far less water.",
+        "line": "“Just doing this saves so much!”"
+      }
+    },
+    {
+      "image": "assets/images/water-village-story-06.png",
+      "ko": {
+        "title": "다시 쓰는 물",
+        "body": "채소 씻은 물은 버리지 않고 화단에 주었어요. 한 번 쓴 물도 다시 쓸 수 있었답니다.",
+        "line": "\"물도 두 번 일할 수 있구나!\""
+      },
+      "en": {
+        "title": "Water Used Again",
+        "body": "They didn't throw away the water from washing vegetables; they gave it to the garden. Even used water could work again.",
+        "line": "“Water can do two jobs!”"
+      }
+    },
+    {
+      "image": "assets/images/water-village-story-07.png",
+      "ko": {
+        "title": "빗물 모으기",
+        "body": "비가 오는 날에는 큰 항아리에 빗물을 모았어요. 모인 빗물로 청소도 하고 꽃에도 주었지요.",
+        "line": "\"하늘이 준 물도 알뜰히!\""
+      },
+      "en": {
+        "title": "Collecting Rainwater",
+        "body": "On rainy days, they collected rainwater in big jars. They cleaned with it and gave it to the flowers.",
+        "line": "“Even water from the sky, used wisely!”"
+      }
+    },
+    {
+      "image": "assets/images/water-village-story-08.png",
+      "ko": {
+        "title": "다시 고이는 물",
+        "body": "모두가 아껴 쓰자 마른 샘에 물이 조금씩 고이기 시작했어요. 작은 물방울이 톡톡 솟아올랐지요.",
+        "line": "\"어! 샘이 다시 살아나고 있어!\""
+      },
+      "en": {
+        "title": "The Water Returns",
+        "body": "As everyone saved, water slowly began to gather in the dry spring. Tiny drops bubbled up, plip-plop.",
+        "line": "“Look! The spring is coming back to life!”"
+      }
+    },
+    {
+      "image": "assets/images/water-village-story-09.png",
+      "ko": {
+        "title": "되살아난 샘",
+        "body": "며칠 뒤 샘은 다시 맑게 졸졸 흘렀어요. 친구들은 손을 맞잡고 깡충깡충 기뻐했지요.",
+        "line": "\"우리가 함께 샘을 살렸어!\""
+      },
+      "en": {
+        "title": "The Spring Revived",
+        "body": "A few days later, the spring trickled clear once more. The friends held hands and hopped with joy.",
+        "line": "“Together, we saved our spring!”"
+      }
+    },
+    {
+      "image": "assets/images/water-village-story-10.png",
+      "ko": {
+        "title": "물은 소중해",
+        "body": "마을 친구들은 물 한 방울도 소중하다는 걸 알았어요. 이제 모두가 물을 아끼며 맑은 샘을 지킨답니다.",
+        "line": "\"한 방울도 아끼면 모두가 행복해!\""
+      },
+      "en": {
+        "title": "Water Is Precious",
+        "body": "The village friends learned that even one drop of water is precious. Now everyone saves water and keeps the spring clear.",
+        "line": "“If we all save every drop, everyone is happy!”"
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "slug": "neptune",
+  "title": {
+    "ko": "해왕성의 푸른 바람 우체국",
+    "en": "Neptune's Blue Wind Post Office"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/neptune-story-01.png",
+      "ko": {
+        "title": "가장 먼 우체국",
+        "body": "하늘이는 푸른 우체통 앞에서 해왕성을 만났어요. 해왕성은 태양계의 아주 먼 곳에서 바람 편지를 보내는 친구였지요.",
+        "line": "\"멀리 있어도 마음은 보낼 수 있어.\""
+      },
+      "en": {
+        "title": "The Farthest Post Office",
+        "body": "Haneul met Neptune in front of a blue mailbox. Neptune was a friend who sent wind letters from the very far edge of the solar system.",
+        "line": "“Even far away, I can still send my heart.”"
+      }
+    },
+    {
+      "image": "assets/images/neptune-story-02.png",
+      "ko": {
+        "title": "빠른 푸른 바람",
+        "body": "해왕성의 바람은 아주 빨랐어요. 편지를 싣고 슝 날아가자 하늘이의 머리카락도 살짝 흔들렸답니다.",
+        "line": "빠른 바람에는 조심스러운 손길이 필요했어요."
+      },
+      "en": {
+        "title": "The Quick Blue Wind",
+        "body": "Neptune's wind was very fast. When it whooshed off carrying a letter, even Haneul's hair fluttered a little.",
+        "line": "A fast wind needs a careful hand."
+      }
+    },
+    {
+      "image": "assets/images/neptune-story-03.png",
+      "ko": {
+        "title": "너무 센 첫 배달",
+        "body": "처음 보낸 편지는 바람이 너무 세서 토성의 고리를 간질였어요. 해왕성은 놀라서 바람 주머니를 꼭 묶었지요.",
+        "line": "\"마음이 급하면 편지도 놀랄 수 있구나.\""
+      },
+      "en": {
+        "title": "The Too-Strong First Delivery",
+        "body": "The first letter blew so hard it tickled Saturn's rings. Surprised, Neptune tied its wind sack up tight.",
+        "line": "“When the heart is in a hurry, even a letter can get startled.”"
+      }
+    },
+    {
+      "image": "assets/images/neptune-story-04.png",
+      "ko": {
+        "title": "살랑살랑 연습",
+        "body": "하늘이는 해왕성에게 종이비행기를 접어 주었어요. \"이렇게 살짝 밀어 보면 어때?\" 해왕성은 바람을 부드럽게 불었답니다.",
+        "line": "부드러운 힘도 멀리 갈 수 있어요."
+      },
+      "en": {
+        "title": "Gentle Practice",
+        "body": "Haneul folded Neptune a paper airplane. “What if you push it softly, like this?” Neptune blew the wind gently.",
+        "line": "A soft force can travel far too."
+      }
+    },
+    {
+      "image": "assets/images/neptune-story-05.png",
+      "ko": {
+        "title": "차가운 푸른빛",
+        "body": "해왕성은 멀리 있어서 차갑고 푸르게 빛났어요. 하늘이는 따뜻한 장갑을 끼고도 그 빛이 아름답다고 느꼈지요.",
+        "line": "차가운 곳에도 다정한 마음이 살 수 있어요."
+      },
+      "en": {
+        "title": "The Cold Blue Light",
+        "body": "Being far away, Neptune glowed cold and blue. Even wearing warm gloves, Haneul felt that its light was beautiful.",
+        "line": "Even a cold place can hold a warm heart."
+      }
+    },
+    {
+      "image": "assets/images/neptune-story-06.png",
+      "ko": {
+        "title": "친구 이름 쓰기",
+        "body": "하늘이와 해왕성은 편지에 행성 친구들의 이름을 하나씩 썼어요. 수성, 금성, 화성, 목성, 토성, 천왕성까지요.",
+        "line": "이름을 쓰는 동안 친구들이 더 가까워졌어요."
+      },
+      "en": {
+        "title": "Writing the Friends' Names",
+        "body": "Haneul and Neptune wrote the planet friends' names on the letter, one by one. Mercury, Venus, Mars, Jupiter, Saturn, even Uranus.",
+        "line": "While writing their names, the friends grew closer."
+      }
+    },
+    {
+      "image": "assets/images/neptune-story-07.png",
+      "ko": {
+        "title": "바람길 지도",
+        "body": "해왕성은 푸른 바람길 지도를 펼쳤어요. 하늘이는 편지가 부딪히지 않도록 별 사이 길을 표시했답니다.",
+        "line": "잘 전하려면 길을 살피는 마음이 필요해요."
+      },
+      "en": {
+        "title": "The Wind-Path Map",
+        "body": "Neptune unrolled a map of blue wind paths. Haneul marked the routes between the stars so the letters wouldn't bump into anything.",
+        "line": "To deliver well, you need a heart that watches the way."
+      }
+    },
+    {
+      "image": "assets/images/neptune-story-08.png",
+      "ko": {
+        "title": "조용한 도착",
+        "body": "이번 편지는 친구들의 창문 앞에 조용히 내려앉았어요. 목성은 웃고, 토성은 고리를 흔들고, 천왕성은 옆으로 춤췄지요.",
+        "line": "부드러운 편지가 모두를 웃게 했어요."
+      },
+      "en": {
+        "title": "A Quiet Arrival",
+        "body": "This time the letters settled quietly in front of each friend's window. Jupiter smiled, Saturn shook its rings, and Uranus danced sideways.",
+        "line": "A gentle letter made everyone smile."
+      }
+    },
+    {
+      "image": "assets/images/neptune-story-09.png",
+      "ko": {
+        "title": "답장이 돌아오는 밤",
+        "body": "밤이 깊자 해왕성 우체국에 답장이 하나둘 도착했어요. 해왕성은 멀리 있어도 더 이상 외롭지 않았답니다.",
+        "line": "주고받는 마음은 먼 거리를 건너요."
+      },
+      "en": {
+        "title": "The Night the Replies Came Back",
+        "body": "As night grew deep, replies arrived one by one at Neptune's post office. Even far away, Neptune wasn't lonely anymore.",
+        "line": "A heart that gives and receives crosses any distance."
+      }
+    },
+    {
+      "image": "assets/images/neptune-story-10.png",
+      "ko": {
+        "title": "하늘이의 엽서",
+        "body": "아침에 깬 하늘이는 멀리 사는 친구에게 엽서를 썼어요. \"보고 싶어. 그래도 우리는 친구야.\" 해왕성의 바람이 살짝 웃는 것 같았지요.",
+        "line": "가장 먼 친구도 마음을 보내면 가까워진답니다."
+      },
+      "en": {
+        "title": "Haneul's Postcard",
+        "body": "When Haneul woke up, he wrote a postcard to a friend who lives far away. “I miss you. But we're still friends.” Neptune's wind seemed to smile a little.",
+        "line": "Even the farthest friend grows close when you send your heart."
+      }
+    }
+  ]
+}

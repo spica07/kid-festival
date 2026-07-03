@@ -1,0 +1,139 @@
+{
+  "slug": "tiny-firetruck",
+  "title": {
+    "ko": "작은 소방차 대장",
+    "en": "The Little Fire Truck Captain"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/tiny-firetruck-story-01.png",
+      "ko": {
+        "title": "빨간 헬멧의 아침",
+        "body": "민우는 장난감 소방 헬멧을 쓰고 공원으로 나갔어요. 나무 위에서 작은 고양이 울음소리가 들렸지요.",
+        "line": "\"작은 구조대가 왔어!\""
+      },
+      "en": {
+        "title": "Morning in the Red Helmet",
+        "body": "Minwoo put on his toy firefighter helmet and went to the park. From a tree, he heard a small kitten crying.",
+        "line": "\"The little rescue team is here!\""
+      }
+    },
+    {
+      "image": "assets/images/tiny-firetruck-story-02.png",
+      "ko": {
+        "title": "삐뽀의 반짝 신호",
+        "body": "민우의 작은 소방차 삐뽀가 반짝였어요. 사다리는 길지 않았지만, 도와주려는 마음은 아주 컸답니다.",
+        "line": "민우는 먼저 고양이를 놀라게 하지 않기로 했어요."
+      },
+      "en": {
+        "title": "Bbo-Bbo's Sparkling Signal",
+        "body": "Minwoo's little fire truck, Bbo-Bbo, sparkled. Its ladder was not long, but its wish to help was very big.",
+        "line": "Minwoo decided first not to scare the kitten."
+      }
+    },
+    {
+      "image": "assets/images/tiny-firetruck-story-03.png",
+      "ko": {
+        "title": "포근한 담요",
+        "body": "민우는 낮은 가지 아래에 담요를 펼쳤어요. 혹시 고양이가 내려오다 놀라도 포근하게 받을 수 있게요.",
+        "line": "용감함은 준비하는 마음에서 시작됐어요."
+      },
+      "en": {
+        "title": "A Cozy Blanket",
+        "body": "Minwoo spread a blanket under a low branch, just in case the kitten got startled while climbing down.",
+        "line": "Bravery began with a prepared heart."
+      }
+    },
+    {
+      "image": "assets/images/tiny-firetruck-story-04.png",
+      "ko": {
+        "title": "작은 목소리",
+        "body": "민우는 손뼉을 치지 않고 조용히 말했어요. \"괜찮아, 천천히 내려와도 돼.\"",
+        "line": "고양이의 떨리던 꼬리가 조금씩 편안해졌어요."
+      },
+      "en": {
+        "title": "A Small Voice",
+        "body": "Minwoo did not clap his hands. He spoke quietly. \"It's okay. You can come down slowly.\"",
+        "line": "The kitten's trembling tail slowly relaxed."
+      }
+    },
+    {
+      "image": "assets/images/tiny-firetruck-story-05.png",
+      "ko": {
+        "title": "포근한 착륙",
+        "body": "고양이는 살금살금 담요 위로 내려왔어요. 민우는 크게 소리치지 않고 따뜻하게 웃어 주었답니다.",
+        "line": "삐뽀도 작은 불빛을 반짝이며 기뻐했어요."
+      },
+      "en": {
+        "title": "A Soft Landing",
+        "body": "The kitten tiptoed down onto the blanket. Minwoo did not shout. He smiled warmly.",
+        "line": "Bbo-Bbo blinked its little light with joy."
+      }
+    },
+    {
+      "image": "assets/images/tiny-firetruck-story-06.png",
+      "ko": {
+        "title": "물 한 그릇",
+        "body": "민우는 고양이에게 작은 물그릇을 놓아 주었어요. 고양이는 물을 마시고 민우 옆에 얌전히 앉았지요.",
+        "line": "돕는 일은 끝난 뒤 보살피는 것까지 이어졌어요."
+      },
+      "en": {
+        "title": "A Bowl of Water",
+        "body": "Minwoo placed a small bowl of water for the kitten. The kitten drank and sat quietly beside him.",
+        "line": "Rescue continued with care after the danger was over."
+      }
+    },
+    {
+      "image": "assets/images/tiny-firetruck-story-07.png",
+      "ko": {
+        "title": "안녕, 고양이 친구",
+        "body": "고양이는 꽃밭 옆으로 걸어가다 뒤돌아보았어요. 민우와 삐뽀는 조용히 손을 흔들었답니다.",
+        "line": "도와준 뒤에는 편히 갈 수 있게 기다려 주었어요."
+      },
+      "en": {
+        "title": "Goodbye, Kitten Friend",
+        "body": "The kitten walked toward the flower bed and looked back. Minwoo and Bbo-Bbo quietly waved.",
+        "line": "After helping, they waited so the kitten could leave in peace."
+      }
+    },
+    {
+      "image": "assets/images/tiny-firetruck-story-08.png",
+      "ko": {
+        "title": "친절 배지",
+        "body": "민우는 헬멧에 작은 배지를 붙였어요. 오늘의 배지는 빠르게 달린 상이 아니라 차분히 도운 상이었지요.",
+        "line": "민우는 그 배지가 아주 자랑스러웠어요."
+      },
+      "en": {
+        "title": "The Kindness Badge",
+        "body": "Minwoo put a small badge on his helmet. Today's badge was not for running fast, but for helping calmly.",
+        "line": "Minwoo felt very proud of that badge."
+      }
+    },
+    {
+      "image": "assets/images/tiny-firetruck-story-09.png",
+      "ko": {
+        "title": "집으로 가는 길",
+        "body": "해가 기울자 민우는 헬멧을 들고 집으로 걸어갔어요. 삐뽀는 옆에서 조용히 굴러갔답니다.",
+        "line": "오늘 공원은 조금 더 따뜻해진 것 같았어요."
+      },
+      "en": {
+        "title": "The Way Home",
+        "body": "As the sun went down, Minwoo carried his helmet and walked home. Bbo-Bbo rolled quietly beside him.",
+        "line": "The park felt a little warmer today."
+      }
+    },
+    {
+      "image": "assets/images/tiny-firetruck-story-10.png",
+      "ko": {
+        "title": "오늘의 구조대장",
+        "body": "민우는 헬멧을 책상 위에 올려두었어요. 내일도 누군가 도움이 필요하면 먼저 살피기로 했지요.",
+        "line": "가장 멋진 소방차는 따뜻한 마음으로 달리는 차였답니다."
+      },
+      "en": {
+        "title": "Today's Rescue Captain",
+        "body": "Minwoo placed his helmet on the desk. Tomorrow, if someone needed help, he would look carefully first.",
+        "line": "The greatest fire truck was one that ran with a warm heart."
+      }
+    }
+  ]
+}

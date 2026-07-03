@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한글 가-하 글씨 쓰기 (획순)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/korean-writing.css">
+</head>
+<body>
+<div class="container">
+  <div class="topbar"><a class="back-hub" href="korean-hub.html">← 한글 허브</a><span class="page-title">✍️ 가-하 글씨 쓰기</span></div>
+  <div class="pick-toolbar">
+    <span class="pick-toolbar-label">📝 <b id="pickLabel">가</b> 쓰는 중</span>
+    <button class="pick-btn" id="pickBtn" type="button">글자 선택 ⋯</button>
+  </div>
+  <div class="pick-panel" id="pickPanel" hidden>
+    <div class="strip" id="strip"></div>
+  </div>
+  <div class="practice">
+    <div class="reading">
+      <span class="big" id="bigCh">가</span>
+      <div class="info">
+        <div class="decomp" id="decomp">ㄱ + ㅏ</div>
+        <div class="hintword" id="hintword">가방의 '가'</div>
+      </div>
+      <button class="say" id="sayBtn" title="소리 듣기">🔊</button>
+    </div>
+    <div class="stage" id="stage">
+      <canvas id="bg"></canvas>
+      <canvas id="fg"></canvas>
+    </div>
+    <div class="controls">
+      <button class="ctrl primary" id="demoBtn">✏️ 시범 보기</button>
+      <button class="ctrl" id="clearBtn">🧽 다시 쓰기</button>
+      <button class="ctrl done-btn" id="learnBtn">✓ 다 썼어요</button>
+    </div>
+    <div class="navrow">
+      <button class="navbtn" id="prevBtn">← 이전 글자</button>
+      <button class="navbtn" id="nextBtn">다음 글자 →</button>
+    </div>
+  </div>
+  <div class="progress-line">
+    <span class="lbl">✅ 쓴 글자</span>
+    <div class="track"><div class="fill" id="pfill"></div></div>
+    <span class="num"><span id="pdone">0</span> / <span id="ptotal">14</span></span>
+  </div>
+  <div class="foot">
+    💡 <b>부모님께</b> · <b>✏️ 시범 보기</b>로 번호 순서를 본 뒤, 회색 선을 따라 써 보게 해주세요.
+    한글은 <b>자음을 먼저, 위에서 아래·왼쪽에서 오른쪽</b>으로 써요. 🔊로 소리도 들려 주세요.
+  </div>
+</div>
+<script src="../../assets/js/course-common.js"></script>
+<script src="../../assets/js/pages/korean-writing.js"></script>
+</body>
+</html>

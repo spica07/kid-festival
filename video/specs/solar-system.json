@@ -1,0 +1,139 @@
+{
+  "slug": "solar-system",
+  "title": {
+    "ko": "반짝반짝 태양계 버스",
+    "en": "The Sparkling Solar System Bus"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/solar-system-story-01.png",
+      "ko": {
+        "title": "별빛 정류장",
+        "body": "하늘이는 종이 로켓을 품에 안고 잠들었어요. 꿈속에서 눈을 뜨자 우주 한가운데에 반짝이는 정류장이 있었지요.",
+        "line": "\"태양계 버스에 오신 걸 환영해요!\""
+      },
+      "en": {
+        "title": "The Starlight Stop",
+        "body": "Haneul fell asleep hugging a paper rocket. In the dream, he opened his eyes to find a sparkling bus stop in the middle of space.",
+        "line": "“Welcome aboard the Solar System Bus!”"
+      }
+    },
+    {
+      "image": "assets/images/solar-system-story-02.png",
+      "ko": {
+        "title": "따뜻한 운전사",
+        "body": "버스 가운데에는 태양 운전사가 앉아 있었어요. 태양은 환한 빛으로 하늘이의 안전벨트를 반짝 비추었답니다.",
+        "line": "태양은 태양계 가족의 중심이었어요."
+      },
+      "en": {
+        "title": "The Warm Driver",
+        "body": "In the middle of the bus sat the Sun, the driver. The Sun lit up Haneul's seatbelt with a bright, gentle glow.",
+        "line": "The Sun was the center of the solar system family."
+      }
+    },
+    {
+      "image": "assets/images/solar-system-story-03.png",
+      "ko": {
+        "title": "첫 번째 손님 수성",
+        "body": "작고 빠른 수성이 쌩 하고 버스에 탔어요. 하늘이는 수성이 태양 가까이에서 가장 빨리 돈다는 걸 알게 되었지요.",
+        "line": "작아도 씩씩한 친구가 있었어요."
+      },
+      "en": {
+        "title": "The First Guest, Mercury",
+        "body": "Tiny, speedy Mercury hopped on board with a whoosh. Haneul learned that Mercury spins fastest of all, close to the Sun.",
+        "line": "Even a small friend can be brave and strong."
+      }
+    },
+    {
+      "image": "assets/images/solar-system-story-04.png",
+      "ko": {
+        "title": "구름 망토 금성",
+        "body": "금성은 두꺼운 구름 망토를 두르고 조용히 자리에 앉았어요. 하늘이는 금성이 밝게 보이지만 아주 뜨거운 행성이라는 이야기를 들었답니다.",
+        "line": "겉모습만 보고 친구를 다 알 수는 없어요."
+      },
+      "en": {
+        "title": "Venus in a Cloud Cape",
+        "body": "Venus wore a thick cloud cape and quietly took a seat. Haneul heard that Venus looks bright but is a very, very hot planet.",
+        "line": "You can't know a friend just by how they look."
+      }
+    },
+    {
+      "image": "assets/images/solar-system-story-05.png",
+      "ko": {
+        "title": "푸른 집 지구",
+        "body": "하늘이는 창밖으로 푸른 지구를 보았어요. 바다와 구름이 어울린 지구는 하늘이가 사는 소중한 집이었지요.",
+        "line": "\"우리 집도 태양계 가족이구나.\""
+      },
+      "en": {
+        "title": "Earth, the Blue Home",
+        "body": "Haneul looked out the window and saw blue Earth. With its oceans and clouds together, Earth was the precious home where Haneul lives.",
+        "line": "“Our home is part of the solar system family too.”"
+      }
+    },
+    {
+      "image": "assets/images/solar-system-story-06.png",
+      "ko": {
+        "title": "붉은 모래 화성",
+        "body": "화성은 붉은 모래 신발을 신고 인사했어요. 하늘이는 언젠가 로봇 친구들이 화성에서 더 많은 비밀을 찾을 거라고 상상했어요.",
+        "line": "궁금한 마음은 먼 곳까지 갈 수 있어요."
+      },
+      "en": {
+        "title": "Red-Sand Mars",
+        "body": "Mars greeted everyone wearing red sandy shoes. Haneul imagined that one day robot friends would find even more secrets on Mars.",
+        "line": "A curious heart can travel very far."
+      }
+    },
+    {
+      "image": "assets/images/solar-system-story-07.png",
+      "ko": {
+        "title": "커다란 목성",
+        "body": "목성이 버스에 오르자 의자가 조금 삐걱했어요. 목성은 가장 큰 행성이지만 작은 달 친구들을 다정하게 챙겼지요.",
+        "line": "큰 몸보다 더 큰 마음이 빛났어요."
+      },
+      "en": {
+        "title": "Great Big Jupiter",
+        "body": "When Jupiter climbed aboard, the seat creaked a little. Jupiter is the biggest planet, yet it kindly looked after its little moon friends.",
+        "line": "A heart bigger than its body shone brightest."
+      }
+    },
+    {
+      "image": "assets/images/solar-system-story-08.png",
+      "ko": {
+        "title": "고리 음악 토성",
+        "body": "토성은 반짝 고리를 흔들며 노래를 들려주었어요. 얼음과 돌 조각들이 딩딩, 통통 소리를 냈답니다.",
+        "line": "서로 다른 소리가 하나의 음악이 되었어요."
+      },
+      "en": {
+        "title": "Saturn's Ring Music",
+        "body": "Saturn shook its sparkling rings and shared a song. Bits of ice and rock made soft ding-ding, tip-tap sounds.",
+        "line": "Different sounds became one song together."
+      }
+    },
+    {
+      "image": "assets/images/solar-system-story-09.png",
+      "ko": {
+        "title": "먼 푸른 친구들",
+        "body": "천왕성은 옆으로 누운 춤을 추고, 해왕성은 푸른 바람 편지를 보냈어요. 하늘이는 먼 친구들도 태양계 가족이라는 걸 배웠지요.",
+        "line": "멀리 있어도 함께 돌면 가족이에요."
+      },
+      "en": {
+        "title": "Far-Off Blue Friends",
+        "body": "Uranus danced lying on its side, and Neptune sent a letter on the blue wind. Haneul learned that far-away friends are part of the family too.",
+        "line": "Even far apart, friends who orbit together are family."
+      }
+    },
+    {
+      "image": "assets/images/solar-system-story-10.png",
+      "ko": {
+        "title": "빙글빙글 약속",
+        "body": "여행이 끝나자 하늘이는 태양계 그림을 노트에 그렸어요. 모두 자기 길을 지키며 태양 둘레를 돈다는 약속도 함께 적었답니다.",
+        "line": "그날 밤 하늘이의 방도 작은 태양계처럼 반짝였어요."
+      },
+      "en": {
+        "title": "The Round-and-Round Promise",
+        "body": "When the trip ended, Haneul drew the solar system in his notebook. He also wrote down their promise to stay on their own paths around the Sun.",
+        "line": "That night, Haneul's room sparkled like a little solar system too."
+      }
+    }
+  ]
+}

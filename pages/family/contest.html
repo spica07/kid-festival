@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'self';">
+<title>🏆 공모전</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 50%, #fce7f3 100%);
+    min-height: 100vh; color: #1f2937; line-height: 1.6; padding: 22px 18px 40px;
+  }
+  .container { max-width: 760px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 22px; }
+  h1 { font-size: clamp(22px, 5vw, 30px); font-weight: 800; color: #b45309; }
+  .subtitle { font-size: 14px; color: #6b7280; margin-top: 6px; }
+
+  .contest-card {
+    display: block; text-decoration: none; color: inherit;
+    background: white; border: 2px solid #fde68a; border-radius: 22px;
+    padding: 22px; margin-bottom: 18px;
+    box-shadow: 0 10px 30px rgba(180,83,9,0.10);
+    transition: transform 0.18s, box-shadow 0.18s;
+  }
+  .contest-card:hover { transform: translateY(-3px); box-shadow: 0 16px 38px rgba(180,83,9,0.18); }
+  .card-top { display: flex; align-items: center; gap: 14px; }
+  .card-emoji { font-size: 44px; flex-shrink: 0; }
+  .card-head { flex: 1; min-width: 0; }
+  .card-title { font-size: 19px; font-weight: 800; color: #b45309; }
+  .card-en { font-size: 13px; color: #9ca3af; margin-top: 2px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 4px; }
+  .tag { font-size: 12px; font-weight: 700; background: #fef3c7; color: #92400e; padding: 5px 11px; border-radius: 999px; }
+  .tag.pending { background: #e5e7eb; color: #6b7280; }
+  .contest-card.pending { border-style: dashed; border-color: #d1d5db; }
+  .meta.pending-note { color: #9ca3af; }
+  .meta { font-size: 14px; color: #374151; margin-top: 10px; }
+  .meta b { color: #b45309; }
+  .go {
+    display: inline-block; margin-top: 16px; font-weight: 800; font-size: 14px; color: white;
+    background: linear-gradient(135deg, #f59e0b, #ec4899); padding: 11px 18px;
+    border-radius: 999px; box-shadow: 0 4px 12px rgba(236,72,153,0.3);
+  }
+  .foot { text-align: center; margin-top: 18px; font-size: 12px; color: #6b7280; line-height: 1.7; }
+
+  @media (max-width: 600px) {
+    .card-top { flex-direction: column; text-align: center; gap: 8px; }
+    .tags { justify-content: center; }
+    .go { display: block; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🏆 공모전</h1>
+    <p class="subtitle">아이와 함께 도전해 볼 수 있는 대회를 모았어요</p>
+  </header>
+
+  <a class="contest-card" href="https://www.xn--3e0bp5xv1i6jbm2lq6p.com/summary/summary.php" target="_blank" rel="noopener">
+    <div class="card-top">
+      <span class="card-emoji">📮</span>
+      <div class="card-head">
+        <div class="card-title">2026 우체국 문화전</div>
+        <div class="card-en">우체국과 관련된 이야기</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">초등·중등·고등</span>
+      <span class="tag">그림·글짓기</span>
+      <span class="tag">8/12 마감</span>
+    </div>
+    <div class="meta">🏛️ 주최 <b>우정사업본부</b></div>
+    <div class="meta">🗓️ 접수 <b>2026.6.1 ~ 8.12</b></div>
+    <div class="meta">🎨 우체국과 관련된 이야기를 그림과 글로 표현하는 문화전</div>
+    <span class="go">대회 홈페이지 →</span>
+  </a>
+
+  <a class="contest-card" href="https://www.nanumcontest.co.kr/2026/html/?p=0201" target="_blank" rel="noopener">
+    <div class="card-top">
+      <span class="card-emoji">🤝</span>
+      <div class="card-head">
+        <div class="card-title">제14회 사랑의열매 나눔공모전</div>
+        <div class="card-en">나눔에는 ○○이(가) 있다</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">초·중·고</span>
+      <span class="tag">나눔</span>
+      <span class="tag">8/3 마감</span>
+    </div>
+    <div class="meta">🏛️ 주최 <b>사랑의열매 사회복지공동모금회·교육부</b></div>
+    <div class="meta">🗓️ 접수 <b>2026.5.26 ~ 8.3</b></div>
+    <div class="meta">💬 나눔의 의미를 글·그림·영상 등으로 표현하는 공모전</div>
+    <span class="go">대회 홈페이지 →</span>
+  </a>
+
+  <a class="contest-card" href="https://contest.hanafn.com/sub1_1.php" target="_blank" rel="noopener">
+    <div class="card-top">
+      <span class="card-emoji">🌿</span>
+      <div class="card-head">
+        <div class="card-title">제34회 하나은행 자연사랑 어린이 미술대회</div>
+        <div class="card-en">자연사랑 그림</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">유치원·초등</span>
+      <span class="tag">환경·자연</span>
+      <span class="tag">8/24 마감</span>
+    </div>
+    <div class="meta">🏛️ 주최 <b>하나은행</b></div>
+    <div class="meta">🗓️ 접수 <b>2026.5.28 ~ 8.24</b></div>
+    <div class="meta">🎨 유치원생과 초등학생 대상 자연사랑 어린이 미술대회</div>
+    <span class="go">대회 홈페이지 →</span>
+  </a>
+
+  <a class="contest-card" href="https://myfuturejob2026.com/" target="_blank" rel="noopener">
+    <div class="card-top">
+      <span class="card-emoji">🚀</span>
+      <div class="card-head">
+        <div class="card-title">제18회 미래내모습그리기대회</div>
+        <div class="card-en">내가 선택한 미래의 나</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">유치원·초·중·고</span>
+      <span class="tag">진로·직업</span>
+      <span class="tag">7/17 마감</span>
+    </div>
+    <div class="meta">🏛️ 주최 <b>고용노동부·한국폴리텍대학</b></div>
+    <div class="meta">🗓️ 접수 <b>2026.6.1 ~ 7.17</b></div>
+    <div class="meta">🖍️ 내가 선택한 미래의 직업과 모습을 그림으로 표현하는 대회</div>
+    <span class="go">대회 홈페이지 →</span>
+  </a>
+
+  <a class="contest-card" href="https://www.kips.kr/cntns/boardView.do?srchPstgSntnSn=10202&menuSn=5010" target="_blank" rel="noopener">
+    <div class="card-top">
+      <span class="card-emoji">🛡️</span>
+      <div class="card-head">
+        <div class="card-title">2026 어린이 제품안전 그림공모전</div>
+        <div class="card-en">내가 꿈꾸는 제품안전</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">유치부·초등</span>
+      <span class="tag">제품안전</span>
+      <span class="tag">7/24 마감</span>
+    </div>
+    <div class="meta">🏛️ 주최 <b>산업통상부 국가기술표준원·한국제품안전관리원</b></div>
+    <div class="meta">🗓️ 접수 <b>2026.5.26 ~ 7.24</b></div>
+    <div class="meta">🎨 안전한 제품과 KC마크를 주제로 그리는 어린이 그림 공모전</div>
+    <span class="go">대회 홈페이지 →</span>
+  </a>
+
+  <a class="contest-card" href="https://aichallenge4all.or.kr" target="_blank" rel="noopener">
+    <div class="card-top">
+      <span class="card-emoji">🤖</span>
+      <div class="card-head">
+        <div class="card-title">2026 전 국민 AI 경진대회</div>
+        <div class="card-en">AI Challenge for All</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">청소년(초·중·고)</span>
+      <span class="tag">대학생·일반</span>
+      <span class="tag">민간·기업</span>
+      <span class="tag">누구나</span>
+    </div>
+    <div class="meta">🏛️ 주최 <b>과학기술정보통신부</b> · 주관 NIPA·NIA·TTA·한국과학창의재단</div>
+    <div class="meta">🗓️ 클릭ON AI 시즌1 <b>2026.5.27 ~ 7.7</b> (트랙별 일정 상이)</div>
+    <div class="meta">🎯 누구나 참여하는 전 국민 AI 활용·경진 대회</div>
+    <span class="go">대회 홈페이지 →</span>
+  </a>
+
+  <a class="contest-card" href="https://festival.seoul.go.kr/festival/main/festivalView.do?festacode=714" target="_blank" rel="noopener">
+    <div class="card-top">
+      <span class="card-emoji">🖍️</span>
+      <div class="card-head">
+        <div class="card-title">DDP 어린이 그림그리기(사생)대회</div>
+        <div class="card-en">내가 상상하는 DDP</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">7세~초등</span>
+      <span class="tag">현장 사생</span>
+      <span class="tag">서울</span>
+    </div>
+    <div class="meta">🏛️ 주최 <b>서울디자인재단(DDP)</b></div>
+    <div class="meta">🗓️ 신청 <b>2026.2.27~3.27</b> · 대회 <b>4.5</b> · 동대문디자인플라자 야외</div>
+    <span class="go">대회 홈페이지 →</span>
+  </a>
+
+  <a class="contest-card" href="https://dreampost.worldvision.or.kr/" target="_blank" rel="noopener">
+    <div class="card-top">
+      <span class="card-emoji">💌</span>
+      <div class="card-head">
+        <div class="card-title">2026 월드비전 꿈엽서그리기대회</div>
+        <div class="card-en">우리가 함께 지키는 지구</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag">유아·초등</span>
+      <span class="tag">환경·지구</span>
+      <span class="tag">엽서 그림</span>
+    </div>
+    <div class="meta">🏛️ 주최 <b>월드비전</b></div>
+    <div class="meta">🗓️ 접수 <b>2026.3.2 ~ 6.12</b></div>
+    <div class="meta">🎨 '우리가 함께 지키는 지구'를 주제로 한 꿈엽서 그리기</div>
+    <span class="go">대회 홈페이지 →</span>
+  </a>
+
+  <a class="contest-card pending" href="https://www.eparanart.or.kr/" target="_blank" rel="noopener">
+    <div class="card-top">
+      <span class="card-emoji">🌳</span>
+      <div class="card-head">
+        <div class="card-title">e파란 어린이 환경그림대회</div>
+        <div class="card-en">홈플러스 이파란재단</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag pending">2026 일정 미정</span>
+      <span class="tag">유아부</span>
+      <span class="tag">환경·자연</span>
+    </div>
+    <div class="meta">🏛️ 주최 <b>홈플러스 이파란재단</b> · 전국 규모 (유아부 운영)</div>
+    <div class="meta pending-note">🗓️ 2026(제24회) 일정 미정 · 매년 봄~여름 접수 (공식 발표 예정)</div>
+    <span class="go">대회 홈페이지 →</span>
+  </a>
+
+  <a class="contest-card pending" href="https://www.me.go.kr/mamo/web/index.do?menuId=639" target="_blank" rel="noopener">
+    <div class="card-top">
+      <span class="card-emoji">☁️</span>
+      <div class="card-head">
+        <div class="card-title">하늘사랑 그림그리기 공모전</div>
+        <div class="card-en">맑은 하늘·대기환경 그림</div>
+      </div>
+    </div>
+    <div class="tags">
+      <span class="tag pending">2026 일정 미정</span>
+      <span class="tag">유아부</span>
+      <span class="tag">환경</span>
+    </div>
+    <div class="meta">🏛️ 주최 <b>환경부</b> · 유아부·학생부 운영</div>
+    <div class="meta pending-note">🗓️ 2026 일정 미정 · 2025년 제17회는 5.30~7.11 접수 (공식 발표 예정)</div>
+    <span class="go">대회 홈페이지 →</span>
+  </a>
+
+  <p class="foot">💡 참가 자격·연령·일정·참가비 등 자세한 내용과 최신 회차는 각 대회 공식 홈페이지에서 꼭 확인하세요. (대회 일정은 매년 달라질 수 있어요)</p>
+</div>
+</body>
+</html>

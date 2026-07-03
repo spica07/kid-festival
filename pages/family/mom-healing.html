@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; base-uri 'self'; form-action 'none'; frame-ancestors 'self';">
+<title>🌿 엄마를 위한 힐링 시간</title>
+<link rel="stylesheet" href="../../assets/css/mom-healing.css">
+</head>
+<body>
+
+<div class="floating">🌿</div>
+<div class="floating">☁️</div>
+<div class="floating">🌸</div>
+<div class="floating">🕊️</div>
+<div class="floating">✨</div>
+
+<div class="container">
+
+  <header>
+    <div class="badge">엄마를 위한 시간</div>
+    <h1>오늘도 수고 많으셨어요</h1>
+    <p class="subtitle">잠시 숨 한 번 깊게 들이쉬어요.<br>여기서는 엄마가 아니라, 그냥 당신이에요.</p>
+  </header>
+
+  <!-- 오늘의 한마디 -->
+  <section class="section">
+    <h2 class="section-title">💌 오늘의 따뜻한 한마디</h2>
+    <p class="section-subtitle">읽고, 한 번 더 천천히 읽어보세요.</p>
+    <div class="quote-box">
+      <p class="quote-text" id="quoteText">오늘의 나는, 어제의 나보다 분명 더 단단해졌어요.</p>
+    </div>
+    <div class="quote-actions">
+      <button class="quote-btn" id="newQuoteBtn">다른 한마디 보기</button>
+    </div>
+  </section>
+
+  <!-- 호흡 명상 -->
+  <section class="section">
+    <h2 class="section-title">🌬️ 5분 숨 고르기</h2>
+    <p class="section-subtitle">원이 커지면 들이쉬고, 잠시 멈추고, 작아지면 내쉬어요.</p>
+    <div class="breath-stage">
+      <div class="breath-circle" id="breathCircle">
+        <span class="breath-label" id="breathLabel">시작해볼까요?</span>
+      </div>
+      <div class="breath-controls">
+        <button class="breath-btn" id="breathBtn">시작하기</button>
+        <span class="breath-cycle" id="breathCycle"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 작은 휴식 -->
+  <section class="section">
+    <h2 class="section-title">☕ 오늘의 작은 휴식</h2>
+    <p class="section-subtitle">한 가지만 골라서, 5분만 나에게 선물해주세요.</p>
+    <div class="rest-grid" id="restGrid"></div>
+    <div class="rest-pick">
+      <button class="rest-pick-btn" id="restPickBtn">오늘은 뭘 해볼까요?</button>
+      <div class="rest-pick-result" id="restPickResult"></div>
+    </div>
+  </section>
+
+  <!-- 마음 점검 -->
+  <section class="section">
+    <h2 class="section-title">🌷 오늘의 마음 점검</h2>
+    <p class="section-subtitle">오늘 나에게 해준 것들을 체크해보세요.</p>
+    <ul class="checklist" id="checklist"></ul>
+    <div class="check-result" id="checkResult">
+      <div class="check-result-title">체크해보세요</div>
+      <div id="checkResultMsg">하나씩 천천히 살펴봐도 좋아요.</div>
+    </div>
+  </section>
+
+  <!-- 마음 메모 -->
+  <section class="section">
+    <h2 class="section-title">📝 오늘의 마음 메모</h2>
+    <p class="section-subtitle">머릿속에 떠다니는 생각 한 줄, 여기 두고 가세요. (이 기기에만 저장돼요)</p>
+    <textarea class="memo-area" id="memoArea" placeholder="오늘 마음에 남는 한 가지는…"></textarea>
+    <div class="memo-actions">
+      <span class="memo-status" id="memoStatus">자동 저장돼요</span>
+      <button class="memo-clear" id="memoClearBtn">지우기</button>
+    </div>
+  </section>
+
+  <!-- 마음 충전 콘텐츠 -->
+  <section class="section">
+    <h2 class="section-title">🌿 마음 충전 처방전</h2>
+    <p class="section-subtitle">지칠 때 한 가지씩 시도해보세요.</p>
+    <div class="recommend-grid">
+      <div class="recommend-card">
+        <div class="recommend-icon">📚</div>
+        <div class="recommend-title">자기 돌봄 에세이</div>
+        <div class="recommend-desc">"있는 그대로의 나", "엄마의 자존감 공부" 같은 책을 한 챕터씩 천천히.</div>
+      </div>
+      <div class="recommend-card">
+        <div class="recommend-icon">🎧</div>
+        <div class="recommend-title">위로 팟캐스트</div>
+        <div class="recommend-desc">설거지하거나 빨래 갤 때, 따뜻한 목소리의 토크 팟캐스트 한 편.</div>
+      </div>
+      <div class="recommend-card">
+        <div class="recommend-icon">🧘</div>
+        <div class="recommend-title">명상 앱 5분</div>
+        <div class="recommend-desc">Calm, 마보, 코끼리 같은 앱의 무료 가이드 명상 한 트랙.</div>
+      </div>
+      <div class="recommend-card">
+        <div class="recommend-icon">🚶</div>
+        <div class="recommend-title">아침 햇볕 산책</div>
+        <div class="recommend-desc">아이 등원 후 10분, 가까운 공원이나 골목 한 바퀴.</div>
+      </div>
+      <div class="recommend-card">
+        <div class="recommend-icon">☕</div>
+        <div class="recommend-title">혼자만의 카페 시간</div>
+        <div class="recommend-desc">일주일 한 번, 한 시간만이라도 익숙한 카페 구석 자리에서.</div>
+      </div>
+      <div class="recommend-card">
+        <div class="recommend-icon">📞</div>
+        <div class="recommend-title">친구에게 안부</div>
+        <div class="recommend-desc">긴 통화 말고, "잘 지내?" 한 줄 메시지. 답이 오면 그게 또 위로예요.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>오늘 하루도 충분히 잘 해내셨어요.</p>
+    <div class="heart">🤍</div>
+    <p>내일은 내일의 힘이 다시 생길 거예요.</p>
+  </footer>
+
+</div>
+
+<script src="../../assets/js/pages/mom-healing.js"></script>
+
+</body>
+</html>

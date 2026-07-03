@@ -1,0 +1,139 @@
+{
+  "slug": "mercury",
+  "title": {
+    "ko": "빠른 발 수성의 심부름",
+    "en": "Speedy Mercury's Errand"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/mercury-story-01.png",
+      "ko": {
+        "title": "쌩쌩 운동화",
+        "body": "하늘이는 꿈속에서 은빛 운동화를 신은 수성을 만났어요. 수성은 태양 둘레를 가장 빨리 도는 심부름꾼이었지요.",
+        "line": "\"빨리 다녀오는 건 내 특기야!\""
+      },
+      "en": {
+        "title": "Whoosh-Whoosh Sneakers",
+        "body": "In his dream, Haneul met Mercury wearing silver sneakers. Mercury was the messenger that circles the Sun the fastest of all.",
+        "line": "“Getting there fast is my specialty!”"
+      }
+    },
+    {
+      "image": "assets/images/mercury-story-02.png",
+      "ko": {
+        "title": "태양 가까운 길",
+        "body": "수성은 태양 가까이에서 달렸어요. 하늘이는 가까운 길이 밝고 뜨겁다는 걸 느끼며 모자 끈을 꼭 묶었답니다.",
+        "line": "가까운 곳일수록 더 조심해야 해요."
+      },
+      "en": {
+        "title": "The Path Near the Sun",
+        "body": "Mercury ran close to the Sun. Feeling how bright and hot the near path was, Haneul tied his hat strings tight.",
+        "line": "The closer you are, the more careful you must be."
+      }
+    },
+    {
+      "image": "assets/images/mercury-story-03.png",
+      "ko": {
+        "title": "울퉁불퉁 땅",
+        "body": "수성의 길에는 작은 구덩이가 많았어요. 하늘이는 그 구덩이들이 오래전 부딪힌 흔적이라는 설명을 들었지요.",
+        "line": "상처처럼 보이는 곳에도 이야기가 있었어요."
+      },
+      "en": {
+        "title": "The Bumpy Ground",
+        "body": "Mercury's path had many little craters. Haneul heard that those craters were marks from collisions long ago.",
+        "line": "Even places that look like scars have a story."
+      }
+    },
+    {
+      "image": "assets/images/mercury-story-04.png",
+      "ko": {
+        "title": "떨어진 별가루",
+        "body": "수성이 너무 빨리 달리다 별가루 봉투를 떨어뜨렸어요. 하늘이는 \"잠깐 멈춰서 찾아보자\"라고 말했답니다.",
+        "line": "빠른 마음에도 멈춤 버튼이 필요했어요."
+      },
+      "en": {
+        "title": "The Dropped Stardust",
+        "body": "Running too fast, Mercury dropped the stardust packet. Haneul said, “Let's stop for a moment and look for it.”",
+        "line": "Even a hurried heart needed a pause button."
+      }
+    },
+    {
+      "image": "assets/images/mercury-story-05.png",
+      "ko": {
+        "title": "작은 발자국 찾기",
+        "body": "하늘이와 수성은 구덩이 사이를 천천히 걸었어요. 그러자 별가루가 남긴 작은 반짝 발자국이 보였지요.",
+        "line": "천천히 보니 길이 더 잘 보였어요."
+      },
+      "en": {
+        "title": "Finding Little Footprints",
+        "body": "Haneul and Mercury walked slowly between the craters. Then they spotted the small sparkling footprints the stardust had left.",
+        "line": "Looking slowly, they could see the path better."
+      }
+    },
+    {
+      "image": "assets/images/mercury-story-06.png",
+      "ko": {
+        "title": "뜨거운 낮",
+        "body": "태양 쪽으로 달리자 수성의 낮은 아주 뜨거웠어요. 하늘이는 물병을 꼭 쥐고 그늘을 찾아 쉬었답니다.",
+        "line": "쉬어 가는 것도 여행의 한 부분이에요."
+      },
+      "en": {
+        "title": "The Hot Day",
+        "body": "Running toward the Sun, Mercury's daytime grew very hot. Haneul gripped his water bottle and found some shade to rest.",
+        "line": "Resting along the way is part of the journey too."
+      }
+    },
+    {
+      "image": "assets/images/mercury-story-07.png",
+      "ko": {
+        "title": "차가운 밤",
+        "body": "태양 반대쪽으로 가자 갑자기 차가운 밤이 찾아왔어요. 하늘이와 수성은 반짝 담요를 덮고 별가루 봉투를 지켰지요.",
+        "line": "작은 행성에도 큰 변화가 있었어요."
+      },
+      "en": {
+        "title": "The Cold Night",
+        "body": "When they crossed to the side away from the Sun, a cold night suddenly arrived. Haneul and Mercury pulled up a sparkly blanket and guarded the stardust packet.",
+        "line": "Even a small planet had big changes."
+      }
+    },
+    {
+      "image": "assets/images/mercury-story-08.png",
+      "ko": {
+        "title": "정확한 배달",
+        "body": "수성은 이번에는 빨리 달리되 중간중간 확인했어요. 봉투는 한 번도 떨어지지 않고 태양 우체통에 도착했답니다.",
+        "line": "빠름과 꼼꼼함이 함께 달렸어요."
+      },
+      "en": {
+        "title": "A Careful Delivery",
+        "body": "This time Mercury ran fast but checked along the way. The packet reached the Sun's mailbox without being dropped even once.",
+        "line": "Speed and care ran together."
+      }
+    },
+    {
+      "image": "assets/images/mercury-story-09.png",
+      "ko": {
+        "title": "수성의 새 규칙",
+        "body": "수성은 운동화에 작은 별 스티커를 붙였어요. 스티커에는 \"쌩쌩, 그리고 확인!\"이라고 적혀 있었지요.",
+        "line": "잘하는 것에 새 습관을 더하면 더 멋져져요."
+      },
+      "en": {
+        "title": "Mercury's New Rule",
+        "body": "Mercury stuck a little star sticker on its sneakers. The sticker read, “Whoosh-whoosh, and check!”",
+        "line": "Adding a new habit to what you're good at makes you even better."
+      }
+    },
+    {
+      "image": "assets/images/mercury-story-10.png",
+      "ko": {
+        "title": "하늘이의 심부름",
+        "body": "아침에 깬 하늘이는 엄마의 심부름을 천천히 확인하며 해냈어요. 수성처럼 빠르게, 하지만 놓치지 않게요.",
+        "line": "그날 하늘이의 발걸음도 반짝반짝 가벼웠답니다."
+      },
+      "en": {
+        "title": "Haneul's Errand",
+        "body": "When he woke in the morning, Haneul did his mom's errand, checking it carefully step by step. Fast like Mercury, but without missing a thing.",
+        "line": "That day, Haneul's steps felt sparkling and light too."
+      }
+    }
+  ]
+}

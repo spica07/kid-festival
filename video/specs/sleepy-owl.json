@@ -1,0 +1,139 @@
+{
+  "slug": "sleepy-owl",
+  "title": {
+    "ko": "잠 못 드는 부엉이",
+    "en": "The Owl Who Couldn't Sleep"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/sleepy-owl-story-01.png",
+      "ko": {
+        "title": "잠이 오지 않는 밤",
+        "body": "아기 부엉이 보리는 둥지 안에서 눈만 깜빡였어요. 깜깜한 밤이 되면 어쩐지 가슴이 콩콩 뛰었지요.",
+        "line": "\"오늘도 잠이 안 와.\""
+      },
+      "en": {
+        "title": "A Night Without Sleep",
+        "body": "Baby owl Bori lay in the nest, just blinking his eyes. When the dark night came, his heart would start to race.",
+        "line": "“I can't fall asleep again tonight.”"
+      }
+    },
+    {
+      "image": "assets/images/sleepy-owl-story-02.png",
+      "ko": {
+        "title": "흔들리는 그림자",
+        "body": "벽에는 커다란 그림자가 흔들흔들 움직였어요. 보리는 이불을 꼭 끌어안았답니다.",
+        "line": "\"저게 뭐지? 조금 무서워.\""
+      },
+      "en": {
+        "title": "The Wobbling Shadow",
+        "body": "On the wall, a big shadow swayed back and forth. Bori hugged his blanket tight.",
+        "line": "“What is that? It's a little scary.”"
+      }
+    },
+    {
+      "image": "assets/images/sleepy-owl-story-03.png",
+      "ko": {
+        "title": "엄마의 작은 등불",
+        "body": "엄마 부엉이가 다가와 작은 별빛 등불을 켜 주었어요. 그러자 그림자는 그냥 흔들리는 나뭇가지였지요.",
+        "line": "\"무서운 게 아니라, 바람이 인사한 거란다.\""
+      },
+      "en": {
+        "title": "Mama's Little Lamp",
+        "body": "Mama Owl came over and lit a tiny starlight lamp. And then the shadow was just a swaying branch.",
+        "line": "“It's not something scary—it's the wind saying hello.”"
+      }
+    },
+    {
+      "image": "assets/images/sleepy-owl-story-04.png",
+      "ko": {
+        "title": "밤 친구들의 인사",
+        "body": "창밖에서 반딧불이들이 반짝반짝 빛났어요. 밤에도 깨어 노는 친구가 이렇게 많았답니다.",
+        "line": "보리는 살짝 웃으며 손을 흔들었어요."
+      },
+      "en": {
+        "title": "The Night Friends' Hello",
+        "body": "Outside the window, fireflies twinkled and glowed. There were so many friends awake and playing at night.",
+        "line": "Bori smiled a little and waved his wing."
+      }
+    },
+    {
+      "image": "assets/images/sleepy-owl-story-05.png",
+      "ko": {
+        "title": "달님의 자장가",
+        "body": "둥근 달이 노란 빛으로 보리를 감싸 주었어요. 달빛은 따뜻한 담요처럼 부드러웠지요.",
+        "line": "\"잘 자라, 작은 부엉아.\""
+      },
+      "en": {
+        "title": "The Moon's Lullaby",
+        "body": "The round moon wrapped Bori in its soft yellow light. The moonlight was gentle, like a warm blanket.",
+        "line": "“Sleep well, little owl.”"
+      }
+    },
+    {
+      "image": "assets/images/sleepy-owl-story-06.png",
+      "ko": {
+        "title": "바람의 이불",
+        "body": "밤바람이 나뭇잎을 사르륵 흔들며 지나갔어요. 보리는 그 소리가 자장가처럼 들렸답니다.",
+        "line": "무서운 소리가 아니라 포근한 소리였어요."
+      },
+      "en": {
+        "title": "The Wind's Blanket",
+        "body": "The night breeze rustled through the leaves as it passed by. To Bori, the sound was just like a lullaby.",
+        "line": "It wasn't a scary sound—it was a cozy one."
+      }
+    },
+    {
+      "image": "assets/images/sleepy-owl-story-07.png",
+      "ko": {
+        "title": "별을 세어 봐",
+        "body": "엄마는 별을 하나, 둘, 셋 함께 세어 보자고 했어요. 별을 세는 동안 마음이 점점 차분해졌지요.",
+        "line": "\"별 하나에 하품 하나.\""
+      },
+      "en": {
+        "title": "Counting the Stars",
+        "body": "Mama said, let's count the stars together: one, two, three. As he counted, his heart grew calmer and calmer.",
+        "line": "“One star, one little yawn.”"
+      }
+    },
+    {
+      "image": "assets/images/sleepy-owl-story-08.png",
+      "ko": {
+        "title": "꿈나라 문 앞에서",
+        "body": "보리의 눈꺼풀이 스르르 무거워졌어요. 어둠은 더 이상 무섭지 않고 포근하게 느껴졌답니다.",
+        "line": "\"밤은 쉬는 시간이구나.\""
+      },
+      "en": {
+        "title": "At the Door to Dreamland",
+        "body": "Bori's eyelids slowly grew heavy. The dark didn't feel scary anymore—it felt cozy.",
+        "line": "“So night is a time for resting.”"
+      }
+    },
+    {
+      "image": "assets/images/sleepy-owl-story-09.png",
+      "ko": {
+        "title": "포근한 잠",
+        "body": "보리는 엄마의 날개 곁에서 새근새근 잠이 들었어요. 작은 등불은 밤새 보리를 지켜 주었지요.",
+        "line": "꿈속에서 보리는 별 위를 날았답니다."
+      },
+      "en": {
+        "title": "A Cozy Sleep",
+        "body": "Bori drifted off softly beside Mama's wing. The little lamp watched over him all night long.",
+        "line": "In his dreams, Bori flew above the stars."
+      }
+    },
+    {
+      "image": "assets/images/sleepy-owl-story-10.png",
+      "ko": {
+        "title": "씩씩한 아침",
+        "body": "아침 해가 떠오르자 보리는 기지개를 쭉 켰어요. 이제 밤이 와도 혼자 잘 수 있을 것 같았답니다.",
+        "line": "\"오늘 밤도 잘 자야지!\""
+      },
+      "en": {
+        "title": "A Brave Morning",
+        "body": "When the morning sun rose, Bori gave a great big stretch. Now he felt he could sleep on his own, even when night came.",
+        "line": "“I'll sleep well tonight too!”"
+      }
+    }
+  ]
+}

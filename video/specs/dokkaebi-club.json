@@ -1,0 +1,139 @@
+{
+  "slug": "dokkaebi-club",
+  "title": {
+    "ko": "도깨비 방망이",
+    "en": "The Goblins' Magic Club"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/dokkaebi-club-story-01.png",
+      "ko": {
+        "title": "착한 나무꾼",
+        "body": "옛날 깊은 산에 마음씨 착한 나무꾼이 살았어요. 나무를 하다 떨어진 개암을 하나둘 주웠지요.",
+        "line": "\"이건 부모님 드려야지, 이건 아이 주고.\""
+      },
+      "en": {
+        "title": "The Kind Woodcutter",
+        "body": "Long ago, a kind-hearted woodcutter lived deep in the mountains. As he chopped wood, he picked up the fallen hazelnuts one by one.",
+        "line": "“This one's for my parents, and this one for my child.”"
+      }
+    },
+    {
+      "image": "assets/images/dokkaebi-club-story-02.png",
+      "ko": {
+        "title": "저물어 든 빈집",
+        "body": "날이 저물자 나무꾼은 산속 빈집으로 들어가 쉬었어요. 곧 밖에서 무언가 두런두런 소리가 들렸지요.",
+        "line": "\"누가 오는 걸까?\""
+      },
+      "en": {
+        "title": "An Empty House at Dusk",
+        "body": "When night fell, the woodcutter went into an empty mountain house to rest. Soon he heard murmuring voices outside.",
+        "line": "“Who could be coming?”"
+      }
+    },
+    {
+      "image": "assets/images/dokkaebi-club-story-03.png",
+      "ko": {
+        "title": "도깨비들의 잔치",
+        "body": "빈집에 도깨비들이 몰려와 방망이를 두드렸어요. \"금 나와라 뚝딱!\" 하자 정말 금이 쏟아졌지요.",
+        "line": "\"우와, 방망이에서 보물이 나오네!\""
+      },
+      "en": {
+        "title": "The Goblins' Feast",
+        "body": "A band of goblins crowded into the house and pounded their magic clubs. “Gold, come out!” they shouted, and gold truly poured out.",
+        "line": "“Wow, treasure comes out of those clubs!”"
+      }
+    },
+    {
+      "image": "assets/images/dokkaebi-club-story-04.png",
+      "ko": {
+        "title": "딱! 개암 깨무는 소리",
+        "body": "숨어 있던 나무꾼이 그만 개암을 딱 깨물었어요. 큰 소리에 도깨비들이 집이 무너지는 줄 알고 놀랐지요.",
+        "line": "\"으악, 집이 무너진다!\""
+      },
+      "en": {
+        "title": "Crack! A Hazelnut",
+        "body": "Hiding in the corner, the woodcutter bit down on a hazelnut by accident. The loud crack made the goblins think the house was falling down.",
+        "line": "“Yikes, the house is collapsing!”"
+      }
+    },
+    {
+      "image": "assets/images/dokkaebi-club-story-05.png",
+      "ko": {
+        "title": "두고 간 방망이",
+        "body": "도깨비들은 방망이를 두고 허둥지둥 달아났어요. 빈집에는 도깨비 방망이만 덩그러니 남았지요.",
+        "line": "\"방망이가 그대로 남았네.\""
+      },
+      "en": {
+        "title": "The Club Left Behind",
+        "body": "The goblins dropped their club and scrambled away in a panic. All alone in the empty house sat one magic club.",
+        "line": "“The club is still right here.”"
+      }
+    },
+    {
+      "image": "assets/images/dokkaebi-club-story-06.png",
+      "ko": {
+        "title": "집으로 돌아와",
+        "body": "나무꾼은 방망이를 들고 조심조심 집으로 돌아왔어요. 하지만 욕심내지 않고 꼭 필요한 만큼만 쓰기로 했지요.",
+        "line": "\"필요한 만큼만 빌려야지.\""
+      },
+      "en": {
+        "title": "Back Home Again",
+        "body": "The woodcutter carried the club home, careful every step. But he wasn't greedy, so he used only what he truly needed.",
+        "line": "“I'll borrow just as much as I need.”"
+      }
+    },
+    {
+      "image": "assets/images/dokkaebi-club-story-07.png",
+      "ko": {
+        "title": "이웃과 나누기",
+        "body": "나무꾼은 방망이로 쌀과 이불을 만들어 가난한 이웃과 나눴어요. 마을에 따뜻한 웃음이 번졌지요.",
+        "line": "\"같이 나누니 더 기쁘구나!\""
+      },
+      "en": {
+        "title": "Sharing with Neighbors",
+        "body": "With the club he made rice and warm blankets for his poor neighbors. Warm laughter spread all through the village.",
+        "line": "“Sharing together makes me even happier!”"
+      }
+    },
+    {
+      "image": "assets/images/dokkaebi-club-story-08.png",
+      "ko": {
+        "title": "욕심부린 이웃",
+        "body": "이를 본 욕심 많은 이웃이 일부러 빈집을 찾아갔어요. 방망이를 통째로 가지려는 마음뿐이었지요.",
+        "line": "\"나도 보물을 잔뜩 가질 테야!\""
+      },
+      "en": {
+        "title": "A Greedy Neighbor",
+        "body": "A greedy neighbor saw this and went to the empty house on purpose. All he wanted was to grab the magic club for himself.",
+        "line": "“I'll take a whole pile of treasure too!”"
+      }
+    },
+    {
+      "image": "assets/images/dokkaebi-club-story-09.png",
+      "ko": {
+        "title": "들통난 거짓",
+        "body": "이번엔 도깨비들이 속지 않고 거짓을 알아챘어요. 욕심부린 이웃은 보물 대신 빈손으로 돌아갔지요.",
+        "line": "\"거짓으로는 보물을 얻을 수 없어.\""
+      },
+      "en": {
+        "title": "The Lie Is Found Out",
+        "body": "This time the goblins weren't fooled and saw through the lie. The greedy neighbor went home empty-handed, with no treasure at all.",
+        "line": "“You can't get treasure with lies.”"
+      }
+    },
+    {
+      "image": "assets/images/dokkaebi-club-story-10.png",
+      "ko": {
+        "title": "정직한 마음이 보물",
+        "body": "착한 나무꾼은 정직하고 나누는 마음 덕분에 복을 받았어요. 진짜 보물은 욕심이 아니라 따뜻한 마음이랍니다.",
+        "line": "\"정직하면 복이 찾아온대!\""
+      },
+      "en": {
+        "title": "An Honest Heart Is the Treasure",
+        "body": "The kind woodcutter was blessed for his honest, sharing heart. The real treasure isn't greed, but a warm and giving heart.",
+        "line": "“When you're honest, good fortune finds you!”"
+      }
+    }
+  ]
+}

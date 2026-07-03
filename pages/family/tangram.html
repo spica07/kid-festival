@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'self';">
+<title>칠교놀이 (탱그램)</title>
+<link rel="stylesheet" href="../../assets/css/board-game.css">
+</head>
+<body>
+  <main class="game-page">
+    <div class="memory-topbar">
+      <a class="back-link" href="board-game-hub.html">← 보드게임 목록</a>
+      <div class="control-groups">
+        <div class="level-group" role="group" aria-label="모양 선택" id="shapeGroup"></div>
+      </div>
+    </div>
+
+    <section class="hub-hero" style="margin-bottom:12px;">
+      <h1>칠교놀이 (탱그램)</h1>
+      <p class="lead">조각을 <b>끌어서</b> 옮기고, <b>한 번 톡</b> 누르면 돌아가요. 평행사변형은 <b>두 번 톡</b> 하면 뒤집혀요. 회색 모양을 보고 만들어 보세요!</p>
+    </section>
+
+    <div class="tangram-wrap">
+      <button class="board-arrow prev" type="button" id="shapePrev" aria-label="이전 모양">◀</button>
+      <svg id="tangramSvg" class="tangram-svg" viewBox="0 0 640 700" role="application" aria-label="칠교 놀이판">
+        <g id="zoneLayer" aria-hidden="true"></g>
+        <g id="targetLayer" aria-hidden="true"></g>
+        <g id="pieceLayer"></g>
+      </svg>
+      <button class="board-arrow next" type="button" id="shapeNext" aria-label="다음 모양">▶</button>
+    </div>
+
+    <div class="tangram-actions">
+      <button class="level-btn" type="button" id="shuffleBtn">펼치기</button>
+      <button class="level-btn" type="button" id="hintBtn">힌트</button>
+      <button class="level-btn" type="button" id="solveBtn">정답</button>
+      <button class="play-again" type="button" id="doneBtn">다 만들었어요!</button>
+    </div>
+
+    <div class="memory-win" id="tangramWin" hidden>
+      <h2>🎉 멋져요!</h2>
+      <p>칠교 조각으로 모양을 완성했어요. 다른 모양도 만들어 볼까요?</p>
+      <button class="play-again" id="winNext" type="button">다른 모양 도전</button>
+    </div>
+  </main>
+
+  <script src="../../assets/js/pages/tangram.js"></script>
+</body>
+</html>

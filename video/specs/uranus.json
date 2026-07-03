@@ -1,0 +1,139 @@
+{
+  "slug": "uranus",
+  "title": {
+    "ko": "옆으로 누운 천왕성의 춤",
+    "en": "The Dance of Tilted Uranus"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/uranus-story-01.png",
+      "ko": {
+        "title": "푸른 얼음빛 무대",
+        "body": "하늘이는 연한 푸른빛 무대 위에서 천왕성을 만났어요. 천왕성은 다른 친구들과 달리 옆으로 누운 듯 돌고 있었지요.",
+        "line": "\"내 춤은 조금 이상해 보일까?\""
+      },
+      "en": {
+        "title": "The Pale Blue Ice Stage",
+        "body": "Haneul met Uranus on a stage of soft blue light. Unlike the other friends, Uranus spun while lying on its side.",
+        "line": "“Does my dance look a little strange?”"
+      }
+    },
+    {
+      "image": "assets/images/uranus-story-02.png",
+      "ko": {
+        "title": "기울어진 첫인사",
+        "body": "천왕성은 몸을 기울여 인사했어요. 하늘이는 처음 보는 인사라 깜짝 놀랐지만 곧 따라 해 보았답니다.",
+        "line": "새로운 인사는 웃음을 데려왔어요."
+      },
+      "en": {
+        "title": "The Tilted First Greeting",
+        "body": "Uranus tilted its body to say hello. It was a greeting Haneul had never seen, so he was surprised, but soon he tried it too.",
+        "line": "A new kind of greeting brought laughter."
+      }
+    },
+    {
+      "image": "assets/images/uranus-story-03.png",
+      "ko": {
+        "title": "다른 방향의 걱정",
+        "body": "천왕성은 작은 목소리로 말했어요. \"모두 똑바로 도는 것 같은데 나는 왜 옆으로 돌까?\" 하늘이는 천천히 들었지요.",
+        "line": "다른 모습에는 이유와 이야기가 있어요."
+      },
+      "en": {
+        "title": "A Worry About Going a Different Way",
+        "body": "Uranus said softly, “Everyone seems to spin upright, so why do I spin on my side?” Haneul listened slowly.",
+        "line": "A different shape has its own reason and story."
+      }
+    },
+    {
+      "image": "assets/images/uranus-story-04.png",
+      "ko": {
+        "title": "푸른 리본 그림자",
+        "body": "천왕성이 돌자 긴 푸른 리본 같은 그림자가 생겼어요. 하늘이는 그 그림자가 무대 장식처럼 아름답다고 말했답니다.",
+        "line": "다르게 움직이니 다른 아름다움이 보였어요."
+      },
+      "en": {
+        "title": "The Blue Ribbon Shadow",
+        "body": "When Uranus spun, it cast a shadow like a long blue ribbon. Haneul said the shadow was as beautiful as a stage decoration.",
+        "line": "Moving differently, a different beauty appeared."
+      }
+    },
+    {
+      "image": "assets/images/uranus-story-05.png",
+      "ko": {
+        "title": "작은 달의 박수",
+        "body": "천왕성 곁의 작은 달들이 박수를 쳤어요. \"우리는 네 옆돌기 춤이 좋아!\" 천왕성의 얼굴이 환해졌지요.",
+        "line": "가까운 친구의 응원은 큰 힘이 돼요."
+      },
+      "en": {
+        "title": "The Little Moons' Applause",
+        "body": "The little moons beside Uranus clapped. “We love your sideways spinning dance!” Uranus's face lit up.",
+        "line": "A close friend's cheer becomes great strength."
+      }
+    },
+    {
+      "image": "assets/images/uranus-story-06.png",
+      "ko": {
+        "title": "하늘이의 비뚤빼뚤 춤",
+        "body": "하늘이도 일부러 비뚤빼뚤 춤을 추었어요. 완벽하지 않았지만 하늘이는 크게 웃었답니다.",
+        "line": "즐거운 춤은 여러 가지가 다 정답이에요."
+      },
+      "en": {
+        "title": "Haneul's Wobbly Dance",
+        "body": "Haneul danced all wobbly on purpose. It wasn't perfect, but Haneul laughed out loud.",
+        "line": "In a happy dance, every way can be right."
+      }
+    },
+    {
+      "image": "assets/images/uranus-story-07.png",
+      "ko": {
+        "title": "옆으로 여는 하늘",
+        "body": "천왕성은 더 자신 있게 돌았어요. 그러자 푸른빛이 옆으로 펼쳐져 우주에 넓은 문처럼 열렸지요.",
+        "line": "자기 방향을 믿으면 새 길이 열려요."
+      },
+      "en": {
+        "title": "A Sky That Opens Sideways",
+        "body": "Uranus spun with more confidence. Then its blue light spread out sideways and opened like a wide door in space.",
+        "line": "When you trust your own direction, a new path opens."
+      }
+    },
+    {
+      "image": "assets/images/uranus-story-08.png",
+      "ko": {
+        "title": "천천히 긴 계절",
+        "body": "천왕성은 기울어진 몸 때문에 계절도 아주 특별하게 지나간다고 알려 주었어요. 하늘이는 긴 계절을 상상하며 눈을 반짝였답니다.",
+        "line": "특별한 방향은 특별한 시간을 만들어요."
+      },
+      "en": {
+        "title": "Long, Slow Seasons",
+        "body": "Uranus said that because of its tilted body, its seasons pass in a very special way. Haneul's eyes sparkled as he imagined the long seasons.",
+        "line": "A special direction makes a special kind of time."
+      }
+    },
+    {
+      "image": "assets/images/uranus-story-09.png",
+      "ko": {
+        "title": "나만의 빙글 이름",
+        "body": "천왕성은 자기 춤에 \"푸른 옆빙글\"이라는 이름을 붙였어요. 하늘이는 그 이름을 우주 노트에 크게 적었지요.",
+        "line": "이름을 붙이면 내 모습이 더 소중해져요."
+      },
+      "en": {
+        "title": "My Very Own Spin Name",
+        "body": "Uranus gave its dance a name, “the Blue Sideways Spin.” Haneul wrote the name in big letters in his space notebook.",
+        "line": "Giving it a name makes who you are more precious."
+      }
+    },
+    {
+      "image": "assets/images/uranus-story-10.png",
+      "ko": {
+        "title": "하늘이의 방향",
+        "body": "아침에 깬 하늘이는 그림을 그릴 때 친구와 다른 색을 골라도 괜찮다고 생각했어요. 천왕성처럼 자기 방향을 믿기로 했답니다.",
+        "line": "하늘이의 그림도 푸른 옆빙글처럼 특별했어요."
+      },
+      "en": {
+        "title": "Haneul's Direction",
+        "body": "When Haneul woke up, he thought it was okay to choose a different color from his friends when drawing. He decided to trust his own direction, just like Uranus.",
+        "line": "Haneul's picture was special too, like the Blue Sideways Spin."
+      }
+    }
+  ]
+}

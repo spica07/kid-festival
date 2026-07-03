@@ -1,0 +1,809 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FFF7E8 0%, #E8F7FF 50%, #F4EEFF 100%);
+  color: #344055;
+  font-family: 'Gaegu', 'Jua', sans-serif;
+}
+
+.story-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 20px 18px 42px;
+}
+
+.story-page:not(.hub-page) {
+  max-width: 680px;
+  padding-top: 12px;
+}
+
+.hero {
+  max-width: 760px;
+  margin-bottom: 14px;
+}
+
+.hero-copy { padding: 12px 4px; }
+
+.hub-back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  margin-bottom: 12px;
+  padding: 5px 14px;
+  border: 2px solid #D8EEE9;
+  border-radius: 999px;
+  background: white;
+  color: #08796B;
+  font-family: 'Jua', sans-serif;
+  font-size: 0.98rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(52, 64, 85, 0.07);
+}
+
+.hub-back-link:hover {
+  border-color: #9EDDD2;
+  transform: translateY(-1px);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: #E3F7F3;
+  color: #08796B;
+  font-family: 'Jua', sans-serif;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-family: 'Jua', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.35rem);
+  line-height: 1.05;
+  color: #28325F;
+  margin-bottom: 12px;
+}
+
+.lead {
+  font-size: 1.32rem;
+  line-height: 1.45;
+  color: #5B6380;
+  font-weight: 700;
+}
+
+.story-toolbar {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.story-lang-toggle,
+.story-read-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 2px solid #D8EEE9;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 3px 10px rgba(52, 64, 85, 0.07);
+}
+
+.story-lang-toggle button,
+.story-read-actions button {
+  min-height: 30px;
+  border: 0;
+  border-radius: 999px;
+  padding: 5px 10px;
+  background: transparent;
+  color: #4E5A73;
+  font-family: 'Jua', sans-serif;
+  font-size: 0.92rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.story-lang-toggle button.active,
+.story-read-actions button:not(:disabled) {
+  background: #08796B;
+  color: white;
+}
+
+.story-read-actions button.is-reading {
+  background: #F59E0B;
+}
+
+.story-read-actions button:disabled {
+  color: #9AA4B8;
+  cursor: not-allowed;
+}
+
+.story-toolbar-bottom {
+  margin-top: 14px;
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.story-carousel {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+}
+
+.story-spread {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: stretch;
+  min-height: 0;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(107, 91, 149, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(52, 64, 85, 0.09);
+  overflow: hidden;
+}
+
+.story-spread[hidden] {
+  display: none;
+}
+
+.story-carousel .story-spread {
+  grid-area: 1 / 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(0) scale(0.995);
+  visibility: hidden;
+}
+
+.story-carousel .story-spread.is-active,
+.story-carousel .story-spread.is-exiting {
+  visibility: visible;
+}
+
+.story-carousel .story-spread.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.story-carousel .story-spread.is-exiting {
+  z-index: 1;
+}
+
+.story-carousel .story-spread.from-next {
+  animation: storySceneInNext 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.story-carousel .story-spread.from-prev {
+  animation: storySceneInPrev 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.story-carousel .story-spread.to-next {
+  animation: storySceneOutNext 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.story-carousel .story-spread.to-prev {
+  animation: storySceneOutPrev 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes storySceneInNext {
+  from {
+    opacity: 0;
+    transform: translateX(28px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes storySceneInPrev {
+  from {
+    opacity: 0;
+    transform: translateX(-28px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes storySceneOutNext {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-18px) scale(0.99);
+  }
+}
+
+@keyframes storySceneOutPrev {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(18px) scale(0.99);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-carousel .story-spread.from-next,
+  .story-carousel .story-spread.from-prev,
+  .story-carousel .story-spread.to-next,
+  .story-carousel .story-spread.to-prev {
+    animation: none;
+  }
+}
+
+/* 삽화 위 좌우 화살표 — 영어 단어 카드(wc-arrow)와 같은 오버레이 방식 */
+.story-carousel .scene-art {
+  position: relative;
+}
+
+.story-art-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #D8EEE9;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.94);
+  color: #08796B;
+  font-family: 'Jua', sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(52, 64, 85, 0.18);
+  transition: opacity 0.15s, transform 0.12s;
+}
+
+.story-prev-btn { left: 8px; }
+.story-next-btn { right: 8px; }
+.story-art-btn:active { transform: translateY(-50%) scale(0.92); }
+
+.story-art-btn.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.story-spread.cover,
+.story-spread.final {
+  grid-column: 1 / -1;
+}
+
+.story-spread.text-only {
+  grid-template-columns: 1fr;
+  padding: 20px 22px;
+}
+
+.story-spread.text-only .scene-copy {
+  padding: 0;
+}
+
+.scene-art {
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-scene {
+  background: white;
+  padding: 0;
+}
+
+.image-scene img {
+  display: block;
+  width: 100%;
+  /* 삽화 원본 비율(가로 약 3:2)대로 전체가 보이도록 — 고정 높이 + cover로 위아래가 잘리던 문제 수정 */
+  height: auto;
+  object-fit: contain;
+}
+
+.solar-illustration {
+  min-height: 230px;
+  padding: 14px;
+  background: linear-gradient(145deg, #182044, #28325F);
+}
+
+.space-viewport {
+  position: relative;
+  width: 100%;
+  min-height: 210px;
+  overflow: hidden;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.22) 0 1px, transparent 2px),
+    radial-gradient(circle at 78% 24%, rgba(255,255,255,0.28) 0 1px, transparent 2px),
+    radial-gradient(circle at 62% 76%, rgba(255,255,255,0.22) 0 1px, transparent 2px),
+    linear-gradient(160deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12);
+}
+
+.space-orbit {
+  position: absolute;
+  right: -28px;
+  top: 30px;
+  width: 190px;
+  height: 100px;
+  border: 2px dashed rgba(255,255,255,0.28);
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+
+.space-main {
+  position: absolute;
+  right: 28px;
+  top: 26px;
+  width: 112px;
+  height: 112px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--solar-main, linear-gradient(135deg, #8D99AE, #4E5A73));
+  box-shadow: 0 14px 34px rgba(0,0,0,0.26), inset -16px -16px 28px rgba(0,0,0,0.18), inset 12px 12px 24px rgba(255,255,255,0.16);
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.space-ring {
+  position: absolute;
+  right: 10px;
+  top: 78px;
+  width: 154px;
+  height: 32px;
+  border: 8px solid rgba(255,232,156,0.78);
+  border-left-color: rgba(255,232,156,0.34);
+  border-right-color: rgba(255,232,156,0.34);
+  border-radius: 50%;
+  transform: rotate(-18deg);
+  display: none;
+}
+
+.space-child {
+  position: absolute;
+  left: 24px;
+  bottom: 22px;
+  width: 78px;
+  height: 104px;
+  filter: drop-shadow(0 10px 16px rgba(0,0,0,0.22));
+}
+
+.child-head {
+  position: absolute;
+  left: 19px;
+  top: 2px;
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255,255,255,0.86);
+  border-radius: 50%;
+  background: #FFD9B8;
+  box-shadow: 0 0 0 4px rgba(135,206,250,0.18);
+  z-index: 3;
+}
+
+.child-hair {
+  position: absolute;
+  left: 8px;
+  top: 3px;
+  width: 22px;
+  height: 10px;
+  border-radius: 12px 12px 4px 4px;
+  background: #4A3327;
+}
+
+.child-face::before,
+.child-face::after {
+  content: '';
+  position: absolute;
+  top: 19px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #3B2A24;
+}
+
+.child-face::before { left: 12px; }
+.child-face::after { right: 12px; }
+
+.child-body {
+  position: absolute;
+  left: 16px;
+  top: 39px;
+  width: 46px;
+  height: 48px;
+  border-radius: 18px 18px 14px 14px;
+  background: linear-gradient(180deg, #FFFFFF, #DFF5FF);
+  border: 3px solid rgba(255,255,255,0.86);
+  z-index: 2;
+}
+
+.child-body::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 11px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #34D399;
+}
+
+.child-pack {
+  position: absolute;
+  left: 7px;
+  top: 45px;
+  width: 24px;
+  height: 40px;
+  border-radius: 12px 4px 4px 12px;
+  background: #6B7FD7;
+  z-index: 1;
+}
+
+.child-arm,
+.child-leg {
+  position: absolute;
+  background: #FFFFFF;
+  border: 3px solid rgba(255,255,255,0.86);
+  border-radius: 999px;
+  z-index: 1;
+}
+
+.child-arm {
+  top: 48px;
+  width: 17px;
+  height: 42px;
+}
+
+.child-arm.left {
+  left: 7px;
+  transform: rotate(24deg);
+}
+
+.child-arm.right {
+  right: 5px;
+  transform: rotate(-34deg);
+}
+
+.child-leg {
+  top: 80px;
+  width: 16px;
+  height: 34px;
+}
+
+.child-leg.left {
+  left: 24px;
+  transform: rotate(9deg);
+}
+
+.child-leg.right {
+  right: 20px;
+  transform: rotate(-13deg);
+}
+
+.pose-2 { transform: rotate(-4deg) translateY(-3px); }
+.pose-3 { transform: rotate(5deg) translateY(-8px); }
+.pose-4 { transform: translateX(6px) translateY(-5px); }
+
+.space-prop {
+  position: absolute;
+  left: 108px;
+  top: 54px;
+  min-width: 54px;
+  min-height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.88);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+  font-size: 2rem;
+}
+
+.space-label {
+  position: absolute;
+  left: 104px;
+  bottom: 24px;
+  max-width: calc(100% - 130px);
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.9);
+  color: #28325F;
+  font-family: 'Jua', sans-serif;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.space-star {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.86);
+  box-shadow: 0 0 12px rgba(255,255,255,0.75);
+}
+
+.space-star.s1 { left: 18px; top: 20px; }
+.space-star.s2 { left: 46%; top: 28px; width: 6px; height: 6px; }
+.space-star.s3 { right: 18px; bottom: 24px; width: 7px; height: 7px; }
+.space-star.s4 { left: 38%; bottom: 42px; width: 5px; height: 5px; }
+
+.solar-illustration.solar-system { --solar-main: linear-gradient(135deg, #5B6380, #FFB84D); }
+.solar-illustration.sun { --solar-main: radial-gradient(circle at 34% 30%, #FFF4CE, #FFB84D 45%, #FF6B57 78%); }
+.solar-illustration.mercury { --solar-main: radial-gradient(circle at 35% 28%, #CBD5E1, #8D99AE 58%, #4E5A73); }
+.solar-illustration.venus { --solar-main: radial-gradient(circle at 36% 30%, #FFE6A7, #F7C46C 54%, #B7791F); }
+.solar-illustration.mars { --solar-main: radial-gradient(circle at 36% 30%, #FFB199, #D95B43 58%, #7C2D24); }
+.solar-illustration.jupiter { --solar-main: linear-gradient(180deg, #EEC88F 0 20%, #A66A3F 20% 34%, #F4D19B 34% 49%, #8B5E3C 49% 62%, #DDA15E 62% 78%, #7A4E2F 78%); }
+.solar-illustration.saturn { --solar-main: radial-gradient(circle at 36% 30%, #FFF4BD, #E9C46A 58%, #B08A42); }
+.solar-illustration.uranus { --solar-main: radial-gradient(circle at 36% 30%, #D9FAFF, #7DD3FC 58%, #38BDF8); }
+.solar-illustration.neptune { --solar-main: radial-gradient(circle at 36% 30%, #A7C7FF, #3B82F6 55%, #1E3A8A); }
+.solar-illustration.saturn .space-ring,
+.solar-illustration.solar-system .space-ring {
+  display: block;
+}
+
+.scene-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 14px 16px 15px;
+}
+
+.page-num {
+  align-self: flex-start;
+  background: #E3F7F3;
+  border-radius: 999px;
+  color: #08796B;
+  font-family: 'Jua', sans-serif;
+  font-size: 0.9rem;
+  padding: 3px 11px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  color: #28325F;
+  font-family: 'Jua', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.scene-copy p {
+  font-size: 1.14rem;
+  line-height: 1.42;
+}
+
+.scene-copy .line {
+  background: #FFF4CE;
+  border-left: 5px solid #FFB84D;
+  border-radius: 12px;
+  color: #5F4B19;
+  font-weight: 700;
+  margin-top: 10px;
+  padding: 8px 11px;
+}
+
+.hub-page {
+  max-width: 1040px;
+}
+
+.hub-hero {
+  margin-bottom: 22px;
+  padding: 10px 4px 0;
+}
+
+.story-shelf {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.story-book {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(107, 91, 149, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(52, 64, 85, 0.09);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.story-book:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 34px rgba(52, 64, 85, 0.14);
+}
+
+.story-book img,
+.placeholder-art {
+  width: 100%;
+  /* img의 height 속성(원본 px)이 카드보다 우선되지 않도록 — 비율은 aspect-ratio가 결정 */
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: white;
+}
+
+.placeholder-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #E8F7FF, #FFF4CE);
+  color: #8A7CA8;
+  font-family: 'Jua', sans-serif;
+  font-size: 4rem;
+}
+
+.solar-cover {
+  color: white;
+  font-size: 4.5rem;
+  text-shadow: 0 6px 18px rgba(20, 24, 48, 0.28);
+}
+
+.solar-cover.solar-system { background: linear-gradient(135deg, #28325F, #5B6380 52%, #FFB84D); }
+.solar-cover.sun { background: linear-gradient(135deg, #FFB84D, #FF6B57); }
+.solar-cover.mercury { background: linear-gradient(135deg, #9AA4B8, #4E5A73); }
+.solar-cover.venus { background: linear-gradient(135deg, #F7C46C, #C08439); }
+.solar-cover.mars { background: linear-gradient(135deg, #D95B43, #7C2D24); }
+.solar-cover.jupiter { background: linear-gradient(135deg, #DDA15E, #8B5E3C); }
+.solar-cover.saturn { background: linear-gradient(135deg, #E9C46A, #8D99AE); }
+.solar-cover.uranus { background: linear-gradient(135deg, #7DD3FC, #38BDF8); }
+.solar-cover.neptune { background: linear-gradient(135deg, #3B82F6, #1E3A8A); }
+
+.book-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.book-copy h2 {
+  font-size: 1.45rem;
+}
+
+.book-copy p {
+  color: #5B6380;
+  font-size: 1.12rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.read-link {
+  margin-top: auto;
+  padding-top: 14px;
+  color: #08796B;
+  font-family: 'Jua', sans-serif;
+  font-size: 1rem;
+}
+
+.placeholder {
+  opacity: 0.78;
+}
+
+.hub-ai-note {
+  margin-top: 28px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(107, 91, 149, 0.16);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.hub-ai-note p {
+  margin: 0;
+  color: #6B5B95;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.hub-ai-note strong {
+  color: #08796B;
+}
+
+@media (max-width: 720px) {
+  .story-page { padding: 12px 12px 30px; }
+  .story-page:not(.hub-page) { max-width: 100%; }
+  .hero-copy { padding: 0 4px; }
+  .lead { font-size: 1.12rem; }
+  .story-toolbar {
+    gap: 5px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+  .story-lang-toggle,
+  .story-read-actions {
+    flex: 0 0 auto;
+    gap: 3px;
+    padding: 3px;
+  }
+  .story-lang-toggle button,
+  .story-read-actions button {
+    flex: 0 0 auto;
+    min-height: 28px;
+    padding: 4px 7px;
+    font-size: 0.84rem;
+  }
+  .page-grid { gap: 14px; }
+  .story-spread {
+    border-radius: 16px;
+  }
+  .image-scene img {
+    height: auto;
+    /* 모바일에서도 원본 비율 유지 — aspect-ratio 고정(4/3)으로 좌우가 잘리던 문제 수정 */
+    aspect-ratio: auto;
+  }
+  .solar-illustration { min-height: 210px; padding: 10px; }
+  .space-viewport { min-height: 190px; }
+  .space-main {
+    right: 16px;
+    top: 24px;
+    width: 94px;
+    height: 94px;
+    font-size: 2.55rem;
+  }
+  .space-ring {
+    right: 0;
+    top: 66px;
+    width: 128px;
+    height: 28px;
+  }
+  .space-child {
+    left: 15px;
+    bottom: 18px;
+    transform: scale(0.88);
+    transform-origin: bottom left;
+  }
+  .pose-2 { transform: scale(0.88) rotate(-4deg) translateY(-3px); }
+  .pose-3 { transform: scale(0.88) rotate(5deg) translateY(-8px); }
+  .pose-4 { transform: scale(0.88) translateX(6px) translateY(-5px); }
+  .space-prop {
+    left: 88px;
+    top: 54px;
+    min-width: 48px;
+    min-height: 48px;
+    font-size: 1.7rem;
+  }
+  .space-label {
+    left: 82px;
+    bottom: 20px;
+    max-width: calc(100% - 94px);
+    font-size: 0.86rem;
+  }
+  h2 { font-size: 1.42rem; }
+  .scene-copy p {
+    font-size: 1.12rem;
+    line-height: 1.5;
+  }
+  .story-art-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+  }
+  .story-prev-btn { left: 4px; }
+  .story-next-btn { right: 4px; }
+}

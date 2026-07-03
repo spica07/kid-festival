@@ -1,0 +1,139 @@
+{
+  "slug": "we-are-different",
+  "title": {
+    "ko": "나랑 다른 게 좋아",
+    "en": "I Love That We're Different"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/we-are-different-story-01.png",
+      "ko": {
+        "title": "다 다른 친구들",
+        "body": "숲속 마을에는 키 큰 기린도, 키 작은 고슴도치도 살았어요. 모두 생김새가 제각각이었지요.",
+        "line": "\"우리는 왜 이렇게 다를까?\""
+      },
+      "en": {
+        "title": "All Different Friends",
+        "body": "In the forest village lived a tall giraffe and a tiny hedgehog. Everyone looked completely different.",
+        "line": "“Why are we all so different?”"
+      }
+    },
+    {
+      "image": "assets/images/we-are-different-story-02.png",
+      "ko": {
+        "title": "기린의 긴 목",
+        "body": "높은 가지에 달린 열매는 기린이 척척 따 주었어요. 긴 목 덕분에 아무도 못 닿던 열매도 닿았지요.",
+        "line": "\"내 목이 길어서 도움이 되는구나!\""
+      },
+      "en": {
+        "title": "The Giraffe's Long Neck",
+        "body": "The giraffe easily picked the fruit on the high branches. Thanks to his long neck, he reached fruit no one else could.",
+        "line": "“My long neck is really helpful!”"
+      }
+    },
+    {
+      "image": "assets/images/we-are-different-story-03.png",
+      "ko": {
+        "title": "고슴도치의 가시",
+        "body": "땅에 떨어진 밤송이는 고슴도치가 가시에 콕콕 꽂아 옮겼어요. 뾰족한 가시도 멋진 재주였답니다.",
+        "line": "\"작아도 나만 할 수 있는 일이 있어.\""
+      },
+      "en": {
+        "title": "The Hedgehog's Spines",
+        "body": "The hedgehog poked the fallen chestnuts onto her spines and carried them off. Even pointy spines were a wonderful talent.",
+        "line": "“Small as I am, there's something only I can do.”"
+      }
+    },
+    {
+      "image": "assets/images/we-are-different-story-04.png",
+      "ko": {
+        "title": "두더지의 땅속 길",
+        "body": "두더지는 땅속에 시원한 길을 파 주었어요. 더운 날 친구들이 쉴 수 있는 비밀 통로였지요.",
+        "line": "\"눈이 작아도 땅속은 내가 제일 잘 알아.\""
+      },
+      "en": {
+        "title": "The Mole's Underground Path",
+        "body": "The mole dug a cool tunnel underground. It was a secret passage where friends could rest on hot days.",
+        "line": "“My eyes are small, but I know underground best.”"
+      }
+    },
+    {
+      "image": "assets/images/we-are-different-story-05.png",
+      "ko": {
+        "title": "새의 날개",
+        "body": "작은 새는 날개를 펴고 멀리까지 소식을 전했어요. 강 건너 친구의 안부도 금세 알아 왔지요.",
+        "line": "\"날 수 있어서 멀리 갈 수 있어.\""
+      },
+      "en": {
+        "title": "The Bird's Wings",
+        "body": "The little bird spread her wings and carried news far away. She quickly brought back word from friends across the river.",
+        "line": "“I can fly, so I can go far.”"
+      }
+    },
+    {
+      "image": "assets/images/we-are-different-story-06.png",
+      "ko": {
+        "title": "거북이의 단단한 등",
+        "body": "거북이는 단단한 등에 친구들을 태우고 강을 건넜어요. 느려도 가장 안전한 배가 되어 주었답니다.",
+        "line": "\"천천히 가도 모두 무사히 도착했어.\""
+      },
+      "en": {
+        "title": "The Turtle's Sturdy Shell",
+        "body": "The turtle carried his friends across the river on his sturdy back. Slow as he was, he made the safest boat.",
+        "line": "“Slow as we went, everyone arrived safely.”"
+      }
+    },
+    {
+      "image": "assets/images/we-are-different-story-07.png",
+      "ko": {
+        "title": "재주를 모아",
+        "body": "친구들은 각자의 재주를 모아 멋진 나무 집을 지었어요. 혼자서는 못 할 일도 함께라서 해냈지요.",
+        "line": "\"다른 점이 모이니 더 멋져!\""
+      },
+      "en": {
+        "title": "Talents Together",
+        "body": "The friends put their talents together and built a wonderful tree house. What no one could do alone, they did together.",
+        "line": "“Put our differences together and it's even better!”"
+      }
+    },
+    {
+      "image": "assets/images/we-are-different-story-08.png",
+      "ko": {
+        "title": "서로의 좋은 점",
+        "body": "친구들은 서로의 다른 점을 칭찬하기 시작했어요. 같지 않아서 더 재미있다는 걸 알았답니다.",
+        "line": "\"네가 나와 달라서 정말 좋아.\""
+      },
+      "en": {
+        "title": "Each Other's Good Points",
+        "body": "The friends began to praise one another's differences. They learned it's more fun because they aren't all the same.",
+        "line": "“I really love that you're different from me.”"
+      }
+    },
+    {
+      "image": "assets/images/we-are-different-story-09.png",
+      "ko": {
+        "title": "함께 추는 춤",
+        "body": "모두 둥글게 모여 저마다의 춤을 추었어요. 큰 동작도 작은 동작도 모두 아름다웠지요.",
+        "line": "달라도 한 무리, 우리는 친구!"
+      },
+      "en": {
+        "title": "A Dance Together",
+        "body": "Everyone gathered in a circle and danced their own dance. Big moves and small moves were all beautiful.",
+        "line": "Different, but one group, we are friends!"
+      }
+    },
+    {
+      "image": "assets/images/we-are-different-story-10.png",
+      "ko": {
+        "title": "다름이 선물",
+        "body": "이제 친구들은 다른 점을 부끄러워하지 않아요. 서로 다른 것이 가장 멋진 선물이라는 걸 알았으니까요.",
+        "line": "\"우리가 다 달라서 세상이 더 환해.\""
+      },
+      "en": {
+        "title": "Difference Is a Gift",
+        "body": "Now the friends aren't shy about being different. They know that being different is the most wonderful gift.",
+        "line": "“Because we're all different, the world is brighter.”"
+      }
+    }
+  ]
+}

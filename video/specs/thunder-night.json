@@ -1,0 +1,139 @@
+{
+  "slug": "thunder-night",
+  "title": {
+    "ko": "무서운 천둥 치는 밤",
+    "en": "The Scary Thunder Night"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/thunder-night-story-01.png",
+      "ko": {
+        "title": "우르릉 쾅!",
+        "body": "밤하늘에서 천둥이 우르릉 쾅 울렸어요. 아기 토끼 솜이는 깜짝 놀라 이불 속으로 쏙 숨었지요.",
+        "line": "\"천둥은 너무 무서워!\""
+      },
+      "en": {
+        "title": "Boom! Crash!",
+        "body": "Thunder boomed and crashed across the night sky. Somi the baby rabbit jumped and hid under her blanket.",
+        "line": "“Thunder is so scary!”"
+      }
+    },
+    {
+      "image": "assets/images/thunder-night-story-02.png",
+      "ko": {
+        "title": "번쩍이는 하늘",
+        "body": "창밖으로 번개가 번쩍번쩍 빛났어요. 빗방울이 창문을 토독토독 두드렸답니다.",
+        "line": "솜이는 귀를 꼭 막았어요."
+      },
+      "en": {
+        "title": "The Flashing Sky",
+        "body": "Outside the window, lightning flashed again and again. Raindrops tapped softly on the glass.",
+        "line": "Somi covered her ears tight."
+      }
+    },
+    {
+      "image": "assets/images/thunder-night-story-03.png",
+      "ko": {
+        "title": "아빠가 왔어요",
+        "body": "아빠 토끼가 이불을 살짝 들추고 솜이를 꼭 안아 주었어요. 따뜻한 품에 솜이의 떨림이 조금 멎었지요.",
+        "line": "\"아빠가 옆에 있으니 괜찮아.\""
+      },
+      "en": {
+        "title": "Daddy Came",
+        "body": "Daddy rabbit lifted the blanket and hugged Somi close. In his warm arms, her shaking slowly stopped.",
+        "line": "“It's okay, Daddy is right here.”"
+      }
+    },
+    {
+      "image": "assets/images/thunder-night-story-04.png",
+      "ko": {
+        "title": "천둥의 비밀",
+        "body": "아빠는 천둥은 구름이 박수를 치는 소리라고 알려 주었어요. 소리는 크지만 우리를 해치진 않는다고요.",
+        "line": "\"구름이 신나서 손뼉을 치는 거란다.\""
+      },
+      "en": {
+        "title": "The Secret of Thunder",
+        "body": "Daddy told her that thunder is the sound of clouds clapping. It's loud, but it can't hurt us.",
+        "line": "“The clouds are clapping because they're happy.”"
+      }
+    },
+    {
+      "image": "assets/images/thunder-night-story-05.png",
+      "ko": {
+        "title": "번개와 천둥 사이",
+        "body": "아빠는 번쩍한 뒤 하나, 둘, 셋 세어 보자고 했어요. 숫자를 세는 동안 천둥은 점점 멀어졌지요.",
+        "line": "\"세어 보니까 덜 무서워!\""
+      },
+      "en": {
+        "title": "Between Lightning and Thunder",
+        "body": "Daddy said they should count one, two, three after each flash. While they counted, the thunder rolled farther away.",
+        "line": "“Counting makes it less scary!”"
+      }
+    },
+    {
+      "image": "assets/images/thunder-night-story-06.png",
+      "ko": {
+        "title": "따뜻한 한 잔",
+        "body": "엄마가 따뜻한 코코아를 한 잔 가져다주었어요. 손이 따뜻해지자 마음도 보들보들해졌답니다.",
+        "line": "비 오는 밤만의 포근함이 있었어요."
+      },
+      "en": {
+        "title": "A Warm Cup",
+        "body": "Mommy brought a warm cup of cocoa. As her hands grew warm, her heart grew soft and cozy.",
+        "line": "There was a special coziness on a rainy night."
+      }
+    },
+    {
+      "image": "assets/images/thunder-night-story-07.png",
+      "ko": {
+        "title": "비를 바라보며",
+        "body": "솜이는 가족과 함께 창가에서 비를 바라보았어요. 빗물이 마른 땅을 촉촉이 적시고 있었지요.",
+        "line": "\"비가 와서 꽃들이 좋아하겠다.\""
+      },
+      "en": {
+        "title": "Watching the Rain",
+        "body": "Somi watched the rain with her family by the window. The water was soaking the dry ground.",
+        "line": "“The flowers must be happy that it's raining.”"
+      }
+    },
+    {
+      "image": "assets/images/thunder-night-story-08.png",
+      "ko": {
+        "title": "멀어지는 천둥",
+        "body": "천둥소리가 점점 작아지며 멀리 사라졌어요. 솜이는 어느새 하품을 쩌억 했답니다.",
+        "line": "무섭던 마음이 스르르 풀렸어요."
+      },
+      "en": {
+        "title": "The Thunder Fades",
+        "body": "The thunder grew quieter and faded far away. Before she knew it, Somi gave a big yawn.",
+        "line": "Her scared feeling melted away."
+      }
+    },
+    {
+      "image": "assets/images/thunder-night-story-09.png",
+      "ko": {
+        "title": "편안한 잠",
+        "body": "솜이는 가족 곁에서 편안히 잠이 들었어요. 빗소리가 부드러운 자장가가 되어 주었지요.",
+        "line": "이제 천둥도 무섭지 않았답니다."
+      },
+      "en": {
+        "title": "Peaceful Sleep",
+        "body": "Somi fell fast asleep beside her family. The sound of rain became a gentle lullaby.",
+        "line": "Now thunder didn't scare her at all."
+      }
+    },
+    {
+      "image": "assets/images/thunder-night-story-10.png",
+      "ko": {
+        "title": "비 갠 아침",
+        "body": "아침이 되자 하늘에는 커다란 무지개가 떴어요. 솜이는 무서운 밤 뒤에 예쁜 선물이 온다는 걸 알았답니다.",
+        "line": "\"무서운 밤이 지나면 무지개가 와!\""
+      },
+      "en": {
+        "title": "A Clear Morning",
+        "body": "When morning came, a big rainbow filled the sky. Somi learned that a pretty gift comes after a scary night.",
+        "line": "“After a scary night, a rainbow comes!”"
+      }
+    }
+  ]
+}

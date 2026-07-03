@@ -1,0 +1,139 @@
+{
+  "slug": "sun",
+  "title": {
+    "ko": "해님이 보낸 따뜻한 편지",
+    "en": "The Warm Letter from the Sun"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/sun-story-01.png",
+      "ko": {
+        "title": "노란 편지 봉투",
+        "body": "아침 창가에서 하늘이는 노란 편지 봉투를 발견했어요. 봉투에는 \"해님에게서\"라고 빛나는 글씨가 적혀 있었지요.",
+        "line": "\"오늘의 따뜻함을 배달합니다.\""
+      },
+      "en": {
+        "title": "The Yellow Envelope",
+        "body": "By the morning window, Haneul found a yellow envelope. On it, shining words read, “From the Sun.”",
+        "line": "“Delivering today's warmth.”"
+      }
+    },
+    {
+      "image": "assets/images/sun-story-02.png",
+      "ko": {
+        "title": "빛으로 쓰는 글씨",
+        "body": "하늘이가 봉투를 열자 햇빛 글씨가 방 안으로 펼쳐졌어요. 글씨는 책상, 이불, 작은 화분 위를 부드럽게 지나갔답니다.",
+        "line": "빛은 조용하지만 멀리까지 닿았어요."
+      },
+      "en": {
+        "title": "Writing with Light",
+        "body": "When Haneul opened the envelope, sunlight letters spread across the room. The words drifted gently over the desk, the blanket, and a little flowerpot.",
+        "line": "Light is quiet, yet it reaches far."
+      }
+    },
+    {
+      "image": "assets/images/sun-story-03.png",
+      "ko": {
+        "title": "식물이 웃는 시간",
+        "body": "하늘이는 햇빛을 받은 화분 잎이 반짝이는 것을 보았어요. 작은 잎은 해님 편지를 읽은 듯 힘차게 고개를 들었지요.",
+        "line": "따뜻한 빛은 자라나는 힘을 주었어요."
+      },
+      "en": {
+        "title": "When Plants Smile",
+        "body": "Haneul watched the leaves of a sunlit plant glisten. The little leaf lifted its head strongly, as if it had read the Sun's letter.",
+        "line": "Warm light gives the power to grow."
+      }
+    },
+    {
+      "image": "assets/images/sun-story-04.png",
+      "ko": {
+        "title": "그림자 친구",
+        "body": "하늘이가 손을 들자 벽에 그림자가 생겼어요. 해님은 빛이 있는 곳에는 그림자도 함께 놀러 온다고 알려 주었답니다.",
+        "line": "빛을 보면 그림자도 이해할 수 있어요."
+      },
+      "en": {
+        "title": "The Shadow Friend",
+        "body": "When Haneul raised his hand, a shadow appeared on the wall. The Sun explained that wherever there is light, a shadow comes to play too.",
+        "line": "When you see light, you can understand shadows too."
+      }
+    },
+    {
+      "image": "assets/images/sun-story-05.png",
+      "ko": {
+        "title": "너무 가까우면 뜨거워",
+        "body": "하늘이는 돋보기 장난감을 들고 햇빛을 모으려다 멈추었어요. 해님 편지에는 \"빛은 조심히 다루어야 해\"라고 적혀 있었지요.",
+        "line": "따뜻함도 안전하게 만나는 게 중요해요."
+      },
+      "en": {
+        "title": "Too Close Gets Too Hot",
+        "body": "Haneul lifted a toy magnifying glass to gather sunlight, then stopped. The Sun's letter read, “Light must be handled with care.”",
+        "line": "Even warmth is best met safely."
+      }
+    },
+    {
+      "image": "assets/images/sun-story-06.png",
+      "ko": {
+        "title": "태양 안의 큰 힘",
+        "body": "꿈속에서 하늘이는 해님 속 작은 불꽃들이 서로 손을 잡는 모습을 보았어요. 그 힘이 빛과 열이 되어 멀리 날아갔답니다.",
+        "line": "해님은 빛을 만드는 아주 큰 불덩이였어요."
+      },
+      "en": {
+        "title": "The Great Power Inside the Sun",
+        "body": "In his dream, Haneul saw tiny flames inside the Sun joining hands. That power became light and heat and flew far away.",
+        "line": "The Sun was a great ball of fire that makes light."
+      }
+    },
+    {
+      "image": "assets/images/sun-story-07.png",
+      "ko": {
+        "title": "행성들에게 가는 길",
+        "body": "빛 편지는 수성, 금성, 지구, 화성을 지나 더 먼 행성 친구들에게도 갔어요. 하늘이는 빛의 여행을 따라 눈을 반짝였지요.",
+        "line": "한 줄기 빛도 긴 여행을 할 수 있어요."
+      },
+      "en": {
+        "title": "The Path to the Planets",
+        "body": "The light letter passed Mercury, Venus, Earth, and Mars, and reached the farther planet friends too. Haneul's eyes sparkled, following the journey of the light.",
+        "line": "Even a single beam of light can take a long journey."
+      }
+    },
+    {
+      "image": "assets/images/sun-story-08.png",
+      "ko": {
+        "title": "해님도 쉬고 싶을까",
+        "body": "하늘이는 해님에게 물었어요. \"매일 비추면 힘들지 않아?\" 해님은 웃으며 꾸준히 나누는 일이 자기의 기쁨이라고 했답니다.",
+        "line": "좋아하는 일을 꾸준히 하면 마음도 빛나요."
+      },
+      "en": {
+        "title": "Does the Sun Want to Rest Too?",
+        "body": "Haneul asked the Sun, “Doesn't shining every day make you tired?” The Sun smiled and said that sharing steadily is its own joy.",
+        "line": "When you steadily do what you love, your heart shines too."
+      }
+    },
+    {
+      "image": "assets/images/sun-story-09.png",
+      "ko": {
+        "title": "노을 답장",
+        "body": "저녁이 되자 하늘이는 주황색 노을을 보았어요. 해님은 하루를 마치며 마지막 편지를 하늘에 넓게 펼친 것이었지요.",
+        "line": "노을은 해님의 다정한 인사였어요."
+      },
+      "en": {
+        "title": "The Sunset Reply",
+        "body": "When evening came, Haneul saw an orange sunset. As its day ended, the Sun had spread its last letter wide across the sky.",
+        "line": "The sunset was the Sun's gentle goodbye."
+      }
+    },
+    {
+      "image": "assets/images/sun-story-10.png",
+      "ko": {
+        "title": "내일 또 만나",
+        "body": "하늘이는 창가에 답장을 놓았어요. \"해님, 내일도 안전하게 반짝여 줘.\" 밤하늘은 조용히 그 약속을 품었답니다.",
+        "line": "아침이 오면 따뜻한 편지도 다시 찾아올 거예요."
+      },
+      "en": {
+        "title": "See You Again Tomorrow",
+        "body": "Haneul placed a reply by the window. “Sun, please shine safely again tomorrow.” The night sky quietly held that promise.",
+        "line": "When morning comes, the warm letter will visit again."
+      }
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "slug": "jupiter",
+  "title": {
+    "ko": "커다란 목성의 빨간 점",
+    "en": "Big Jupiter's Red Spot"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/jupiter-story-01.png",
+      "ko": {
+        "title": "커다란 줄무늬 친구",
+        "body": "하늘이는 줄무늬 구름이 빙글도는 목성을 만났어요. 목성은 아주 커서 하늘이가 고개를 한참 들어야 했지요.",
+        "line": "\"나는 크지만, 너와 친구가 되고 싶어.\""
+      },
+      "en": {
+        "title": "The Big Striped Friend",
+        "body": "Haneul met Jupiter, whose striped clouds swirled round and round. Jupiter was so big that Haneul had to tip his head way back to see.",
+        "line": "“I'm big, but I want to be your friend.”"
+      }
+    },
+    {
+      "image": "assets/images/jupiter-story-02.png",
+      "ko": {
+        "title": "빨간 점의 비밀",
+        "body": "목성 얼굴에는 커다란 빨간 점이 있었어요. 하늘이는 그곳에서 오래된 폭풍이 돌고 있다는 이야기를 들었답니다.",
+        "line": "크고 센 친구도 사나운 마음이 들 때가 있어요."
+      },
+      "en": {
+        "title": "The Secret of the Red Spot",
+        "body": "There was a big red spot on Jupiter's face. Haneul heard that an old storm was spinning around inside it.",
+        "line": "Even a big, strong friend can feel stormy sometimes."
+      }
+    },
+    {
+      "image": "assets/images/jupiter-story-03.png",
+      "ko": {
+        "title": "소용돌이 소리",
+        "body": "빨간 점 가까이에서 바람이 우르릉 소리를 냈어요. 하늘이는 조금 무서웠지만 목성의 손을 꼭 잡았지요.",
+        "line": "무서울 때는 손을 잡아도 괜찮아요."
+      },
+      "en": {
+        "title": "The Sound of the Swirl",
+        "body": "Near the red spot, the wind made a deep rumbling sound. Haneul felt a little scared, but he held Jupiter's hand tight.",
+        "line": "When you're scared, it's okay to hold someone's hand."
+      }
+    },
+    {
+      "image": "assets/images/jupiter-story-04.png",
+      "ko": {
+        "title": "작은 달들의 인사",
+        "body": "목성 곁에는 달 친구들이 많이 있었어요. 이오, 유로파, 가니메데, 칼리스토가 하늘이에게 반짝 인사했답니다.",
+        "line": "목성은 많은 친구를 품고 있었어요."
+      },
+      "en": {
+        "title": "The Little Moons Say Hello",
+        "body": "Many moon friends lived beside Jupiter. Io, Europa, Ganymede, and Callisto twinkled hello to Haneul.",
+        "line": "Jupiter held many friends close."
+      }
+    },
+    {
+      "image": "assets/images/jupiter-story-05.png",
+      "ko": {
+        "title": "폭풍에게 이름 붙이기",
+        "body": "하늘이는 목성에게 말했어요. \"빨간 점을 오래된 바람 친구라고 불러 보면 어때?\" 목성은 천천히 따라 말했지요.",
+        "line": "이름을 붙이면 마음을 바라보기 쉬워져요."
+      },
+      "en": {
+        "title": "Giving the Storm a Name",
+        "body": "Haneul said to Jupiter, “What if we call your red spot the old wind friend?” Jupiter slowly said the words too.",
+        "line": "Naming a feeling makes it easier to look at."
+      }
+    },
+    {
+      "image": "assets/images/jupiter-story-06.png",
+      "ko": {
+        "title": "큰 숨 쉬기",
+        "body": "목성과 하늘이는 하나, 둘, 셋 하고 큰 숨을 쉬었어요. 빨간 점은 사라지지 않았지만 소리가 조금 부드러워졌답니다.",
+        "line": "숨은 마음을 천천히 흔들어 주었어요."
+      },
+      "en": {
+        "title": "Taking a Big Breath",
+        "body": "Jupiter and Haneul took big breaths together, one, two, three. The red spot didn't go away, but its sound grew a little softer.",
+        "line": "A breath can rock a heart gently calm."
+      }
+    },
+    {
+      "image": "assets/images/jupiter-story-07.png",
+      "ko": {
+        "title": "달 친구들의 노래",
+        "body": "달 친구들이 작은 노래를 불렀어요. \"목성아, 네 바람도 네 마음의 한 부분이야.\" 목성은 눈을 반짝였지요.",
+        "line": "친구의 노래가 큰 마음을 안아 주었어요."
+      },
+      "en": {
+        "title": "The Moon Friends' Song",
+        "body": "The moon friends sang a little song. “Jupiter, your wind is part of your heart too.” Jupiter's eyes sparkled.",
+        "line": "A friend's song wrapped a big heart in a hug."
+      }
+    },
+    {
+      "image": "assets/images/jupiter-story-08.png",
+      "ko": {
+        "title": "구름 줄무늬 그림",
+        "body": "하늘이는 목성의 구름 줄무늬를 따라 그림을 그렸어요. 빨간 점도 그림 속에서 둥근 꽃처럼 보였답니다.",
+        "line": "다르게 보면 무서운 것도 새로운 모습이 돼요."
+      },
+      "en": {
+        "title": "Painting the Cloud Stripes",
+        "body": "Haneul painted along Jupiter's cloudy stripes. In the picture, the red spot looked like a round flower.",
+        "line": "Seen a new way, even a scary thing can look new."
+      }
+    },
+    {
+      "image": "assets/images/jupiter-story-09.png",
+      "ko": {
+        "title": "큰 마음의 품",
+        "body": "목성은 달 친구들과 하늘이를 넓은 구름 품으로 감싸 주었어요. 폭풍이 있어도 따뜻한 품은 그대로였지요.",
+        "line": "큰 마음은 흔들림까지 품을 수 있어요."
+      },
+      "en": {
+        "title": "The Big-Hearted Hug",
+        "body": "Jupiter wrapped the moon friends and Haneul in his wide, cloudy arms. Even with the storm, his warm hug stayed just the same.",
+        "line": "A big heart can hold even its own storms."
+      }
+    },
+    {
+      "image": "assets/images/jupiter-story-10.png",
+      "ko": {
+        "title": "하늘이의 빨간 점",
+        "body": "아침에 깬 하늘이는 속상한 마음을 빨간 점으로 그렸어요. 그리고 그 옆에 \"괜찮아, 내 마음이야\"라고 썼답니다.",
+        "line": "목성은 하늘이에게 마음을 다루는 법을 알려 주었어요."
+      },
+      "en": {
+        "title": "Haneul's Red Spot",
+        "body": "When Haneul woke up, he drew his upset feeling as a red spot. Next to it he wrote, “It's okay, this is my heart.”",
+        "line": "Jupiter showed Haneul how to care for his feelings."
+      }
+    }
+  ]
+}

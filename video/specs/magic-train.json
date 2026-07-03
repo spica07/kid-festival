@@ -1,0 +1,139 @@
+{
+  "slug": "magic-train",
+  "title": {
+    "ko": "번개 기차를 만든 하루",
+    "en": "The Day Haram Built the Lightning Train"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/magic-train-story-01.png",
+      "ko": {
+        "title": "파란 기차 설계도",
+        "body": "하람이는 종이 위에 멋진 기차를 그렸어요. 바퀴는 동그랗게, 창문은 반짝반짝하게 색칠했지요.",
+        "line": "\"오늘은 내가 기관사이자 발명가야!\""
+      },
+      "en": {
+        "title": "The Blue Train Blueprint",
+        "body": "Haram drew a wonderful train on paper. He colored round wheels and shiny windows.",
+        "line": "\"Today I am both the driver and the inventor!\""
+      }
+    },
+    {
+      "image": "assets/images/magic-train-story-02.png",
+      "ko": {
+        "title": "덜컹덜컹 첫 출발",
+        "body": "기차가 레일 위에 올라가자마자 덜컹 하고 멈췄어요. 바퀴 하나가 살짝 삐뚤어져 있었거든요.",
+        "line": "하람이는 속상했지만 다시 살펴보기로 했어요."
+      },
+      "en": {
+        "title": "A Bumpy First Start",
+        "body": "As soon as the train went onto the rail, it stopped with a bump. One wheel was a little crooked.",
+        "line": "Haram felt upset, but he decided to look again."
+      }
+    },
+    {
+      "image": "assets/images/magic-train-story-03.png",
+      "ko": {
+        "title": "바퀴를 다시 맞춰요",
+        "body": "하람이는 작은 장난감 도구로 바퀴를 천천히 맞췄어요. 급하게 하지 않으니 기차가 조금씩 반듯해졌지요.",
+        "line": "고치는 시간도 만드는 시간만큼 중요했어요."
+      },
+      "en": {
+        "title": "Setting the Wheels Straight",
+        "body": "Haram slowly fixed the wheels with a small toy tool. Because he did not rush, the train became straighter little by little.",
+        "line": "Time spent fixing was as important as time spent making."
+      }
+    },
+    {
+      "image": "assets/images/magic-train-story-04.png",
+      "ko": {
+        "title": "친구 레일 공사",
+        "body": "동생이 블록을 가져와 긴 다리를 만들었어요. 하람이는 다리 밑을 지나가는 터널까지 연결했지요.",
+        "line": "함께 만드니 기차길이 훨씬 길어졌어요."
+      },
+      "en": {
+        "title": "Building Rails with a Friend",
+        "body": "His younger sibling brought blocks and made a long bridge. Haram connected a tunnel under the bridge.",
+        "line": "When they built together, the train track became much longer."
+      }
+    },
+    {
+      "image": "assets/images/magic-train-story-05.png",
+      "ko": {
+        "title": "다리 위의 성공",
+        "body": "파란 기차는 조심조심 다리를 올라 터널을 지나갔어요. 이번에는 멈추지 않고 끝까지 달렸답니다.",
+        "line": "하람이는 두 손을 번쩍 들었어요."
+      },
+      "en": {
+        "title": "Success on the Bridge",
+        "body": "The blue train carefully climbed the bridge and passed through the tunnel. This time, it ran all the way without stopping.",
+        "line": "Haram lifted both hands high."
+      }
+    },
+    {
+      "image": "assets/images/magic-train-story-06.png",
+      "ko": {
+        "title": "작은 역 만들기",
+        "body": "하람이는 블록으로 작은 역을 만들고 장난감 승객들을 세웠어요. 기차가 도착하자 모두 여행을 기다리는 것 같았지요.",
+        "line": "상상 속 역에는 누구나 탈 수 있었어요."
+      },
+      "en": {
+        "title": "Making a Little Station",
+        "body": "Haram made a small station with blocks and placed toy passengers there. When the train arrived, everyone seemed ready for a trip.",
+        "line": "In the station of imagination, anyone could ride."
+      }
+    },
+    {
+      "image": "assets/images/magic-train-story-07.png",
+      "ko": {
+        "title": "꼬마 기관사",
+        "body": "하람이는 기관사처럼 허리를 펴고 기차를 출발시켰어요. 작은 표를 나누어 주며 가족 여행을 시작했지요.",
+        "line": "\"상상나라행 기차가 출발합니다!\""
+      },
+      "en": {
+        "title": "The Little Train Driver",
+        "body": "Haram stood tall like a driver and started the train. He handed out tiny tickets and began a family trip.",
+        "line": "\"The train to Imagination Land is leaving!\""
+      }
+    },
+    {
+      "image": "assets/images/magic-train-story-08.png",
+      "ko": {
+        "title": "창밖의 별빛길",
+        "body": "기차가 창문 앞을 지날 때 방 안이 별빛으로 반짝였어요. 하람이는 기차가 상상나라로 달리는 것처럼 느꼈답니다.",
+        "line": "작은 레일은 커다란 꿈길이 되었어요."
+      },
+      "en": {
+        "title": "Starlight Road by the Window",
+        "body": "When the train passed the window, the room sparkled with starlight. Haram felt as if the train were running to Imagination Land.",
+        "line": "The little rail became a big dream road."
+      }
+    },
+    {
+      "image": "assets/images/magic-train-story-09.png",
+      "ko": {
+        "title": "모두의 정거장",
+        "body": "가족들은 기차 주변에 모여 앉았어요. 하람이는 천천히 기차를 세우고 다음 승객을 기다렸지요.",
+        "line": "혼자 만든 기차가 모두의 놀이가 되었어요."
+      },
+      "en": {
+        "title": "Everyone's Station",
+        "body": "The family sat around the train. Haram slowly stopped it and waited for the next passenger.",
+        "line": "A train he made alone became a game for everyone."
+      }
+    },
+    {
+      "image": "assets/images/magic-train-story-10.png",
+      "ko": {
+        "title": "다음 역은 내일",
+        "body": "밤이 되자 하람이는 기차 옆에서 잠들었어요. 파란 기차는 작게 반짝이며 내일의 여행을 기다렸답니다.",
+        "line": "하람이는 포기하지 않으면 꿈도 달릴 수 있다는 걸 알았어요."
+      },
+      "en": {
+        "title": "Next Station, Tomorrow",
+        "body": "At night, Haram fell asleep beside the train. The blue train sparkled softly and waited for tomorrow's trip.",
+        "line": "Haram learned that dreams can run when we do not give up."
+      }
+    }
+  ]
+}

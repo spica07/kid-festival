@@ -1,0 +1,30 @@
+# ===== OS · 에디터 잡파일 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# ===== Python 캐시 =====
+__pycache__/
+*.py[cod]
+
+# ===== Node =====
+node_modules/
+
+# ===== 블로그 글 (git에 올리지 않음) =====
+blog/
+
+# ===== 임시 파일/폴더 =====
+tmp/
+assets/temp/
+*.tmp
+*.log
+
+# ===== Playwright MCP 임시 스크린샷/스냅샷 =====
+.playwright-mcp/
+
+# ===== 동화 영상 빌드 산출물·중간물 (재생성 가능, 용량 큼) =====
+# 스크립트(video/*.py, *.js)와 스펙(video/specs/*.json)은 소스로 추적한다.
+video/out/
+video/build/

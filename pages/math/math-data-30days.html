@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>생각이 자료와 논리 30일</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/math-data-30days.css">
+</head>
+<body>
+<div class="container">
+  <div class="topbar"><a class="back-hub" href="math-hub.html">← 수학 허브</a><span class="page-title">🦉 생각이 자료와 논리 30일</span></div>
+  <div class="mascot-row">
+    <div class="mascot">🦉</div>
+    <div class="bubble" id="leoBubble">안녕! 나는 생각이야. 오늘도 다섯 문제 같이 생각해 볼까?</div>
+  </div>
+  <div class="day-toolbar">
+    <span class="day-toolbar-label">📅 <b id="dayLabel">Day 1</b></span>
+    <button class="day-pick-btn" id="dayPickBtn" type="button">날짜 선택 ⋯</button>
+  </div>
+  <div class="day-panel" id="dayPanel" hidden>
+    <div class="day-grid" id="dayGrid"></div>
+  </div>
+  <div class="lesson" id="lesson"></div>
+  <div class="progress-wrap">
+    <div class="progress-top"><span>나의 30일 도전</span><span class="count"><span id="doneCount">0</span> / 30일 완료</span></div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+  <div class="foot">
+    💡 <b>부모님께</b> · 문제를 소리 내어 읽어 주고, 아이가 그림을 보며 먼저 생각해 보게 해주세요. <b>정답 버튼</b>은 충분히 생각한 뒤에 눌러요.
+    구체물(블록·사탕)로 직접 세고 견주어 보면 더 좋아요.
+    <br><button class="reset-btn" id="resetBtn">진행 기록 모두 지우기</button>
+  </div>
+</div>
+<script src="../../assets/data/math-data-30days.js"></script>
+<script src="../../assets/js/course-common.js"></script>
+<script src="../../assets/js/math-course.js"></script>
+</body>
+</html>

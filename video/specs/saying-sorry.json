@@ -1,0 +1,139 @@
+{
+  "slug": "saying-sorry",
+  "title": {
+    "ko": "미안하다고 말하기",
+    "en": "Saying I'm Sorry"
+  },
+  "scenes": [
+    {
+      "image": "assets/images/saying-sorry-story-01.png",
+      "ko": {
+        "title": "와르르 무너진 성",
+        "body": "강아지 두두가 뛰어가다 친구 다람쥐의 모래성을 발로 차 버렸어요. 정성껏 쌓은 성이 와르르 무너졌지요.",
+        "line": "\"앗… 일부러 그런 건 아닌데.\""
+      },
+      "en": {
+        "title": "The Castle Came Tumbling Down",
+        "body": "Dudu the puppy was running and kicked over his friend Squirrel's sandcastle. The carefully built castle came tumbling down.",
+        "line": "“Oops… I didn't mean to.”"
+      }
+    },
+    {
+      "image": "assets/images/saying-sorry-story-02.png",
+      "ko": {
+        "title": "속상한 다람쥐",
+        "body": "다람쥐는 무너진 성을 보며 눈물을 글썽였어요. 아침 내내 만든 소중한 성이었으니까요.",
+        "line": "다람쥐의 어깨가 축 처졌어요."
+      },
+      "en": {
+        "title": "A Sad Squirrel",
+        "body": "Squirrel looked at the ruined castle with tears welling up. He had spent the whole morning making it.",
+        "line": "Squirrel's shoulders drooped low."
+      }
+    },
+    {
+      "image": "assets/images/saying-sorry-story-03.png",
+      "ko": {
+        "title": "모른 척",
+        "body": "두두는 괜히 부끄러워 모른 척 고개를 돌렸어요. \"그냥 모래성인데, 뭐\"라고 중얼거렸지요.",
+        "line": "하지만 마음 한구석이 콕콕 따끔했어요."
+      },
+      "en": {
+        "title": "Pretending Not to Notice",
+        "body": "Feeling embarrassed, Dudu turned away and pretended not to notice. “It's just a sandcastle, anyway,” he mumbled.",
+        "line": "But one corner of his heart kept stinging."
+      }
+    },
+    {
+      "image": "assets/images/saying-sorry-story-04.png",
+      "ko": {
+        "title": "혼자 떠난 친구",
+        "body": "다람쥐는 시무룩하게 자리를 떠났어요. 두두는 친구의 뒷모습을 바라보며 마음이 무거워졌지요.",
+        "line": "\"다람쥐가 많이 속상했나 봐.\""
+      },
+      "en": {
+        "title": "A Friend Walks Away",
+        "body": "Squirrel walked off all by himself, feeling glum. Dudu watched his friend's back and felt heavy inside.",
+        "line": "“I think Squirrel was really upset.”"
+      }
+    },
+    {
+      "image": "assets/images/saying-sorry-story-05.png",
+      "ko": {
+        "title": "엄마의 물음",
+        "body": "엄마 강아지가 두두의 마음을 가만히 물었어요. 미안한 마음이 들면 그 마음을 전하면 된다고 했지요.",
+        "line": "\"미안할 땐 어떻게 하면 좋을까?\""
+      },
+      "en": {
+        "title": "Mama's Question",
+        "body": "Mama Dog gently asked Dudu how he was feeling. If you feel sorry, she said, you can share that feeling.",
+        "line": "“What should I do when I'm sorry?”"
+      }
+    },
+    {
+      "image": "assets/images/saying-sorry-story-06.png",
+      "ko": {
+        "title": "친구를 찾아서",
+        "body": "두두는 용기를 내어 다람쥐를 찾아갔어요. 가슴이 콩콩 뛰었지만 꼭 사과하고 싶었답니다.",
+        "line": "\"다람쥐야, 잠깐 얘기해도 될까?\""
+      },
+      "en": {
+        "title": "Looking for His Friend",
+        "body": "Dudu gathered his courage and went to find Squirrel. His heart was pounding, but he really wanted to apologize.",
+        "line": "“Squirrel, can we talk for a minute?”"
+      }
+    },
+    {
+      "image": "assets/images/saying-sorry-story-07.png",
+      "ko": {
+        "title": "진심을 담아",
+        "body": "두두는 다람쥐의 눈을 보며 또박또박 말했어요. 모래성을 망가뜨려서 정말 미안하다고요.",
+        "line": "\"내가 네 성을 무너뜨려서 미안해.\""
+      },
+      "en": {
+        "title": "From the Heart",
+        "body": "Dudu looked Squirrel in the eyes and spoke clearly. He said he was truly sorry for breaking the castle.",
+        "line": "“I'm sorry I knocked down your castle.”"
+      }
+    },
+    {
+      "image": "assets/images/saying-sorry-story-08.png",
+      "ko": {
+        "title": "풀린 마음",
+        "body": "진심 어린 사과에 다람쥐의 마음이 스르르 풀렸어요. 다람쥐는 고개를 끄덕이며 괜찮다고 했지요.",
+        "line": "\"솔직하게 말해 줘서 고마워.\""
+      },
+      "en": {
+        "title": "A Heart at Ease",
+        "body": "At the heartfelt apology, Squirrel's feelings gently softened. He nodded and said it was okay.",
+        "line": "“Thank you for being honest with me.”"
+      }
+    },
+    {
+      "image": "assets/images/saying-sorry-story-09.png",
+      "ko": {
+        "title": "같이 다시 쌓기",
+        "body": "두두는 다람쥐와 함께 더 멋진 모래성을 쌓았어요. 둘이 만드니 성은 더 크고 튼튼해졌답니다.",
+        "line": "\"이번엔 같이 만드니까 더 멋져!\""
+      },
+      "en": {
+        "title": "Building Again Together",
+        "body": "Dudu and Squirrel built an even grander castle together. With the two of them, it grew bigger and stronger.",
+        "line": "“It's even cooler now that we made it together!”"
+      }
+    },
+    {
+      "image": "assets/images/saying-sorry-story-10.png",
+      "ko": {
+        "title": "미안해의 힘",
+        "body": "두두는 진심으로 미안하다고 말하면 다시 친해질 수 있다는 걸 알았어요. 작은 사과가 큰 마음을 이어 주었지요.",
+        "line": "\"미안해, 이 한마디가 마법 같아!\""
+      },
+      "en": {
+        "title": "The Power of Sorry",
+        "body": "Dudu learned that a heartfelt sorry can bring friends back together. One small apology mended a big friendship.",
+        "line": "“'Sorry'—just one word, and it's like magic!”"
+      }
+    }
+  ]
+}

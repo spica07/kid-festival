@@ -1,0 +1,15 @@
+@import url("math-30days-core.css");
+  /* 테마 색상만 이 파일에서 정의 */
+  :root {
+    --a1: #fbbf24; --a2: #d97706;
+    --soft: #fde68a;
+    --wbg1: #fffbeb; --wbg2: #fef3c7;
+    --wtext: #b45309;
+    --bubBg: #fffbeb; --bubBorder: #fde68a; --bubText: #92400e;
+    --face: linear-gradient(135deg, #fde68a, #d97706);
+    --badge: #d97706;
+    --gt: linear-gradient(90deg, #f59e0b, #f97316, #fbbf24);
+    --pageBg: linear-gradient(135deg, #fffbeb 0%, #fef3c7 45%, #ffedd5 100%);
+    --doneBg: linear-gradient(135deg, #d1fae5, #a7f3d0); --doneBorder: #34d399; --doneText: #065f46;
+    --shadowA: rgba(5,150,105,0.4); --shadowB: rgba(5,150,105,0.3);
+  }

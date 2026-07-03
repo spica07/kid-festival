@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Jua', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #ecfeff 44%, #fff7ed 100%);
+  color: #253044;
+}
+
+.dashboard-shell {
+  width: min(1120px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 28px 0 42px;
+}
+
+.dash-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(37, 48, 68, 0.1);
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #0891b2;
+  font-size: 0.95rem;
+}
+
+h1, h2, p { margin-top: 0; }
+
+h1 {
+  margin-bottom: 0;
+  font-size: clamp(1.6rem, 4vw, 2.45rem);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-bottom: 14px;
+  font-size: 1.22rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.action-btn,
+.course-open {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: #0f766e;
+  color: white;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(15, 118, 110, 0.2);
+}
+
+.action-btn.secondary {
+  background: #4f46e5;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.18);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.summary-card,
+.subject-card,
+.course-row {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(37, 48, 68, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(37, 48, 68, 0.08);
+}
+
+.summary-card {
+  min-height: 112px;
+  padding: 16px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  color: #64748b;
+  font-size: 0.88rem;
+}
+
+.summary-card strong {
+  font-size: 2rem;
+  color: #0f172a;
+}
+
+.mini-bar,
+.subject-bar {
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: #e5e7eb;
+}
+
+.mini-bar span,
+.subject-bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #14b8a6, #f97316);
+  transition: width 0.25s ease;
+}
+
+.section-block {
+  margin-top: 24px;
+}
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.subject-card {
+  padding: 16px;
+}
+
+.subject-card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.subject-name {
+  font-size: 1.08rem;
+  color: #111827;
+}
+
+.subject-percent {
+  color: #db2777;
+}
+
+.course-list {
+  display: grid;
+  gap: 10px;
+}
+
+.course-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 16px;
+}
+
+.course-title {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.course-title strong {
+  color: #0f172a;
+  font-size: 1.02rem;
+}
+
+.course-subject {
+  color: #0891b2;
+  font-size: 0.86rem;
+}
+
+.course-meta {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.course-open {
+  min-width: 74px;
+  background: #f97316;
+  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.18);
+}
+
+.empty-note {
+  padding: 18px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px dashed rgba(37, 48, 68, 0.18);
+  color: #64748b;
+}
+
+.status-line {
+  min-height: 22px;
+  margin: 18px 0 0;
+  color: #0f766e;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 760px) {
+  .dashboard-shell {
+    width: min(100% - 18px, 1120px);
+    padding-top: 18px;
+  }
+
+  .dash-hero {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
+  }
+
+  .summary-grid,
+  .subject-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-row {
+    grid-template-columns: 1fr;
+  }
+
+  .course-open {
+    width: 100%;
+  }
+}

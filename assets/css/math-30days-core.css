@@ -1,0 +1,71 @@
+/* math 30일/7일 코스 공용 스타일. 테마 색은 각 코스 CSS의 :root 변수로 정의한다. */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+    background: var(--pageBg);
+    min-height: 100vh; color: #1f2937; line-height: 1.6; padding: 20px;
+  }
+  .container { max-width: 820px; margin: 0 auto; }
+  .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .page-title { font-family: 'Jua', sans-serif; font-size: clamp(17px, 4.2vw, 22px); font-weight: 400; color: #374151; line-height: 1.2; }
+  .back-hub { display: inline-flex; align-items: center; gap: 6px; background: white; border: 2px solid var(--soft); color: var(--wtext); font-weight: 700; font-size: 14px; padding: 8px 14px; border-radius: 999px; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .hero { text-align: center; padding: 14px 0 18px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.8); padding: 8px 16px; border-radius: 999px; font-size: 14px; color: var(--badge); font-weight: 600; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .hero h1 { font-family: 'Jua', sans-serif; font-size: clamp(24px, 5vw, 40px); font-weight: 400; margin-bottom: 8px; line-height: 1.25; }
+  .gradient-text { background: var(--gt); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero p { font-size: 15px; color: #6b7280; }
+  .progress-wrap { background: white; border-radius: 20px; padding: 16px 22px; margin-bottom: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+  .progress-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-weight: 700; font-size: 15px; }
+  .progress-top .count { color: var(--a2); }
+  .progress-bar { height: 14px; background: #f3f4f6; border-radius: 999px; overflow: hidden; }
+  .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--a1), var(--a2)); border-radius: 999px; transition: width 0.4s ease; }
+  .mascot-row { display: flex; align-items: center; gap: 16px; background: white; border-radius: 24px; padding: 18px 22px; margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); }
+  .mascot { flex-shrink: 0; width: 74px; height: 74px; border-radius: 50%; background: var(--face); display: flex; align-items: center; justify-content: center; font-size: 42px; box-shadow: 0 6px 18px rgba(0,0,0,0.18); animation: bob 2.6s ease-in-out infinite; }
+  @keyframes bob { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-6px);} }
+  .bubble { position: relative; background: var(--bubBg); border: 2px solid var(--bubBorder); border-radius: 18px; padding: 12px 16px; font-size: 16px; color: var(--bubText); font-weight: 600; }
+  .bubble::before { content: ''; position: absolute; left: -10px; top: 24px; border-width: 8px 10px 8px 0; border-style: solid; border-color: transparent var(--bubBorder) transparent transparent; }
+  .section-label { font-weight: 700; font-size: 15px; color: #374151; margin: 0 4px 10px; }
+  .day-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .day-toolbar-label { font-weight: 700; font-size: 15px; color: #374151; }
+  .day-pick-btn { border: 2px solid var(--soft); background: white; color: var(--wtext); font-weight: 700; font-size: 14px; padding: 9px 16px; border-radius: 999px; cursor: pointer; transition: transform 0.15s; }
+  .day-pick-btn:hover { transform: translateY(-2px); }
+  .day-panel { margin-bottom: 10px; }
+  .day-panel[hidden] { display: none; }
+  .day-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(54px, 1fr)); gap: 8px; margin-bottom: 22px; }
+  .day-btn { aspect-ratio: 1/1; border: 2px solid var(--soft); background: white; color: var(--wtext); border-radius: 13px; cursor: pointer; font-weight: 700; font-size: 13px; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.1; transition: transform 0.15s; }
+  .day-btn:hover { transform: translateY(-2px); }
+  .day-btn .d-num { font-size: 15px; }
+  .day-btn .d-check { font-size: 12px; height: 14px; }
+  .day-btn.done { background: var(--doneBg); border-color: var(--doneBorder); color: var(--doneText); }
+  .day-btn.active { background: linear-gradient(135deg, var(--a1), var(--a2)); border-color: var(--a2); color: white; box-shadow: 0 6px 18px var(--shadowA); }
+  .lesson { background: white; border-radius: 24px; padding: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.06); margin-bottom: 22px; }
+  .lesson-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+  .lesson-day { font-family: 'Jua', sans-serif; font-size: 24px; color: var(--a2); }
+  .lesson-theme { font-size: 20px; font-weight: 800; }
+  .lesson-hint { font-size: 13px; color: #9ca3af; margin-bottom: 16px; }
+  .prob-list { display: flex; flex-direction: column; gap: 12px; }
+  .prob { display: flex; flex-direction: column; gap: 8px; background: linear-gradient(135deg, var(--wbg1), var(--wbg2)); border: 2px solid var(--soft); border-radius: 16px; padding: 14px 16px; }
+  .prob-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .prob-c { font-size: 14px; font-weight: 800; color: var(--a2); }
+  .prob-pic { font-size: 40px; line-height: 1.45; text-align: center; background: white; border: 1.5px solid var(--soft); border-radius: 14px; padding: 14px 10px; word-spacing: 6px; word-break: break-word; }
+  .prob-q { font-size: 17px; font-weight: 700; color: #1f2937; cursor: pointer; }
+  .prob-a { font-size: 16px; font-weight: 800; color: #b45309; background: #fffbeb; border-radius: 10px; padding: 8px 12px; }
+  .icon-btn { width: 36px; height: 36px; border-radius: 50%; border: none; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .say-btn { background: rgba(255,255,255,0.9); box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+  .ans-btn { align-self: flex-start; padding: 9px 18px; border-radius: 999px; border: none; background: linear-gradient(135deg, #fbbf24, #f59e0b); color: white; font-weight: 800; font-size: 14px; cursor: pointer; box-shadow: 0 3px 8px rgba(245,158,11,0.35); }
+  .complete-btn { display: block; width: 100%; margin-top: 22px; padding: 16px; border: none; border-radius: 16px; cursor: pointer; font-size: 17px; font-weight: 800; color: white; background: linear-gradient(135deg, var(--a1), var(--a2)); box-shadow: 0 8px 22px var(--shadowB); }
+  .complete-btn.is-done { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #92400e; box-shadow: none; }
+  .nav-row { display: flex; gap: 10px; margin-top: 12px; }
+  .nav-btn { flex: 1; padding: 12px; border: 2px solid var(--soft); background: white; color: var(--wtext); border-radius: 14px; cursor: pointer; font-weight: 700; font-size: 14px; }
+  .nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .foot { background: rgba(255,255,255,0.7); border-radius: 20px; padding: 18px 22px; font-size: 14px; color: #6b7280; line-height: 1.7; }
+  .foot b { color: var(--wtext); }
+  .reset-btn { margin-top: 10px; background: none; border: none; color: #9ca3af; font-size: 13px; cursor: pointer; text-decoration: underline; }
+  @media (max-width: 600px) {
+    body { padding: 14px; }
+    .mascot { width: 60px; height: 60px; font-size: 32px; }
+    .bubble { font-size: 14px; }
+    .lesson { padding: 18px; }
+    .prob-q { font-size: 16px; }
+    .prob-pic { font-size: 32px; padding: 12px 8px; }
+  }

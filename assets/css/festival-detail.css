@@ -1,0 +1,204 @@
+/* 행사 상세 페이지 전용 스타일 — 우리 동네 꼬마 놀이터 */
+
+.detail-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 18px 16px 60px;
+}
+
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0 16px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #fff;
+  color: #6B5B95;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 10px rgba(107, 91, 149, 0.12);
+  transition: all 0.25s;
+}
+.detail-back:hover { transform: translateX(-3px); box-shadow: 0 4px 14px rgba(107, 91, 149, 0.2); }
+
+/* ----- 히어로 ----- */
+.detail-hero {
+  position: relative;
+  border-radius: 26px;
+  padding: 30px 26px 26px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 8px 26px rgba(107, 91, 149, 0.18);
+  overflow: hidden;
+}
+.detail-hero-emoji { font-size: 4.2rem; line-height: 1; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15)); }
+.detail-hero-badges {
+  display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 14px 0 10px;
+}
+.detail-hero-title {
+  font-size: 1.7rem; margin: 6px 0 8px; color: #fff;
+  /* kid-festival.css의 전역 h1 그라데이션 텍스트(background-clip:text)를 무효화해 단색으로 표시 */
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.18);
+}
+.detail-hero-tip { font-size: 1.02rem; opacity: 1; margin: 0; }
+
+/* 밝은 파스텔 배경에서는 제목·설명을 검은색으로(어두운 배경은 흰색 유지) */
+.detail-hero.hero-text-dark { color: #000; }
+.detail-hero.hero-text-dark .detail-hero-title {
+  color: #000;
+  text-shadow: none;
+}
+.detail-hero.hero-text-dark .detail-hero-tip { color: #000; }
+.detail-hero.hero-text-dark .detail-hero-emoji { filter: drop-shadow(0 3px 6px rgba(0,0,0,0.22)); }
+
+.detail-alert {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #FFF3E0;
+  border: 1px solid #FFD59A;
+  color: #8A4B00;
+  box-shadow: 0 4px 14px rgba(138, 75, 0, 0.08);
+}
+.detail-alert strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.98rem;
+}
+.detail-alert span { display: block; line-height: 1.55; }
+
+/* ----- 정보 섹션 ----- */
+.detail-section {
+  background: #fff;
+  border-radius: 22px;
+  padding: 20px 22px;
+  margin-top: 16px;
+  box-shadow: 0 4px 18px rgba(107, 91, 149, 0.08);
+}
+.detail-section-title {
+  font-size: 1.18rem; color: #6B5B95; margin: 0 0 12px; display: flex; align-items: center; gap: 8px;
+}
+.detail-section-body { color: #4A4A6A; font-size: 1rem; line-height: 1.65; }
+.detail-section.needs-check {
+  border: 1px solid #F5D08A;
+  background: #FFFDF7;
+}
+.detail-section-body a { color: #4A6FE8; font-weight: 700; }
+.detail-address { font-weight: 700; margin: 0 0 12px; }
+
+.detail-hours { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.detail-hours li {
+  background: #F4F0FF; color: #5E35B1; font-weight: 600;
+  padding: 8px 14px; border-radius: 12px;
+}
+.detail-subnote { margin-top: 10px; color: #888; font-size: 0.92rem; }
+
+.reservation-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.reservation-status-label {
+  font-weight: 700;
+  color: #6B5B95;
+}
+.reservation-status-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.reservation-status-badge.required {
+  background: #FFF0E0;
+  color: #A34B00;
+}
+.reservation-status-badge.partial {
+  background: #EAF3FF;
+  color: #245CA8;
+}
+.reservation-status-badge.not-required {
+  background: #EAF8EF;
+  color: #14734B;
+}
+.reservation-status-badge.check {
+  background: #FFF8D9;
+  color: #8A6500;
+}
+
+.detail-meta-row {
+  display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px dashed #ece8f5;
+}
+.detail-meta-row:last-child { border-bottom: none; }
+.detail-meta-row > span:first-child { flex: 0 0 78px; font-weight: 700; color: #6B5B95; }
+.detail-meta-row > span:last-child { flex: 1; }
+
+/* ----- 액션 버튼 ----- */
+.detail-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.detail-link-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 11px 18px; border-radius: 14px; font-family: inherit; font-size: 0.97rem;
+  font-weight: 700; text-decoration: none; border: none; cursor: pointer; transition: all 0.25s;
+}
+.detail-link-btn:hover { transform: scale(1.04); box-shadow: 0 4px 12px rgba(0,0,0,0.14); }
+.detail-link-btn.map { background: linear-gradient(135deg, #A8E6A8, #C9F0C9); color: #2E7D32; }
+.detail-link-btn.web { background: linear-gradient(135deg, #95D5FF, #B5E5FF); color: #1A5490; }
+.detail-link-btn.primary { background: linear-gradient(135deg, #B39DDB, #9575CD); color: #fff; }
+.detail-link-btn.ghost { background: #efeaf7; color: #6B5B95; }
+
+/* ----- 방문 후기 ----- */
+.review-list { display: grid; gap: 12px; margin-bottom: 18px; }
+.review-empty {
+  text-align: center; color: #999; padding: 22px 12px; background: #faf8ff;
+  border-radius: 14px; border: 1px dashed #e3dcf2;
+}
+.review-item { background: #faf8ff; border-radius: 14px; padding: 14px 16px; }
+.review-item.my { border: 1px solid #e3dcf2; }
+.review-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.review-author { font-weight: 700; color: #5E35B1; }
+.review-mine-badge {
+  background: #ede7f6; color: #5E35B1; font-weight: 700; font-size: 0.8rem;
+  padding: 3px 10px; border-radius: 999px;
+}
+.review-stars { color: #FFB300; letter-spacing: 1px; }
+.review-edit, .review-del {
+  background: none; border: none; color: #bbb; cursor: pointer;
+  font-family: inherit; font-size: 0.82rem; padding: 2px 6px; border-radius: 8px;
+}
+.review-edit { margin-left: auto; color: #9575CD; }
+.review-edit:hover { color: #6B5B95; background: #f1edfa; }
+.review-del:hover { color: #e57373; background: #fff0f0; }
+.review-text { color: #4A4A6A; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+
+.review-form { background: #fff; border: 1px solid #eee7f7; border-radius: 16px; padding: 16px; }
+.review-form-row { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+.review-input {
+  font-family: inherit; font-size: 0.95rem; padding: 10px 12px;
+  border: 1px solid #ddd4ef; border-radius: 12px; background: #fff; color: #4A4A6A;
+}
+.review-input:focus { outline: none; border-color: #9575CD; box-shadow: 0 0 0 3px rgba(149,117,205,0.15); }
+#reviewAuthor { flex: 1; min-width: 120px; }
+.review-rating-select { flex: 0 0 auto; color: #FFB300; font-weight: 700; }
+.review-textarea { width: 100%; box-sizing: border-box; min-height: 76px; resize: vertical; margin-bottom: 10px; }
+.review-note { margin: 10px 0 0; font-size: 0.82rem; color: #aaa; }
+
+/* ----- 빈/오류 상태 ----- */
+.detail-empty { text-align: center; padding: 60px 20px; color: #888; }
+.detail-empty-emoji { font-size: 3.4rem; margin-bottom: 12px; }
+
+.detail-footer-note {
+  text-align: center; color: #999; font-size: 0.88rem; margin-top: 24px;
+}
+
+@media (max-width: 480px) {
+  .detail-hero-title { font-size: 1.45rem; }
+  .detail-section { padding: 18px 16px; }
+}
