@@ -79,10 +79,16 @@
     { title: "솔직한 토끼의 하루", description: "솔직함의 힘을 배우는 이야기", url: "pages/family/honest-rabbit-story.html" },
     { title: "미안하다고 말하기", description: "진심 어린 사과를 배우는 이야기", url: "pages/family/saying-sorry-story.html" },
     { title: "새 친구를 만난 날", description: "먼저 다가가는 용기를 배우는 이야기", url: "pages/family/new-friend-story.html" },
-    { title: "골고루 무지개 접시", description: "골고루 먹는 즐거움을 배우는 이야기", url: "pages/family/rainbow-plate-story.html" }
-    // 삽화 준비 중(이미지 미완성)으로 검색에서 제외: 스스로 척척 아침, 세 개의 동전,
-    // 정리 정돈 꼬마 마법사, 약속을 지킨 하루, 호랑이와 곶감, 지구가 보낸 쪽지,
-    // 해와 달이 된 오누이, 도깨비 방망이, 물을 아끼는 마을
+    { title: "골고루 무지개 접시", description: "골고루 먹는 즐거움을 배우는 이야기", url: "pages/family/rainbow-plate-story.html" },
+    { title: "스스로 척척 아침", description: "스스로 하는 즐거움을 배우는 아침 습관 이야기", url: "pages/family/morning-routine-story.html" },
+    { title: "세 개의 동전", description: "쓰고 모으고 나누는 법을 배우는 용돈 이야기", url: "pages/family/three-coins-story.html" },
+    { title: "정리 정돈 꼬마 마법사", description: "정리 정돈의 마법을 배우는 이야기", url: "pages/family/tidy-wizard-story.html" },
+    { title: "약속을 지킨 하루", description: "약속과 믿음의 소중함을 배우는 이야기", url: "pages/family/keeping-promise-story.html" },
+    { title: "호랑이와 곶감", description: "곶감 한 마디에 깜짝 놀란 호랑이의 옛이야기", url: "pages/family/tiger-gotgam-story.html" },
+    { title: "지구가 보낸 쪽지", description: "자연을 아끼는 마음을 배우는 이야기", url: "pages/family/earth-letter-story.html" },
+    { title: "해와 달이 된 오누이", description: "지혜와 용기로 위기를 이겨 낸 옛이야기", url: "pages/family/sun-moon-siblings-story.html" },
+    { title: "도깨비 방망이", description: "정직한 나무꾼이 복을 받는 옛이야기", url: "pages/family/dokkaebi-club-story.html" },
+    { title: "물을 아끼는 마을", description: "물 아끼기를 배우는 두꺼비 마을 이야기", url: "pages/family/water-village-story.html" }
   ];
 
   const pages = [
