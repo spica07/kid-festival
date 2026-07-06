@@ -5,7 +5,7 @@ description: 꼬마 축제 페이지의 행사 데이터(assets/data/festivals.j
 
 # 꼬마 축제 페이지 업데이트
 
-이 스킬은 **`assets/data/festivals.js` 의 `window.KID_FESTIVALS` 배열**(행사 데이터, 약 200건)을 최신으로 유지한다. 실제 작업은 **`festival-updater` 에이전트**에 위임한다.
+이 스킬은 **`assets/data/festivals.js` 의 `window.KID_FESTIVALS` 배열**(행사 데이터, 약 320건)을 최신으로 유지한다. 실제 작업은 **`festival-updater` 에이전트**에 위임한다.
 
 > 참고: `assets/js/pages/kid-festival.js`는 데이터가 아니라 달력 계산·실내외 분류 등 **렌더링 로직**이며, 실내외 예외(`VENUE_OVERRIDE`)·기준 월(`currentYear`/`currentMonth`)만 거기 있다.
 

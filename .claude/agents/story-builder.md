@@ -16,7 +16,7 @@ model: inherit
 - (선택) 원하는 **slug**(영문 케밥케이스). 없으면 내용에 맞게 직접 정함(기존과 중복 금지 — `pages/family/` 와 허브를 확인).
 
 ## 작업 전 반드시 참고할 기준 파일 (Read)
-- 견본 동화: `pages/family/picture-story.html`, `pages/family/sleepy-owl-story.html`
+- 견본 동화: `pages/family/rainbow-plate-story.html`, `pages/family/sleepy-owl-story.html` (`picture-story.html`은 이미지 파일명이 구식이라 견본으로 쓰지 말 것)
 - 리더 스크립트·영어 데이터: `assets/js/pages/story-reader.js` (`ENGLISH_STORIES` 객체)
 - 허브: `pages/family/picture-story-hub.html`
 - 삽화 프롬프트 시트: `docs/illustration-prompts.md`
@@ -48,7 +48,7 @@ model: inherit
 
 ---
 
-## 산출물 (한 동화당 6곳을 수정/생성)
+## 산출물 (한 동화당 7곳을 수정/생성)
 
 `{slug}` = 영문 케밥케이스, `{NN}` = 01~10.
 
@@ -78,7 +78,7 @@ model: inherit
     <section class="page-grid" aria-label="그림동화 본문">
       <article class="story-spread cover">
         <div class="scene-art image-scene">
-          <img src="../../assets/images/{slug}-story-01.png" alt="{1장 삽화 설명}">
+          <img src="../../assets/images/{slug}-story-01.png" alt="{1장 삽화 설명}" width="1536" height="1024" decoding="async">
         </div>
         <div class="scene-copy">
           <h2>{1장 제목}</h2>
@@ -89,7 +89,7 @@ model: inherit
       <!-- 2~9장: 같은 구조의 <article class="story-spread"> -->
       <article class="story-spread final">
         <div class="scene-art image-scene">
-          <img src="../../assets/images/{slug}-story-10.png" alt="{10장 삽화 설명}">
+          <img src="../../assets/images/{slug}-story-10.png" alt="{10장 삽화 설명}" width="1536" height="1024" decoding="async" loading="lazy">
         </div>
         <div class="scene-copy">
           <h2>{10장 제목}</h2>
@@ -99,10 +99,12 @@ model: inherit
       </article>
     </section>
   </main>
+<script src="../../assets/js/course-common.js"></script>
 <script src="../../assets/js/pages/story-reader.js"></script>
 </body>
 </html>
 ```
+> `<img>` 규칙: 1장은 `width="1536" height="1024" decoding="async"`, 2~10장은 여기에 `loading="lazy"` 추가. 이미지가 아직 없으므로 치수는 표준 3:2(1536×1024)로 적는다(실제 픽셀이 조금 달라도 무방). `course-common.js`를 `story-reader.js` 앞에 반드시 포함(전 동화 공통).
 > 화면 구성(툴바·캐러셀·읽기·한/영 토글)은 `story-reader.js`가 자동 처리하므로, **HTML에는 정적 스프레드만** 넣으면 된다. (태양계처럼 데이터 기반으로 만들지 말 것 — 신규 동화는 이 정적 HTML 방식이 표준이다.)
 
 ### 2) 영어 번역 추가 — `assets/js/pages/story-reader.js`
@@ -119,10 +121,10 @@ model: inherit
 ```
 
 ### 3) 허브 카드 추가 — `pages/family/picture-story-hub.html`
-`<article class="story-book placeholder"` 바로 **앞에** 카드 한 개를 삽입(표지 = `{slug}-story-01.png`):
+`<article class="story-book placeholder"` 바로 **앞에** 카드 한 개를 삽입. 표지는 본문 01과 별개의 **전용 표지 이미지 `{slug}-story-cover.png`** 를 참조한다(현행 표준 — 01을 표지로 쓰지 말 것). 단 **삽화 완성 전에는 깨진 이미지를 노출하지 않는 방침**(2026-06 확정)이므로, 카드를 `<!-- 삽화 완성 시 주석 해제 -->` HTML 주석으로 감싸 넣는다:
 ```html
       <a class="story-book" href="{slug}-story.html">
-        <img src="../../assets/images/{slug}-story-01.png" alt="{제목} 표지">
+        <img src="../../assets/images/{slug}-story-cover.png" alt="{제목} 표지" width="1536" height="1024" decoding="async" loading="lazy">
         <div class="book-copy">
           <h2>{제목}</h2>
           <p>{리드}</p>
@@ -141,12 +143,16 @@ model: inherit
 |01|{slug}-story-01.png| {english scene prompt} | {한국어 설명(표지)} |
 | … 10장까지 |
 ```
-- 같은 동화 10장은 **주인공 설정을 동일하게 유지**(캐릭터 일관성). 비율 16:10 가로, 표지=01.
+- 같은 동화 10장은 **주인공 설정을 동일하게 유지**(캐릭터 일관성). 비율 **3:2 가로(1536×1024)**, 1장=표지 장면.
+- 허브 표지(`{slug}-story-cover.png`)는 이 시트에 넣지 않는다(기존 섹션들과 동일). 표지의 완성형 프롬프트 요청서는 `request-illustrations` 스킬(illustration-director)이 담당.
 
-### 5) 캐시 버전 올리기 — `sw.js`
+### 5) 검색 카탈로그 — `assets/data/site-catalog.js`
+사이트 검색용 카탈로그의 `stories` 배열에 새 동화가 등록되어야 검색에 잡힌다. 단 **삽화 완성 전에는 검색에 노출하지 않는 방침**이므로, 지금은 배열 끝의 "삽화 준비 중(이미지 미완성)으로 검색에서 제외" 주석에 새 동화 제목을 추가만 해 두고, 실제 항목(`{ title, description, url }`)은 삽화 완성 시 등록한다. (이 파일은 `sw.js`의 `CORE_ASSETS`에 포함 — 수정 시 아래 6)의 캐시 버전 +1로 함께 반영된다.)
+
+### 6) 캐시 버전 올리기 — `sw.js`
 `const CACHE = 'kkoma-cache-vN'` 의 숫자 N을 **+1** 한다(콘텐츠 추가 반영). 동화 HTML·이미지는 on-demand 캐싱이라 `CORE_ASSETS`에 넣을 필요는 **없다**.
 
-### 6) 검증
+### 7) 검증
 - `node --check assets/js/pages/story-reader.js` 통과 확인(영어 항목 문법).
 - 슬러그 중복·장면 10개·영어 10개 일치 확인.
 
@@ -155,11 +161,12 @@ model: inherit
 ## 보고
 작업 후 다음을 보고한다:
 - 만든 동화: 제목 / slug / 주제·교훈 / English title
-- 수정한 파일 6곳 체크리스트 (HTML, story-reader.js, hub, illustration-prompts.md, sw.js, 검증)
-- **그려야 할 삽화 10장 목록**: `{slug}-story-01.png ~ -10.png` (각 장면 한국어 설명) — "삽화는 별도 작업으로 그려 `assets/images/`에 넣으면 자동 반영"임을 명시.
+- 수정한 파일 7곳 체크리스트 (HTML, story-reader.js, hub, illustration-prompts.md, site-catalog.js, sw.js, 검증)
+- **삽화 완성 후 복원 절차** 안내: ① 허브 카드 주석 해제 ② `site-catalog.js`의 `stories`에 항목 등록(제외 주석에서 제거) ③ `sw.js` 캐시 버전 +1
+- **그려야 할 삽화 11장 목록**: 허브 표지 `{slug}-story-cover.png` + 본문 `{slug}-story-01.png ~ -10.png` (각 장면 한국어 설명) — "삽화는 별도 작업으로 그려 `assets/images/`에 넣으면 자동 반영"임을 명시.
 - `node --check` 결과.
 
 ## 원칙
 - **기존 형식·코드 스타일 그대로**. 불필요한 대량 변경 금지.
-- 한 번에 **한 동화**가 기본. 여러 편이면 호출자가 동화별로 에이전트를 병렬 실행하되, **같은 파일(story-reader.js·hub·sw.js·docs)을 동시에 Edit하면 충돌**하므로 그 공유 파일 반영은 호출자가 취합해 한 번에 한다(병렬 시 에이전트는 동화 본문/HTML/프롬프트 초안까지만).
+- 한 번에 **한 동화**가 기본. 여러 편이면 호출자가 동화별로 에이전트를 병렬 실행하되, **같은 파일(story-reader.js·hub·site-catalog.js·sw.js·docs)을 동시에 Edit하면 충돌**하므로 그 공유 파일 반영은 호출자가 취합해 한 번에 한다(병렬 시 에이전트는 동화 본문/HTML/프롬프트 초안까지만).
 - 삽화 이미지 생성·추가는 **이 에이전트의 일이 아니다**(별도). 이미지가 없어도 작업은 완료된 것으로 본다.

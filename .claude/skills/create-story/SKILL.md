@@ -19,19 +19,20 @@ description: 사이트 표준에 맞는 새 그림동화를 만든다. 스토리
 
 2. **중복 확인**: `pages/family/` 와 `picture-story-hub.html` 에서 같은 주제/slug가 이미 있는지 가볍게 점검.
 
-3. **에이전트 실행**: `story-builder` 에이전트를 Agent 도구로 실행한다. 프롬프트에 위 요구사항(주제·주인공·분위기·slug)과 "삽화는 만들지 말 것"을 명시한다. 에이전트는 6곳을 처리한다:
+3. **에이전트 실행**: `story-builder` 에이전트를 Agent 도구로 실행한다. 프롬프트에 위 요구사항(주제·주인공·분위기·slug)과 "삽화는 만들지 말 것"을 명시한다. 에이전트는 7곳을 처리한다:
    - `pages/family/{slug}-story.html` 생성 (정적 10 스프레드)
    - `assets/js/pages/story-reader.js` 의 `ENGLISH_STORIES`에 영어 항목 추가
-   - `pages/family/picture-story-hub.html` 에 카드 추가
+   - `pages/family/picture-story-hub.html` 에 카드 추가 (삽화 완성 전에는 주석 상태 — 깨진 이미지 비노출 방침)
    - `docs/illustration-prompts.md` 에 10장 프롬프트 섹션 추가
+   - `assets/data/site-catalog.js` 제외 주석에 등록 (검색 노출은 삽화 완성 후)
    - `sw.js` 캐시 버전 +1
    - `node --check`로 검증
 
-4. **여러 편일 때**: 동화별로 에이전트를 **병렬 실행**해도 되지만, `story-reader.js`·hub·`sw.js`·`docs`는 **공유 파일**이라 동시 Edit 시 충돌한다. 병렬 시에는 에이전트에게 **본문·HTML·프롬프트 초안까지만** 시키고, 공유 파일(영어 항목·허브 카드·캐시·프롬프트 시트) 반영은 **메인에서 취합해 한 번에** 한다.
+4. **여러 편일 때**: 동화별로 에이전트를 **병렬 실행**해도 되지만, `story-reader.js`·hub·`site-catalog.js`·`sw.js`·`docs`는 **공유 파일**이라 동시 Edit 시 충돌한다. 병렬 시에는 에이전트에게 **본문·HTML·프롬프트 초안까지만** 시키고, 공유 파일(영어 항목·허브 카드·캐시·프롬프트 시트) 반영은 **메인에서 취합해 한 번에** 한다.
 
 5. **검증**: `node --check C:\kid\assets\js\pages\story-reader.js` 통과 확인. (선택) 로컬 서버로 페이지를 띄워 캐러셀·한/영 토글·읽기가 동작하는지 확인한다. 이미지는 아직 없으므로 깨진 이미지로 보이는 게 정상이다.
 
-6. **보고**: 만든 동화(제목·slug·주제·English title), 수정한 파일 체크리스트, 그리고 **별도로 그려야 할 삽화 10장 목록**(`{slug}-story-01~10.png` + 각 장면 설명)을 표로 정리해 보고한다.
+6. **보고**: 만든 동화(제목·slug·주제·English title), 수정한 파일 체크리스트, 그리고 **별도로 그려야 할 삽화 11장 목록**(허브 표지 `{slug}-story-cover.png` + 본문 `{slug}-story-01~10.png` + 각 장면 설명)을 표로 정리해 보고한다. 완성형 프롬프트 요청서가 필요하면 `request-illustrations` 스킬로 이어간다.
 
 ## 주의
 

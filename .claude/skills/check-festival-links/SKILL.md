@@ -5,7 +5,7 @@ description: 꼬마 축제 페이지 행사들의 홈페이지 URL이 살아 있
 
 # 꼬마 축제 링크·길찾기 점검
 
-이 스킬은 **`assets/data/festivals.js`의 `window.KID_FESTIVALS` 배열**(약 250건)의 외부 링크와 네이버 길찾기 동작을 점검한다. 실제 작업은 **`festival-link-checker` 에이전트**에 위임한다.
+이 스킬은 **`assets/data/festivals.js`의 `window.KID_FESTIVALS` 배열**(약 320건)의 외부 링크와 네이버 길찾기 동작을 점검한다. 실제 작업은 **`festival-link-checker` 에이전트**에 위임한다.
 
 점검 대상:
 - **홈페이지 URL**: 각 행사의 `web` · `detail.reservationUrl` · `detail.sourceUrl` (도메인+경로 기준 중복 제거 후 점검)

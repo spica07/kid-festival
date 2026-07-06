@@ -35,7 +35,7 @@ model: inherit
 ## 주의·트러블슈팅
 - **edge-tts 503/일시 오류**: `synth_timed` 에 최대 5회 재시도 내장. 그래도 실패하면 잠시 후 재실행(네트워크 필요).
 - **PowerShell 경로 BOM**: `ffdir.txt` 는 `utf-8-sig` 로 읽음. ffmpeg 경로는 변수보다 전체경로 직접 사용 권장.
-- **삽화 미완성 동화**(예: saying-sorry는 9장)는 대상에서 제외. 10장 모두 있는지 먼저 확인.
+- **삽화 미완성 동화**는 대상에서 제외 — 작업 전 `assets/images/<slug>-story-01..10.png` 10장이 모두 있는지 확인. (2026-07 기준 등록 동화는 전부 완비. 단 견본 `picture-story`는 이미지 파일명이 구식이라 추출 불가 — 제외.)
 - **행성 동화**(jupiter/mars 등)도 이제 정적 story-spread 구조라 동일하게 추출됨.
 - 영상은 용량이 커서 **git 에 커밋하지 않음**(`video/out/` 는 .gitignore).
 

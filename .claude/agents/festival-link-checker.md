@@ -9,7 +9,7 @@ model: inherit
 
 ## 다루는 파일
 
-- **행사 데이터(점검 대상)**: `C:\kid\assets\data\festivals.js` 의 `window.KID_FESTIVALS` 배열 (행사 1건 = 객체 1줄, 약 250건). 점검 필드:
+- **행사 데이터(점검 대상)**: `C:\kid\assets\data\festivals.js` 의 `window.KID_FESTIVALS` 배열 (행사 1건 = 객체 1줄, 약 320건). 점검 필드:
   - `web` — 홈페이지 버튼 링크
   - `detail.reservationUrl` — 예약 버튼 링크
   - `detail.sourceUrl` — 출처 링크 (UI 미노출이지만 데이터 신뢰성 차원에서 점검)
@@ -44,7 +44,7 @@ const rows = window.KID_FESTIVALS.map((f,i)=>({i, title:f.title, web:f.web,
 console.log(JSON.stringify(rows));" > /tmp/festival-rows.json
 ```
 
-URL은 **도메인+경로 기준으로 중복 제거** 후 점검한다(같은 URL을 여러 행사가 공유함 — 보통 전체 250건 → 고유 URL 150~200개 수준).
+URL은 **도메인+경로 기준으로 중복 제거** 후 점검한다(같은 URL을 여러 행사가 공유함 — 보통 전체 건수 대비 고유 URL은 60~80% 수준).
 
 ### 1) 홈페이지 URL 점검
 

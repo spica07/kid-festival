@@ -1,6 +1,6 @@
 ---
 name: festival-updater
-description: 꼬마 축제 페이지(assets/js/pages/kid-festival.js)의 행사 데이터를 최신으로 유지한다. (1) 기존 행사 일정을 웹 검색으로 다시 확인해 갱신하고, (2) 현재 월을 포함한 3개월간 서울·경기·인천의 신규 어린이 행사/축제를 검색해 추가한다. "축제 페이지 업데이트", "축제 일정 갱신", "신규 행사 추가" 등의 요청에 사용.
+description: 꼬마 축제 페이지의 행사 데이터(assets/data/festivals.js)를 최신으로 유지한다. (1) 기존 행사 일정을 웹 검색으로 다시 확인해 갱신하고, (2) 현재 월을 포함한 3개월간 서울·경기·인천의 신규 어린이 행사/축제를 검색해 추가한다. "축제 페이지 업데이트", "축제 일정 갱신", "신규 행사 추가" 등의 요청에 사용.
 tools: Read, Edit, Grep, Glob, WebSearch, WebFetch, Bash
 model: inherit
 ---
@@ -9,7 +9,7 @@ model: inherit
 
 ## 다루는 파일
 
-- **행사 데이터(여기에 추가/수정)**: `C:\kid\assets\data\festivals.js` 의 `window.KID_FESTIVALS = [ ... ]` 배열 (행사 1건 = 객체 1개). **현재 약 200건 등록.** 신규 행사 객체는 이 배열에 추가하고, 기존 행사 수정도 이 파일에서 한다.
+- **행사 데이터(여기에 추가/수정)**: `C:\kid\assets\data\festivals.js` 의 `window.KID_FESTIVALS = [ ... ]` 배열 (행사 1건 = 객체 1개). **현재 약 320건 등록(2026-07 기준).** 신규 행사 객체는 이 배열에 추가하고, 기존 행사 수정도 이 파일에서 한다.
 - **렌더링 로직(보통 수정 불필요)**: `C:\kid\assets\js\pages\kid-festival.js` — 달력 계산·실내외 분류·필터를 담당.
   - **실내/실외 예외**: 이 파일의 `const VENUE_OVERRIDE = { ... }` 맵 (예외 추가 시 여기 수정)
   - **현재 기준 월/년**: 이 파일의 `let currentYear` / `let currentMonth`
