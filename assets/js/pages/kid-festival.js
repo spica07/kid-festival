@@ -62,6 +62,7 @@ const VENUE_OVERRIDE = {
   '캐릭터 라이선싱 페어 2026': '실내',
   '제29회 부천국제만화축제': '실내외',
   '2026 경기도자비엔날레': '실내외',
+  '2026 성남아트센터 키즈 페스티벌': '실내',
 };
 function venueOf(f) {
   if (VENUE_OVERRIDE[f.title]) return VENUE_OVERRIDE[f.title];

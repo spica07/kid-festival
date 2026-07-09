@@ -90,16 +90,33 @@ model: inherit
 
 1. `festivals.js`(데이터)와 `kid-festival.js`(규칙)를 Read 하고, 환경의 오늘 날짜로 대상 3개월을 정한다. 필요하면 `kid-festival.js`의 `currentYear`/`currentMonth`도 현재에 맞게 갱신.
 2. **기존 행사 갱신**: 항목들을 묶어 효율적으로 WebSearch → 공식 페이지 WebFetch로 일정 확인 → 변경분만 Edit.
-3. **신규 행사 검색** — ⚠️ **WebSearch는 미국 기반(US-only)이라 한국 소규모 지역 행사를 잘 못 찾는다. 키워드 검색에만 의존하지 말고, 아래 한국 축제 포털 목록 페이지를 WebFetch로 직접 순회해 그 달 행사를 뽑아내는 것을 1차 전략으로 삼는다.**
-   - **펀서울(서울 공식 축제)**: `https://festival.seoul.go.kr/` — 월별/지역별 축제 목록
-   - **서울문화포털 행사**: `https://culture.seoul.go.kr/culture/culture/cultureEvent/list.do?searchCate=FESTIVAL&menuNo=200010`
-   - **대한민국 구석구석 축제달력**: `https://korean.visitkorea.or.kr/kfes/` (전국 축제, 경기·인천 포함)
-   - **경기관광포털**: `https://www.ggtour.or.kr/` / 경기 시·군 문화재단 페이지
-   - **인천관광공사·인천 시·군·구**: `https://www.it8949.or.kr/` 및 각 구청 행사 페이지
-   - **한강공원·서울시설공단**: 여름 물놀이장·물빛광장 등 시즌 시설
-   - 위 목록에서 후보를 모은 뒤, 각 행사의 **공식/지자체 상세 페이지를 WebFetch**로 열어 일정·장소·요금·연령·링크를 확인한다.
-   - 보조로 WebSearch도 쓰되, 쿼리는 `"<구/시> 어린이 축제 2026 <월>"`, `"<지역> 가족 체험 <월>"`, `"<지역> 물놀이장 2026"` 처럼 **구체적 지자체명 + 월**을 넣는다. 가능하면 `allowed_domains`에 `go.kr`/`or.kr`을 지정해 공신력 출처로 좁힌다.
-   - **중복 확인**: 추가 전 반드시 `festivals.js`에서 `title` 키워드를 Grep 해 이미 있는지 확인한다.
+3. **신규 행사 검색 — 계층형 전략 (순서대로. 매우 중요)**
+
+   > ⚠️ **핵심 교훈**: 한국 축제 포털의 **목록** 페이지(구석구석 kfes·서울문화포털·경기관광포털)는 대부분 **JS로 렌더링돼 `WebFetch`로는 빈 껍데기**만 나온다(정적 fetch로 목록 수집이 막힘). 단 **펀서울 목록**과 **각 포털의 상세 페이지**는 정적으로 열린다. `WebSearch`도 미국 기반이라 소규모 지역 행사를 잘 못 찾는다. 따라서 "정적 fetch로 목록 순회"에만 의존하면 신규 발굴이 실패한다. 아래 순서로 접근하라.
+
+   **① (발견·열거) 공개 정부 API로 축제 목록을 먼저 뽑는다 — 1차 전략.** 이 API들은 기간·지역 필터를 공식 제공해 *전체 목록 열거*가 가능하다. 인증키가 없으면 사용자에게 발급을 요청한다.
+   - **한국관광공사 TourAPI `searchFestival2`** (data.go.kr "한국관광공사 국문 관광정보"): 서울·경기·인천 축제를 지역별로 조회. `eventStartDate`/`eventEndDate`로 기간 필터. ⚠️ **2026-01-12부터 지역코드 변경**: `areaCode`→`lDongRegnCd`, `sigunguCode`→`lDongSignguCd`. 값 = **서울 `11` · 경기 `41` · 인천 `28`**. 지역별 3회 호출.
+   - **서울 문화행사 `culturalEventInfo`** ([서울 열린데이터광장](https://data.seoul.go.kr) `OA-15486` — data.go.kr 아님): 서울 문화행사 약 1.9만 건. 필드가 풍부해 5~7세 필터에 최적(`USE_TRGT` 이용대상, `USE_FEE` 요금, `GUNAME` 자치구, `CODENAME` 분류, `DATE`, `ORG_LINK`). 단 **무키 대량 파일 다운로드는 없다** — `sample` 키(`http://openapi.seoul.go.kr:8088/sample/json/culturalEventInfo/1/5/`)는 5건 미리보기 전용이고, 전량은 **무료 인증키**가 필요하다(회원가입→인증키 즉시 발급→`http://openapi.seoul.go.kr:8088/{KEY}/json/culturalEventInfo/{start}/{end}/`를 1000건씩 페이징). 키 없으면 사용자에게 발급을 요청한다. (문화행사=공연·전시 중심이라 순수 '축제'와는 성격이 다르니 `USE_TRGT`로 아동·가족 행사를 골라낸다.)
+   - **전국문화축제표준데이터** (data.go.kr `15013104`): 전국 지자체 축제 표준(축제명·시작/종료일·장소·홈페이지). **⭐ 인증키 없이 파일 전량을 받는 게 가장 쉽다.** 브라우저의 CSV/XLS 다운로드가 내부적으로 호출하는 JSON 2종을 `Bash`+`curl`로 그대로 부르면 된다(세션 쿠키 + `X-Requested-With: XMLHttpRequest` 헤더 필요, Referer는 standard.do):
+     - 컬럼·건수: `GET https://www.data.go.kr/download/columList.json?pk=15013104&ext=csv` → `totalCount`, `tableVO.svcTableNm`(=`tn_pubr_public_cltur_fstvl_svc`), `tableVO.colNmList` 획득.
+     - 데이터: `GET https://www.data.go.kr/download/standard.json` (쿼리: `publicDataPk=15013104&svcTableNm=…&totalCount=N&perPage=10000&page=1` + `colNmList=` 반복). ⚠️ **`page`는 1부터**(0이면 빈 응답). 응답은 행 객체 배열(필드: `FSTVL_NM,OPAR,FSTVL_START_DATE,FSTVL_END_DATE,FSTVL_CO,HOMEPAGE_URL,RDNMADR,PHONE_NUMBER…`).
+     - 받은 배열을 `MNNST_NM`(제공 지자체)로 서울/경기/인천, 날짜로 대상 3개월 겹침 필터 → 기존 `festivals.js` title과 대조해 신규만 추린다. (분기 갱신 스냅샷이라 신규 발표분은 늦을 수 있으니, 개별 행사는 `HOMEPAGE_URL`로 최종 검증.)
+   - API 방식이 필요하면 같은 데이터의 오픈API `tn_pubr_public_cltur_fstvl_api`(serviceKey 필요)도 있다.
+   - API 응답에서 날짜 교차·5~7세 가족 대상·요금·장소 필터를 적용해 후보를 좁힌다.
+
+   **② (검증) 후보의 공식/상세 페이지를 WebFetch로 확정.** kfes·서울문화포털은 *목록은 JS라도 상세(`fstvlDetail.do?fstvlCntntsId=…` 등)는 정적*이니, ①에서 얻은 ID/이름으로 상세를 열어 일정·장소·요금·연령·링크를 확정한다. 펀서울은 `festivalView.do?festacode=…` 상세.
+
+   **③ (보완) 정적으로 되는 목록은 직접 순회.**
+   - **펀서울**: `https://festival.seoul.go.kr/` — 정적으로 월별 목록이 나온다. 끝까지 훑어 후보를 빠짐없이 뽑는다.
+   - **한강공원·서울시설공단**: 여름 물놀이장·물빛광장 등 시즌 시설.
+
+   **④ (잔여분) 브라우저 자동화.** API로도 못 잡은 것은 **Claude in Chrome**(`mcp__claude-in-chrome__*`)으로 kfes·경기관광포털 등의 목록을 실제 렌더한 뒤 카드/네트워크 응답을 추출한다.
+
+   **⑤ (보조) 도메인 한정 검색.** `WebSearch`를 `allowed_domains`에 `go.kr`/`or.kr` 지정해 `"<구/시> 어린이 축제 2026 <월>"`, `"<지역> 물놀이장 2026"` 등 **구체적 지자체명+월**로. 검색 색인은 전체 목록 대용이 아니라 ID 발굴용 보조로만.
+
+   **중복 확인**: 추가 전 반드시 `festivals.js`에서 `title` 키워드를 Grep 해 이미 있는지 확인한다.
+
+   > 지역별로 에이전트를 **병렬 실행**할 때는, 3개가 *똑같은 정적 fetch 실패를 반복*하지 않도록 포털별 역할("API 열거 / 정적 상세 검증 / 브라우저 자동화")을 나눠 지시한다.
 4. 중복이 아니면 스키마대로 객체를 만들어 배열에 추가(지역/카테고리 정렬을 깨지 않게 적절한 위치, 또는 끝에 추가해도 무방 — 정렬은 코드가 함). 실내/실외 예외 필요 시 `VENUE_OVERRIDE`도 갱신.
 5. Edit 후 구문·파싱 검증:
    - 데이터: `node -e "global.window={}; require('C:/kid/assets/data/festivals.js'); console.log(window.KID_FESTIVALS.length)"` 로 배열이 정상 파싱되고 건수가 기대대로 늘었는지 확인.
