@@ -507,7 +507,7 @@ const stickyFilters = document.querySelector('.sticky-filters');
 filterToggleBtn.addEventListener('click', () => {
   const collapsed = !stickyFilters.classList.contains('filters-collapsed');
   stickyFilters.classList.toggle('filters-collapsed', collapsed);
-  filterToggleBtn.textContent = collapsed ? '🔽' : '🔼';
+  filterToggleBtn.textContent = collapsed ? '▼' : '▲';
   const label = collapsed ? '필터 열기' : '필터 닫기';
   filterToggleBtn.title = label;
   filterToggleBtn.setAttribute('aria-label', label);
