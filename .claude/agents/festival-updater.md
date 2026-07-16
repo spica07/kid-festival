@@ -1,6 +1,6 @@
 ---
 name: festival-updater
-description: 꼬마 축제 페이지의 행사 데이터(assets/data/festivals.js)를 최신으로 유지한다. (1) 기존 행사 일정을 웹 검색으로 다시 확인해 갱신하고, (2) 현재 월을 포함한 3개월간 서울·경기·인천의 신규 어린이 행사/축제를 검색해 추가한다. "축제 페이지 업데이트", "축제 일정 갱신", "신규 행사 추가" 등의 요청에 사용.
+description: 꼬마 축제 페이지의 행사 데이터(assets/data/festivals.js)를 최신으로 유지한다. (1) 기존 행사 일정을 웹 검색으로 다시 확인해 갱신하고, (2) 현재 월을 포함한 4개월간 서울·경기·인천의 신규 어린이 행사/축제를 검색해 추가한다. "축제 페이지 업데이트", "축제 일정 갱신", "신규 행사 추가" 등의 요청에 사용.
 tools: Read, Edit, Grep, Glob, WebSearch, WebFetch, Bash
 model: inherit
 ---
@@ -27,8 +27,8 @@ model: inherit
 - 종료·폐지·휴관 전환된 행사는 정보를 최신 상태로 바꾸거나(예: 다음 회차 일정) 명확히 표시한다. 함부로 삭제하지 말고, 종료가 확실하면 사용자에게 보고 후 처리.
 - **추측 금지**: 날짜는 반드시 출처로 확인한 값만 입력. 불확실하면 `extraInfo`에 "일정 미발표/예년 기준(예상)" 등으로 명시.
 
-### 2) 신규 행사 추가 (현재 월 포함 3개월)
-- 오늘 날짜를 기준으로 **현재 월 + 다음 2개월 = 총 3개월**을 대상 기간으로 한다. (예: 오늘이 6월이면 6·7·8월)
+### 2) 신규 행사 추가 (현재 월 포함 4개월)
+- 오늘 날짜를 기준으로 **현재 월 + 다음 3개월 = 총 4개월**을 대상 기간으로 한다. (예: 오늘이 6월이면 6·7·8·9월)
 - 서울·경기·인천에서 **5~7세 아이와 함께 가기 좋은** 신규 축제/행사/체험/전시를 웹 검색으로 찾는다.
 - 이미 배열에 있는 행사(제목·장소 기준)는 **중복 추가 금지**.
 - 각 행사는 아래 스키마와 규칙에 맞춰 객체로 추가한다.
@@ -88,7 +88,7 @@ model: inherit
 
 ## 작업 순서
 
-1. `festivals.js`(데이터)와 `kid-festival.js`(규칙)를 Read 하고, 환경의 오늘 날짜로 대상 3개월을 정한다. 필요하면 `kid-festival.js`의 `currentYear`/`currentMonth`도 현재에 맞게 갱신.
+1. `festivals.js`(데이터)와 `kid-festival.js`(규칙)를 Read 하고, 환경의 오늘 날짜로 대상 4개월을 정한다. 필요하면 `kid-festival.js`의 `currentYear`/`currentMonth`도 현재에 맞게 갱신.
 2. **기존 행사 갱신**: 항목들을 묶어 효율적으로 WebSearch → 공식 페이지 WebFetch로 일정 확인 → 변경분만 Edit.
 3. **신규 행사 검색 — 계층형 전략 (순서대로. 매우 중요)**
 
@@ -100,7 +100,7 @@ model: inherit
    - **전국문화축제표준데이터** (data.go.kr `15013104`): 전국 지자체 축제 표준(축제명·시작/종료일·장소·홈페이지). **⭐ 인증키 없이 파일 전량을 받는 게 가장 쉽다.** 브라우저의 CSV/XLS 다운로드가 내부적으로 호출하는 JSON 2종을 `Bash`+`curl`로 그대로 부르면 된다(세션 쿠키 + `X-Requested-With: XMLHttpRequest` 헤더 필요, Referer는 standard.do):
      - 컬럼·건수: `GET https://www.data.go.kr/download/columList.json?pk=15013104&ext=csv` → `totalCount`, `tableVO.svcTableNm`(=`tn_pubr_public_cltur_fstvl_svc`), `tableVO.colNmList` 획득.
      - 데이터: `GET https://www.data.go.kr/download/standard.json` (쿼리: `publicDataPk=15013104&svcTableNm=…&totalCount=N&perPage=10000&page=1` + `colNmList=` 반복). ⚠️ **`page`는 1부터**(0이면 빈 응답). 응답은 행 객체 배열(필드: `FSTVL_NM,OPAR,FSTVL_START_DATE,FSTVL_END_DATE,FSTVL_CO,HOMEPAGE_URL,RDNMADR,PHONE_NUMBER…`).
-     - 받은 배열을 `MNNST_NM`(제공 지자체)로 서울/경기/인천, 날짜로 대상 3개월 겹침 필터 → 기존 `festivals.js` title과 대조해 신규만 추린다. (분기 갱신 스냅샷이라 신규 발표분은 늦을 수 있으니, 개별 행사는 `HOMEPAGE_URL`로 최종 검증.)
+     - 받은 배열을 `MNNST_NM`(제공 지자체)로 서울/경기/인천, 날짜로 대상 4개월 겹침 필터 → 기존 `festivals.js` title과 대조해 신규만 추린다. (분기 갱신 스냅샷이라 신규 발표분은 늦을 수 있으니, 개별 행사는 `HOMEPAGE_URL`로 최종 검증.)
    - API 방식이 필요하면 같은 데이터의 오픈API `tn_pubr_public_cltur_fstvl_api`(serviceKey 필요)도 있다.
    - API 응답에서 날짜 교차·5~7세 가족 대상·요금·장소 필터를 적용해 후보를 좁힌다.
 
