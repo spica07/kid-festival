@@ -23,7 +23,8 @@ for (let j = b; j < src.length; j++) {
   else if (c === '}') { depth--; if (depth === 0) { end = j; break; } }
 }
 const objText = src.slice(b, end + 1);
-const obj = eval('(' + objText + ')');
+// eval 대신 Function 생성자 사용 — 이 스코프의 지역 변수에 접근하지 못하고 전역 스코프에서만 실행된다.
+const obj = Function('"use strict"; return (' + objText + ');')();
 
 const slug = process.argv[2];
 const key = slug + '-story.html';
