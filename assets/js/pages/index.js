@@ -28,17 +28,8 @@
   };
   const FRAME_STORAGE_PREFIX = 'kkoma:frame:';
 
-  const moreBtn = document.getElementById('moreBtn');
-  const moreDropdown = document.getElementById('moreDropdown');
-  const MORE_TARGETS = ['healing', 'guide', 'dashboard', 'roadmap', 'contest']; // 모바일 ⋯ 더보기 메뉴에 들어간 항목들
   const siteSearch = document.querySelector('.site-search');
   const EDUCATION_TARGETS = ['english', 'math', 'korean'];
-
-  function closeMore() {
-    if (!moreDropdown) return;
-    moreDropdown.hidden = true;
-    if (moreBtn) moreBtn.setAttribute('aria-expanded', 'false');
-  }
 
   function appRelativeUrl(value) {
     try {
@@ -124,9 +115,6 @@
     Object.entries(frames).forEach(([key, frame]) => {
       frame.classList.toggle('hidden', key !== target);
     });
-    // 모바일에서 ⋯ 더보기 버튼은 그 안의 항목이 선택됐을 때 활성 표시, 그리고 드롭다운 닫기
-    if (moreBtn) moreBtn.classList.toggle('active', MORE_TARGETS.includes(target));
-    closeMore();
     // A1: 마지막으로 본 탭 기억 (이 기기에만 저장)
     try { localStorage.setItem('kkoma:lastTab', target); } catch (e) {}
     // A2: 주소 해시 동기화 (공유·북마크·뒤로가기 지원) — 해시에서 호출된 경우는 갱신하지 않아 루프 방지
@@ -139,20 +127,6 @@
   buttons.forEach(btn => {
     btn.addEventListener('click', () => showTab(btn.dataset.target));
   });
-
-  // ⋯ 더보기 메뉴 열고/닫기 (모바일)
-  if (moreBtn && moreDropdown) {
-    moreBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const willOpen = moreDropdown.hidden;
-      moreDropdown.hidden = !willOpen;
-      moreBtn.setAttribute('aria-expanded', String(willOpen));
-    });
-    document.addEventListener('click', (e) => {
-      if (!moreDropdown.hidden && !e.target.closest('.more-menu')) closeMore();
-    });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMore(); });
-  }
 
   // Allow child iframes (e.g. the about page) to switch the top tab
   window.showSiteTab = function (target) { if (frames[target]) showTab(target); };
