@@ -76,6 +76,7 @@ const VENUE_OVERRIDE = {
   '모두를 위한 뮤지컬 [이상하고 아름다운 하얀숲]': '실내',
   '뮤지컬 [드라랄라 치과]': '실내',
   '2026 강서문화야행': '실내외',
+  '어린이 공연 넌버벌 [네네네]': '실내',
 };
 function venueOf(f) {
   if (VENUE_OVERRIDE[f.title]) return VENUE_OVERRIDE[f.title];
