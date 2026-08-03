@@ -245,6 +245,7 @@ function occursInMonth(f, y, m) {
 
 // 이미 종료된 행사인가? (상시/시즌 상시는 지나지 않은 것으로 본다)
 function isPastFestival(f) {
+  if (f.ended) return true;            // 데이터에 종료로 표시된 회차 (다음 회차 발표 시 플래그 제거)
   if (f._kind === 'closed') return true;
   if (f._kind === 'always' || f._kind === 'open' || !f._e) return false;
   return f._e < TODAY;
