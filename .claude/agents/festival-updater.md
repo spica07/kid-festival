@@ -9,11 +9,11 @@ model: inherit
 
 ## 다루는 파일
 
-- **행사 데이터(여기에 추가/수정)**: `C:\kid\assets\data\festivals.js` 의 `window.KID_FESTIVALS = [ ... ]` 배열 (행사 1건 = 객체 1개). **현재 약 320건 등록(2026-07 기준).** 신규 행사 객체는 이 배열에 추가하고, 기존 행사 수정도 이 파일에서 한다.
-- **렌더링 로직(보통 수정 불필요)**: `C:\kid\assets\js\pages\kid-festival.js` — 달력 계산·실내외 분류·필터를 담당.
+- **행사 데이터(여기에 추가/수정)**: `C:\blog_writing\kid-festival\assets\data\festivals.js` 의 `window.KID_FESTIVALS = [ ... ]` 배열 (행사 1건 = 객체 1개). **현재 약 430건 등록(2026-08 기준).** 신규 행사 객체는 이 배열에 추가하고, 기존 행사 수정도 이 파일에서 한다.
+- **렌더링 로직(보통 수정 불필요)**: `C:\blog_writing\kid-festival\assets\js\pages\kid-festival.js` — 달력 계산·실내외 분류·필터를 담당.
   - **실내/실외 예외**: 이 파일의 `const VENUE_OVERRIDE = { ... }` 맵 (예외 추가 시 여기 수정)
   - **현재 기준 월/년**: 이 파일의 `let currentYear` / `let currentMonth`
-- **페이지(HTML)**: `C:\kid\pages\family\kid-festival.html` (보통 수정 불필요)
+- **페이지(HTML)**: `C:\blog_writing\kid-festival\pages\family\kid-festival.html` (보통 수정 불필요)
 
 > ⚠️ 데이터는 `festivals.js`, 동작 규칙(VENUE_OVERRIDE·currentYear)은 `kid-festival.js`로 **파일이 분리돼 있다.** 헷갈리지 말 것.
 
@@ -119,8 +119,8 @@ model: inherit
    > 지역별로 에이전트를 **병렬 실행**할 때는, 3개가 *똑같은 정적 fetch 실패를 반복*하지 않도록 포털별 역할("API 열거 / 정적 상세 검증 / 브라우저 자동화")을 나눠 지시한다.
 4. 중복이 아니면 스키마대로 객체를 만들어 배열에 추가(지역/카테고리 정렬을 깨지 않게 적절한 위치, 또는 끝에 추가해도 무방 — 정렬은 코드가 함). 실내/실외 예외 필요 시 `VENUE_OVERRIDE`도 갱신.
 5. Edit 후 구문·파싱 검증:
-   - 데이터: `node -e "global.window={}; require('C:/kid/assets/data/festivals.js'); console.log(window.KID_FESTIVALS.length)"` 로 배열이 정상 파싱되고 건수가 기대대로 늘었는지 확인.
-   - 렌더링 파일을 수정했다면 `node --check C:\kid\assets\js\pages\kid-festival.js` 도 통과 확인.
+   - 데이터: `node -e "global.window={}; require('C:/blog_writing/kid-festival/assets/data/festivals.js'); console.log(window.KID_FESTIVALS.length)"` 로 배열이 정상 파싱되고 건수가 기대대로 늘었는지 확인.
+   - 렌더링 파일을 수정했다면 `node --check C:\blog_writing\kid-festival\assets\js\pages\kid-festival.js` 도 통과 확인.
 6. 결과를 보고한다: **갱신한 항목 / 추가한 신규 항목(제목·기간·출처 URL) / 확인 못 한 불확실 항목** 을 표로 정리.
 
 ## 원칙

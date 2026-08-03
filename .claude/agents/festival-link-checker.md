@@ -9,12 +9,12 @@ model: inherit
 
 ## 다루는 파일
 
-- **행사 데이터(점검 대상)**: `C:\kid\assets\data\festivals.js` 의 `window.KID_FESTIVALS` 배열 (행사 1건 = 객체 1줄, 약 320건). 점검 필드:
+- **행사 데이터(점검 대상)**: `C:\blog_writing\kid-festival\assets\data\festivals.js` 의 `window.KID_FESTIVALS` 배열 (행사 1건 = 객체 1줄, 약 430건). 점검 필드:
   - `web` — 홈페이지 버튼 링크
   - `detail.reservationUrl` — 예약 버튼 링크
   - `detail.sourceUrl` — 출처 링크 (UI 미노출이지만 데이터 신뢰성 차원에서 점검)
   - `title` / `location` / `category` — 길찾기 검색어 계산에 사용
-- **길찾기 규칙(읽기 전용)**: `C:\kid\assets\js\pages\kid-festival.js` 와 `C:\kid\assets\js\pages\festival-detail.js` 상단의 `mapQuery`/`mapUrl` — 두 파일이 동일 규칙을 공유한다. 점검 전 반드시 Read 해서 규칙이 아래 설명과 달라지지 않았는지 확인할 것.
+- **길찾기 규칙(읽기 전용)**: `C:\blog_writing\kid-festival\assets\js\pages\kid-festival.js` 와 `C:\blog_writing\kid-festival\assets\js\pages\festival-detail.js` 상단의 `mapQuery`/`mapUrl` — 두 파일이 동일 규칙을 공유한다. 점검 전 반드시 Read 해서 규칙이 아래 설명과 달라지지 않았는지 확인할 것.
 
 ## 길찾기 검색어 규칙 (코드와 동일하게 재현)
 
@@ -37,7 +37,7 @@ const NAME_SEARCH_CATEGORIES = ['museum', 'library', 'themepark'];
 Node로 데이터를 파싱해 점검 목록을 만든다 (Grep로 긁지 말 것 — 한 줄이 길어서 누락되기 쉽다):
 
 ```bash
-node -e "global.window={}; require('C:/kid/assets/data/festivals.js');
+node -e "global.window={}; require('C:/blog_writing/kid-festival/assets/data/festivals.js');
 const rows = window.KID_FESTIVALS.map((f,i)=>({i, title:f.title, web:f.web,
   resv:f.detail&&f.detail.reservationUrl, src:f.detail&&f.detail.sourceUrl,
   loc:f.location, cat:(f.category||[]).join(',')}));
@@ -108,7 +108,7 @@ curl -s -L --max-time 20 "https://pcmap.place.naver.com/place/list?query=<인코
 - 기본은 **점검·보고**다. 수정은 다음만 자율 진행: ❌ 깨진 `web`/`reservationUrl`을 **공식 출처로 확정한** 대체 URL로 교체, ❌ 길찾기 0건인 행사에 검증된 `mapName` 추가(표시용 `location`/`title`은 건드리지 않는다).
 - 호출자가 "점검만, 수정 금지(check-only)"를 지시하면 **절대 Edit 하지 말고** 결과만 반환한다.
 - 행사 삭제, `mapQuery` 로직 변경, 대량 일괄 치환은 금지 — 보고로만.
-- Edit 했다면 반드시 파싱 검증: `node -e "global.window={}; require('C:/kid/assets/data/festivals.js'); console.log(window.KID_FESTIVALS.length)"`
+- Edit 했다면 반드시 파싱 검증: `node -e "global.window={}; require('C:/blog_writing/kid-festival/assets/data/festivals.js'); console.log(window.KID_FESTIVALS.length)"`
 
 ## 보고 형식
 

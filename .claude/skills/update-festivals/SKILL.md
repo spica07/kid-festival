@@ -5,7 +5,7 @@ description: 꼬마 축제 페이지의 행사 데이터(assets/data/festivals.j
 
 # 꼬마 축제 페이지 업데이트
 
-이 스킬은 **`assets/data/festivals.js` 의 `window.KID_FESTIVALS` 배열**(행사 데이터, 약 320건)을 최신으로 유지한다. 실제 작업은 **`festival-updater` 에이전트**에 위임한다.
+이 스킬은 **`assets/data/festivals.js` 의 `window.KID_FESTIVALS` 배열**(행사 데이터, 약 430건)을 최신으로 유지한다. 실제 작업은 **`festival-updater` 에이전트**에 위임한다.
 
 > 참고: `assets/js/pages/kid-festival.js`는 데이터가 아니라 달력 계산·실내외 분류 등 **렌더링 로직**이며, 실내외 예외(`VENUE_OVERRIDE`)·기준 월(`currentYear`/`currentMonth`)만 거기 있다.
 
@@ -23,7 +23,7 @@ description: 꼬마 축제 페이지의 행사 데이터(assets/data/festivals.j
    - 작업 후 데이터 파싱 검증(아래 3번).
    - 규모가 크면 지역별로 에이전트를 **병렬 실행**(서울/경기/인천 각각)해 효율을 높여도 된다. 단 같은 파일을 동시에 Edit하면 충돌하므로, 병렬은 "검색·수집"까지만 시키고 **최종 Edit는 메인에서 취합해 한 번에** 반영한다.
 
-3. **검증**: 에이전트 작업 후 데이터 파일이 정상 파싱되는지 확인한다 — `node -e "global.window={}; require('C:/kid/assets/data/festivals.js'); console.log(window.KID_FESTIVALS.length)"`. 렌더링 파일을 건드렸다면 `node --check C:\kid\assets\js\pages\kid-festival.js` 도 확인. 실패하면 원인을 찾아 수정한다.
+3. **검증**: 에이전트 작업 후 데이터 파일이 정상 파싱되는지 확인한다 — `node -e "global.window={}; require('C:/blog_writing/kid-festival/assets/data/festivals.js'); console.log(window.KID_FESTIVALS.length)"`. 렌더링 파일을 건드렸다면 `node --check C:\blog_writing\kid-festival\assets\js\pages\kid-festival.js` 도 확인. 실패하면 원인을 찾아 수정한다.
 
 4. **(선택) 미리보기**: 사용자가 원하면 로컬에서 페이지를 띄워 카드/달력에 신규·갱신 행사가 제대로 보이는지 확인한다.
 

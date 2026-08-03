@@ -15,7 +15,7 @@ model: inherit
 - 음성: 한국어 `ko-KR-SunHiNeural`, 영어 `en-US-AvaNeural`, 속도 −6%.
 - 한국어/영어는 **절대 한 영상에 섞지 않음** — 파일을 분리(`<slug>_ko.mp4`, `<slug>_en.mp4`).
 
-## 파이프라인 (모든 스크립트는 `C:\kid\video\` 에 있음)
+## 파이프라인 (모든 스크립트는 `C:\blog_writing\kid-festival\video\` 에 있음)
 1. **스펙 추출**: `py -3 video\make_spec.py <slug>`
    - 한국어: `pages/family/<slug>-story.html` 의 `article.story-spread`(h2/본문 p/`p.line`)
    - 영어: `assets/js/pages/story-reader.js` 의 `ENGLISH_STORIES`(→ `video/extract_en.js` 가 node로 추출)

@@ -5,7 +5,7 @@ description: 꼬마 축제 페이지 행사들의 홈페이지 URL이 살아 있
 
 # 꼬마 축제 링크·길찾기 점검
 
-이 스킬은 **`assets/data/festivals.js`의 `window.KID_FESTIVALS` 배열**(약 320건)의 외부 링크와 네이버 길찾기 동작을 점검한다. 실제 작업은 **`festival-link-checker` 에이전트**에 위임한다.
+이 스킬은 **`assets/data/festivals.js`의 `window.KID_FESTIVALS` 배열**(약 430건)의 외부 링크와 네이버 길찾기 동작을 점검한다. 실제 작업은 **`festival-link-checker` 에이전트**에 위임한다.
 
 점검 대상:
 - **홈페이지 URL**: 각 행사의 `web` · `detail.reservationUrl` · `detail.sourceUrl` (도메인+경로 기준 중복 제거 후 점검)
@@ -23,7 +23,7 @@ description: 꼬마 축제 페이지 행사들의 홈페이지 URL이 살아 있
 
 3. **수정 반영**(있는 경우): 깨진 URL의 공식 대체 URL 교체, 길찾기 실패 행사에 검증된 `mapName` 추가(표시용 `location`/`title`은 유지)를 반영한다. 행사 삭제나 `mapQuery` 로직 변경은 **사용자 확인 후**에만.
 
-4. **검증**: 데이터 파일을 수정했다면 정상 파싱 확인 — `node -e "global.window={}; require('C:/kid/assets/data/festivals.js'); console.log(window.KID_FESTIVALS.length)"` (건수가 변하지 않아야 정상). 렌더링 파일을 건드렸다면 `node --check` 도 확인.
+4. **검증**: 데이터 파일을 수정했다면 정상 파싱 확인 — `node -e "global.window={}; require('C:/blog_writing/kid-festival/assets/data/festivals.js'); console.log(window.KID_FESTIVALS.length)"` (건수가 변하지 않아야 정상). 렌더링 파일을 건드렸다면 `node --check` 도 확인.
 
 5. **보고**: 다음을 표로 정리해 사용자에게 보고한다.
    - ❌ **깨진 홈페이지 URL** (행사 · 기존 URL · 증상 · 대체 URL 또는 "대체 불가")

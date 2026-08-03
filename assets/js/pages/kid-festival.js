@@ -22,6 +22,9 @@ const festivals = Array.isArray(window.KID_FESTIVALS) ? window.KID_FESTIVALS : [
 // 카테고리 기본값: 박물관·도서관 = 실내, 그 외(자연·테마파크·축제·마라톤) = 실외
 // 기본값과 다른 경우만 제목으로 예외 지정
 const VENUE_OVERRIDE = {
+  '명품 어린이 연극 [강아지똥]': '실내',
+  '왕가의 산책 (인천공항)': '실내',
+  '광명동굴빛축제': '실내외',
   '서울야외도서관': '실외',
   '2026 책읽는 한강공원 (가을)': '실외',
   '중랑 북페스티벌': '실외',
@@ -99,7 +102,7 @@ let currentCategory = 'all';
 let currentPrice = 'all';
 let currentVenue = 'all';
 let currentYear = 2026;
-let currentMonth = 7; // 1~12
+let currentMonth = 8; // 1~12
 let hidePast = true;  // 기본: 지난 날짜/종료된 행사 숨김
 let hideAlways = false; // 기본: 상시성 행사도 모두 표시
 let favoriteOnly = false; // 기본: 모든 카드 표시

@@ -24,5 +24,5 @@ description: 사이트의 기존 그림동화(삽화 10장 완비)를 유튜브�
 
 ## 참고
 - 도구·경로·트러블슈팅은 `.claude/agents/story-video-maker.md` 에 상세히 있음.
-- 스크립트 위치: `C:\kid\video\` (make_spec.py, build_story_video.py, build_all.py, gen_assets.py).
+- 스크립트 위치: `C:\blog_writing\kid-festival\video\` (make_spec.py, build_story_video.py, build_all.py, gen_assets.py).
 - 영상 파일은 용량이 커서 git 에 커밋하지 않는다(`video/out/` 은 .gitignore).
