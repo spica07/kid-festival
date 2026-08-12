@@ -85,6 +85,9 @@ const VENUE_OVERRIDE = {
   '뮤지컬 [드라랄라 치과]': '실내',
   '2026 강서문화야행': '실내외',
   '어린이 공연 넌버벌 [네네네]': '실내',
+  '서울생활사박물관 문화가 흐르는 박물관': '실내외',
+  '2026 서울 어린이 꿈 축제': '실내',
+  '2026 DDP 가을축제': '실내외',
 };
 function venueOf(f) {
   if (VENUE_OVERRIDE[f.title]) return VENUE_OVERRIDE[f.title];

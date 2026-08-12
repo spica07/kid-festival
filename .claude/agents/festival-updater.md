@@ -9,7 +9,7 @@ model: inherit
 
 ## 다루는 파일
 
-- **행사 데이터(여기에 추가/수정)**: `C:\blog_writing\kid-festival\assets\data\festivals.js` 의 `window.KID_FESTIVALS = [ ... ]` 배열 (행사 1건 = 객체 1개). **현재 약 430건 등록(2026-08 기준).** 신규 행사 객체는 이 배열에 추가하고, 기존 행사 수정도 이 파일에서 한다.
+- **행사 데이터(여기에 추가/수정)**: `C:\blog_writing\kid-festival\assets\data\festivals.js` 의 `window.KID_FESTIVALS = [ ... ]` 배열 (행사 1건 = 객체 1개). **현재 484건 등록(2026-08-12 기준).** 신규 행사 객체는 이 배열에 추가하고, 기존 행사 수정도 이 파일에서 한다.
 - **렌더링 로직(보통 수정 불필요)**: `C:\blog_writing\kid-festival\assets\js\pages\kid-festival.js` — 달력 계산·실내외 분류·필터를 담당.
   - **실내/실외 예외**: 이 파일의 `const VENUE_OVERRIDE = { ... }` 맵 (예외 추가 시 여기 수정)
   - **현재 기준 월/년**: 이 파일의 `let currentYear` / `let currentMonth`
@@ -130,7 +130,17 @@ node -e "global.window={};require('./assets/data/festivals.js'); const JP=['🏯
    **② (검증) 후보의 공식/상세 페이지를 WebFetch로 확정.** kfes·서울문화포털은 *목록은 JS라도 상세(`fstvlDetail.do?fstvlCntntsId=…` 등)는 정적*이니, ①에서 얻은 ID/이름으로 상세를 열어 일정·장소·요금·연령·링크를 확정한다. 펀서울은 `festivalView.do?festacode=…` 상세.
 
    **③ (보완) 정적으로 되는 목록은 직접 순회.**
-   - **펀서울**: `https://festival.seoul.go.kr/` — 정적으로 월별 목록이 나온다. 끝까지 훑어 후보를 빠짐없이 뽑는다.
+   - **펀서울**: 정적으로 열리지만 **메인 페이지를 훑으면 안 된다.** 메인(`festival.seoul.go.kr/`)은 큐레이션된 슬라이더라 68건만 나오고, `search/list.do`를 파라미터 없이 부르면 `lastIndex` 기본값 때문에 **5건**만 나온다. 실제 전량은 **기간 필터 + `lastIndex`를 크게 준 한 번의 호출**로 받는다:
+
+     ```bash
+     curl -skL -A "Mozilla/5.0" \
+       "https://festival.seoul.go.kr/festival/search/list.do?searchStrtDate=2026-08-01&searchEndDate=2026-11-30&lastIndex=200" \
+       -o funseoul.html
+     ```
+
+     `lastIndex`는 누적 개수(무한스크롤)라 페이지 번호가 아니다. 넉넉히(200~500) 주고, **결과 건수가 더 안 늘어나면 전량을 받은 것**이다(같은 기간에 `lastIndex=200`과 `500`이 같은 건수면 포화). 카드 파싱은 `festivalView.do?festacode=(\d+)"[^>]*class="card-inner"` 로 잡고 그 안의 `.title` / `.text.date` / `.text.location`을 꺼낸다. 2026-08~11 기준 이렇게 하면 **154건**이 나온다(메인만 보면 86건을 놓치고, 놓치는 쪽이 주로 자치구 동네 축제라 정작 아이와 갈 만한 행사가 걸러진다).
+
+     날짜 앞에 `(예정)`이 붙은 항목은 지자체가 아직 확정 공지를 안 한 것이다. 버리지 말고 추가하되 `extraInfo`에 "펀서울 (예정) 표기"를, `detail.needsRecheck`에 `true`를 넣는다. 상세 본문(`festivalView.do?festacode=…`)에 **작년 회차 일정이 그대로 적혀 있는 경우가 많으니** 목록의 기간과 본문 일정이 다르면 본문 쪽을 신뢰하고 그 사실을 `hoursNote`에 남긴다. 본문 기간이 목록과 크게 어긋나 개최일을 못 믿겠으면 `hideCalendar:true`로 달력에서 뺀다.
    - **한강공원·서울시설공단**: 여름 물놀이장·물빛광장 등 시즌 시설.
 
    **④ (잔여분) 브라우저 자동화.** API로도 못 잡은 것은 **Claude in Chrome**(`mcp__claude-in-chrome__*`)으로 kfes·경기관광포털 등의 목록을 실제 렌더한 뒤 카드/네트워크 응답을 추출한다.
