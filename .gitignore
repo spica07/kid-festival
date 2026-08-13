@@ -33,3 +33,5 @@ assets/temp/
 # 스크립트(video/*.py, *.js)와 스펙(video/specs/*.json)은 소스로 추적한다.
 video/out/
 video/build/
+
+.impeccable/
