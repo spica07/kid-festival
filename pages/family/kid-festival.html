@@ -19,54 +19,83 @@
 <div class="container">
 
   <header>
-    <div class="month-nav header-month-nav">
-      <button class="month-nav-btn" id="prevMonth" type="button" aria-label="이전 달">‹</button>
-      <select class="month-select" id="yearSelect" aria-label="년도 선택"></select>
-      <select class="month-select" id="monthSelect" aria-label="월 선택"></select>
-      <button class="month-nav-btn" id="nextMonth" type="button" aria-label="다음 달">›</button>
+    <div class="header-row">
+      <h1>우리 동네 꼬마 축제</h1>
+      <div class="month-nav header-month-nav">
+        <button class="month-nav-btn" id="prevMonth" type="button" aria-label="이전 달">‹</button>
+        <select class="month-select" id="yearSelect" aria-label="년도 선택"></select>
+        <select class="month-select" id="monthSelect" aria-label="월 선택"></select>
+        <button class="month-nav-btn" id="nextMonth" type="button" aria-label="다음 달">›</button>
+      </div>
     </div>
-    <h1>우리 동네 꼬마 축제</h1>
-    <div class="top-notice">💝 정보는 변동될 수 있어요 · 방문 전 공식 홈페이지 확인!</div>
   </header>
 
   <div class="sticky-filters filters-collapsed">
     <div class="filter-toggle-row">
       <div class="filter-quick-actions" aria-label="보기 옵션">
-        <button class="filter-collapse-btn" id="filterToggleBtn" type="button" title="필터 열기" aria-label="필터 열기" aria-expanded="false">▼</button>
+        <button class="filter-collapse-btn" id="filterToggleBtn" type="button" title="필터 열기" aria-label="필터 열기" aria-expanded="false" aria-controls="filterPanel">필터 ▾</button>
         <button class="view-toggle-btn second-toggle quick-when-btn" id="todayBtn" data-quick="today" type="button" title="오늘 갈 만한 곳" aria-label="오늘 갈 만한 곳">오늘</button>
         <button class="view-toggle-btn second-toggle quick-when-btn" id="weekendBtn" data-quick="weekend" type="button" title="이번 주말 갈 만한 곳" aria-label="이번 주말 갈 만한 곳">이번주말</button>
-        <button class="view-toggle-btn" id="viewToggleBtn" type="button" title="달력 보기로 전환" aria-label="달력 보기로 전환">달력보기</button>
         <button class="view-toggle-btn second-toggle" id="favoriteOnlyBtn" type="button" title="찜한 카드만 보기" aria-label="찜한 카드만 보기">찜한카드</button>
-        <button class="view-toggle-btn second-toggle" id="hideAlwaysBtn" type="button" title="상시 행사 숨김" aria-label="상시 행사 숨김">상시행사</button>
-        <button class="view-toggle-btn second-toggle active" id="hidePastBtn" type="button" title="지난 날짜 숨김" aria-label="지난 날짜 숨김">지난날짜</button>
+        <button class="view-toggle-btn" id="viewToggleBtn" type="button" title="달력 보기로 전환" aria-label="달력 보기로 전환">달력보기</button>
       </div>
     </div>
-    <div class="region-filters">
-      <button class="region-btn active" data-region="all">전체</button>
-      <button class="region-btn" data-region="seoul">서울</button>
-      <button class="region-btn" data-region="gyeonggi">경기</button>
-      <button class="region-btn" data-region="incheon">인천</button>
+
+    <!-- 펼침 패널: 축(지역·종류·요금·장소·보기)마다 라벨을 달아 어떤 기준인지 읽지 않고도 알게 한다 -->
+    <div class="filter-panel" id="filterPanel">
+      <div class="filter-group">
+        <span class="filter-group-label" id="filterLabelRegion">지역</span>
+        <div class="filter-chips region-filters" role="group" aria-labelledby="filterLabelRegion">
+          <button class="region-btn active" data-region="all">전체</button>
+          <button class="region-btn" data-region="seoul">서울</button>
+          <button class="region-btn" data-region="gyeonggi">경기</button>
+          <button class="region-btn" data-region="incheon">인천</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-group-label" id="filterLabelCategory">종류</span>
+        <div class="filter-chips filters" role="group" aria-labelledby="filterLabelCategory">
+          <button class="filter-btn active" data-filter="all">전체</button>
+          <button class="filter-btn" data-filter="festival">축제</button>
+          <button class="filter-btn" data-filter="museum">박물관</button>
+          <button class="filter-btn" data-filter="themepark">테마파크</button>
+          <button class="filter-btn" data-filter="nature">자연</button>
+          <button class="filter-btn" data-filter="library">도서관</button>
+          <button class="filter-btn" data-filter="marathon">마라톤</button>
+          <button class="filter-btn" data-filter="galaxy">은하수</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-group-label" id="filterLabelPrice">요금</span>
+        <div class="filter-chips price-filters" role="group" aria-labelledby="filterLabelPrice">
+          <button class="price-btn active" data-price="all">전체</button>
+          <button class="price-btn" data-price="free">무료</button>
+          <button class="price-btn" data-price="paid">유료</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-group-label" id="filterLabelVenue">장소</span>
+        <div class="filter-chips venue-filters" role="group" aria-labelledby="filterLabelVenue">
+          <button class="venue-btn active" data-venue="all">전체</button>
+          <button class="venue-btn" data-venue="실내">실내</button>
+          <button class="venue-btn" data-venue="실외">실외</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-group-label" id="filterLabelOption">보기</span>
+        <div class="filter-chips option-filters" role="group" aria-labelledby="filterLabelOption">
+          <button class="view-toggle-btn second-toggle" id="hideAlwaysBtn" type="button" title="상시 행사 숨김" aria-label="상시 행사 숨김">상시 행사 숨김</button>
+          <button class="view-toggle-btn second-toggle active" id="hidePastBtn" type="button" title="지난 날짜 숨김" aria-label="지난 날짜 숨김">지난 날짜 숨김</button>
+        </div>
+      </div>
     </div>
 
-    <div class="filters">
-      <button class="filter-btn active" data-filter="all">전체</button>
-      <button class="filter-btn" data-filter="festival">축제</button>
-      <button class="filter-btn" data-filter="museum">박물관</button>
-      <button class="filter-btn" data-filter="themepark">테마파크</button>
-      <button class="filter-btn" data-filter="nature">자연</button>
-      <button class="filter-btn" data-filter="library">도서관</button>
-      <button class="filter-btn" data-filter="marathon">마라톤</button>
-      <button class="filter-btn" data-filter="galaxy">은하수</button>
-    </div>
-    <div class="filters price-venue-filters">
-      <button class="price-btn active" data-price="all">전체</button>
-      <button class="price-btn" data-price="free">무료</button>
-      <button class="price-btn" data-price="paid">유료</button>
-      <span class="filter-divider" aria-hidden="true"></span>
-      <button class="venue-btn active" data-venue="all">전체</button>
-      <button class="venue-btn" data-venue="실내">실내</button>
-      <button class="venue-btn" data-venue="실외">실외</button>
-    </div>
+    <!-- 요약 줄: 패널을 접어도 무엇이 걸려 있는지 남는다 -->
+    <div class="filter-summary" id="filterSummary"></div>
   </div>
 
   <div class="festival-grid" id="festivalGrid"></div>
@@ -89,12 +118,15 @@
     </p>
   </div>
 
-  <div class="hangang-section">
-    <h2 class="hangang-title">🏞️ 한강공원 공원별 행사 안내</h2>
+  <details class="hangang-section">
+    <summary class="hangang-summary">
+      <span class="hangang-title">🏞️ 한강공원 공원별 행사 안내</span>
+      <span class="hangang-summary-hint">공원별 연간 일정 펼쳐보기</span>
+    </summary>
     <p class="hangang-subtitle">공원별 연간 행사 일정이에요. 선택한 달에 열리는 행사는 파란색으로 강조돼요! · 👶 = 가족·어린이 추천</p>
     <p style="text-align:center; margin-bottom:14px;"><a href="https://hangang.seoul.go.kr/www/bbsPost/17/644/detail.do?mid=604" target="_blank" rel="noopener" style="color:#4A6FE8; font-weight:bold; font-size:0.85rem;">📋 서울시 한강공원 공원별 행사 안내 원문 보기 →</a></p>
     <div class="hangang-grid" id="hangangParks"></div>
-  </div>
+  </details>
 
   <div class="modal-overlay" id="modalOverlay">
     <div class="modal" id="modalContent">

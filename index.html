@@ -32,13 +32,14 @@
     <button class="tab-btn" type="button" data-target="contest">공모전</button>
     -->
   </div>
+  <button class="tab-search-btn" id="siteSearchToggle" type="button" title="검색 열기" aria-label="검색 열기" aria-expanded="false" aria-controls="siteSearchPanel">🔍</button>
   <button class="tab-btn tab-icon" type="button" data-target="english" title="캐릭터와 함께하는 30일 영어" aria-label="영어 놀이">🔤</button>
   <button class="tab-btn tab-icon" type="button" data-target="math" title="사고력 수학" aria-label="수학">🔢</button>
   <button class="tab-btn tab-icon" type="button" data-target="korean" title="한글 글씨·문해력" aria-label="한글">가</button>
   <button class="tab-btn tab-icon" type="button" data-target="about" title="사이트 소개" aria-label="사이트 소개">ℹ️</button>
 </nav>
 
-<div class="site-search" role="search">
+<div class="site-search is-closed" id="siteSearchPanel" role="search">
   <label class="search-label" for="siteSearchInput">검색</label>
   <input id="siteSearchInput" type="search" autocomplete="off" placeholder="행사, 코스, 동화 검색">
   <button id="siteSearchClear" class="search-clear" type="button" hidden>지우기</button>
@@ -61,7 +62,7 @@
 </div>
 
 <div class="site-notice" role="note">
-  © 2026 우리 동네 꼬마 놀이터 · 무단 복제를 금합니다. 본 사이트는 정보 공유 목적으로 제공됩니다. 상표·행사명·장소명의 권리는 해당 권리자에게 있습니다.
+  © 2026 우리 동네 꼬마 놀이터 · 무단 복제를 금합니다.
 </div>
 
 <script src="assets/data/festivals.js"></script>

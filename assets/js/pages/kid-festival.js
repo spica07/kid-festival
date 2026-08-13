@@ -310,6 +310,36 @@ function occurDays(f, y, m) {
   return out;
 }
 
+// ----- 카드 날짜 한 줄 -----
+// 데이터의 endDate 칸은 종료일일 때도 있고 안내문일 때도 있다.
+// ('당일 행사' 73건 · '월요일 휴관' 33건 · '연중 개방' 21건 · '기상·수량 확인' 13건 …)
+// 시작·종료가 모두 날짜인 행사만 한 줄 범위로 합치고, 안내문은 아래 줄에 그대로 남긴다.
+// 예전에는 어느 쪽이든 '시작'·'종료' 두 줄을 차지해 카드 절반이 날짜 상자였다.
+const DATE_KIND_LABEL = { range: '기간', single: '날짜', always: '운영', open: '운영' };
+function dateParts(f) {
+  if (f._kind === 'range' && f._s && f._e) {
+    // 같은 해면 종료 쪽 연도는 되풀이라 뗀다: 2026.05.01 (금) ~ 06.21 (일)
+    const end = f._s.getFullYear() === f._e.getFullYear()
+      ? String(f.endDate).replace(/^\d{4}\./, '')
+      : String(f.endDate);
+    return { label: '기간', main: `${f.startDate} ~ ${end}`, note: '' };
+  }
+  return {
+    label: DATE_KIND_LABEL[f._kind] || '운영',
+    main: String(f.startDate ?? ''),
+    note: String(f.endDate ?? ''),
+  };
+}
+
+function dateBoxHtml(f) {
+  const d = dateParts(f);
+  return `<div class="date-box">
+          <div class="date-row"><span class="date-label">${esc(d.label)}</span><span>📅 ${esc(d.main)}</span></div>
+          ${d.note ? `<div class="date-note">${esc(d.note)}</div>` : ''}
+          ${f.extraInfo ? `<div class="date-extra">⏰ ${esc(f.extraInfo)}</div>` : ''}
+        </div>`;
+}
+
 // ----- 카드 정렬: 지역 → 카테고리(축제 먼저) → 가격(무료 먼저) → 가나다 -----
 const REGION_ORDER = ['seoul', 'gyeonggi', 'incheon'];
 const CATEGORY_ORDER = ['festival', 'museum', 'themepark', 'nature', 'library', 'marathon', 'galaxy'];
@@ -410,6 +440,89 @@ function setupFestivalCarousel() {
   goTo(0);
 }
 
+// ----- 적용된 필터 요약 -----
+// 필터 패널을 접으면 무엇이 걸려 있는지 화면에서 사라졌다. 걸린 조건만 칩으로 남기고,
+// 칩을 누르면 그 조건 하나만 풀린다. 오른쪽 끝에는 지금 몇 곳이 걸러졌는지 적는다.
+const REGION_LABELS = { seoul: '서울', gyeonggi: '경기', incheon: '인천' };
+const CATEGORY_LABELS = {
+  festival: '축제', museum: '박물관', themepark: '테마파크',
+  nature: '자연', library: '도서관', marathon: '마라톤', galaxy: '은하수',
+};
+const PRICE_LABELS = { free: '무료', paid: '유료' };
+const QUICK_LABELS = { today: '오늘', weekend: '이번 주말' };
+
+function activeFilterChips() {
+  const chips = [];
+  if (currentQuick !== 'all') chips.push({ key: 'quick', label: QUICK_LABELS[currentQuick] || currentQuick });
+  if (currentRegion !== 'all') chips.push({ key: 'region', label: REGION_LABELS[currentRegion] || currentRegion });
+  if (currentCategory !== 'all') chips.push({ key: 'category', label: CATEGORY_LABELS[currentCategory] || currentCategory });
+  if (currentPrice !== 'all') chips.push({ key: 'price', label: PRICE_LABELS[currentPrice] || currentPrice });
+  if (currentVenue !== 'all') chips.push({ key: 'venue', label: currentVenue });
+  if (favoriteOnly) chips.push({ key: 'favorite', label: '찜한 카드' });
+  if (hideAlways) chips.push({ key: 'hideAlways', label: '상시 행사 숨김' });
+  // 지난 날짜 숨김은 기본값이라 켜져 있을 때는 알릴 것이 없다. 끈 경우만 알린다.
+  if (!hidePast) chips.push({ key: 'hidePast', label: '지난 날짜 포함' });
+  return chips;
+}
+
+function syncChipGroup(selector, dataKey, value) {
+  document.querySelectorAll(selector).forEach(b => b.classList.toggle('active', b.dataset[dataKey] === value));
+}
+
+function clearFilter(key) {
+  switch (key) {
+    case 'quick':
+      currentQuick = 'all';
+      syncQuickButtons();
+      break;
+    case 'region':
+      currentRegion = 'all';
+      syncChipGroup('.region-btn', 'region', 'all');
+      break;
+    case 'category':
+      currentCategory = 'all';
+      syncChipGroup('.filter-btn', 'filter', 'all');
+      break;
+    case 'price':
+      currentPrice = 'all';
+      syncChipGroup('.price-btn', 'price', 'all');
+      break;
+    case 'venue':
+      currentVenue = 'all';
+      syncChipGroup('.venue-btn', 'venue', 'all');
+      break;
+    case 'favorite':
+      favoriteOnly = false;
+      syncFavoriteOnlyButton();
+      break;
+    case 'hideAlways':
+      hideAlways = false;
+      document.getElementById('hideAlwaysBtn').classList.remove('active');
+      break;
+    case 'hidePast':
+      hidePast = true;
+      document.getElementById('hidePastBtn').classList.add('active');
+      break;
+    default:
+      return;
+  }
+  updateView();
+}
+
+function renderFilterSummary() {
+  const box = document.getElementById('filterSummary');
+  if (!box) return;
+  const chips = activeFilterChips();
+  // 걸린 조건이 없으면 줄 자체를 비워 자리를 차지하지 않게 한다
+  box.classList.toggle('is-empty', chips.length === 0);
+  box.innerHTML = chips.map(c =>
+    `<button class="summary-chip" type="button" data-clear="${esc(c.key)}" aria-label="${esc(c.label)} 조건 해제">${esc(c.label)}<span class="chip-x" aria-hidden="true">✕</span></button>`
+  ).join('');
+  box.querySelectorAll('.summary-chip').forEach(btn => {
+    btn.addEventListener('click', () => clearFilter(btn.dataset.clear));
+  });
+}
+
 function renderFestivals() {
   const grid = document.getElementById('festivalGrid');
   let filtered = festivals;
@@ -428,6 +541,7 @@ function renderFestivals() {
   if (hideAlways) filtered = filtered.filter(f => !isAlwaysLike(f));
   if (favoriteOnly) filtered = filtered.filter(f => isFavorite(f));
   filtered = filtered.slice().sort(compareFestivals);
+  renderFilterSummary();
 
   if (filtered.length === 0) {
     let title = '조건에 맞는 행사가 없어요!';
@@ -460,11 +574,7 @@ function renderFestivals() {
           <span class="region-badge ${esc(f.region)}">${esc(f.regionName)}</span>
         </div>
         <h3 class="card-title">${esc(f.title)}</h3>
-        <div class="date-box">
-          <div class="date-row"><span class="date-label">시작</span><span>📅 ${esc(f.startDate)}</span></div>
-          <div class="date-row"><span class="date-label end">종료</span><span>🏁 ${esc(f.endDate)}</span></div>
-          ${f.extraInfo ? `<div class="date-extra">⏰ ${esc(f.extraInfo)}</div>` : ''}
-        </div>
+        ${dateBoxHtml(f)}
         <div class="card-info">📍 ${esc(f.location)}</div>
         <div class="card-tip">${esc(f.tip)}</div>
         <div class="card-links">
@@ -521,7 +631,8 @@ const stickyFilters = document.querySelector('.sticky-filters');
 filterToggleBtn.addEventListener('click', () => {
   const collapsed = !stickyFilters.classList.contains('filters-collapsed');
   stickyFilters.classList.toggle('filters-collapsed', collapsed);
-  filterToggleBtn.textContent = collapsed ? '▼' : '▲';
+  filterToggleBtn.textContent = collapsed ? '필터 ▾' : '필터 ▴';
+  filterToggleBtn.classList.toggle('is-open', !collapsed);
   const label = collapsed ? '필터 열기' : '필터 닫기';
   filterToggleBtn.title = label;
   filterToggleBtn.setAttribute('aria-label', label);
@@ -720,11 +831,7 @@ function showModal(f) {
         <span class="region-badge ${esc(f.region)}">${esc(f.regionName)}</span>
       </div>
       <h3 class="card-title" style="font-size: 1.6rem; margin-bottom: 15px;">${esc(f.title)}</h3>
-      <div class="date-box">
-        <div class="date-row"><span class="date-label">시작</span><span>📅 ${esc(f.startDate)}</span></div>
-        <div class="date-row"><span class="date-label end">종료</span><span>🏁 ${esc(f.endDate)}</span></div>
-        ${f.extraInfo ? `<div class="date-extra">⏰ ${esc(f.extraInfo)}</div>` : ''}
-      </div>
+      ${dateBoxHtml(f)}
       <div class="card-info" style="margin-top: 12px;">📍 ${esc(f.location)}</div>
       <div class="card-tip" style="margin-top: 10px;">${esc(f.tip)}</div>
       <div class="card-links" style="margin-top: 18px;">

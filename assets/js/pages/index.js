@@ -344,6 +344,35 @@
     });
   }
 
+  // 검색줄 여닫기 — 기본은 닫힘. 상단에 늘 한 줄을 차지하지 않도록 탭바의 돋보기로 연다.
+  // (is-hidden은 코스 상세 화면에서 검색 자체를 감추는 별개 상태이므로 건드리지 않는다)
+  const searchToggle = document.getElementById('siteSearchToggle');
+  if (searchToggle && siteSearch) {
+    function setSearchOpen(open) {
+      siteSearch.classList.toggle('is-closed', !open);
+      searchToggle.classList.toggle('active', open);
+      const label = open ? '검색 닫기' : '검색 열기';
+      searchToggle.title = label;
+      searchToggle.setAttribute('aria-label', label);
+      searchToggle.setAttribute('aria-expanded', String(open));
+      if (open) {
+        if (searchInput) searchInput.focus();
+      } else {
+        if (searchInput) searchInput.value = '';
+        if (searchClear) searchClear.hidden = true;
+        closeSearchResults();
+      }
+    }
+    searchToggle.addEventListener('click', () => {
+      setSearchOpen(siteSearch.classList.contains('is-closed'));
+    });
+    if (searchInput) {
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') setSearchOpen(false);
+      });
+    }
+  }
+
   Object.entries(frames).forEach(([target, frame]) => {
     frame.addEventListener('load', () => {
       rememberFrameLocation(target);
