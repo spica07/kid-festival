@@ -846,6 +846,10 @@
   .event-tag.more { background: #F3EEFA; color: #6B5B95; border-left-color: #C9A0FF; font-weight: 600; }
   .event-tag.more:hover { background: #E4D8F5; }
 
+  /* ---------- 모달: 모바일은 바텀시트 ----------
+     지도앱(museum_map·library_map 등)과 같은 방식이다. 좁은 화면에서는
+     화면 바닥에 붙여 올리고, 640px 이상에서만 가운데 카드로 되돌린다.
+     한 손으로 쥐었을 때 닫기 버튼과 길찾기 버튼이 엄지 안쪽에 오게 하려는 것이다. */
   .modal-overlay {
     display: none;
     position: fixed;
@@ -854,8 +858,8 @@
     background: rgba(0,0,0,0.5);
     z-index: 1000;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
+    align-items: flex-end;
+    padding: 0;
     backdrop-filter: blur(4px);
   }
 
@@ -871,19 +875,53 @@
 
   .modal {
     background: white;
-    border-radius: 25px;
-    max-width: 450px;
+    border-radius: 25px 25px 0 0;
     width: 100%;
-    max-height: 90vh;
+    max-height: 88dvh;
+    padding-bottom: env(safe-area-inset-bottom);
     overflow-y: auto;
     position: relative;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 -8px 40px rgba(0,0,0,0.28);
+    animation: sheetUp 0.22s cubic-bezier(0.2, 0.7, 0.3, 1);
+  }
+
+  @keyframes sheetUp {
+    from { transform: translateY(16px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
   }
 
   @keyframes popIn {
     from { transform: scale(0.7); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
+  }
+
+  /* 그랩 핸들 — 아래에서 올라온 시트라는 것을 알린다.
+     행사마다 머리 그림 배경색이 달라서(파스텔 계열) 흰 핸들은 묻힌다.
+     날짜별 목록 모달은 배경이 흰색이라, 양쪽 모두에서 보이는 반투명 보라로 둔다. */
+  .modal::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(107, 91, 149, 0.38);
+    z-index: 3;
+  }
+
+  @media (min-width: 640px) {
+    .modal-overlay { align-items: center; padding: 20px; }
+    .modal {
+      max-width: 450px;
+      max-height: 90vh;
+      padding-bottom: 0;
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .modal::before { display: none; }
   }
 
   .modal-close {
@@ -1142,7 +1180,6 @@
     .calendar { display: none; }
     .day-header { display: none; }
     .calendar-list { display: block; }
-    .modal { max-width: 100%; }
     .modal-body { padding: 0 20px 25px; }
   }
   /* 한강공원 공원별 행사 안내 */

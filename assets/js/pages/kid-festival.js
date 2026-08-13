@@ -733,7 +733,7 @@ function showModal(f) {
       </div>
     </div>
   `;
-  document.getElementById('modalOverlay').classList.add('active');
+  openModalOverlay();
   bindFavoriteButtons(modal);
   bindModalClose();
 }
@@ -766,7 +766,7 @@ function showDayEvents(day, events) {
       showModal(festivals[idx]);
     });
   });
-  document.getElementById('modalOverlay').classList.add('active');
+  openModalOverlay();
   bindModalClose();
 }
 
@@ -775,8 +775,16 @@ function bindModalClose() {
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
 }
 
+// 좁은 화면에서는 바텀시트로 열린다. 시트 뒤 페이지가 같이 굴러가면
+// 시트를 닫았을 때 보던 자리를 잃으므로, 열려 있는 동안은 배경을 묶어 둔다.
+function openModalOverlay() {
+  document.getElementById('modalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
 function closeModal() {
   document.getElementById('modalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
 }
 
 document.getElementById('modalOverlay').addEventListener('click', (e) => {
