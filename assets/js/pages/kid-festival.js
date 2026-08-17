@@ -88,6 +88,7 @@ const VENUE_OVERRIDE = {
   '서울생활사박물관 문화가 흐르는 박물관': '실내외',
   '2026 서울 어린이 꿈 축제': '실내',
   '2026 DDP 가을축제': '실내외',
+  '2026 송도 트라이보울 재즈 페스티벌': '실내외',
 };
 function venueOf(f) {
   if (VENUE_OVERRIDE[f.title]) return VENUE_OVERRIDE[f.title];
