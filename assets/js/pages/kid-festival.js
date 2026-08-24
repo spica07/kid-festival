@@ -89,6 +89,8 @@ const VENUE_OVERRIDE = {
   '2026 서울 어린이 꿈 축제': '실내',
   '2026 DDP 가을축제': '실내외',
   '2026 송도 트라이보울 재즈 페스티벌': '실내외',
+  '2026 성북 책모꼬지 북페스티벌': '실외',
+  '2026 새활용 페스티벌': '실내외',
 };
 function venueOf(f) {
   if (VENUE_OVERRIDE[f.title]) return VENUE_OVERRIDE[f.title];
