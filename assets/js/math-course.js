@@ -14,7 +14,7 @@
   function updateProgress() {
     const doneCount = doneDays.size;
     document.getElementById("doneCount").textContent = doneCount;
-    document.getElementById("progressFill").style.width = (doneCount / lessons.length * 100) + "%";
+    document.getElementById("progressFill").style.transform = "scaleX(" + (doneCount / lessons.length) + ")";
     rewards.updateStreakPanel();
   }
 
@@ -29,7 +29,7 @@
       if (lesson.day === currentDay) button.classList.add("active");
       button.innerHTML =
         '<span class="d-num">' + lesson.day + '</span>' +
-        '<span class="d-check">' + (doneDays.has(lesson.day) ? "✓" : "") + '</span>';
+        '<span class="d-check">' + (doneDays.has(lesson.day) ? KFIcon("check") : "") + '</span>';
       button.addEventListener("click", () => selectDay(lesson.day));
       grid.appendChild(button);
     });
@@ -55,24 +55,24 @@
         '<div class="prob">' +
           '<div class="prob-top">' +
             '<span class="prob-c">' + item.emoji + ' ' + item.c + '</span>' +
-            '<button class="icon-btn say-btn" data-say="' + item.q + '" title="문제 듣기">🔊</button>' +
+            '<button class="icon-btn say-btn" data-say="' + item.q + '" title="문제 듣기">' + KFIcon("speaker") + '</button>' +
           '</div>' +
           (item.pic ? '<div class="prob-pic">' + item.pic + '</div>' : '') +
           '<div class="prob-q" data-say="' + item.q + '">' + item.q + '</div>' +
           '<button class="ans-btn" data-i="' + index + '" data-ans="' + item.a + '">정답 보기</button>' +
-          '<div class="prob-a" id="ans' + index + '" hidden>👉 ' + item.a + '</div>' +
+          '<div class="prob-a" id="ans' + index + '" hidden>' + KFIcon("chevronRight") + ' ' + item.a + '</div>' +
         '</div>';
     });
 
     html += '</div>';
     html +=
-      '<button class="complete-btn ' + (isDone ? "is-done" : "") + '" id="completeBtn">' +
-        (isDone ? "✓ 오늘 학습 끝! 잘했어요" : "오늘 학습 완료! ✓") +
+      '<button class="complete-btn ' + (isDone ? "is-done" : "") + '" id="completeBtn">' + KFIcon("check") +
+        (isDone ? "오늘 학습 끝! 잘했어요" : "오늘 학습 완료!") +
       '</button>';
     html +=
       '<div class="nav-row">' +
-        '<button class="nav-btn" id="prevBtn" ' + (currentDay <= 1 ? "disabled" : "") + '>← 이전 날</button>' +
-        '<button class="nav-btn" id="nextBtn" ' + (currentDay >= lessons.length ? "disabled" : "") + '>다음 날 →</button>' +
+        '<button class="nav-btn" id="prevBtn" ' + (currentDay <= 1 ? "disabled" : "") + '>' + KFIcon("chevronLeft") + ' 이전 날</button>' +
+        '<button class="nav-btn" id="nextBtn" ' + (currentDay >= lessons.length ? "disabled" : "") + '>다음 날 ' + KFIcon("chevronRight") + '</button>' +
       '</div>';
 
     root.innerHTML = html;

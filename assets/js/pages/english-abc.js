@@ -277,7 +277,7 @@
   }
   function renderProgress(){
     document.getElementById("pdone").textContent = learned.size;
-    document.getElementById("pfill").style.width = (learned.size/26*100) + "%";
+    document.getElementById("pfill").style.transform = "scaleX(" + (learned.size/26) + ")";
   }
   function renderReading(){
     const w = WORDS[current];

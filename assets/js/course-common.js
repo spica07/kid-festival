@@ -229,7 +229,7 @@
       panel.innerHTML =
         '<div class="streak-row"><span><b>' + streak + "</b>일 연속 학습</span>" +
         '<span>이번 주 <b>' + week + "</b>/" + STREAK_GOAL + "일</span></div>" +
-        '<div class="streak-bar"><div class="streak-fill" style="width:' + pct + '%"></div></div>' +
+        '<div class="streak-bar"><div class="streak-fill" style="transform:scaleX(' + (pct / 100) + ')"></div></div>' +
         '<div class="sticker-row"><span>모은 스티커 <b>' + stickers.length + '</b>개</span>' +
         '<div class="sticker-list">' + (recent || '<span class="sticker-chip">완료하면 쌓여요</span>') + "</div></div>";
     }

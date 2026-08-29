@@ -1,8 +1,8 @@
 @import url("hub-core.css");
   /* 한글 허브 테마 색상 */
   :root {
-    --hubBg: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 45%, #fef3c7 100%);
-    --hubAccent: #e11d48;
-    --hubGt: linear-gradient(90deg, #fb7185, #f59e0b, #f43f5e);
-    --hubFill: linear-gradient(90deg, #fb7185, #e11d48);
+    --hubBg: radial-gradient(900px 480px at 100% -8%, rgba(200,67,59,0.08), transparent), var(--paper);
+    --hubAccent: #c8433b;
+    --hubGt: #c8433b;
+    --hubFill: linear-gradient(90deg, #e2703a, #c8433b);
   }

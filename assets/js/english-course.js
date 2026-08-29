@@ -16,7 +16,7 @@
   function updateProgress() {
     const doneCount = doneDays.size;
     document.getElementById("doneCount").textContent = doneCount;
-    document.getElementById("progressFill").style.width = (doneCount / lessons.length * 100) + "%";
+    document.getElementById("progressFill").style.transform = "scaleX(" + (doneCount / lessons.length) + ")";
     rewards.updateStreakPanel();
   }
 
@@ -29,7 +29,7 @@
       button.className = "day-btn";
       if (doneDays.has(lesson.day)) button.classList.add("done");
       if (lesson.day === currentDay) button.classList.add("active");
-      const check = doneDays.has(lesson.day) ? "✓" : "";
+      const check = doneDays.has(lesson.day) ? KFIcon("check") : "";
       button.innerHTML = '<span class="d-num">' + lesson.day + '</span><span class="d-check">' + check + '</span>';
       button.addEventListener("click", () => {
         selectDay(lesson.day);
@@ -54,13 +54,13 @@
             '<div class="wc-word">' +
               '<div class="wc-en">' + word.en + '</div>' +
               '<div class="wc-ko">' + word.ko + '</div>' +
-              '<button class="wc-speak" data-say="' + word.en + '" title="단어 발음 듣기">🔊 단어</button>' +
+              '<button class="wc-speak" data-say="' + word.en + '" title="단어 발음 듣기">' + KFIcon("speaker") + ' 단어</button>' +
             '</div>' +
             '<div class="wc-divider"></div>' +
             '<div class="wc-sentence">' +
               '<div class="wc-sen-en">' + word.s + '</div>' +
               '<div class="wc-sen-ko">' + word.sk + '</div>' +
-              '<button class="wc-play" data-say="' + word.s + '" title="문장 듣기">▶ 문장</button>' +
+              '<button class="wc-play" data-say="' + word.s + '" title="문장 듣기">' + KFIcon("play") + ' 문장</button>' +
             '</div>' +
           '</div>' +
         '</div>';
@@ -75,9 +75,9 @@
 
     const carouselHtml =
       '<div class="word-carousel">' +
-        '<button class="wc-arrow wc-prev is-hidden" type="button" aria-label="이전 단어">‹</button>' +
+        '<button class="wc-arrow wc-prev is-hidden" type="button" aria-label="이전 단어">' + KFIcon("chevronLeft") + '</button>' +
         '<div class="wc-track" id="wcTrack">' + slidesHtml + '</div>' +
-        '<button class="wc-arrow wc-next" type="button" aria-label="다음 단어">›</button>' +
+        '<button class="wc-arrow wc-next" type="button" aria-label="다음 단어">' + KFIcon("chevronRight") + '</button>' +
       '</div>' +
       '<div class="wc-dots" id="wcDots">' + dotsHtml + '</div>';
 
@@ -87,12 +87,12 @@
     root.innerHTML =
       '<div class="lesson-head"><span class="lesson-day">Day ' + lesson.day + '</span>' +
       '<span class="lesson-theme">' + lesson.theme + '</span></div>' +
-      '<div class="lesson-hint">카드를 옆으로 넘기거나 화살표로 단어를 바꿔요. 🔊·▶ 버튼으로 발음을 들어요.</div>' +
+      '<div class="lesson-hint">카드를 옆으로 넘기거나 화살표로 단어를 바꿔요. 스피커·재생 버튼으로 발음을 들어요.</div>' +
       carouselHtml +
-      '<button class="complete-btn ' + (isDone ? "is-done" : "") + '" id="completeBtn">' +
-      (isDone ? "✓ 오늘 학습 끝! 잘했어요" : "오늘 학습 완료! ✓") + '</button>' +
-      '<div class="nav-row"><button class="nav-btn" id="prevBtn" ' + prevDisabled + '>← 이전 날</button>' +
-      '<button class="nav-btn" id="nextBtn" ' + nextDisabled + '>다음 날 →</button></div>';
+      '<button class="complete-btn ' + (isDone ? "is-done" : "") + '" id="completeBtn">' + KFIcon("check") +
+      (isDone ? "오늘 학습 끝! 잘했어요" : "오늘 학습 완료!") + '</button>' +
+      '<div class="nav-row"><button class="nav-btn" id="prevBtn" ' + prevDisabled + '>' + KFIcon("chevronLeft") + ' 이전 날</button>' +
+      '<button class="nav-btn" id="nextBtn" ' + nextDisabled + '>다음 날 ' + KFIcon("chevronRight") + '</button></div>';
 
     root.querySelectorAll("[data-say]").forEach((node) => {
       node.addEventListener("click", (event) => {

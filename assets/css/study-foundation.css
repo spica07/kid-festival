@@ -1,0 +1,80 @@
+/* 영어·수학·한글 학습 영역 공용 파운데이션 — 토큰, 리셋, 타이포 베이스, 브라우저 표면(선택/포커스/스크롤바).
+   허브·데이 코스·필기 연습 각 템플릿의 코어 CSS보다 먼저 로드한다. 각 코스 고유 색(--a1/--a2/--soft 등)은
+   건드리지 않고, 그 위에 얹히는 중립 토큰과 컴포넌트 규칙만 정의한다. */
+
+:root {
+  /* 종이/잉크 — 차갑고 밋밋한 회색 대신 따뜻한 톤 */
+  --paper: #fbf7f0;
+  --paper-card: #fffdf9;
+  --ink-900: #2b2420;
+  --ink-700: #4a4038;
+  --ink-500: #7a6f64;
+  --ink-line: rgba(43, 36, 32, 0.1);
+  --ink-line-strong: rgba(43, 36, 32, 0.16);
+
+  /* 타이포 */
+  --font-display: 'Jua', -apple-system, 'Noto Sans KR', sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+
+  /* 간격 스케일 */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px;
+  --sp-6: 24px; --sp-7: 32px; --sp-8: 40px; --sp-9: 56px;
+
+  /* 반경 */
+  --r-sm: 12px; --r-md: 16px; --r-lg: 22px; --r-xl: 28px; --r-pill: 999px;
+
+  /* 그림자 — 순수 검정 대신 따뜻한 잉크색 섞음, 오프셋 + 블러 */
+  --sh-sm: 0 2px 8px rgba(43, 36, 32, 0.08);
+  --sh-md: 0 10px 28px rgba(43, 36, 32, 0.10);
+  --sh-lg: 0 18px 44px rgba(43, 36, 32, 0.14);
+
+  /* 모션 */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-sm: 0.18s;
+  --dur-md: 0.32s;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink-900);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, p, figure { margin: 0; }
+button { font-family: inherit; }
+a { color: inherit; }
+
+/* 아이콘 — icons.js가 채우는 <i data-icon> / KFIcon() 출력 공통 크기 */
+.icon, i[data-icon] {
+  display: inline-flex;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  flex-shrink: 0;
+}
+.icon svg, i[data-icon] svg { width: 100%; height: 100%; }
+i[data-icon] { line-height: 0; }
+
+/* 브라우저 표면 — 선택 영역, 포커스 링, 스크롤바를 파레트에 맞춘다 */
+::selection { background: color-mix(in srgb, var(--a2, #c84b31) 30%, transparent); color: var(--ink-900); }
+
+:focus-visible {
+  outline: 2.5px solid var(--a2, #c84b31);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+* { scrollbar-width: thin; scrollbar-color: var(--ink-line-strong) transparent; }
+*::-webkit-scrollbar { height: 8px; width: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background: var(--ink-line-strong); border-radius: 999px; }
+*::-webkit-scrollbar-thumb:hover { background: var(--ink-500); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}

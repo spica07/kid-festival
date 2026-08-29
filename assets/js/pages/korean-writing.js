@@ -305,7 +305,7 @@
     document.getElementById("pdone").textContent = learned.size;
     const totalNode = document.getElementById("ptotal");
     if (totalNode) totalNode.textContent = SYLL.length;
-    document.getElementById("pfill").style.width = (learned.size/SYLL.length*100) + "%";
+    document.getElementById("pfill").style.transform = "scaleX(" + (learned.size/SYLL.length) + ")";
   }
   function renderReading(){
     const s=cur();

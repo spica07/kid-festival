@@ -6,20 +6,21 @@
 <title>레오 선생님과 함께하는 30일 영어</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/study-foundation.css">
 <link rel="stylesheet" href="../../assets/css/english-30days.css">
 </head>
 <body>
 <div class="container">
 
-  <div class="topbar"><a class="back-hub" href="english-hub.html">← 영어 허브</a><span class="page-title">🦁 레오 영어 30일</span></div>
+  <div class="topbar"><a class="back-hub" href="english-hub.html"><i class="ic" data-icon="chevronLeft"></i> 영어 허브</a><span class="page-title">🦁 레오 영어 30일</span></div>
 
-  <div class="leo-row">
-    <div class="leo-face">🦁</div>
-    <div class="leo-bubble" id="leoBubble">안녕! 나는 레오 선생님이야. 오늘도 영어 다섯 개 배워볼까?</div>
+  <div class="mascot-row">
+    <div class="mascot">🦁</div>
+    <div class="bubble" id="leoBubble">안녕! 나는 레오 선생님이야. 오늘도 영어 다섯 개 배워볼까?</div>
   </div>
 
   <div class="day-toolbar">
-    <span class="day-toolbar-label">📅 <b id="dayLabel">Day 1</b></span>
+    <span class="day-toolbar-label"><i class="ic" data-icon="calendar"></i> <b id="dayLabel">Day 1</b></span>
     <button class="day-pick-btn" id="dayPickBtn" type="button">날짜 선택 ⋯</button>
   </div>
   <div class="day-panel" id="dayPanel" hidden>
@@ -37,14 +38,15 @@
   </div>
 
   <div class="foot">
-    💡 <b>부모님께</b> · 하루 10분이면 충분해요. 레오 선생님처럼 <b>천천히 따라 말하기</b>를 함께 해주세요.
+    <i class="ic" data-icon="bulb"></i> <b>부모님께</b> · 하루 10분이면 충분해요. 레오 선생님처럼 <b>천천히 따라 말하기</b>를 함께 해주세요.
     단어 카드와 🔊 버튼을 누르면 영어 발음을 들을 수 있어요. 매일 한 칸씩 채워가는 재미를 칭찬해주세요!
     <br>
-    <button class="reset-btn" id="resetBtn">진행 기록 모두 지우기</button>
+    <button class="reset-btn" id="resetBtn"><i class="ic" data-icon="refresh"></i> 진행 기록 모두 지우기</button>
   </div>
 
 </div>
 
+<script src="../../assets/js/icons.js"></script>
 <script src="../../assets/data/english-30days.js"></script>
 <script src="../../assets/js/course-common.js"></script>
 <script src="../../assets/js/english-course.js"></script>

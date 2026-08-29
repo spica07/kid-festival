@@ -4,14 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>알파벳 따라쓰기 · 대문자 소문자 함께</title>
+<link rel="stylesheet" href="../../assets/css/study-foundation.css">
 <link rel="stylesheet" href="../../assets/css/english-abc.css">
 </head>
 <body>
 <div class="container">
-  <div class="topbar"><a class="back-hub" href="english-hub.html">← 영어 허브</a><span class="page-title">✍️ 알파벳 읽고 쓰기</span></div>
+  <div class="topbar"><a class="back-hub" href="english-hub.html"><i class="ic" data-icon="chevronLeft"></i> 영어 허브</a><span class="page-title">✍️ 알파벳 읽고 쓰기</span></div>
 
   <div class="pick-toolbar">
-    <span class="pick-toolbar-label">📝 <b id="pickLabel">A</b> 쓰는 중</span>
+    <span class="pick-toolbar-label"><i class="ic" data-icon="pencil"></i> <b id="pickLabel">A</b> 쓰는 중</span>
     <button class="pick-btn" id="pickBtn" type="button">글자 선택 ⋯</button>
   </div>
   <div class="pick-panel" id="pickPanel" hidden>
@@ -24,7 +25,7 @@
       <div class="info">
         <div class="word"><span id="kwLetter">A</span> is for <span class="kw" id="kwWord">apple</span> <span class="emoji" id="kwEmoji">🍎</span></div>
       </div>
-      <button class="say" id="sayBtn" title="소리 듣기">🔊</button>
+      <button class="say" id="sayBtn" title="소리 듣기"><i class="ic" data-icon="speaker"></i></button>
     </div>
 
     <div class="pads">
@@ -39,28 +40,29 @@
     </div>
 
     <div class="controls">
-      <button class="ctrl primary" id="demoBtn">✏️ 시범 보기</button>
-      <button class="ctrl" id="clearBtn">🧽 다시 쓰기</button>
-      <button class="ctrl done-btn" id="learnBtn">✓ 다 썼어요</button>
+      <button class="ctrl primary" id="demoBtn"><i class="ic" data-icon="pencil"></i> 시범 보기</button>
+      <button class="ctrl" id="clearBtn"><i class="ic" data-icon="eraser"></i> 다시 쓰기</button>
+      <button class="ctrl done-btn" id="learnBtn"><i class="ic" data-icon="check"></i> 다 썼어요</button>
     </div>
     <div class="navrow">
-      <button class="navbtn" id="prevBtn">← 이전 글자</button>
-      <button class="navbtn" id="nextBtn">다음 글자 →</button>
+      <button class="navbtn" id="prevBtn"><i class="ic" data-icon="chevronLeft"></i> 이전 글자</button>
+      <button class="navbtn" id="nextBtn">다음 글자 <i class="ic" data-icon="chevronRight"></i></button>
     </div>
   </div>
 
   <div class="progress-line">
-    <span class="lbl">✅ 쓴 글자</span>
+    <span class="lbl"><i class="ic" data-icon="check"></i> 쓴 글자</span>
     <div class="track"><div class="fill" id="pfill"></div></div>
     <span class="num"><span id="pdone">0</span> / 26</span>
   </div>
 
   <div class="foot">
-    💡 <b>부모님께</b> · 대문자와 소문자를 <b>한 글자씩 같이</b> 써 봐요. <b>✏️ 시범 보기</b>로 번호 순서를 보여주고,
+    <i class="ic" data-icon="bulb"></i> <b>부모님께</b> · 대문자와 소문자를 <b>한 글자씩 같이</b> 써 봐요. <b><i class="ic" data-icon="pencil"></i> 시범 보기</b>로 번호 순서를 보여주고,
     회색 안내선을 따라 천천히 쓰게 해주세요. 🔊 버튼으로 글자 소리도 들을 수 있어요.
   </div>
 </div>
 
+<script src="../../assets/js/icons.js"></script>
 <script src="../../assets/js/course-common.js"></script>
 <script src="../../assets/js/pages/english-abc.js"></script>
 </body>

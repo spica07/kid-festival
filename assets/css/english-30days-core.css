@@ -1,4 +1,4 @@
-/* korean 30일/7일 코스 공용 스타일. 테마 색은 각 코스 CSS의 :root 변수로 정의한다.
+/* english 30일/7일 코스 공용 스타일. 테마 색은 각 코스 CSS의 :root 변수로 정의한다.
    study-foundation.css가 먼저 로드되어 있다고 가정한다(토큰/리셋/브라우저 표면). */
 
 body { background: var(--pageBg); padding: var(--sp-5); }
@@ -8,7 +8,7 @@ body { background: var(--pageBg); padding: var(--sp-5); }
 .page-title { font-family: var(--font-display); font-weight: 400; font-size: clamp(17px, 4.2vw, 22px); color: var(--ink-700); line-height: 1.2; }
 .back-hub {
   display: inline-flex; align-items: center; gap: 6px;
-  background: var(--paper-card); border: 1.5px solid var(--soft); color: var(--wtext);
+  background: var(--paper-card); border: 1.5px solid var(--soft); color: var(--wtext, color-mix(in srgb, var(--a2) 78%, black));
   font-weight: 700; font-size: 13.5px; padding: 8px 14px; border-radius: var(--r-pill); text-decoration: none;
   box-shadow: var(--sh-sm); transition: transform var(--dur-sm) var(--ease), border-color var(--dur-sm) var(--ease);
 }
@@ -21,21 +21,21 @@ body { background: var(--pageBg); padding: var(--sp-5); }
 .progress-fill { height: 100%; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--a1), var(--a2)); border-radius: var(--r-pill); transition: transform var(--dur-md) var(--ease); }
 
 .mascot-row { display: flex; align-items: center; gap: var(--sp-4); background: var(--paper-card); border: 1px solid var(--ink-line); border-radius: var(--r-xl); padding: var(--sp-4) var(--sp-5); margin-bottom: var(--sp-5); box-shadow: var(--sh-sm); }
-.mascot { flex-shrink: 0; width: 68px; height: 68px; border-radius: 50%; background: var(--face); display: flex; align-items: center; justify-content: center; font-size: 38px; box-shadow: var(--sh-sm); animation: bob 2.8s var(--ease) infinite; }
+.mascot { flex-shrink: 0; width: 68px; height: 68px; border-radius: 50%; background: var(--face, linear-gradient(135deg, var(--soft), var(--a2))); display: flex; align-items: center; justify-content: center; font-size: 38px; box-shadow: var(--sh-sm); animation: bob 2.8s var(--ease) infinite; }
 @keyframes bob { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-6px);} }
-.bubble { position: relative; background: var(--bubBg); border: 1.5px solid var(--bubBorder); border-radius: var(--r-lg); padding: 11px 16px; font-size: 15px; color: var(--bubText); font-weight: 600; }
-.bubble::before { content: ''; position: absolute; left: -9px; top: 22px; border-width: 7px 9px 7px 0; border-style: solid; border-color: transparent var(--bubBorder) transparent transparent; }
+.bubble { position: relative; background: var(--bubBg, color-mix(in srgb, var(--soft) 35%, white)); border: 1.5px solid var(--bubBorder, var(--soft)); border-radius: var(--r-lg); padding: 11px 16px; font-size: 15px; color: var(--bubText, color-mix(in srgb, var(--a2) 82%, black)); font-weight: 600; }
+.bubble::before { content: ''; position: absolute; left: -9px; top: 22px; border-width: 7px 9px 7px 0; border-style: solid; border-color: transparent var(--bubBorder, var(--soft)) transparent transparent; }
 
 .section-label { font-weight: 800; font-size: 14.5px; color: var(--ink-700); margin: 0 2px var(--sp-3); }
 .day-toolbar { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-2); margin-bottom: var(--sp-3); flex-wrap: wrap; }
 .day-toolbar-label { display: flex; align-items: center; gap: 6px; font-weight: 800; font-size: 14.5px; color: var(--ink-700); }
 .day-toolbar-label .icon { color: var(--a2); }
-.day-pick-btn { border: 1.5px solid var(--soft); background: var(--paper-card); color: var(--wtext); font-weight: 700; font-size: 13.5px; padding: 8px 15px; border-radius: var(--r-pill); cursor: pointer; transition: transform var(--dur-sm) var(--ease); }
+.day-pick-btn { border: 1.5px solid var(--soft); background: var(--paper-card); color: var(--wtext, color-mix(in srgb, var(--a2) 78%, black)); font-weight: 700; font-size: 13.5px; padding: 8px 15px; border-radius: var(--r-pill); cursor: pointer; transition: transform var(--dur-sm) var(--ease); }
 .day-pick-btn:hover { transform: translateY(-2px); }
 .day-panel { margin-bottom: var(--sp-2); }
 .day-panel[hidden] { display: none; }
 .day-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(52px, 1fr)); gap: 7px; margin-bottom: var(--sp-6); }
-.day-btn { aspect-ratio: 1/1; border: 1.5px solid var(--soft); background: var(--paper-card); color: var(--wtext); border-radius: var(--r-sm); cursor: pointer; font-weight: 700; font-size: 13px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; line-height: 1.1; transition: transform var(--dur-sm) var(--ease); }
+.day-btn { aspect-ratio: 1/1; border: 1.5px solid var(--soft); background: var(--paper-card); color: var(--wtext, color-mix(in srgb, var(--a2) 78%, black)); border-radius: var(--r-sm); cursor: pointer; font-weight: 700; font-size: 13px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; line-height: 1.1; transition: transform var(--dur-sm) var(--ease); }
 .day-btn:hover { transform: translateY(-2px); }
 .day-btn .d-num { font-size: 14.5px; }
 .day-btn .d-check { display: flex; height: 12px; color: #1a9d6f; }
@@ -59,12 +59,12 @@ body { background: var(--pageBg); padding: var(--sp-5); }
 .complete-btn:hover { transform: translateY(-2px); }
 .complete-btn.is-done { background: color-mix(in srgb, #1a9d6f 16%, var(--paper-card)); color: #0f6e4d; box-shadow: none; }
 .nav-row { display: flex; gap: var(--sp-2); margin-top: var(--sp-3); }
-.nav-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 11px; border: 1.5px solid var(--soft); background: var(--paper-card); color: var(--wtext); border-radius: var(--r-sm); cursor: pointer; font-weight: 700; font-size: 13.5px; }
+.nav-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 11px; border: 1.5px solid var(--soft); background: var(--paper-card); color: var(--wtext, color-mix(in srgb, var(--a2) 78%, black)); border-radius: var(--r-sm); cursor: pointer; font-weight: 700; font-size: 13.5px; }
 .nav-btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
 .foot { background: var(--paper-card); border: 1px solid var(--ink-line); border-radius: var(--r-lg); padding: var(--sp-4) var(--sp-5); font-size: 13.5px; color: var(--ink-500); line-height: 1.75; }
 .foot .icon { color: var(--a2); }
-.foot b { color: var(--wtext); }
+.foot b { color: var(--wtext, color-mix(in srgb, var(--a2) 78%, black)); }
 .reset-btn { display: inline-flex; align-items: center; gap: 5px; margin-top: var(--sp-2); background: none; border: none; color: var(--ink-500); font-size: 12.5px; cursor: pointer; text-decoration: underline; }
 
 /* 이어하기 보상 패널 (course-common.js에서 주입, 코스 accent 색 상속) */
@@ -76,8 +76,8 @@ body { background: var(--pageBg); padding: var(--sp-5); }
 .sticker-row { display: flex; justify-content: space-between; gap: 10px; align-items: flex-start; margin-top: 9px; font-size: 12.5px; color: var(--ink-500); }
 .sticker-row b { color: var(--a2); font-size: 16px; }
 .sticker-list { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
-.sticker-chip { display: inline-flex; align-items: center; min-height: 22px; padding: 3px 8px; border-radius: 999px; background: var(--soft); color: var(--wtext); font-size: 11.5px; font-weight: 700; }
-.reward-pop { position: fixed; left: 50%; top: 18px; z-index: 9999; transform: translateX(-50%); background: var(--paper-card); border: 2px solid var(--a2); border-radius: var(--r-lg); padding: 11px 18px; box-shadow: var(--sh-lg); font-size: 15px; font-weight: 800; color: var(--wtext); animation: rewardIn .9s var(--ease) forwards; }
+.sticker-chip { display: inline-flex; align-items: center; min-height: 22px; padding: 3px 8px; border-radius: 999px; background: var(--soft); color: var(--wtext, color-mix(in srgb, var(--a2) 78%, black)); font-size: 11.5px; font-weight: 700; }
+.reward-pop { position: fixed; left: 50%; top: 18px; z-index: 9999; transform: translateX(-50%); background: var(--paper-card); border: 2px solid var(--a2); border-radius: var(--r-lg); padding: 11px 18px; box-shadow: var(--sh-lg); font-size: 15px; font-weight: 800; color: var(--wtext, color-mix(in srgb, var(--a2) 78%, black)); animation: rewardIn .9s var(--ease) forwards; }
 @keyframes rewardIn { 0%{opacity:0;transform:translate(-50%,-18px) scale(.92);} 25%{opacity:1;transform:translate(-50%,0) scale(1.04);} 100%{opacity:0;transform:translate(-50%,-8px) scale(1);} }
 
 @media (max-width: 600px) {

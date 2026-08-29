@@ -188,7 +188,7 @@
   }
   function renderProgress(){
     document.getElementById("pdone").textContent = learned.size;
-    document.getElementById("pfill").style.width = (learned.size/DIGITS.length*100) + "%";
+    document.getElementById("pfill").style.transform = "scaleX(" + (learned.size/DIGITS.length) + ")";
   }
   function renderReading(){
     const d=cur();

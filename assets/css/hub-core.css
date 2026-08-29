@@ -1,38 +1,143 @@
-/* 한글/수학 허브 공용 스타일. 테마 색은 각 허브 CSS의 :root 변수(--hubBg, --hubAccent, --hubGt, --hubFill)로 정의한다. */
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif; background: var(--hubBg); min-height: 100vh; color: #1f2937; line-height: 1.6; padding: 24px 20px 40px; }
-  .container { max-width: 760px; margin: 0 auto; }
-  .hero { text-align: center; padding: 16px 0 24px; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.8); padding: 8px 16px; border-radius: 999px; font-size: 14px; color: var(--hubAccent); font-weight: 600; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-  .hero h1 { font-family: 'Jua', sans-serif; font-size: clamp(26px, 5vw, 40px); font-weight: 400; margin-bottom: 8px; line-height: 1.25; }
-  .gradient-text { background: var(--hubGt); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .hero p { font-size: 16px; color: #6b7280; }
-  .total-bar { background: white; border-radius: 18px; padding: 16px 22px; margin-bottom: 24px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-  .total-bar .label { font-weight: 700; font-size: 15px; }
-  .total-bar .track { flex: 1; min-width: 160px; height: 14px; background: #f3f4f6; border-radius: 999px; overflow: hidden; }
-  .total-bar .fill { height: 100%; width: 0%; background: var(--hubFill); border-radius: 999px; transition: width 0.5s ease; }
-  .total-bar .num { font-weight: 800; color: var(--hubAccent); font-size: 15px; }
-  .grid-toolbar { display: flex; justify-content: flex-end; margin-bottom: 14px; }
-  .toggle-done-btn { background: white; border: 2px solid var(--hubAccent); color: var(--hubAccent); font-weight: 700; font-size: 14px; padding: 8px 16px; border-radius: 999px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.15s; }
-  .toggle-done-btn:hover { transform: translateY(-2px); }
-  .empty-note { text-align: center; color: #6b7280; font-size: 14px; padding: 24px 12px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
-  .card { display: block; text-decoration: none; color: inherit; background: white; border-radius: 22px; padding: 22px; box-shadow: 0 8px 30px rgba(0,0,0,0.06); border: 2px solid transparent; transition: transform 0.18s, box-shadow 0.18s; position: relative; overflow: hidden; }
-  .card::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 6px; background: linear-gradient(90deg, var(--c1), var(--c2)); }
-  .card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); border-color: var(--c2); }
-  .card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; margin-top: 4px; }
-  .avatar { flex-shrink: 0; width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--soft), var(--c2)); display: flex; align-items: center; justify-content: center; font-size: 36px; box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
-  .card-name { font-family: 'Jua', sans-serif; font-size: 21px; color: var(--c2); line-height: 1.2; }
-  .course-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; }
-  .course-badge { display: inline-flex; align-items: center; border-radius: 999px; padding: 3px 8px; background: var(--soft); color: var(--c2); font-size: 11px; font-weight: 800; line-height: 1; }
-  .card-theme { font-size: 14px; color: #6b7280; margin-top: 2px; }
-  .card-prog { display: flex; align-items: center; gap: 10px; }
-  .card-prog .track { flex: 1; height: 10px; background: #f3f4f6; border-radius: 999px; overflow: hidden; }
-  .card-prog .fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--c1), var(--c2)); border-radius: 999px; transition: width 0.5s ease; }
-  .card-prog .cnt { font-size: 13px; font-weight: 700; color: var(--c2); white-space: nowrap; }
-  .card-start { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; font-weight: 700; font-size: 14px; color: var(--c2); }
-  .badge-done { position: absolute; top: 14px; right: 14px; background: linear-gradient(135deg, #34d399, #10b981); color: white; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 999px; box-shadow: 0 3px 10px rgba(16,185,129,0.35); display: none; }
-  .badge-done.show { display: inline-block; }
-  .foot { text-align: center; margin-top: 28px; font-size: 14px; color: #6b7280; }
-  .foot b { color: var(--hubAccent); }
-  @media (max-width: 600px) { body { padding: 16px 14px 32px; } .grid { grid-template-columns: 1fr; gap: 14px; } }
+/* 한글/수학/영어 허브 공용 스타일. 테마 색은 각 허브 CSS의 :root 변수(--hubBg, --hubAccent, --hubGt, --hubFill)로 정의한다.
+   study-foundation.css가 먼저 로드되어 있다고 가정한다(토큰/리셋/브라우저 표면). */
+
+body {
+  background: var(--hubBg);
+  padding: var(--sp-7) var(--sp-5) var(--sp-9);
+}
+.container { max-width: 880px; margin: 0 auto; }
+
+/* ---- Hero ---- */
+.hero { padding: var(--sp-3) 0 var(--sp-7); max-width: 640px; }
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(30px, 5.4vw, 46px);
+  line-height: 1.2;
+  color: var(--ink-900);
+  letter-spacing: -0.01em;
+}
+.gradient-text { color: var(--hubAccent); }
+.hero p { margin-top: var(--sp-3); font-size: 16px; color: var(--ink-500); max-width: 46ch; }
+
+/* ---- 전체 진행 바 ---- */
+.total-bar {
+  background: var(--paper-card);
+  border: 1px solid var(--ink-line);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4) var(--sp-5);
+  margin-bottom: var(--sp-6);
+  box-shadow: var(--sh-sm);
+  display: flex; align-items: center; gap: var(--sp-4); flex-wrap: wrap;
+}
+.total-bar .label { font-weight: 800; font-size: 15px; color: var(--ink-700); white-space: nowrap; }
+.total-bar .track { flex: 1; min-width: 160px; height: 12px; background: var(--ink-line); border-radius: var(--r-pill); overflow: hidden; }
+.total-bar .fill { height: 100%; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: var(--hubFill); border-radius: var(--r-pill); transition: transform var(--dur-md) var(--ease); }
+.total-bar .num { font-weight: 800; color: var(--hubAccent); font-size: 15px; white-space: nowrap; }
+
+/* ---- 툴바 ---- */
+.grid-toolbar { display: flex; justify-content: flex-end; gap: var(--sp-2); margin-bottom: var(--sp-4); flex-wrap: wrap; }
+.toggle-done-btn, .reset-progress-btn {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--paper-card); border: 1.5px solid var(--ink-line-strong); color: var(--hubAccent);
+  font-weight: 700; font-size: 13.5px; padding: 9px 16px; border-radius: var(--r-pill); cursor: pointer;
+  transition: transform var(--dur-sm) var(--ease), border-color var(--dur-sm) var(--ease);
+}
+.toggle-done-btn:hover, .reset-progress-btn:hover { transform: translateY(-2px); border-color: var(--hubAccent); }
+.reset-progress-btn { color: var(--ink-500); }
+.reset-progress-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+/* ---- 나이대 구분 ---- */
+.grid-groups { display: flex; flex-direction: column; }
+.age-group { margin-bottom: var(--sp-7); }
+.age-group:last-child { margin-bottom: 0; }
+.age-group-heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 19px;
+  color: var(--ink-700);
+  margin: 0 2px var(--sp-4);
+  padding-top: var(--sp-2);
+  display: flex; align-items: baseline; gap: 8px;
+}
+.age-group-heading .n { color: var(--hubAccent); }
+
+.empty-note { text-align: center; color: var(--ink-500); font-size: 14px; padding: var(--sp-6) var(--sp-3); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--sp-4); }
+
+/* ---- 이어서 하기 카드 (hub-page.js에서 주입) ---- */
+.resume-card {
+  display: flex; align-items: center; gap: var(--sp-4);
+  text-decoration: none; color: #fff;
+  background: linear-gradient(155deg, var(--c1, #a8c5ff), var(--c2, #7fa8ff));
+  border-radius: var(--r-xl);
+  padding: var(--sp-4) var(--sp-5);
+  margin: 0 0 var(--sp-5);
+  box-shadow: var(--sh-md);
+  transition: transform var(--dur-sm) var(--ease), box-shadow var(--dur-sm) var(--ease);
+}
+.resume-card:hover { transform: translateY(-3px); box-shadow: var(--sh-lg); }
+.resume-emoji {
+  font-size: 1.9rem; flex: 0 0 auto; width: 52px; height: 52px; border-radius: var(--r-md);
+  background: rgba(255,255,255,.22); display: flex; align-items: center; justify-content: center;
+}
+.resume-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.resume-label { display: flex; align-items: center; gap: 5px; font-size: .78rem; opacity: .92; font-weight: 800; letter-spacing: .01em; }
+.resume-label .icon { width: .9em; height: .9em; }
+.resume-name { font-size: 1.14rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.resume-prog { display: flex; align-items: center; gap: 8px; margin-top: 2px; }
+.resume-track { flex: 1; height: 7px; background: rgba(255,255,255,.32); border-radius: 99px; overflow: hidden; max-width: 160px; }
+.resume-fill { display: block; height: 100%; background: #fff; border-radius: 99px; }
+.resume-cnt { font-size: .78rem; font-weight: 700; white-space: nowrap; }
+.resume-go { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 4px; font-weight: 800; font-size: .92rem; background: rgba(255,255,255,.2); padding: 8px 13px; border-radius: var(--r-md); white-space: nowrap; }
+
+/* ---- 코스 카드 ---- */
+.card {
+  display: block; text-decoration: none; color: inherit;
+  background: var(--paper-card); border-radius: var(--r-xl); padding: var(--sp-5);
+  box-shadow: var(--sh-sm);
+  border: 1.5px solid var(--ink-line);
+  transition: transform var(--dur-sm) var(--ease), box-shadow var(--dur-sm) var(--ease), border-color var(--dur-sm) var(--ease);
+  position: relative; overflow: hidden;
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--sh-md); border-color: var(--c2); }
+.card-top { display: flex; align-items: flex-start; gap: var(--sp-3); margin-bottom: var(--sp-3); margin-top: 4px; }
+.avatar {
+  flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(155deg, var(--soft), var(--c2));
+  display: flex; align-items: center; justify-content: center; font-size: 30px;
+  box-shadow: 0 6px 14px rgba(43,36,32,0.16);
+}
+.card-name { font-family: var(--font-display); font-weight: 400; font-size: 19px; color: var(--ink-900); line-height: 1.25; }
+.course-badges { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.course-badge { display: inline-flex; align-items: center; border-radius: var(--r-pill); padding: 3px 9px; background: var(--soft); color: var(--c2); font-size: 10.5px; font-weight: 800; line-height: 1.4; }
+.card-theme { font-size: 13.5px; color: var(--ink-500); margin-top: 4px; line-height: 1.4; }
+.card-prog { display: flex; align-items: center; gap: 9px; margin-top: var(--sp-3); }
+.card-prog .track { flex: 1; height: 8px; background: var(--ink-line); border-radius: var(--r-pill); overflow: hidden; }
+.card-prog .fill { height: 100%; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, var(--c1), var(--c2)); border-radius: var(--r-pill); transition: transform var(--dur-md) var(--ease); }
+.card-prog .cnt { font-size: 12.5px; font-weight: 700; color: var(--c2); white-space: nowrap; }
+.card-start {
+  display: inline-flex; align-items: center; gap: 5px; margin-top: var(--sp-4);
+  font-weight: 800; font-size: 13.5px; color: var(--c2);
+}
+.card-start .icon { transition: transform var(--dur-sm) var(--ease); }
+.card:hover .card-start .icon { transform: translateX(3px); }
+.badge-done {
+  position: absolute; top: 13px; right: 13px;
+  display: inline-flex; align-items: center; gap: 4px;
+  background: linear-gradient(155deg, #3fbd8f, #1a9d6f); color: white;
+  font-size: 11.5px; font-weight: 800; padding: 5px 10px 5px 8px; border-radius: var(--r-pill);
+  box-shadow: 0 4px 10px rgba(26,157,111,0.32); display: none;
+}
+.badge-done .icon { width: .95em; height: .95em; }
+.badge-done.show { display: inline-flex; }
+
+.foot { text-align: center; margin-top: var(--sp-7); font-size: 13.5px; color: var(--ink-500); line-height: 1.75; }
+.foot .icon { color: var(--hubAccent); }
+.foot b { color: var(--hubAccent); }
+
+@media (max-width: 600px) {
+  body { padding: var(--sp-5) var(--sp-4) var(--sp-7); }
+  .grid { grid-template-columns: 1fr; gap: var(--sp-3); }
+  .hero { padding: var(--sp-2) 0 var(--sp-6); }
+}

@@ -9,7 +9,7 @@
     --face: linear-gradient(135deg, #fbcfe8, #db2777);
     --badge: #db2777;
     --gt: linear-gradient(90deg, #ec4899, #a855f7, #f472b6);
-    --pageBg: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 45%, #f5d0fe 100%);
+    --pageBg: radial-gradient(900px 480px at 100% -8%, color-mix(in srgb, var(--a2) 9%, transparent), transparent), var(--paper);
     --doneBg: linear-gradient(135deg, #fef3c7, #fde68a); --doneBorder: #f59e0b; --doneText: #92400e;
     --shadowA: rgba(219,39,119,0.4); --shadowB: rgba(219,39,119,0.3);
   }
