@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>서울세계불꽃축제 생활인구 이동 분석 (2025.09.27)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cloud-dancer: #F5F5F0;
+  --bg-main:      #FAFAF7;
+  --bg-sidebar:   #EEEDE7;
+  --bg-header:    #1a1a2e;
+  --text-primary: #2C2C28;
+  --text-sub:     #6B6B5E;
+  --border:       #DEDED5;
+  --warm-gray:    #8B8680;
+  --accent:       #D4A843;
+  --accent-dark:  #B8922F;
+  --accent-light: #FDF6E3;
+  --green:        #4A6741;  --green-light:  #EAF0E8;
+  --red:          #C2544D;  --red-light:    #F5E8E8;
+  --blue:         #5E7A8A;  --blue-light:   #E8EEF2;
+  /* 차트 시리즈 (light surface #FAFAF7 기준) */
+  --s-festival:   #A07C1E;
+  --s-base:       #2E6DA4;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; overflow: hidden; }
+body {
+  font-family: 'Noto Sans KR', -apple-system, sans-serif;
+  background: var(--cloud-dancer);
+  color: var(--text-primary);
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+/* ───────── 슬라이드 프레임 ───────── */
+.deck { position: fixed; inset: 0; }
+.slide {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 44px 72px 84px;
+  background: var(--bg-main);
+  opacity: 0; transform: translateX(48px);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  overflow: hidden;
+}
+.slide.active { opacity: 1; transform: none; pointer-events: auto; }
+.slide.before { transform: translateX(-48px); }
+.slide-inner { width: 100%; max-width: 1160px; margin: 0 auto; max-height: 100%; overflow-y: auto; }
+
+/* ───────── HUD (진행바 + 하단 내비) ───────── */
+.progress-bar {
+  position: fixed; top: 0; left: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), #E8C468);
+  z-index: 1000; transition: width 0.3s; width: 0%;
+}
+.hud {
+  position: fixed; left: 0; right: 0; bottom: 0; height: 56px;
+  display: flex; align-items: center; gap: 16px;
+  padding: 0 28px; z-index: 900;
+  background: rgba(245,245,240,0.95); color: var(--text-sub);
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(4px);
+  font-size: 13px;
+}
+.hud .slide-label { font-weight: 600; color: var(--accent-dark); }
+.hud .spacer { flex: 1; }
+.hud .counter { font-variant-numeric: tabular-nums; color: var(--warm-gray); }
+.hud button {
+  background: #fff; color: var(--text-primary); border: 1px solid var(--border);
+  border-radius: 8px; width: 38px; height: 34px; font-size: 15px; cursor: pointer;
+  transition: background 0.15s;
+}
+.hud button:hover { background: var(--accent-light); }
+.hud .hint { color: var(--warm-gray); font-size: 12px; }
+
+/* ───────── 타이틀 · 클로징 ───────── */
+.title-badge {
+  display: inline-block; background: var(--accent-light); color: var(--accent-dark);
+  padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+  letter-spacing: 1px; margin-bottom: 22px; text-transform: uppercase;
+}
+.title-slide h1 { font-size: 52px; font-weight: 900; line-height: 1.25; letter-spacing: -1px; margin-bottom: 18px; }
+.title-slide h1 span { color: var(--accent-dark); }
+.title-sub { font-size: 20px; font-weight: 300; color: var(--text-sub); max-width: 760px; margin-bottom: 34px; }
+.title-meta { display: flex; gap: 26px; font-size: 13.5px; color: var(--warm-gray); flex-wrap: wrap; }
+
+/* ───────── 본문 공통 ───────── */
+.slide h2 {
+  font-size: 30px; font-weight: 800; margin-bottom: 8px;
+  padding-bottom: 12px; border-bottom: 2px solid var(--accent); letter-spacing: -0.3px;
+}
+.slide h3 { font-size: 18px; font-weight: 700; margin: 18px 0 10px; }
+.section-lead { font-size: 16.5px; color: var(--text-sub); margin: 14px 0 20px; line-height: 1.75; max-width: 980px; }
+strong { font-weight: 700; }
+.highlight-text { color: var(--accent-dark); font-weight: 700; }
+.muted { color: var(--text-sub); font-size: 13px; }
+
+/* Executive Summary */
+.verdict { font-size: 32px; font-weight: 800; line-height: 1.45; margin: 10px 0 18px; }
+.verdict span { color: var(--accent-dark); }
+.exec-desc { color: var(--text-sub); font-size: 16.5px; line-height: 1.8; max-width: 980px; }
+.exec-kpi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 34px; }
+.exec-kpi-item {
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 12px; padding: 22px 18px; text-align: center;
+}
+.exec-kpi-item .label { font-size: 12px; color: var(--warm-gray); text-transform: uppercase; letter-spacing: 1px; }
+.exec-kpi-item .value { font-size: 34px; font-weight: 800; color: var(--accent-dark); margin-top: 8px; }
+.exec-kpi-item .desc { font-size: 13px; color: var(--text-sub); margin-top: 4px; }
+
+/* 카드·박스 */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 12px 0; }
+.white-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; }
+.white-card-title {
+  font-size: 14px; font-weight: 700; margin: 0 0 12px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.info-box {
+  border-radius: 10px; padding: 14px 20px; margin: 14px 0 0;
+  font-size: 13.5px; line-height: 1.65; border-left: 4px solid;
+}
+.info-box.tip    { background: var(--green-light);  border-color: var(--green); }
+.info-box.warn   { background: var(--accent-light); border-color: var(--accent); }
+.info-box.danger { background: var(--red-light);    border-color: var(--red); }
+.info-box.info   { background: var(--blue-light);   border-color: var(--blue); }
+
+/* 표 */
+table { width: 100%; border-collapse: collapse; margin: 12px 0 0; font-size: 13.5px; }
+th, td { padding: 8px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+th {
+  background: var(--bg-sidebar); font-weight: 600; font-size: 12px;
+  text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-sub);
+}
+tr:hover { background: rgba(212,168,67,0.05); }
+tbody tr:last-child td { border-bottom: none; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.highlight { background: var(--accent-light); font-weight: 600; }
+
+/* 차트 */
+.chart-card {
+  background: #fff; border: 1px solid var(--border); border-radius: 12px;
+  padding: 18px 22px 12px; margin: 12px 0 0; position: relative;
+}
+.chart-title { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+.chart-sub { font-size: 12.5px; color: var(--text-sub); margin-bottom: 8px; }
+.legend { display: flex; gap: 18px; font-size: 12.5px; color: var(--text-sub); margin-bottom: 6px; flex-wrap: wrap; }
+.legend .chip { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.chart-svg { width: 100%; height: auto; display: block; max-height: 58vh; }
+.chart-tooltip {
+  position: absolute; pointer-events: none; background: #1a1a2e; color: #fff;
+  font-size: 12px; line-height: 1.5; padding: 8px 12px; border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25); opacity: 0; transition: opacity 0.1s;
+  z-index: 10; white-space: nowrap;
+}
+.chart-tooltip .tt-title { font-weight: 700; color: var(--accent); margin-bottom: 2px; }
+.sm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 12px; }
+.sm-grid .chart-card { margin: 0; padding: 14px 16px 8px; }
+.sm-grid .chart-title { font-size: 13.5px; }
+.sm-grid .chart-sub { font-size: 11.5px; }
+
+/* 넥스트 스텝 */
+.next-step-box { background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-top: 18px; }
+.next-step-header {
+  background: var(--accent-light); color: var(--text-primary); padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 10px;
+}
+.next-step-sub { font-size: 13px; font-weight: 400; color: var(--text-sub); margin-left: auto; }
+.next-step-items { padding: 14px 24px; }
+.next-step-item {
+  display: flex; align-items: flex-start; gap: 14px; padding: 11px 0;
+  border-bottom: 1px solid var(--border); font-size: 14px; line-height: 1.6;
+}
+.next-step-item:last-child { border-bottom: none; }
+.next-step-circle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; min-width: 26px; background: var(--accent);
+  color: #1a1a2e; border-radius: 50%; font-size: 12px; font-weight: 800;
+}
+
+/* 클로징 */
+.closing h1 { font-size: 40px; font-weight: 900; margin-bottom: 20px; }
+.closing h1 span { color: var(--accent-dark); }
+.closing p { color: var(--text-sub); font-size: 16px; max-width: 800px; line-height: 1.9; }
+.closing .meta { margin-top: 36px; font-size: 13px; color: var(--warm-gray); }
+
+@media (max-width: 900px) {
+  .slide { padding: 28px 24px 76px; }
+  .title-slide h1 { font-size: 32px; }
+  .exec-kpi { grid-template-columns: repeat(2, 1fr); }
+  .two-col { grid-template-columns: 1fr; }
+  .sm-grid { grid-template-columns: 1fr 1fr; }
+  .verdict { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="deck" id="deck">
+
+  <!-- 1. 타이틀 -->
+  <section class="slide title-slide" data-label="타이틀">
+    <div class="slide-inner">
+      <div class="title-badge">Data Analysis · Slide Report</div>
+      <h1>서울세계불꽃축제,<br><span>도시가 움직인 4시간</span></h1>
+      <div class="title-sub">서울 생활인구(행정동·시간대별) 데이터로 본 2025년 9월 27일 인구 대이동<br>여의도에 무슨 일이 있었나</div>
+      <div class="title-meta">
+        <span>데이터 기준: 2025년 9월 (서울시 생활인구, 행정동 단위)</span>
+        <span>비교 기준: 평상 토요일 9/13 · 9/20 평균</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Executive Summary -->
+  <section class="slide" data-label="요약">
+    <div class="slide-inner">
+      <div class="title-badge">Executive Summary</div>
+      <div class="verdict">불꽃쇼가 시작된 19시, 여의동 생활인구는 <span>35.9만 명</span><br>평상 토요일의 <span>4.4배</span></div>
+      <p class="exec-desc">서울 전체 생활인구 총량은 평상 토요일 대비 2.2% 늘었을 뿐이지만, 그 내부에서는 극적인 재배치가 일어났다.
+      한강 조망이 가능한 여의동·이촌동·노량진 일대로 저녁 3~4시간 동안 40만 명 규모의 인파가 쏠렸고,
+      같은 시간 홍대·신촌 등 전통적 주말 상권의 인구는 오히려 줄었다.</p>
+      <div class="exec-kpi">
+        <div class="exec-kpi-item">
+          <div class="label">여의동 19시 생활인구</div>
+          <div class="value">35.9만</div>
+          <div class="desc">평상 토요일 8.3만 → 4.4배</div>
+        </div>
+        <div class="exec-kpi-item">
+          <div class="label">여의동 순증 (19~20시)</div>
+          <div class="value">+26.5만</div>
+          <div class="desc">평상 대비 +342.6%</div>
+        </div>
+        <div class="exec-kpi-item">
+          <div class="label">최대 증가율 동네</div>
+          <div class="value">+460%</div>
+          <div class="desc">용산구 이촌2동 (강 건너 조망)</div>
+        </div>
+        <div class="exec-kpi-item">
+          <div class="label">영등포구 저녁 증가</div>
+          <div class="value">+49.1%</div>
+          <div class="desc">18~21시, +22.3만 명</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 데이터와 방법 -->
+  <section class="slide" data-label="데이터와 방법">
+    <div class="slide-inner">
+      <h2>데이터와 분석 방법</h2>
+      <p class="section-lead">서울시 생활인구는 KT 통신 데이터와 서울시 행정 데이터를 결합해 추계한 "특정 시점, 특정 지역에 실제로 존재하는 인구"다. 주민등록 인구와 달리 이동·체류를 그대로 반영하므로 축제 같은 이벤트 분석에 가장 적합한 데이터다.</p>
+      <div class="two-col">
+        <div class="white-card">
+          <div class="white-card-title">데이터 개요</div>
+          <table>
+            <tbody>
+              <tr><td>원천</td><td>서울시 생활인구 (행정동·시간대별), 2025년 9월</td></tr>
+              <tr><td>규모</td><td>305,204행 · 424개 행정동 × 24시간 × 30일</td></tr>
+              <tr><td>분석 대상일</td><td class="highlight">9/27(토) 서울세계불꽃축제</td></tr>
+              <tr><td>비교 기준</td><td>평상 토요일 9/13·9/20 평균</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="white-card">
+          <div class="white-card-title">비교 설계</div>
+          <p style="font-size:13.5px" class="muted">같은 요일(토)끼리 비교해 요일 효과를 제거했다. 추석 연휴가 없는 9월 중순 두 토요일을 기준선으로 삼고, 불꽃쇼 시간대(19~20시)와 저녁 시간대(18~21시)를 중심으로 축제일과의 차이를 측정했다. 행정동 이름은 행정안전부 행정동코드 기준으로 결합했다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 서울 전체 -->
+  <section class="slide" data-label="서울 전체 추이">
+    <div class="slide-inner">
+      <h2>서울 전체: 총량은 잔잔했고, 내부는 요동쳤다</h2>
+      <p class="section-lead">서울 전체 곡선만 보면 축제일은 평상 토요일과 거의 겹친다. 저녁 19시 기준 차이는 <strong>+22.7만 명(+2.2%)</strong>. 즉 불꽃축제의 본질은 "서울로의 유입"이 아니라 <strong class="highlight-text">서울 안에서의 대규모 재배치</strong>였다.</p>
+      <div class="chart-card" id="chart-seoul"></div>
+      <div class="info-box info">
+        <strong>읽는 법</strong><br>축제일 곡선(골드)은 오후부터 기준선(블루) 위로 벌어지기 시작해 19~21시에 격차가 가장 커진다. 외곽 유입 + 귀가 지연이 겹친 결과다.
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 여의동 시간대 -->
+  <section class="slide" data-label="여의동 집중 분석">
+    <div class="slide-inner">
+      <h2>여의동: 8만의 동네가 36만의 도시가 되다</h2>
+      <p class="section-lead">축제의 진앙. 불꽃쇼가 열리는 한강공원이 속한 <strong>영등포구 여의동</strong>은 오후부터 인구가 가파르게 차오르다 쇼 시작 시각인 <strong>19시에 35.9만 명</strong>으로 정점을 찍었다. 평상 토요일 같은 시각(8.3만 명)의 4.4배, 광역시 하나의 도심 인구가 한 개 동에 들어선 셈이다.</p>
+      <div class="chart-card" id="chart-yeoui"></div>
+    </div>
+  </section>
+
+  <!-- 6. 여의동 9월 일자별 -->
+  <section class="slide" data-label="9월 한 달 속의 9/27">
+    <div class="slide-inner">
+      <h2>9월 한 달 중 9/27은 어떤 날이었나</h2>
+      <p class="section-lead">한 달 전체의 저녁(19~20시 평균) 인구를 일자별로 놓고 보면 9/27이 얼마나 이례적인지 한눈에 보인다. 평일·주말 모두 8~10만 명 수준의 균일한 띠를 그리다가 축제일 하루만 <strong>34.2만 명</strong>으로 치솟는다.</p>
+      <div class="chart-card" id="chart-yeoui-month"></div>
+    </div>
+  </section>
+
+  <!-- 7. 한강변 확산 -->
+  <section class="slide" data-label="한강변 확산">
+    <div class="slide-inner">
+      <h2>한강변 확산: 조망점을 따라 번진 인파</h2>
+      <p class="section-lead">증가폭 상위 지역은 정확히 <strong>한강 조망 지도</strong>를 그린다. 강 건너 맞은편 이촌1·2동, 한강대교 남단 노량진, 원효대교 북단 원효로2동.<br>모두 불꽃이 보이는 물가다.</p>
+      <div class="sm-grid" id="sm-dongs"></div>
+    </div>
+  </section>
+
+  <!-- 8. 증가 상위 15 -->
+  <section class="slide" data-label="증가량 상위 15">
+    <div class="slide-inner">
+      <h2>증가량 상위 15개 행정동 (19~20시 평균)</h2>
+      <table id="tbl-spike">
+        <thead><tr><th>#</th><th>행정동</th><th>자치구</th><th class="num">평상 토요일</th><th class="num">축제일</th><th class="num">증가</th><th class="num">증가율</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="info-box warn">
+        <strong>해석 주의: 북아현동</strong><br>북아현동(+58.4%)은 축제 효과로 보기 어렵다. 평상 토요일 저녁마다 인구가 규칙적으로 급감하는 기저 패턴 탓에 기준선이 낮게 형성돼 증가율이 과대 산출됐다. 한강 조망 지역도 아니어서 확산 차트에서는 제외했다.
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. 자치구별 증감 -->
+  <section class="slide" data-label="자치구별 증감">
+    <div class="slide-inner">
+      <h2>자치구별 증감: 강을 낀 4개 구의 밤</h2>
+      <p class="section-lead">저녁 18~21시 평균 기준, 증가분의 대부분이 <strong>영등포·용산·동작·마포</strong> 4개 구에 집중됐다. 나머지 21개 구는 보합 또는 소폭 감소.<br>서울 시민이 축제가 보이는 곳으로 "이동"했음을 보여준다.</p>
+      <div class="chart-card" id="chart-gu"></div>
+    </div>
+  </section>
+
+  <!-- 10. 시간대별 밀집 순위 -->
+  <section class="slide" data-label="시간대별 밀집 순위">
+    <div class="slide-inner">
+      <h2>시간대별 최대 밀집 순위</h2>
+      <p class="section-lead">축제일 저녁, 시간대별 생활인구 상위 5개 동. 평소 주말 저녁이라면 홍대(서교동)가 차지할 1위를 <strong>16시부터 22시까지 여의동이 독점</strong>했고, 23시가 되어서야 순위가 평소 모습으로 돌아왔다.</p>
+      <table id="tbl-rank">
+        <thead><tr><th>시각</th><th>1위</th><th>2위</th><th>3위</th><th>4위</th><th>5위</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="info-box warn">
+        <strong>안전 관리 관점</strong><br>여의동은 21시(19.3만 명)에도 평상시 저녁의 2배가 넘는 인구가 남아 있었다. 쇼 종료 직후 귀가 인파가 일시에 몰리는 20~22시 구간이 밀집 리스크 관리의 핵심 시간대다.
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. 유출 지역 -->
+  <section class="slide" data-label="유출 지역">
+    <div class="slide-inner">
+      <h2>유출 지역: 홍대와 신촌이 조용해진 밤</h2>
+      <p class="section-lead">같은 시각(19~20시) 인구가 줄어든 곳은 신촌동·서교동(홍대) 같은 대학가·주말 상권이다. 축제장 바로 옆 <strong>영등포동</strong>도 감소했다.<br>축제 인파를 피해 지역 수요가 빠져나간 것으로 보인다.</p>
+      <table id="tbl-outflow">
+        <thead><tr><th>#</th><th>행정동</th><th>자치구</th><th class="num">평상 토요일</th><th class="num">축제일</th><th class="num">증감</th><th class="num">증감율</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="info-box danger">
+        <strong>해석 주의: 충현동(※)</strong><br>감소폭 1위인 충현동은 축제 효과가 아니다. 9/26(금)부터 9월 말까지 저녁 인구가 구조적으로 하락해 있어 기지국·집계 셀 변경 또는 지역 요인으로 판단된다. 신촌동 역시 기준일 9/20 수치가 이례적으로 높아 감소폭이 과대 산출됐을 수 있다.
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. 시사점 -->
+  <section class="slide" data-label="시사점">
+    <div class="slide-inner">
+      <h2>시사점</h2>
+      <p class="section-lead">단일 이벤트가 도시 공간에 미치는 영향을 시간·공간 해상도 높게 정량화할 수 있음을 보여준다. 같은 방법론이 재난 대응, 교통 수요 예측, 상권 분석에 그대로 확장된다.</p>
+      <div class="info-box tip">
+        <strong>상권 관점</strong><br>대형 이벤트는 도시 전체 소비를 늘리기보다 <strong>수요의 공간 이동</strong>을 일으킨다. 축제 인접 상권(여의도·노량진·용산)의 매출 기회와 원거리 상권(홍대·신촌·자양·대치)의 일시적 공백, 그리고 최인접 지역(영등포동)의 회피 효과가 동시에 발생한다.
+      </div>
+      <div class="next-step-box">
+        <div class="next-step-header">
+          분석 확장 제안
+          <span class="next-step-sub">동일 데이터셋으로 즉시 착수 가능</span>
+        </div>
+        <div class="next-step-items">
+          <div class="next-step-item">
+            <span class="next-step-circle">1</span>
+            <span><strong>연령·성별 구성 분석</strong><br>생활인구 데이터의 연령×성별 28개 컬럼으로 축제 방문객 프로파일(20대 여성 비중 등)을 추정</span>
+          </div>
+          <div class="next-step-item">
+            <span class="next-step-circle">2</span>
+            <span><strong>유입 경로 추정</strong><br>인접 동의 시간대별 증감 시퀀스로 지하철 5·9호선 축 중심의 유입·해산 경로 재구성</span>
+          </div>
+          <div class="next-step-item">
+            <span class="next-step-circle">3</span>
+            <span><strong>해산 속도 모델링</strong><br>20~24시 인구 감소 곡선으로 대중교통 수송 능력 대비 해산 소요 시간 정량화 (안전 계획 근거)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. 클로징 -->
+  <section class="slide closing" data-label="마무리">
+    <div class="slide-inner">
+      <div class="title-badge">Closing</div>
+      <h1>총량이 아니라 <span>재배치</span>를 보라</h1>
+      <p>2025년 9월 27일 저녁, 서울의 인구 총량은 2.2% 늘었을 뿐이지만
+      여의도 한 개 동에는 광역시 도심급 인구가 들어섰다.
+      생활인구 데이터는 도시가 이벤트에 반응하는 방식을 시간 단위로 보여주는 렌즈다.</p>
+      <div class="meta">서울세계불꽃축제 생활인구 이동 분석 · 데이터 기준 2025.09 · 서울시 생활인구(행정동)</div>
+    </div>
+  </section>
+
+</div>
+
+<div class="hud">
+  <span class="slide-label" id="hudLabel"></span>
+  <span class="spacer"></span>
+  <span class="hint">← → 방향키 · Space로 이동</span>
+  <span class="counter" id="hudCounter"></span>
+  <button id="btnPrev" aria-label="이전 슬라이드">‹</button>
+  <button id="btnNext" aria-label="다음 슬라이드">›</button>
+</div>
+
+<script>
+const DATA = {"seoul": {"festival": [9893029, 9876372, 9866121, 9859664, 9851911, 9845327, 9831190, 9813402, 9855823, 9922270, 9991559, 10062843, 10130908, 10185852, 10227441, 10275511, 10319338, 10329640, 10327487, 10313079, 10271937, 10168330, 10021964, 9876353], "base": [9872452, 9857504, 9850084, 9844757, 9841791, 9842793, 9833519, 9828435, 9879368, 9947406, 10009269, 10068958, 10119826, 10150527, 10166189, 10179127, 10183560, 10167170, 10134703, 10086453, 10038820, 9971913, 9887514, 9806470]}, "yeoui": {"festival": [55622, 53984, 53214, 52866, 53466, 55890, 61164, 66283, 75976, 91353, 107425, 123677, 142736, 161183, 180610, 202836, 232390, 270234, 320034, 359281, 324360, 192531, 103612, 66864], "base": [50923, 49807, 49340, 49101, 49427, 52518, 58184, 63749, 65607, 72108, 78857, 84981, 89365, 93140, 95703, 97281, 97913, 94719, 89456, 82532, 71934, 63323, 56897, 52418]}, "yeouiDaily": [{"date": "20250901", "dow": 0, "pop": 85631}, {"date": "20250902", "dow": 1, "pop": 92117}, {"date": "20250903", "dow": 2, "pop": 92912}, {"date": "20250904", "dow": 3, "pop": 92133}, {"date": "20250905", "dow": 4, "pop": 92190}, {"date": "20250906", "dow": 5, "pop": 67267}, {"date": "20250907", "dow": 6, "pop": 67468}, {"date": "20250908", "dow": 0, "pop": 88328}, {"date": "20250909", "dow": 1, "pop": 92352}, {"date": "20250910", "dow": 2, "pop": 95118}, {"date": "20250911", "dow": 3, "pop": 94432}, {"date": "20250912", "dow": 4, "pop": 87388}, {"date": "20250913", "dow": 5, "pop": 76012}, {"date": "20250914", "dow": 6, "pop": 69796}, {"date": "20250915", "dow": 0, "pop": 88217}, {"date": "20250916", "dow": 1, "pop": 94127}, {"date": "20250917", "dow": 2, "pop": 90088}, {"date": "20250918", "dow": 3, "pop": 96805}, {"date": "20250919", "dow": 4, "pop": 88023}, {"date": "20250920", "dow": 5, "pop": 78455}, {"date": "20250921", "dow": 6, "pop": 72791}, {"date": "20250922", "dow": 0, "pop": 90910}, {"date": "20250923", "dow": 1, "pop": 96616}, {"date": "20250924", "dow": 2, "pop": 93397}, {"date": "20250925", "dow": 3, "pop": 99005}, {"date": "20250926", "dow": 4, "pop": 97386}, {"date": "20250927", "dow": 5, "pop": 341821}, {"date": "20250928", "dow": 6, "pop": 66820}, {"date": "20250929", "dow": 0, "pop": 94753}, {"date": "20250930", "dow": 1, "pop": 97224}], "topDongs": [{"name": "이촌2동", "gu": "용산구", "festival": [7651, 7799, 7796, 7873, 7754, 8231, 8911, 9250, 10447, 10588, 11623, 11295, 13337, 15546, 18958, 23375, 29033, 37944, 55246, 77181, 47404, 21258, 13887, 7769], "base": [7026, 7076, 7180, 7141, 7217, 7523, 7547, 7758, 7949, 8125, 7934, 8001, 8133, 8934, 9645, 10872, 11517, 12642, 12129, 11295, 10931, 9698, 8997, 6236], "fest1920": 62293, "base1920": 11113, "pct": 460.5}, {"name": "노량진1동", "gu": "동작구", "festival": [33619, 33745, 33863, 33941, 34117, 34754, 34894, 36119, 37879, 38717, 38800, 39027, 41360, 44592, 48509, 54749, 61027, 67461, 75906, 84878, 78915, 55437, 45198, 37493], "base": [32948, 33080, 33064, 33046, 33285, 33845, 34009, 35034, 36899, 37549, 37494, 37513, 37546, 37896, 38597, 39705, 40354, 40470, 39033, 38572, 37423, 36359, 35139, 32808], "fest1920": 81896, "base1920": 37997, "pct": 115.5}, {"name": "이촌1동", "gu": "용산구", "festival": [25328, 24810, 24690, 24719, 24760, 25463, 26258, 26951, 28226, 29177, 28774, 27943, 29336, 30608, 32655, 36603, 42344, 49385, 58576, 63219, 59072, 42858, 31165, 26449], "base": [25006, 24840, 24621, 24559, 24535, 25090, 25544, 25885, 26483, 26345, 26348, 25778, 25780, 25104, 25083, 25584, 25845, 25664, 24585, 24403, 25942, 26214, 26126, 25097], "fest1920": 61146, "base1920": 25172, "pct": 142.9}, {"name": "한강로동", "gu": "용산구", "festival": [36513, 34647, 33809, 33477, 33759, 34367, 35927, 38168, 40476, 47748, 53539, 62529, 71969, 79754, 84178, 91028, 92025, 95781, 90035, 82637, 87360, 78111, 55783, 43927], "base": [35399, 34296, 33613, 33349, 33360, 33554, 35048, 37054, 39274, 45744, 51355, 59879, 69035, 76790, 78066, 82706, 81260, 80184, 76947, 71810, 64213, 52174, 44150, 37704], "fest1920": 84998, "base1920": 68012, "pct": 25.0}, {"name": "용강동", "gu": "마포구", "festival": [25563, 25748, 25578, 25521, 25428, 25654, 25566, 25261, 24813, 23736, 23496, 22817, 23699, 23002, 22461, 22811, 23992, 26478, 31255, 35254, 36953, 32268, 27405, 27834], "base": [24912, 25010, 24854, 24732, 24754, 24886, 24624, 24422, 24070, 23235, 22806, 22163, 21801, 21013, 20731, 19995, 20051, 20550, 20674, 20671, 20683, 21275, 22304, 25162], "fest1920": 36104, "base1920": 20677, "pct": 74.6}, {"name": "원효로2동", "gu": "용산구", "festival": [15954, 16107, 16305, 16424, 16384, 16600, 16664, 16160, 15735, 14422, 13673, 12954, 12657, 13335, 13385, 14037, 15093, 17858, 22014, 26401, 24460, 19875, 17989, 17014], "base": [15978, 16021, 16082, 16250, 16241, 16346, 16288, 16055, 15564, 14556, 13771, 13287, 12704, 12329, 12129, 12162, 12228, 12119, 12469, 12747, 13387, 13963, 14652, 15630], "fest1920": 25431, "base1920": 13067, "pct": 94.6}], "gu": [{"gu": "영등포구", "fest": 678773, "base": 455298, "diff": 223475, "pct": 49.1}, {"gu": "용산구", "fest": 408776, "base": 300399, "diff": 108377, "pct": 36.1}, {"gu": "동작구", "fest": 412046, "base": 362911, "diff": 49135, "pct": 13.5}, {"gu": "마포구", "fest": 531729, "base": 503683, "diff": 28046, "pct": 5.6}, {"gu": "서초구", "fest": 544614, "base": 540946, "diff": 3668, "pct": 0.7}, {"gu": "종로구", "fest": 275383, "base": 275308, "diff": 75, "pct": 0.0}, {"gu": "성북구", "fest": 406470, "base": 408180, "diff": -1710, "pct": -0.4}, {"gu": "금천구", "fest": 182108, "base": 185321, "diff": -3213, "pct": -1.7}, {"gu": "구로구", "fest": 363634, "base": 367717, "diff": -4083, "pct": -1.1}, {"gu": "도봉구", "fest": 247408, "base": 252265, "diff": -4857, "pct": -1.9}, {"gu": "중랑구", "fest": 325082, "base": 330045, "diff": -4963, "pct": -1.5}, {"gu": "중구", "fest": 222090, "base": 227312, "diff": -5221, "pct": -2.3}, {"gu": "노원구", "fest": 448851, "base": 455819, "diff": -6968, "pct": -1.5}, {"gu": "강북구", "fest": 249837, "base": 257374, "diff": -7536, "pct": -2.9}, {"gu": "동대문구", "fest": 319181, "base": 328482, "diff": -9301, "pct": -2.8}, {"gu": "강동구", "fest": 509420, "base": 519096, "diff": -9676, "pct": -1.9}, {"gu": "성동구", "fest": 324051, "base": 333943, "diff": -9892, "pct": -3.0}, {"gu": "송파구", "fest": 745985, "base": 756822, "diff": -10837, "pct": -1.4}, {"gu": "양천구", "fest": 347891, "base": 360534, "diff": -12643, "pct": -3.5}, {"gu": "은평구", "fest": 396592, "base": 409431, "diff": -12839, "pct": -3.1}, {"gu": "관악구", "fest": 423240, "base": 436889, "diff": -13649, "pct": -3.1}, {"gu": "강서구", "fest": 494051, "base": 508809, "diff": -14758, "pct": -2.9}, {"gu": "서대문구", "fest": 314222, "base": 333987, "diff": -19765, "pct": -5.9}, {"gu": "광진구", "fest": 354624, "base": 374575, "diff": -19951, "pct": -5.3}, {"gu": "강남구", "fest": 744150, "base": 772826, "diff": -28677, "pct": -3.7}], "spikeTop": [{"code": "11560540", "name": "여의동", "gu": "영등포구", "fest": 341821, "base": 77233, "diff": 264588, "pct": 342.6}, {"code": "11170640", "name": "이촌2동", "gu": "용산구", "fest": 62293, "base": 11113, "diff": 51179, "pct": 460.5}, {"code": "11590510", "name": "노량진1동", "gu": "동작구", "fest": 81896, "base": 37997, "diff": 43899, "pct": 115.5}, {"code": "11170630", "name": "이촌1동", "gu": "용산구", "fest": 61146, "base": 25172, "diff": 35973, "pct": 142.9}, {"code": "11170625", "name": "한강로동", "gu": "용산구", "fest": 84998, "base": 68012, "diff": 16987, "pct": 25.0}, {"code": "11440590", "name": "용강동", "gu": "마포구", "fest": 36104, "base": 20677, "diff": 15427, "pct": 74.6}, {"code": "11410555", "name": "북아현동", "gu": "서대문구", "fest": 40852, "base": 25795, "diff": 15056, "pct": 58.4}, {"code": "11170570", "name": "원효로2동", "gu": "용산구", "fest": 25431, "base": 13067, "diff": 12364, "pct": 94.6}, {"code": "11440585", "name": "도화동", "gu": "마포구", "fest": 31281, "base": 20678, "diff": 10603, "pct": 51.3}, {"code": "11590520", "name": "노량진2동", "gu": "동작구", "fest": 28741, "base": 18271, "diff": 10469, "pct": 57.3}, {"code": "11440680", "name": "합정동", "gu": "마포구", "fest": 32855, "base": 23324, "diff": 9531, "pct": 40.9}, {"code": "11650570", "name": "반포2동", "gu": "서초구", "fest": 35106, "base": 26689, "diff": 8417, "pct": 31.5}, {"code": "11290600", "name": "안암동", "gu": "성북구", "fest": 35210, "base": 28384, "diff": 6826, "pct": 24.1}, {"code": "11170690", "name": "서빙고동", "gu": "용산구", "fest": 21145, "base": 14373, "diff": 6773, "pct": 47.1}, {"code": "11560560", "name": "당산2동", "gu": "영등포구", "fest": 44042, "base": 37542, "diff": 6500, "pct": 17.3}], "hourlyTop5": {"0": [{"name": "역삼1동", "gu": "강남구", "pop": 66353}, {"name": "길동", "gu": "강동구", "pop": 62994}, {"name": "서교동", "gu": "마포구", "pop": 58670}, {"name": "진관동", "gu": "은평구", "pop": 58178}, {"name": "대조동", "gu": "은평구", "pop": 57338}], "1": [{"name": "역삼1동", "gu": "강남구", "pop": 63865}, {"name": "길동", "gu": "강동구", "pop": 62967}, {"name": "진관동", "gu": "은평구", "pop": 58080}, {"name": "대조동", "gu": "은평구", "pop": 57828}, {"name": "서교동", "gu": "마포구", "pop": 55321}], "2": [{"name": "길동", "gu": "강동구", "pop": 62739}, {"name": "역삼1동", "gu": "강남구", "pop": 62203}, {"name": "대조동", "gu": "은평구", "pop": 58943}, {"name": "진관동", "gu": "은평구", "pop": 58120}, {"name": "위례동", "gu": "송파구", "pop": 54978}], "3": [{"name": "길동", "gu": "강동구", "pop": 62325}, {"name": "역삼1동", "gu": "강남구", "pop": 61069}, {"name": "대조동", "gu": "은평구", "pop": 59469}, {"name": "진관동", "gu": "은평구", "pop": 58081}, {"name": "위례동", "gu": "송파구", "pop": 54914}], "4": [{"name": "길동", "gu": "강동구", "pop": 62611}, {"name": "역삼1동", "gu": "강남구", "pop": 60187}, {"name": "대조동", "gu": "은평구", "pop": 59176}, {"name": "진관동", "gu": "은평구", "pop": 58109}, {"name": "오류2동", "gu": "구로구", "pop": 54744}], "5": [{"name": "길동", "gu": "강동구", "pop": 61223}, {"name": "역삼1동", "gu": "강남구", "pop": 60243}, {"name": "진관동", "gu": "은평구", "pop": 58260}, {"name": "대조동", "gu": "은평구", "pop": 57704}, {"name": "여의동", "gu": "영등포구", "pop": 55890}], "6": [{"name": "역삼1동", "gu": "강남구", "pop": 61681}, {"name": "여의동", "gu": "영등포구", "pop": 61164}, {"name": "길동", "gu": "강동구", "pop": 60785}, {"name": "진관동", "gu": "은평구", "pop": 58557}, {"name": "대조동", "gu": "은평구", "pop": 56534}], "7": [{"name": "여의동", "gu": "영등포구", "pop": 66283}, {"name": "역삼1동", "gu": "강남구", "pop": 64021}, {"name": "길동", "gu": "강동구", "pop": 59874}, {"name": "진관동", "gu": "은평구", "pop": 58253}, {"name": "신촌동", "gu": "서대문구", "pop": 58221}], "8": [{"name": "여의동", "gu": "영등포구", "pop": 75976}, {"name": "역삼1동", "gu": "강남구", "pop": 70861}, {"name": "신촌동", "gu": "서대문구", "pop": 61407}, {"name": "길동", "gu": "강동구", "pop": 59631}, {"name": "진관동", "gu": "은평구", "pop": 57358}], "9": [{"name": "여의동", "gu": "영등포구", "pop": 91353}, {"name": "역삼1동", "gu": "강남구", "pop": 80092}, {"name": "신촌동", "gu": "서대문구", "pop": 65972}, {"name": "서초3동", "gu": "서초구", "pop": 60948}, {"name": "길동", "gu": "강동구", "pop": 59399}], "10": [{"name": "여의동", "gu": "영등포구", "pop": 107425}, {"name": "역삼1동", "gu": "강남구", "pop": 89052}, {"name": "신촌동", "gu": "서대문구", "pop": 72068}, {"name": "서교동", "gu": "마포구", "pop": 67149}, {"name": "서초3동", "gu": "서초구", "pop": 64209}], "11": [{"name": "여의동", "gu": "영등포구", "pop": 123677}, {"name": "역삼1동", "gu": "강남구", "pop": 95479}, {"name": "서교동", "gu": "마포구", "pop": 81419}, {"name": "신촌동", "gu": "서대문구", "pop": 73003}, {"name": "종로1·2·3·4가동", "gu": "종로구", "pop": 68323}], "12": [{"name": "여의동", "gu": "영등포구", "pop": 142736}, {"name": "역삼1동", "gu": "강남구", "pop": 101012}, {"name": "서교동", "gu": "마포구", "pop": 93275}, {"name": "종로1·2·3·4가동", "gu": "종로구", "pop": 79899}, {"name": "신촌동", "gu": "서대문구", "pop": 73016}], "13": [{"name": "여의동", "gu": "영등포구", "pop": 161183}, {"name": "서교동", "gu": "마포구", "pop": 104781}, {"name": "역삼1동", "gu": "강남구", "pop": 103370}, {"name": "종로1·2·3·4가동", "gu": "종로구", "pop": 88894}, {"name": "한강로동", "gu": "용산구", "pop": 79754}], "14": [{"name": "여의동", "gu": "영등포구", "pop": 180610}, {"name": "서교동", "gu": "마포구", "pop": 114615}, {"name": "역삼1동", "gu": "강남구", "pop": 103238}, {"name": "종로1·2·3·4가동", "gu": "종로구", "pop": 93259}, {"name": "한강로동", "gu": "용산구", "pop": 84178}], "15": [{"name": "여의동", "gu": "영등포구", "pop": 202836}, {"name": "서교동", "gu": "마포구", "pop": 119274}, {"name": "역삼1동", "gu": "강남구", "pop": 101045}, {"name": "종로1·2·3·4가동", "gu": "종로구", "pop": 97059}, {"name": "한강로동", "gu": "용산구", "pop": 91028}], "16": [{"name": "여의동", "gu": "영등포구", "pop": 232390}, {"name": "서교동", "gu": "마포구", "pop": 124858}, {"name": "역삼1동", "gu": "강남구", "pop": 98188}, {"name": "종로1·2·3·4가동", "gu": "종로구", "pop": 95690}, {"name": "한강로동", "gu": "용산구", "pop": 92025}], "17": [{"name": "여의동", "gu": "영등포구", "pop": 270234}, {"name": "서교동", "gu": "마포구", "pop": 124039}, {"name": "한강로동", "gu": "용산구", "pop": 95781}, {"name": "역삼1동", "gu": "강남구", "pop": 95670}, {"name": "종로1·2·3·4가동", "gu": "종로구", "pop": 93263}], "18": [{"name": "여의동", "gu": "영등포구", "pop": 320034}, {"name": "서교동", "gu": "마포구", "pop": 118057}, {"name": "역삼1동", "gu": "강남구", "pop": 91306}, {"name": "한강로동", "gu": "용산구", "pop": 90035}, {"name": "종로1·2·3·4가동", "gu": "종로구", "pop": 84765}], "19": [{"name": "여의동", "gu": "영등포구", "pop": 359281}, {"name": "서교동", "gu": "마포구", "pop": 109771}, {"name": "역삼1동", "gu": "강남구", "pop": 84979}, {"name": "노량진1동", "gu": "동작구", "pop": 84878}, {"name": "한강로동", "gu": "용산구", "pop": 82637}], "20": [{"name": "여의동", "gu": "영등포구", "pop": 324360}, {"name": "서교동", "gu": "마포구", "pop": 101682}, {"name": "한강로동", "gu": "용산구", "pop": 87360}, {"name": "역삼1동", "gu": "강남구", "pop": 81191}, {"name": "노량진1동", "gu": "동작구", "pop": 78915}], "21": [{"name": "여의동", "gu": "영등포구", "pop": 192531}, {"name": "서교동", "gu": "마포구", "pop": 97783}, {"name": "한강로동", "gu": "용산구", "pop": 78111}, {"name": "역삼1동", "gu": "강남구", "pop": 76187}, {"name": "길동", "gu": "강동구", "pop": 63592}], "22": [{"name": "여의동", "gu": "영등포구", "pop": 103612}, {"name": "서교동", "gu": "마포구", "pop": 86596}, {"name": "역삼1동", "gu": "강남구", "pop": 70582}, {"name": "길동", "gu": "강동구", "pop": 64284}, {"name": "대조동", "gu": "은평구", "pop": 58720}], "23": [{"name": "서교동", "gu": "마포구", "pop": 67349}, {"name": "여의동", "gu": "영등포구", "pop": 66864}, {"name": "길동", "gu": "강동구", "pop": 62404}, {"name": "역삼1동", "gu": "강남구", "pop": 61957}, {"name": "진관동", "gu": "은평구", "pop": 57706}]}, "outflow": [{"code": "11410565", "name": "충현동", "gu": "서대문구", "fest": 27145, "base": 44541, "diff": -17397, "pct": -39.1}, {"code": "11410585", "name": "신촌동", "gu": "서대문구", "fest": 50652, "base": 63485, "diff": -12833, "pct": -20.2}, {"code": "11440660", "name": "서교동", "gu": "마포구", "fest": 105727, "base": 115934, "diff": -10208, "pct": -8.8}, {"code": "11215840", "name": "자양3동", "gu": "광진구", "fest": 25599, "base": 33040, "diff": -7441, "pct": -22.5}, {"code": "11680630", "name": "대치4동", "gu": "강남구", "fest": 45639, "base": 52542, "diff": -6902, "pct": -13.1}, {"code": "11215847", "name": "자양4동", "gu": "광진구", "fest": 34116, "base": 40749, "diff": -6633, "pct": -16.3}, {"code": "11560535", "name": "영등포동", "gu": "영등포구", "fest": 55001, "base": 60514, "diff": -5513, "pct": -9.1}]};
+
+/* ───────── 공통 유틸 ───────── */
+const NF = new Intl.NumberFormat('ko-KR');
+function fmtMan(v) {
+  if (Math.abs(v) >= 1e8) return (v / 1e8).toFixed(1) + '억';
+  if (Math.abs(v) >= 1e4) {
+    const man = v / 1e4;
+    return (Math.abs(man) >= 100 ? Math.round(man) : man.toFixed(1)) + '만';
+  }
+  return NF.format(Math.round(v));
+}
+function el(tag, attrs) {
+  const e = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
+}
+function niceTicks(lo, hi, n) {
+  const span = hi - lo, step0 = span / n, mag = Math.pow(10, Math.floor(Math.log10(step0)));
+  let step = mag;
+  for (const m of [1, 2, 2.5, 5, 10]) { if (step0 <= m * mag) { step = m * mag; break; } }
+  const ticks = [];
+  for (let t = Math.ceil(lo / step) * step; t <= hi + 1e-9; t += step) ticks.push(t);
+  return ticks;
+}
+
+/* ───────── 라인 차트 (2계열, hover crosshair + tooltip) ───────── */
+function lineChart(container, cfg) {
+  const W = cfg.w || 860, H = cfg.h || 300;
+  const M = { l: 52, r: 14, t: 12, b: 26 };
+  const n = cfg.series[0].values.length;
+  let vmax = -Infinity, vmin = Infinity;
+  cfg.series.forEach(s => s.values.forEach(v => { vmax = Math.max(vmax, v); vmin = Math.min(vmin, v); }));
+  const y0 = cfg.zeroBase ? 0 : Math.max(0, vmin - (vmax - vmin) * 0.08);
+  const y1 = vmax + (vmax - vmin || vmax) * 0.06;
+  const px = i => M.l + (W - M.l - M.r) * (i / (n - 1));
+  const py = v => M.t + (H - M.t - M.b) * (1 - (v - y0) / (y1 - y0));
+
+  if (cfg.title) {
+    const t = document.createElement('div'); t.className = 'chart-title'; t.innerHTML = cfg.title;
+    container.appendChild(t);
+  }
+  if (cfg.sub) {
+    const s = document.createElement('div'); s.className = 'chart-sub'; s.textContent = cfg.sub;
+    container.appendChild(s);
+  }
+  if (!cfg.noLegend) {
+    const lg = document.createElement('div'); lg.className = 'legend';
+    cfg.series.forEach(s => {
+      lg.innerHTML += `<span><span class="chip" style="background:${s.color}"></span>${s.name}</span>`;
+    });
+    container.appendChild(lg);
+  }
+
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart-svg' });
+
+  niceTicks(y0, y1, 4).forEach(tv => {
+    svg.appendChild(el('line', { x1: M.l, x2: W - M.r, y1: py(tv), y2: py(tv), stroke: '#DEDED5', 'stroke-width': 1 }));
+    const tx = el('text', { x: M.l - 8, y: py(tv) + 4, 'text-anchor': 'end', 'font-size': 11, fill: '#8B8680' });
+    tx.textContent = fmtMan(tv); svg.appendChild(tx);
+  });
+  const hourStep = cfg.smallLabels ? 6 : 3;
+  for (let h = 0; h < n; h += hourStep) {
+    const tx = el('text', { x: px(h), y: H - 8, 'text-anchor': 'middle', 'font-size': 11, fill: '#8B8680' });
+    tx.textContent = h + '시'; svg.appendChild(tx);
+  }
+
+  cfg.series.forEach(s => {
+    const d = s.values.map((v, i) => (i ? 'L' : 'M') + px(i).toFixed(1) + ' ' + py(v).toFixed(1)).join(' ');
+    svg.appendChild(el('path', { d, fill: 'none', stroke: s.color, 'stroke-width': 2, 'stroke-linejoin': 'round' }));
+  });
+  // 피크 직접 라벨 (첫 번째 시리즈 = 축제일)
+  if (cfg.peakLabel) {
+    const s0 = cfg.series[0];
+    const pi = s0.values.indexOf(Math.max(...s0.values));
+    svg.appendChild(el('circle', { cx: px(pi), cy: py(s0.values[pi]), r: 4, fill: s0.color, stroke: '#fff', 'stroke-width': 2 }));
+    const tx = el('text', {
+      x: Math.min(px(pi) + 8, W - 90), y: py(s0.values[pi]) - 8,
+      'font-size': 12, 'font-weight': 700, fill: '#2C2C28'
+    });
+    tx.textContent = pi + '시 ' + fmtMan(s0.values[pi]); svg.appendChild(tx);
+  }
+
+  // hover 레이어
+  const cross = el('line', { y1: M.t, y2: H - M.b, stroke: '#8B8680', 'stroke-width': 1, 'stroke-dasharray': '3 3', opacity: 0 });
+  svg.appendChild(cross);
+  const dots = cfg.series.map(s => {
+    const c = el('circle', { r: 5, fill: s.color, stroke: '#fff', 'stroke-width': 2, opacity: 0 });
+    svg.appendChild(c); return c;
+  });
+  const tip = document.createElement('div'); tip.className = 'chart-tooltip'; container.appendChild(tip);
+  const hit = el('rect', { x: M.l, y: M.t, width: W - M.l - M.r, height: H - M.t - M.b, fill: 'transparent' });
+  svg.appendChild(hit);
+  hit.addEventListener('mousemove', ev => {
+    const r = svg.getBoundingClientRect();
+    const mx = (ev.clientX - r.left) * (W / r.width);
+    const i = Math.max(0, Math.min(n - 1, Math.round((mx - M.l) / (W - M.l - M.r) * (n - 1))));
+    cross.setAttribute('x1', px(i)); cross.setAttribute('x2', px(i)); cross.setAttribute('opacity', 1);
+    let html = `<div class="tt-title">${cfg.xTip ? cfg.xTip(i) : i + '시'}</div>`;
+    cfg.series.forEach((s, k) => {
+      dots[k].setAttribute('cx', px(i)); dots[k].setAttribute('cy', py(s.values[i])); dots[k].setAttribute('opacity', 1);
+      html += `${s.name}: <b>${NF.format(s.values[i])}명</b><br>`;
+    });
+    if (cfg.series.length === 2) {
+      const d = cfg.series[0].values[i] - cfg.series[1].values[i];
+      html += `차이: <b>${d >= 0 ? '+' : ''}${NF.format(d)}명</b>`;
+    }
+    tip.innerHTML = html;
+    const cr = container.getBoundingClientRect();
+    let tx = ev.clientX - cr.left + 14;
+    if (tx > cr.width - 190) tx = ev.clientX - cr.left - 190;
+    tip.style.left = tx + 'px';
+    tip.style.top = (ev.clientY - cr.top - 20) + 'px';
+    tip.style.opacity = 1;
+  });
+  hit.addEventListener('mouseleave', () => {
+    cross.setAttribute('opacity', 0); dots.forEach(d => d.setAttribute('opacity', 0)); tip.style.opacity = 0;
+  });
+  container.appendChild(svg);
+}
+
+/* ───────── 가로 막대 (자치구 증감) ───────── */
+function guBarChart(container, rows) {
+  const t = document.createElement('div'); t.className = 'chart-title';
+  t.innerHTML = '자치구별 저녁(18~21시) 생활인구 증감<br>축제일 vs 평상 토요일';
+  container.appendChild(t);
+  const s = document.createElement('div'); s.className = 'chart-sub';
+  s.textContent = '25개 자치구 전체, 증가량 순 정렬 (단위: 명)';
+  container.appendChild(s);
+  const lg = document.createElement('div'); lg.className = 'legend';
+  lg.innerHTML = `<span><span class="chip" style="background:#A07C1E"></span>증가</span>
+                  <span><span class="chip" style="background:#2E6DA4"></span>감소</span>`;
+  container.appendChild(lg);
+
+  const W = 860, rowH = 20, M = { l: 78, r: 86, t: 4, b: 4 };
+  const H = M.t + M.b + rows.length * rowH;
+  const maxAbs = Math.max(...rows.map(r => Math.abs(r.diff)));
+  const x0 = M.l, plotW = W - M.l - M.r;
+  const sx = v => x0 + Math.abs(v) / maxAbs * plotW * 0.96;
+
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart-svg' });
+  const tip = document.createElement('div'); tip.className = 'chart-tooltip'; container.appendChild(tip);
+
+  rows.forEach((r, i) => {
+    const y = M.t + i * rowH;
+    const name = el('text', { x: M.l - 8, y: y + rowH / 2 + 4, 'text-anchor': 'end', 'font-size': 11.5, fill: '#2C2C28' });
+    name.textContent = r.gu; svg.appendChild(name);
+    const w = Math.max(2, sx(r.diff) - x0);
+    const bar = el('rect', {
+      x: x0, y: y + 3, width: w, height: rowH - 6, rx: 4,
+      fill: r.diff >= 0 ? '#A07C1E' : '#2E6DA4'
+    });
+    svg.appendChild(bar);
+    const val = el('text', { x: x0 + w + 6, y: y + rowH / 2 + 4, 'font-size': 11, fill: '#6B6B5E' });
+    val.textContent = (r.diff >= 0 ? '+' : '−') + fmtMan(Math.abs(r.diff)) + (r.pct !== null ? ` (${r.diff >= 0 ? '+' : ''}${r.pct}%)` : '');
+    svg.appendChild(val);
+    bar.addEventListener('mousemove', ev => {
+      tip.innerHTML = `<div class="tt-title">${r.gu}</div>평상 토요일: <b>${NF.format(r.base)}명</b><br>축제일: <b>${NF.format(r.fest)}명</b><br>증감: <b>${r.diff >= 0 ? '+' : ''}${NF.format(r.diff)}명</b>`;
+      const cr = container.getBoundingClientRect();
+      tip.style.left = Math.min(ev.clientX - cr.left + 14, cr.width - 200) + 'px';
+      tip.style.top = (ev.clientY - cr.top - 20) + 'px';
+      tip.style.opacity = 1;
+    });
+    bar.addEventListener('mouseleave', () => tip.style.opacity = 0);
+  });
+  svg.appendChild(el('line', { x1: x0, x2: x0, y1: M.t, y2: H - M.b, stroke: '#DEDED5', 'stroke-width': 1 }));
+  container.appendChild(svg);
+}
+
+/* ───────── 일자별 세로 막대 (여의동 9월) ───────── */
+function dailyBarChart(container, rows) {
+  const t = document.createElement('div'); t.className = 'chart-title';
+  t.innerHTML = '여의동 일자별 저녁(19~20시 평균) 생활인구<br>2025년 9월 전체';
+  container.appendChild(t);
+  const lg = document.createElement('div'); lg.className = 'legend';
+  lg.innerHTML = `<span><span class="chip" style="background:#A07C1E"></span>불꽃축제일 (9/27)</span>
+                  <span><span class="chip" style="background:#2E6DA4"></span>그 외 일자</span>
+                  <span class="muted" style="font-size:12px">· x축의 <b>토</b> = 토요일</span>`;
+  container.appendChild(lg);
+
+  const W = 860, H = 260, M = { l: 52, r: 14, t: 16, b: 30 };
+  const vmax = Math.max(...rows.map(r => r.pop)) * 1.08;
+  const n = rows.length, plotW = W - M.l - M.r, bw = plotW / n - 2;
+  const py = v => M.t + (H - M.t - M.b) * (1 - v / vmax);
+
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, class: 'chart-svg' });
+  niceTicks(0, vmax, 4).forEach(tv => {
+    svg.appendChild(el('line', { x1: M.l, x2: W - M.r, y1: py(tv), y2: py(tv), stroke: '#DEDED5', 'stroke-width': 1 }));
+    const tx = el('text', { x: M.l - 8, y: py(tv) + 4, 'text-anchor': 'end', 'font-size': 11, fill: '#8B8680' });
+    tx.textContent = fmtMan(tv); svg.appendChild(tx);
+  });
+  const tip = document.createElement('div'); tip.className = 'chart-tooltip'; container.appendChild(tip);
+  rows.forEach((r, i) => {
+    const x = M.l + plotW * (i / n) + 1;
+    const day = parseInt(r.date.slice(6), 10);
+    const isFest = r.date === '20250927';
+    const bar = el('rect', {
+      x, y: py(r.pop), width: bw, height: H - M.b - py(r.pop), rx: 3,
+      fill: isFest ? '#A07C1E' : '#2E6DA4'
+    });
+    svg.appendChild(bar);
+    if (r.dow === 5) {
+      const tx = el('text', { x: x + bw / 2, y: H - 6, 'text-anchor': 'middle', 'font-size': 10, 'font-weight': 700, fill: isFest ? '#A07C1E' : '#6B6B5E' });
+      tx.textContent = '토'; svg.appendChild(tx);
+    }
+    if (day % 5 === 0 || day === 1) {
+      const tx = el('text', { x: x + bw / 2, y: H - 17, 'text-anchor': 'middle', 'font-size': 10.5, fill: '#8B8680' });
+      tx.textContent = day; svg.appendChild(tx);
+    }
+    if (isFest) {
+      const tx = el('text', { x: x + bw / 2, y: py(r.pop) - 7, 'text-anchor': 'middle', 'font-size': 12, 'font-weight': 700, fill: '#2C2C28' });
+      tx.textContent = fmtMan(r.pop); svg.appendChild(tx);
+    }
+    bar.addEventListener('mousemove', ev => {
+      const dows = ['월', '화', '수', '목', '금', '토', '일'];
+      tip.innerHTML = `<div class="tt-title">9/${day} (${dows[r.dow]})${isFest ? ' · 불꽃축제' : ''}</div>19~20시 평균: <b>${NF.format(r.pop)}명</b>`;
+      const cr = container.getBoundingClientRect();
+      tip.style.left = Math.min(ev.clientX - cr.left + 14, cr.width - 170) + 'px';
+      tip.style.top = (ev.clientY - cr.top - 20) + 'px';
+      tip.style.opacity = 1;
+    });
+    bar.addEventListener('mouseleave', () => tip.style.opacity = 0);
+  });
+  container.appendChild(svg);
+}
+
+/* ───────── 렌더링 ───────── */
+const C_FEST = '#A07C1E', C_BASE = '#2E6DA4';
+
+lineChart(document.getElementById('chart-seoul'), {
+  title: '서울 전체 시간대별 생활인구<br>축제일 vs 평상 토요일',
+  sub: '9/27(토) vs 9/13·9/20(토) 평균 · 단위: 명',
+  series: [
+    { name: '축제일 9/27', color: C_FEST, values: DATA.seoul.festival },
+    { name: '평상 토요일 평균', color: C_BASE, values: DATA.seoul.base }
+  ],
+  h: 280, zeroBase: false, peakLabel: false
+});
+
+lineChart(document.getElementById('chart-yeoui'), {
+  title: '여의동 시간대별 생활인구<br>축제일 vs 평상 토요일',
+  sub: '불꽃쇼 시간대(19~20시)에 정점 · 단위: 명',
+  series: [
+    { name: '축제일 9/27', color: C_FEST, values: DATA.yeoui.festival },
+    { name: '평상 토요일 평균', color: C_BASE, values: DATA.yeoui.base }
+  ],
+  h: 300, zeroBase: true, peakLabel: true
+});
+
+dailyBarChart(document.getElementById('chart-yeoui-month'), DATA.yeouiDaily);
+
+const smWrap = document.getElementById('sm-dongs');
+DATA.topDongs.forEach(d => {
+  const card = document.createElement('div'); card.className = 'chart-card';
+  smWrap.appendChild(card);
+  lineChart(card, {
+    title: `${d.name} (${d.gu})`,
+    sub: `19~20시 평균 ${fmtMan(d.base1920)} → ${fmtMan(d.fest1920)} (+${d.pct}%)`,
+    series: [
+      { name: '축제일', color: C_FEST, values: d.festival },
+      { name: '평상 토요일', color: C_BASE, values: d.base }
+    ],
+    w: 420, h: 165, zeroBase: true, smallLabels: true, noLegend: true
+  });
+});
+
+guBarChart(document.getElementById('chart-gu'), DATA.gu);
+
+/* 표: 증가 상위 15 */
+const spikeBody = document.querySelector('#tbl-spike tbody');
+DATA.spikeTop.forEach((r, i) => {
+  spikeBody.innerHTML += `<tr>
+    <td>${i + 1}</td><td><strong>${r.name}</strong></td><td>${r.gu}</td>
+    <td class="num">${NF.format(r.base)}</td><td class="num">${NF.format(r.fest)}</td>
+    <td class="num highlight">+${NF.format(r.diff)}</td><td class="num">+${r.pct}%</td></tr>`;
+});
+
+/* 표: 시간대별 top5 (16~23시) */
+const rankBody = document.querySelector('#tbl-rank tbody');
+for (let h = 16; h <= 23; h++) {
+  const cells = DATA.hourlyTop5[h].map((d, i) =>
+    `<td>${i === 0 ? '<strong>' : ''}${d.name}<span class="muted"> ${fmtMan(d.pop)}</span>${i === 0 ? '</strong>' : ''}</td>`).join('');
+  rankBody.innerHTML += `<tr><td><strong>${h}시</strong></td>${cells}</tr>`;
+}
+
+/* 표: 유출 상위 */
+const outBody = document.querySelector('#tbl-outflow tbody');
+DATA.outflow.forEach((r, i) => {
+  const flag = r.name === '충현동' ? ' <span class="muted">※ 축제 무관(아래 주의)</span>' : '';
+  outBody.innerHTML += `<tr>
+    <td>${i + 1}</td><td><strong>${r.name}</strong>${flag}</td><td>${r.gu}</td>
+    <td class="num">${NF.format(r.base)}</td><td class="num">${NF.format(r.fest)}</td>
+    <td class="num" style="color:var(--red);font-weight:600">${NF.format(r.diff)}</td><td class="num">${r.pct}%</td></tr>`;
+});
+
+/* ───────── 슬라이드 내비게이션 ───────── */
+const slides = Array.from(document.querySelectorAll('.slide'));
+const total = slides.length;
+let cur = 0;
+
+function goTo(i) {
+  cur = Math.max(0, Math.min(total - 1, i));
+  slides.forEach((s, k) => {
+    s.classList.toggle('active', k === cur);
+    s.classList.toggle('before', k < cur);
+  });
+  document.getElementById('progressBar').style.width = ((cur + 1) / total * 100) + '%';
+  document.getElementById('hudCounter').textContent = (cur + 1) + ' / ' + total;
+  document.getElementById('hudLabel').textContent = slides[cur].dataset.label || '';
+  history.replaceState(null, '', '#' + (cur + 1));
+}
+function next() { goTo(cur + 1); }
+function prev() { goTo(cur - 1); }
+
+document.getElementById('btnNext').addEventListener('click', next);
+document.getElementById('btnPrev').addEventListener('click', prev);
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next(); }
+  else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
+  else if (e.key === 'Home') { e.preventDefault(); goTo(0); }
+  else if (e.key === 'End') { e.preventDefault(); goTo(total - 1); }
+});
+
+/* 휠로 넘기기 (슬라이드 내부 스크롤이 끝에 닿았을 때만) */
+let wheelLock = 0;
+document.addEventListener('wheel', e => {
+  const now = Date.now();
+  if (now - wheelLock < 700) return;
+  const inner = slides[cur].querySelector('.slide-inner');
+  const atTop = inner.scrollTop <= 0;
+  const atBottom = inner.scrollTop + inner.clientHeight >= inner.scrollHeight - 2;
+  if (e.deltaY > 30 && atBottom) { wheelLock = now; next(); }
+  else if (e.deltaY < -30 && atTop) { wheelLock = now; prev(); }
+}, { passive: true });
+
+/* 시작 슬라이드 (#n 해시 지원) */
+const hash = parseInt(location.hash.slice(1), 10);
+goTo(isNaN(hash) ? 0 : hash - 1);
+</script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9월 5일 한강 불꽃축제 명당 완전판</title>
+<style>
+  :root{
+    --night:#101A2E;      /* 밤하늘 */
+    --river:#1A2A45;      /* 한강 수면 */
+    --line:#2B3D5E;
+    --moon:#EEF3FA;       /* 본문 */
+    --mist:#93A5C1;       /* 보조 텍스트 */
+    --gold:#FFC862;       /* 불꽃 금 */
+    --coral:#FF8FA3;      /* 불꽃 분홍 */
+    --spark:#7DD8E0;      /* 물빛 */
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--night);
+    color:var(--moon);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans CJK KR","Malgun Gothic","Noto Sans KR",sans-serif;
+    font-size:15px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:44px 20px 72px}
+
+  /* ── 헤더: 불꽃 한 발 ───────────────────────── */
+  header{position:relative;padding:8px 0 30px;border-bottom:1px solid var(--line)}
+  .burst{display:block;margin:0 auto 6px;width:150px;height:110px}
+  .burst .ray{stroke-linecap:round;fill:none}
+  .burst .tip{opacity:.95}
+  @media (prefers-reduced-motion: no-preference){
+    .burst .ray{stroke-dasharray:60;stroke-dashoffset:60;animation:fire 1.1s ease-out .15s forwards}
+    .burst .tip{opacity:0;animation:tip .5s ease-out 1s forwards}
+    @keyframes fire{to{stroke-dashoffset:0}}
+    @keyframes tip{to{opacity:.95}}
+  }
+  .date{color:var(--gold);font-weight:600;font-size:14px;letter-spacing:.01em}
+  h1{
+    font-size:clamp(29px,5.6vw,44px);
+    font-weight:800;
+    letter-spacing:-0.02em;
+    line-height:1.24;
+    margin:10px 0 14px;
+  }
+  .lead{color:var(--mist);max-width:40em}
+  .lead strong{color:var(--moon);font-weight:600}
+
+  /* ── 인파 지수 범례 ─────────────────────────── */
+  .legend{
+    display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;
+    margin:26px 0 6px;color:var(--mist);font-size:13px;
+  }
+  .legend .item{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+
+  /* 인파 미터: 채워진 점이 많을수록 붐빔 */
+  .meter{display:inline-flex;gap:4px;align-items:center}
+  .meter i{width:8px;height:8px;border-radius:50%;background:transparent;border:1px solid var(--line)}
+  .m5 i:nth-child(-n+5),.m4 i:nth-child(-n+4){background:var(--coral);border-color:var(--coral)}
+  .m3 i:nth-child(-n+3){background:var(--gold);border-color:var(--gold)}
+  .m2 i:nth-child(-n+2),.m1 i:nth-child(-n+1){background:var(--spark);border-color:var(--spark)}
+  .mlabel{font-size:13px;font-weight:600;white-space:nowrap}
+  .m5 + .mlabel,.m4 + .mlabel{color:var(--coral)}
+  .m3 + .mlabel{color:var(--gold)}
+  .m2 + .mlabel,.m1 + .mlabel{color:var(--spark)}
+  .crowd{display:inline-flex;align-items:center;gap:9px}
+
+  /* ── 표 ─────────────────────────────────────── */
+  main{padding-top:8px}
+  table{width:100%;border-collapse:collapse}
+  caption{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  thead th{
+    text-align:left;font-size:13px;font-weight:600;color:var(--mist);
+    padding:14px 14px 10px;border-bottom:1px solid var(--line);
+  }
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody th,tbody td{padding:16px 14px;vertical-align:top;text-align:left}
+  tbody th{width:23%}
+  .name{font-weight:700;font-size:16px;line-height:1.35}
+  .area{display:block;font-weight:400;font-size:13px;color:var(--mist);margin-top:2px}
+  .view{width:29%;color:var(--moon)}
+  .tip{color:var(--mist);font-size:14px}
+  .tip b{color:var(--moon);font-weight:600}
+
+  /* 그룹 구분 행 */
+  tr.group{border-bottom:1px solid var(--line)}
+  tr.group th{padding:34px 14px 12px}
+  .gname{font-size:17px;font-weight:800;letter-spacing:-0.01em}
+  .gdesc{display:block;font-size:13.5px;font-weight:400;color:var(--mist);margin-top:3px}
+
+  /* ── 하단 안내 ──────────────────────────────── */
+  footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+  footer p{color:var(--mist);font-size:14px;max-width:46em}
+  footer p + p{margin-top:10px}
+  footer strong{color:var(--moon);font-weight:600}
+
+  /* ── 이미지로 저장 버튼 ─────────────────────── */
+  .save-btn{
+    position:fixed;right:18px;bottom:18px;z-index:10;
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--gold);color:#22190A;
+    border:none;border-radius:99px;padding:13px 19px;
+    font-family:inherit;font-size:14px;font-weight:700;line-height:1;
+    cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.4);
+  }
+  .save-btn svg{width:16px;height:16px;stroke:#22190A}
+  .save-btn:hover{filter:brightness(1.06)}
+  .save-btn:focus-visible{outline:2px solid var(--spark);outline-offset:3px}
+  .save-btn:disabled{opacity:.65;cursor:default}
+  @media print{.save-btn{display:none}}
+
+  /* ── 모바일: 표를 세로 카드형으로 ───────────── */
+  @media (max-width:660px){
+    .wrap{padding-top:36px}
+    thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+    table,tbody,tr,th,td{display:block;width:100%}
+    tbody tr{
+      border:1px solid var(--line);
+      border-left:3px solid var(--edge,var(--line));
+      border-radius:10px;
+      margin-bottom:14px;
+      padding:16px 16px 6px;
+      background:rgba(26,42,69,.45);
+    }
+    tr.p5{--edge:var(--coral)} tr.p4{--edge:var(--coral)}
+    tr.p3{--edge:var(--gold)}
+    tr.p2{--edge:var(--spark)} tr.p1{--edge:var(--spark)}
+    tbody th,tbody td{padding:0 0 12px}
+    tbody th{width:auto}
+    td[data-label]::before{
+      content:attr(data-label);
+      display:block;font-size:12px;color:var(--mist);margin-bottom:3px;
+    }
+    .view{width:auto}
+    tr.group{border:none;border-radius:0;background:none;padding:24px 0 4px;margin-bottom:6px}
+    tr.group th{padding:0}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <svg class="burst" viewBox="0 0 150 110" aria-hidden="true">
+      <g transform="translate(75,50)">
+        <g class="ray" stroke="#FFC862" stroke-width="2">
+          <path d="M0,-8 L0,-40"/><path d="M6,6 L28,28"/><path d="M-6,6 L-28,28"/>
+          <path d="M8,0 L40,0"/><path d="M-8,0 L-40,0"/>
+        </g>
+        <g class="ray" stroke="#FF8FA3" stroke-width="2">
+          <path d="M6,-6 L28,-28"/><path d="M-6,-6 L-28,-28"/>
+        </g>
+        <g class="ray" stroke="#7DD8E0" stroke-width="2">
+          <path d="M0,8 L0,34"/>
+        </g>
+        <g class="tip">
+          <circle cx="0" cy="-44" r="2.6" fill="#FFC862"/>
+          <circle cx="32" cy="32" r="2.6" fill="#FFC862"/>
+          <circle cx="-32" cy="32" r="2.6" fill="#FFC862"/>
+          <circle cx="44" cy="0" r="2.6" fill="#FFC862"/>
+          <circle cx="-44" cy="0" r="2.6" fill="#FFC862"/>
+          <circle cx="32" cy="-32" r="2.6" fill="#FF8FA3"/>
+          <circle cx="-32" cy="-32" r="2.6" fill="#FF8FA3"/>
+          <circle cx="0" cy="38" r="2.6" fill="#7DD8E0"/>
+        </g>
+      </g>
+      <line x1="30" y1="104" x2="120" y2="104" stroke="#2B3D5E" stroke-width="1.5"/>
+      <line x1="60" y1="108" x2="90" y2="108" stroke="#2B3D5E" stroke-width="1"/>
+    </svg>
+    <p class="date">2026년 9월 5일 토요일, 서울세계불꽃축제</p>
+    <h1>행사장부터 숨은 언덕까지,<br>불꽃 명당 완전판</h1>
+    <p class="lead">메인 행사장, 이름난 명당, 조사로 추린 여유 명당, 예매·유료 옵션에 <strong>지난해 생활인구 실측 데이터로 검증한 자리</strong>까지 <strong>22곳</strong>을 한 장에 담았습니다. 불꽃쇼는 <strong>저녁 8시 시작</strong>이며 원효대교를 중심으로 연출됩니다. 인기 자리는 이른 오후, 여유 자리도 <strong>오후 5시 전 도착</strong>이 기준입니다.</p>
+    <div class="legend">
+      <span class="item"><span class="crowd"><span class="meter m5" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">전날부터 자리 전쟁</span></span></span>
+      <span class="item"><span class="crowd"><span class="meter m3" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">붐비지만 견딜 만함</span></span></span>
+      <span class="item"><span class="crowd"><span class="meter m1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">산책 수준</span></span></span>
+    </div>
+  </header>
+
+  <main>
+    <table>
+      <caption>서울세계불꽃축제 관람 명당 19곳: 뷰, 인파 지수, 팁 비교</caption>
+      <thead>
+        <tr>
+          <th scope="col">장소</th>
+          <th scope="col">불꽃 뷰</th>
+          <th scope="col">인파 지수</th>
+          <th scope="col">접근과 팁</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="group"><th colspan="4"><span class="gname">메인 행사장</span><span class="gdesc">뷰는 최고, 대신 100만 인파의 한복판</span></th></tr>
+        <tr class="p5">
+          <th scope="row"><span class="name">여의도 한강공원<span class="area">주행사장 · 63빌딩 앞</span></span></th>
+          <td class="view" data-label="불꽃 뷰">머리 위에서 터지는 최고 뷰. 음악 연출과 낮은 불꽃까지 전부 보이는 유일한 곳</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m5" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">매우 혼잡</span></span></td>
+          <td class="tip" data-label="접근과 팁">전날부터 돗자리 전쟁. <b>여의동로(마포대교 남단~63빌딩)가 오후 3시부터 통제</b>되니 반드시 대중교통으로</td>
+        </tr>
+        <tr class="p5">
+          <th scope="row"><span class="name">이촌 한강공원<span class="area">용산 · 공식 행사장</span></span></th>
+          <td class="view" data-label="불꽃 뷰">강 건너 정면. 탁 트인 시야로 불꽃 전체 스케일을 한눈에</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m5" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">매우 혼잡</span></span></td>
+          <td class="tip" data-label="접근과 팁">잔디밭 돗자리 명당이지만 <b>이젠 숨은 명당이라 부르기 어려울 만큼 유명</b>. 이촌역 혼잡 각오</td>
+        </tr>
+
+        <tr class="group"><th colspan="4"><span class="gname">이름난 명당</span><span class="gdesc">알 만한 사람은 다 아는 자리 — 이른 오후 도착 필수</span></th></tr>
+        <tr class="p4">
+          <th scope="row"><span class="name">한강 다리 북단 일대<span class="area">원효 · 한강 · 마포대교</span></span></th>
+          <td class="view" data-label="불꽃 뷰">불꽃이 강 위로 넓게 펼쳐져 보이는 파노라마</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">혼잡</span></span></td>
+          <td class="tip" data-label="접근과 팁">장시간 <b>서서 관람</b>해야 하고, 안전 통제로 다리 위 정차·진입이 막힐 수 있음</td>
+        </tr>
+        <tr class="p4">
+          <th scope="row"><span class="name">사육신역사공원<span class="area">동작 노량진</span></span></th>
+          <td class="view" data-label="불꽃 뷰">강 건너 고지대 정면 뷰의 원조 명당</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">혼잡</span></span></td>
+          <td class="tip" data-label="접근과 팁">오후 5시가 넘으면 <b>구청이 출입 자제 문자를 보낼 정도</b>. 맞은편 컵밥거리는 여전히 별미</td>
+        </tr>
+        <tr class="p4">
+          <th scope="row"><span class="name">용양봉저정공원<span class="area">동작 본동</span></span></th>
+          <td class="view" data-label="불꽃 뷰">한강대교와 여의도가 정면으로 보이는 전망대 뷰</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">혼잡</span></span></td>
+          <td class="tip" data-label="접근과 팁">SNS로 뜨면서 유명세. 노들역 3번 출구 도보. <b>정오~이른 오후 선점</b>이 안전</td>
+        </tr>
+        <tr class="p3">
+          <th scope="row"><span class="name">노량진수산시장 옥상<span class="area">동작 노량진</span></span></th>
+          <td class="view" data-label="불꽃 뷰">여의도 방향 조망. 회와 함께 즐기는 관람</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m3" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">보통</span></span></td>
+          <td class="tip" data-label="접근과 팁">작년엔 <b>낮부터 만석</b>이었던 곳. 이른 오픈런 후 회 포장 조합</td>
+        </tr>
+        <tr class="p3">
+          <th scope="row"><span class="name">노량진축구장<span class="area">동작 노량진 · 한강변</span></span></th>
+          <td class="view" data-label="불꽃 뷰">강변 최전선에서 63빌딩과 여의도를 정면으로. 시야에 걸리는 게 거의 없음</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m3" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">보통</span></span></td>
+          <td class="tip" data-label="접근과 팁">"불꽃축제를 편하게 봤다"는 후기가 있는 강변 명당. <b>입소문을 타는 중</b>이라 이른 오후 도착. 노량진역 도보, 수산시장과 묶어 동선 짜기 좋음</td>
+        </tr>
+        <tr class="p3">
+          <th scope="row"><span class="name">마포 한강공원<span class="area">마포대교~망원 구간</span></span></th>
+          <td class="view" data-label="불꽃 뷰">불꽃과 63빌딩 스카이라인, 도심 야경이 한 장면에</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m3" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">보통</span></span></td>
+          <td class="tip" data-label="접근과 팁">사진파에게 인기인 뷰포인트. 강변이 길어 <b>구간을 옮겨 가며 자리 탐색 가능</b></td>
+        </tr>
+
+        <tr class="group"><th colspan="4"><span class="gname">여유 명당</span><span class="gdesc">이 표의 핵심 — 조사로 추린, 숨 막히지 않는 자리</span></th></tr>
+        <tr class="p2">
+          <th scope="row"><span class="name">노량진근린공원<span class="area">동작 본동</span></span></th>
+          <td class="view" data-label="불꽃 뷰">용양봉저정과 같은 능선의 뒷자락. 정면 고지대 뷰</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">여유</span></span></td>
+          <td class="tip" data-label="접근과 팁"><b>입소문 초기 단계의 대체 명당.</b> 노들역·노량진역 도보, 5시 전 도착이면 충분</td>
+        </tr>
+        <tr class="p2">
+          <th scope="row"><span class="name">효사정<span class="area">동작 흑석</span></span></th>
+          <td class="view" data-label="불꽃 뷰">정면 고지대, 시야가 시원하게 트인 작은 정자</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">여유</span></span></td>
+          <td class="tip" data-label="접근과 팁"><b>흑석역 도보.</b> 2~4인이 조용히 보기 좋고, 자리가 적으니 일찍</td>
+        </tr>
+        <tr class="p3">
+          <th scope="row"><span class="name">노들나루공원<span class="area">동작 노량진</span></span></th>
+          <td class="view" data-label="불꽃 뷰">정면이지만 평지라 낮은 불꽃은 일부 가림</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m3" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">보통</span></span></td>
+          <td class="tip" data-label="접근과 팁"><b>노들역 2번 출구 직결.</b> 공식 안내에도 소개된 감상 명소. 넓은 잔디에 돗자리</td>
+        </tr>
+        <tr class="p1">
+          <th scope="row"><span class="name">달마공원<span class="area">흑석 서달산 자락</span></span></th>
+          <td class="view" data-label="불꽃 뷰">고지대지만 숲이라 트인 지점이 한정적</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">매우 여유</span></span></td>
+          <td class="tip" data-label="접근과 팁">언론 선정 숨은 명당 리스트에 오른 곳. <b>밝을 때 미리 가서 시야 확인 필수</b></td>
+        </tr>
+        <tr class="p2">
+          <th scope="row"><span class="name">선유도공원<span class="area">영등포</span></span></th>
+          <td class="view" data-label="불꽃 뷰">서쪽 측면 뷰. 낮은 불꽃은 다리에 가림</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">여유</span></span></td>
+          <td class="tip" data-label="접근과 팁"><b>선유도역 도보.</b> 공원이 넓어 산책 겸 여유롭게 보기 좋음</td>
+        </tr>
+
+        <tr class="group"><th colspan="4"><span class="gname">원경 · 분위기파</span><span class="gdesc">불꽃은 멀리, 마음은 편하게</span></th></tr>
+        <tr class="p2">
+          <th scope="row"><span class="name">남산 일대<span class="area">N서울타워 · 남산도서관 앞</span></span></th>
+          <td class="view" data-label="불꽃 뷰">서울 전경과 함께 담기는 원경</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">여유</span></span></td>
+          <td class="tip" data-label="접근과 팁">접근성 좋고 축제 인파 대비 한산. 디테일보다 <b>분위기 감상용</b></td>
+        </tr>
+        <tr class="p1">
+          <th scope="row"><span class="name">상도근린공원<span class="area">동작 상도</span></span></th>
+          <td class="view" data-label="불꽃 뷰">원경으로 작게 보임. 야경과 함께</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">매우 여유</span></span></td>
+          <td class="tip" data-label="접근과 팁">동네 언덕이라 <b>인파 스트레스 최소</b></td>
+        </tr>
+        <tr class="p1">
+          <th scope="row"><span class="name">하늘공원<span class="area">마포 난지</span></span></th>
+          <td class="view" data-label="불꽃 뷰">가장 먼 원경. 억새와 함께 담기는 풍경</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">매우 여유</span></span></td>
+          <td class="tip" data-label="접근과 팁"><b>폐장·계단 통제 시간을 당일 꼭 확인</b></td>
+        </tr>
+
+        <tr class="group"><th colspan="4"><span class="gname">데이터가 찾은 명당</span><span class="gdesc">지난해 축제일 서울 생활인구 실측 분석 — 저녁 인구가 실제로 몰린 동네에서 고른 자리</span></th></tr>
+        <tr class="p4">
+          <th scope="row"><span class="name">이촌 한강공원 서측 · 원효대교 북단<span class="area">용산 서부이촌동</span></span></th>
+          <td class="view" data-label="불꽃 뷰">원효대교 중심 연출(나이아가라 불꽃)을 데칼코마니로 정면에서 보는 최근접 강변</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m4" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">혼잡</span></span></td>
+          <td class="tip" data-label="접근과 팁">지난해 축제일 저녁 이 동네 생활인구는 평상 토요일의 <b>5.6배(서울 최대 증가율)</b>. 더는 한산한 자리가 아니니, 혼잡한 이촌역 대신 <b>용산·신용산역에서 도보 우회</b></td>
+        </tr>
+        <tr class="p3">
+          <th scope="row"><span class="name">용산아이파크몰 옥상정원<span class="area">용산 한강로동</span></span></th>
+          <td class="view" data-label="불꽃 뷰">고층 옥상에서 여의도 방향 조망. 구조물에 시야가 일부 가림</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m3" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">보통</span></span></td>
+          <td class="tip" data-label="접근과 팁">대기·식사·화장실이 실내에서 해결되는 드문 자리. 지난해 한강로동은 저녁 <b>8.5만 명(절대 인원 서울 5위권)</b>이 몰렸으니 <b>옥상 개방 여부·운영시간을 당일 확인</b></td>
+        </tr>
+        <tr class="p2">
+          <th scope="row"><span class="name">63스퀘어 전망대<span class="area">여의도 60층 · 유료</span></span></th>
+          <td class="view" data-label="불꽃 뷰">불꽃을 눈높이에서 내려다보는 각도. 유리창 반사 주의</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">입장 제한</span></span></td>
+          <td class="tip" data-label="접근과 팁"><b>사전 예약 필수.</b> 발밑 여의동은 지난해 19시에 <b>35.9만 명(평상 토요일의 4.4배)</b> — 그 인파를 통째로 피하는 우회로</td>
+        </tr>
+
+        <tr class="group"><th colspan="4"><span class="gname">예매 · 유료로 편하게</span><span class="gdesc">자리 걱정을 돈과 예매로 해결하는 방법</span></th></tr>
+        <tr class="p2">
+          <th scope="row"><span class="name">노들섬 오렌지플레이존<span class="area">유료 · 사전 예매</span></span></th>
+          <td class="view" data-label="불꽃 뷰">한강 한가운데에서 불꽃을 정면으로</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m2" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">입장 제한</span></span></td>
+          <td class="tip" data-label="접근과 팁">올해 노들섬 전체가 유료존으로 운영. <b>티켓 없으면 당일 입장 불가</b>, 오렌지플레이 앱에서 잔여석 확인</td>
+        </tr>
+        <tr class="p1">
+          <th scope="row"><span class="name">한강 유람선<span class="area">잠실 등 선착장 출발</span></span></th>
+          <td class="view" data-label="불꽃 뷰">강 위에서 보는 불꽃. 이동 자체가 관람</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">매우 여유</span></span></td>
+          <td class="tip" data-label="접근과 팁">가족·연인의 편안한 선택지. <b>귀가 헬게이트를 배로 피하는 것</b>이 최대 장점, 조기 매진 주의</td>
+        </tr>
+        <tr class="p1">
+          <th scope="row"><span class="name">불꽃 뷰 호텔<span class="area">콘래드 · 페어몬트 · 호텔나루</span></span></th>
+          <td class="view" data-label="불꽃 뷰">객실 창밖으로 즐기는 프라이빗 뷰</td>
+          <td data-label="인파 지수"><span class="crowd"><span class="meter m1" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="mlabel">매우 여유</span></span></td>
+          <td class="tip" data-label="접근과 팁">가장 편하지만 가장 비싼 방법. <b>한강 뷰 객실인지 반드시 확인</b> 후 예약</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p><strong>공통 준비물</strong> 돗자리, 겉옷(강바람), 간식과 물, 보조배터리. 행사장 일대는 배달 오토바이 진입이 사실상 불가능하니 먹을 것은 미리 챙기세요.</p>
+    <p><strong>안전과 통제</strong> 행사장 주변은 물론 강 건너까지 안전 통제가 강화되어, 위 명당들도 당일 출입이 제한될 수 있습니다. 구청·축제 공식 안내를 함께 확인하고, 끝난 뒤에는 30분~1시간 여유를 두고 이동하면 지하철 혼잡을 피할 수 있습니다.</p>
+    <p><strong>데이터 검증</strong> '데이터가 찾은 명당'의 인파 수치는 지난해 축제일(2025.9.27) 서울시 생활인구(행정동·시간대별) 실측 분석 결과입니다. 표의 주요 명당 동네가 실제로 붐볐음도 수치로 확인됐습니다 — 노량진 일대 +115%, 이촌 일대 +143~460%, 마포 용강·도화동 +51~75% (평상 토요일 저녁 대비).</p>
+  </footer>
+
+</div>
+
+<button class="save-btn" id="saveBtn" type="button" data-html2canvas-ignore>
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 3v12"/><path d="M6 11l6 6 6-6"/><path d="M4 21h16"/>
+  </svg>
+  <span>이미지로 저장</span>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('saveBtn');
+  var label = btn.querySelector('span');
+
+  function reset() { btn.disabled = false; label.textContent = '이미지로 저장'; }
+
+  btn.addEventListener('click', function () {
+    if (typeof html2canvas === 'undefined') {
+      alert('이미지 변환 스크립트를 불러오지 못했습니다. 인터넷 연결을 확인한 뒤 페이지를 새로고침해 주세요.');
+      return;
+    }
+    btn.disabled = true;
+    label.textContent = '만드는 중…';
+
+    html2canvas(document.body, {
+      backgroundColor: '#101A2E',
+      scale: 2,
+      useCORS: true,
+      onclone: function (doc) {
+        // 캡처본에서는 불꽃 애니메이션을 완성된 상태로 고정
+        var s = doc.createElement('style');
+        s.textContent =
+          '.burst .ray{stroke-dasharray:none!important;stroke-dashoffset:0!important;animation:none!important}' +
+          '.burst .tip{opacity:.95!important;animation:none!important}';
+        doc.head.appendChild(s);
+      }
+    }).then(function (canvas) {
+      canvas.toBlob(function (blob) {
+        if (!blob) { alert('이미지 생성에 실패했습니다. 다시 시도해 주세요.'); reset(); return; }
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = '불꽃축제_명당_완전판.png';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+        reset();
+      }, 'image/png');
+    }).catch(function (e) {
+      alert('이미지 저장에 실패했습니다: ' + e.message);
+      reset();
+    });
+  });
+})();
+</script>
+</body>
+</html>
