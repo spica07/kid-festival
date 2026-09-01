@@ -24,6 +24,7 @@ const festivals = Array.isArray(window.KID_FESTIVALS) ? window.KID_FESTIVALS : [
 const VENUE_OVERRIDE = {
   '2026 종로 가족공연축제': '실내',
   '2026 성동구 구립도서관 북 페스티벌': '실외',
+  '2026 서울유아독서축제': '실외',
   '2026 한성백제박물관 한가위 큰잔치': '실내외',
   '종로구 야외도서관 [종로 열린 책마루]': '실외',
   '어린이 과학 강연극 [과학을 부탁해]': '실내',
