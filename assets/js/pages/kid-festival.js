@@ -102,6 +102,7 @@ const VENUE_OVERRIDE = {
   '2026 새활용 페스티벌': '실내외',
   '제33회 전국어린이연극잔치': '실내',
   '서울식물원 윈터가든 페스티벌': '실내외',
+  '2026 가을 궁중문화축전': '실내외',
 };
 function venueOf(f) {
   if (VENUE_OVERRIDE[f.title]) return VENUE_OVERRIDE[f.title];
