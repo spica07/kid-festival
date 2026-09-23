@@ -28,15 +28,13 @@ model: inherit
 
 ### 1) 요일-날짜 정합성 기계 점검 (가장 빠르고 확실한 신호)
 
-대상 행사의 `startDate`/`endDate`에 적힌 `(요일)`이 실제 달력과 맞는지 먼저 계산한다:
+데이터 전체의 `startDate`/`endDate` `(요일)` 표기를 실제 달력과 대조한다(임박 행사 목록도 함께 나온다):
 
 ```bash
-py -c "
-import datetime
-wd = ['월','화','수','목','금','토','일']
-print(wd[datetime.date(2026,9,12).weekday()])
-"
+node C:/blog_writing/kid-festival/.claude/skills/update-festivals/scripts/audit-dates.js
 ```
+
+기사에서 찾은 날짜의 요일을 따로 확인할 때는 `py -c "import datetime; print('월화수목금토일'[datetime.date(2026,9,12).weekday()])"`.
 
 **요일 표기가 실제와 다르면 그 항목은 100% 어딘가 잘못됐다** — 날짜 오타, 요일 오타, 또는 (고촌도서관 사례처럼) 원본 출처 자체의 모순이다. 무조건 웹 재검증 대상으로 올린다.
 
@@ -64,7 +62,7 @@ print(wd[datetime.date(2026,9,12).weekday()])
 
 ## 작업 순서
 
-1. 재검증 대상 목록을 받으면(스킬에서 전달받거나, `needsRecheck: true` Grep으로 직접 확보) 각 항목을 `festivals.js`에서 Read/Grep로 현재 값을 확인한다.
+1. 재검증 대상 목록을 받으면(스킬에서 전달받거나, 없으면 `audit-dates.js`의 요일 불일치 + ★ 임박 행사로 직접 확보 — `needsRecheck` 전체는 절반이 넘어 범위로 쓰지 않는다) 각 항목을 `festivals.js`에서 Read/Grep로 현재 값을 확인한다.
 2. 항목별로 위 "검증 방법" 1→2를 적용한다. 여러 건이면 배치로 WebSearch를 묶어 효율화해도 되지만, 확정 전 WebFetch로 각 건을 개별 확인한다.
 3. 확정된 항목은 Edit로 반영. 이때 날짜 관련 필드 외에는 건드리지 않는다.
 4. 전부 처리한 뒤 파싱 검증:

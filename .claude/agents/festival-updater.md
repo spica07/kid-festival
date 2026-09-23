@@ -9,45 +9,38 @@ model: inherit
 
 ## 다루는 파일
 
-- **행사 데이터(여기에 추가/수정)**: `C:\blog_writing\kid-festival\assets\data\festivals.js` 의 `window.KID_FESTIVALS = [ ... ]` 배열 (행사 1건 = 객체 1개). **현재 484건 등록(2026-08-12 기준).** 신규 행사 객체는 이 배열에 추가하고, 기존 행사 수정도 이 파일에서 한다.
+- **행사 데이터(여기에 추가/수정)**: `C:\blog_writing\kid-festival\assets\data\festivals.js` 의 `window.KID_FESTIVALS = [ ... ]` 배열 (행사 1건 = 객체 1개). 현재 건수는 아래 파싱 검증 명령으로 확인한다. 신규 행사 객체는 이 배열에 추가하고, 기존 행사 수정도 이 파일에서 한다.
 - **렌더링 로직(보통 수정 불필요)**: `C:\blog_writing\kid-festival\assets\js\pages\kid-festival.js` — 달력 계산·실내외 분류·필터를 담당.
   - **실내/실외 예외**: 이 파일의 `const VENUE_OVERRIDE = { ... }` 맵 (예외 추가 시 여기 수정)
-  - **현재 기준 월/년**: 이 파일의 `let currentYear` / `let currentMonth`
+  - **현재 기준 월/년**: `let currentYear` / `let currentMonth` — 오늘 날짜로 자동 설정되므로 수정 불필요
 - **페이지(HTML)**: `C:\blog_writing\kid-festival\pages\family\kid-festival.html` (보통 수정 불필요)
 
 > ⚠️ 데이터는 `festivals.js`, 동작 규칙(VENUE_OVERRIDE·currentYear)은 `kid-festival.js`로 **파일이 분리돼 있다.** 헷갈리지 말 것.
 
-작업 전 반드시 `festivals.js`(데이터)와 `kid-festival.js`(규칙)를 모두 Read 해서 현재 데이터·형식·기존 항목을 파악하세요. (`festivals.js`는 커서 한 번에 못 읽으면 offset/limit으로 나눠 읽는다.)
+작업 전 `festivals.js`에서 같은 카테고리 기존 항목 몇 건을 Read 해 형식을 파악한다. 파일 전체(수백 건)를 통째로 읽지 않는다 — 중복 확인과 기존 값 확인은 title Grep으로 한다.
 
 ## 임무 (세 가지)
 
 ### 0) 공공데이터 최신본 재수집 (매 실행 필수)
-- 현재 기준 월/년 이후 데이터를 전국문화축제표준데이터·TourAPI `searchFestival2`·서울 열린데이터광장 `culturalEventInfo` 등은 **이번 실행에서 새로 받는다.** 이전 실행에서 저장해둔 로컬 파일(캐시)을 재사용하지 않는다 — 표준데이터는 분기 단위로 갱신되므로, 오래된 캐시를 쓰면 그 사이 지자체가 올린 최신 일정 변경을 놓친다.
+- 스크립트 두 개가 공공데이터 3종과 데이터 파일을 **그 자리에서 새로 읽어** 조사 목록을 만든다. 호출자가 결과 파일을 넘겨줬으면 그것을 쓰고, 없으면 직접 실행한다(이전 실행의 캐시 재사용 금지 — 표준데이터는 분기 갱신이라 오래된 캐시는 최신 일정 변경을 놓친다):
+  ```bash
+  cd C:/blog_writing/kid-festival
+  node .claude/skills/update-festivals/scripts/fetch-candidates.js --start YYYYMMDD --end YYYYMMDD  # 미등록 후보
+  node .claude/skills/update-festivals/scripts/audit-dates.js                                        # 요일 불일치 + 30일 이내 임박 행사
+  ```
+- 인증키(`SEOUL_API_KEY`, `DATA_GO_KR_SERVICE_KEY`)는 `kid-festival/.env`에 이미 있고 스크립트가 읽는다. **"키 없음"으로 건너뛰거나 사용자에게 요청하지 않는다.** 키 값은 출력하지 않는다.
 
 ### 1) 기존 행사 일정·장소 갱신
-- 배열의 각 행사를 웹 검색(공식 홈페이지·지자체·문화포털)으로 다시 확인한다.
+- **대상 기간 안의 행사만** 다시 확인한다(배열 전체를 웹 검색하지 않는다 — 비용이 과도하다).
 - 변경 사항 반영: `startDate`, `endDate`, `extraInfo`, `price`, `web`, `recur`, `location` 등.
 - 종료·폐지·휴관 전환된 행사는 정보를 최신 상태로 바꾸거나(예: 다음 회차 일정) 명확히 표시한다. 함부로 삭제하지 말고, 종료가 확실하면 사용자에게 보고 후 처리.
 - **추측 금지**: 날짜는 반드시 출처로 확인한 값만 입력. 불확실하면 `extraInfo`에 "일정 미발표/예년 기준(예상)" 등으로 명시.
 
 #### 1-1) 임박 행사(오늘 기준 1개월 이내)는 날짜·장소 교차검증 필수
 
-표준데이터·지자체 SNS 그래픽은 "공식"이지만 "최신"이 아닐 수 있다. 실제로 2026-09-10에 두 건이 틀려 있었다:
+표준데이터·지자체 SNS 그래픽은 "공식"이지만 "최신"이 아닐 수 있다(2026-09 잠원나루축제가 작년 회차 날짜로 남아 있던 사례 — 상세는 `festival-date-checker.md`). 1개월 이후 행사는 표준데이터·공식 페이지 확인으로 충분하다.
 
-- **잠원나루축제**: 표준데이터엔 9월 19일로 등록(작년 제11회, 2025-09-20 패턴이 그대로 남은 값). 실제 올해(제12회)는 서초구가 그날 낸 보도자료 기준 **9월 12일**이었다.
-- **고촌도서관 영어 베이킹**: 구청 인스타 그래픽 캡션이 "매주 월요일"인데 명시 날짜(9/8·9/15)는 화요일이라 이미 모순이 있었다. 실제로는 월 자체가 틀려 10월(10/12·10/19, 목) 행사였다.
-
-오늘부터 1개월 이내에 열리는 행사는 아래 방법으로 재확인한다(1개월 이후 행사는 표준데이터·공식 페이지 확인으로 충분— 전부 언론 교차검증하면 비용이 과도하다):
-
-1. **요일-날짜 기계 정합성 검사**를 먼저 돌려 표기 모순이 있는 항목부터 잡는다:
-   ```bash
-   py -c "
-   import datetime
-   wd = ['월','화','수','목','금','토','일']
-   print(wd[datetime.date(2026,9,12).weekday()])
-   "
-   ```
-   `startDate`/`endDate`의 `(요일)` 표기가 실제와 다르면 그 항목은 100% 어딘가 잘못된 것이다.
+1. `audit-dates.js` 결과에서 **요일 불일치** 항목(100% 오류)과 **★ needsRecheck가 붙은 임박 행사**부터 처리한다.
 2. `WebSearch`로 `"<행사명> <대상연도>"` 검색 → 결과에 섞인 **회차(제N회)와 기사 작성일을 반드시 대조**해 작년 기사를 올해 것으로 착각하지 않는다.
 3. 유력한 기사/공식 공지를 `WebFetch`로 열어 정확한 **날짜·요일·장소·시간**을 확인한다 — 날짜만 보고 장소를 놓치지 않는다(매년 다른 공원으로 옮기는 행사도 있다).
 4. 확정되면 `startDate`/`endDate`/`dates`/`location`을 갱신하고 `detail.sourceUrl`/`detail.verifiedAt`(오늘 날짜)을 남긴다. 확정 못 하면 `detail.needsRecheck: true` + `detail.recheckNote`로 이유를 남긴다(추측 금지).
@@ -137,8 +130,8 @@ node -e "global.window={};require('./assets/data/festivals.js'); const JP=['🏯
 
 ## 작업 순서
 
-1. `festivals.js`(데이터)와 `kid-festival.js`(규칙)를 Read 하고, 환경의 오늘 날짜로 대상 4개월을 정한다. 필요하면 `kid-festival.js`의 `currentYear`/`currentMonth`도 현재에 맞게 갱신.
-2. **기존 행사 갱신**: 항목들을 묶어 효율적으로 WebSearch → 공식 페이지 WebFetch로 일정 확인 → 변경분만 Edit.
+1. 환경의 오늘 날짜로 대상 4개월을 정하고, 0)의 스크립트 결과(후보·임박 목록)를 확보한다. `festivals.js`는 커서 통째로 읽지 말고 필요한 항목만 Grep으로 찾는다. (`kid-festival.js`의 `currentYear`/`currentMonth`는 오늘 날짜로 자동 설정되니 손대지 않는다.)
+2. **기존 행사 갱신**: 임박 목록부터 WebSearch → 공식 페이지 WebFetch로 일정 확인 → 변경분만 Edit.
 3. **신규 행사 검색 — 계층형 전략 (순서대로. 매우 중요)**
 
    > ⚠️ **핵심 교훈**: 한국 축제 포털의 **목록** 페이지(구석구석 kfes·서울문화포털·경기관광포털)는 대부분 **JS로 렌더링돼 `WebFetch`로는 빈 껍데기**만 나온다(정적 fetch로 목록 수집이 막힘). 단 **펀서울 목록**과 **각 포털의 상세 페이지**는 정적으로 열린다. `WebSearch`도 미국 기반이라 소규모 지역 행사를 잘 못 찾는다. 따라서 "정적 fetch로 목록 순회"에만 의존하면 신규 발굴이 실패한다. 아래 순서로 접근하라.
@@ -146,12 +139,8 @@ node -e "global.window={};require('./assets/data/festivals.js'); const JP=['🏯
    **① (발견·열거) 공개 정부 API로 축제 목록을 먼저 뽑는다 — 1차 전략.** 이 API들은 기간·지역 필터를 공식 제공해 *전체 목록 열거*가 가능하다. 인증키가 없으면 사용자에게 발급을 요청한다.
    - **한국관광공사 TourAPI `searchFestival2`** (data.go.kr "한국관광공사 국문 관광정보"): 서울·경기·인천 축제를 지역별로 조회. `eventStartDate`/`eventEndDate`로 기간 필터. ⚠️ **2026-01-12부터 지역코드 변경**: `areaCode`→`lDongRegnCd`, `sigunguCode`→`lDongSignguCd`. 값 = **서울 `11` · 경기 `41` · 인천 `28`**. 지역별 3회 호출.
    - **서울 문화행사 `culturalEventInfo`** ([서울 열린데이터광장](https://data.seoul.go.kr) `OA-15486` — data.go.kr 아님): 서울 문화행사 약 1.9만 건. 필드가 풍부해 5~7세 필터에 최적(`USE_TRGT` 이용대상, `USE_FEE` 요금, `GUNAME` 자치구, `CODENAME` 분류, `DATE`, `ORG_LINK`). 단 **무키 대량 파일 다운로드는 없다** — `sample` 키(`http://openapi.seoul.go.kr:8088/sample/json/culturalEventInfo/1/5/`)는 5건 미리보기 전용이고, 전량은 **무료 인증키**가 필요하다(회원가입→인증키 즉시 발급→`http://openapi.seoul.go.kr:8088/{KEY}/json/culturalEventInfo/{start}/{end}/`를 1000건씩 페이징). 키 없으면 사용자에게 발급을 요청한다. (문화행사=공연·전시 중심이라 순수 '축제'와는 성격이 다르니 `USE_TRGT`로 아동·가족 행사를 골라낸다.)
-   - **전국문화축제표준데이터** (data.go.kr `15013104`): 전국 지자체 축제 표준(축제명·시작/종료일·장소·홈페이지). **⭐ 인증키 없이 파일 전량을 받는 게 가장 쉽다.** 브라우저의 CSV/XLS 다운로드가 내부적으로 호출하는 JSON 2종을 `Bash`+`curl`로 그대로 부르면 된다(세션 쿠키 + `X-Requested-With: XMLHttpRequest` 헤더 필요, Referer는 standard.do):
-     - 컬럼·건수: `GET https://www.data.go.kr/download/columList.json?pk=15013104&ext=csv` → `totalCount`, `tableVO.svcTableNm`(=`tn_pubr_public_cltur_fstvl_svc`), `tableVO.colNmList` 획득.
-     - 데이터: `GET https://www.data.go.kr/download/standard.json` (쿼리: `publicDataPk=15013104&svcTableNm=…&totalCount=N&perPage=10000&page=1` + `colNmList=` 반복). ⚠️ **`page`는 1부터**(0이면 빈 응답). 응답은 행 객체 배열(필드: `FSTVL_NM,OPAR,FSTVL_START_DATE,FSTVL_END_DATE,FSTVL_CO,HOMEPAGE_URL,RDNMADR,PHONE_NUMBER…`).
-     - 받은 배열을 `MNNST_NM`(제공 지자체)로 서울/경기/인천, 날짜로 대상 4개월 겹침 필터 → 기존 `festivals.js` title과 대조해 신규만 추린다. (분기 갱신 스냅샷이라 신규 발표분은 늦을 수 있으니, 개별 행사는 `HOMEPAGE_URL`로 최종 검증.)
-   - API 방식이 필요하면 같은 데이터의 오픈API `tn_pubr_public_cltur_fstvl_api`(serviceKey 필요)도 있다.
-   - API 응답에서 날짜 교차·5~7세 가족 대상·요금·장소 필터를 적용해 후보를 좁힌다.
+   - **전국문화축제표준데이터** (data.go.kr `15013104`): 전국 지자체 축제 표준. 인증키 없이 전량(약 1,300행)을 받는다. 브라우저 CSV 다운로드가 쓰는 JSON 2종(`download/columList.json` → `download/standard.json`)을 세션 쿠키로 부르는 방식이며, 함정(`colNmList`는 `tableVO.colNmList`만, `page`는 1부터)까지 `fetch-candidates.js`에 구현돼 있다. 분기 스냅숏이라 출력의 `기준일`(REFERENCE_DATE)이 오래된 행은 작년 날짜일 수 있으니 `HOMEPAGE_URL`로 최종 검증한다.
+   - 위 세 소스는 모두 `fetch-candidates.js` 한 번으로 받는다. 출력에서 5~7세 가족 대상·요금·장소 기준으로 후보를 좁힌다.
 
    **② (검증) 후보의 공식/상세 페이지를 WebFetch로 확정.** kfes·서울문화포털은 *목록은 JS라도 상세(`fstvlDetail.do?fstvlCntntsId=…` 등)는 정적*이니, ①에서 얻은 ID/이름으로 상세를 열어 일정·장소·요금·연령·링크를 확정한다. 펀서울은 `festivalView.do?festacode=…` 상세.
 
@@ -169,7 +158,7 @@ node -e "global.window={};require('./assets/data/festivals.js'); const JP=['🏯
      날짜 앞에 `(예정)`이 붙은 항목은 지자체가 아직 확정 공지를 안 한 것이다. 버리지 말고 추가하되 `extraInfo`에 "펀서울 (예정) 표기"를, `detail.needsRecheck`에 `true`를 넣는다. 상세 본문(`festivalView.do?festacode=…`)에 **작년 회차 일정이 그대로 적혀 있는 경우가 많으니** 목록의 기간과 본문 일정이 다르면 본문 쪽을 신뢰하고 그 사실을 `hoursNote`에 남긴다. 본문 기간이 목록과 크게 어긋나 개최일을 못 믿겠으면 `hideCalendar:true`로 달력에서 뺀다.
    - **한강공원·서울시설공단**: 여름 물놀이장·물빛광장 등 시즌 시설.
 
-   **④ (잔여분) 브라우저 자동화.** API로도 못 잡은 것은 **Claude in Chrome**(`mcp__claude-in-chrome__*`)으로 kfes·경기관광포털 등의 목록을 실제 렌더한 뒤 카드/네트워크 응답을 추출한다.
+   **④ (잔여분) 브라우저 자동화 — 이 에이전트는 하지 않는다.** 도구에 브라우저가 없다. kfes·경기관광포털 목록이 꼭 필요하면 보고에 "브라우저 보완 필요"로 남겨 메인 세션이 Claude in Chrome으로 처리하게 한다.
 
    **⑤ (보조) 도메인 한정 검색.** `WebSearch`를 `allowed_domains`에 `go.kr`/`or.kr` 지정해 `"<구/시> 어린이 축제 2026 <월>"`, `"<지역> 물놀이장 2026"` 등 **구체적 지자체명+월**로. 검색 색인은 전체 목록 대용이 아니라 ID 발굴용 보조로만.
 

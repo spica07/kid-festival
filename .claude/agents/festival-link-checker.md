@@ -9,7 +9,7 @@ model: inherit
 
 ## 다루는 파일
 
-- **행사 데이터(점검 대상)**: `C:\blog_writing\kid-festival\assets\data\festivals.js` 의 `window.KID_FESTIVALS` 배열 (행사 1건 = 객체 1줄, 약 430건). 점검 필드:
+- **행사 데이터(점검 대상)**: `C:\blog_writing\kid-festival\assets\data\festivals.js` 의 `window.KID_FESTIVALS` 배열 (행사 1건 = 객체 1줄). 점검 필드:
   - `web` — 홈페이지 버튼 링크
   - `detail.reservationUrl` — 예약 버튼 링크
   - `detail.sourceUrl` — 출처 링크 (UI 미노출이지만 데이터 신뢰성 차원에서 점검)
@@ -41,8 +41,10 @@ node -e "global.window={}; require('C:/blog_writing/kid-festival/assets/data/fes
 const rows = window.KID_FESTIVALS.map((f,i)=>({i, title:f.title, web:f.web,
   resv:f.detail&&f.detail.reservationUrl, src:f.detail&&f.detail.sourceUrl,
   loc:f.location, cat:(f.category||[]).join(',')}));
-console.log(JSON.stringify(rows));" > /tmp/festival-rows.json
+console.log(JSON.stringify(rows));" > <세션 스크래치 디렉터리>/festival-rows.json
 ```
+
+(Windows 환경이라 `/tmp`를 쓰지 않는다. 호출자가 알려준 스크래치 경로에 둔다.)
 
 URL은 **도메인+경로 기준으로 중복 제거** 후 점검한다(같은 URL을 여러 행사가 공유함 — 보통 전체 건수 대비 고유 URL은 60~80% 수준).
 
@@ -93,7 +95,7 @@ curl -s -L --max-time 20 "https://pcmap.place.naver.com/place/list?query=<인코
 장소가 있으면 응답 HTML/JSON에 `"name":"영등포공원"` 같은 실제 장소명이 들어 있고, 없으면 UI 라벨(거리순·관련도순·반경1km 등)만 남는다. ⚠️ **판정 기준을 추측하지 말고 먼저 캘리브레이션할 것**:
 1. 확실히 존재하는 장소(예: `서울숲`)와 무의미한 문자열(예: `ㅇㅇㅇ존재하지않는장소123`)로 각각 호출해 "결과 있음/없음" 응답의 차이(장소명 유무, "검색결과가 없습니다" 마커 등)를 파악한 뒤 전 항목에 적용한다.
 2. 2차에서도 0건이면 변형 검색어(괄호 제거, "일원"·"일대" 제거, 핵심 시설명만)로 재시도해 동작하는 대안을 찾아 제안한다. 변형으로만 찾아지는 항목은 ❌ 실패(검색어 개선 필요)로 분류한다.
-3. 이 API들도 비공식이라 차단될 수 있다 — 차단되면(403/캡차/빈 응답 연속) 해당 항목은 "수동 확인 필요"로 보고하고 실패로 단정하지 않는다. Playwright MCP 도구(`mcp__playwright__*`)가 세션에 있으면 실제 페이지를 열어 최종 확인해도 된다.
+3. 이 API들도 비공식이라 차단될 수 있다 — 차단되면(403/캡차/빈 응답 연속) 해당 항목은 "수동 확인 필요"로 보고하고 실패로 단정하지 않는다. 이 에이전트에는 브라우저 도구가 없으니, 실제 페이지 확인이 필요한 항목은 "수동 확인 필요"로 넘겨 메인 세션이 Claude in Chrome으로 확인하게 한다.
 4. 요청 사이에 짧은 간격을 두어(예: 0.3~0.5초) 과도한 호출을 피한다.
 
 판정 기준:
@@ -101,7 +103,7 @@ curl -s -L --max-time 20 "https://pcmap.place.naver.com/place/list?query=<인코
 - ⚠️ **의심**: 결과는 있으나 상위 결과 주소가 행사 지역과 명백히 다름 (동명 장소가 다른 지역에 잡힘) — 검색어 개선 제안과 함께 보고
 - ❌ **실패**: 결과 0건 — `location` 표기를 다듬은 대안 검색어(예: 괄호 제거, 행정구 추가, 시설 정식 명칭)를 시험해 보고, 동작하는 대안을 제안
 
-길찾기 실패의 수정 수단은 **`location` 문구 조정**(검색어 원천) 또는 박물관류면 `title` 확인이다. `mapQuery` 코드 자체를 고치는 것은 전체 행사에 영향을 주므로 **사용자 보고 후에만** 진행.
+길찾기 실패의 수정 수단은 **`mapName` 추가/수정** 하나다(위 "길찾기 검색어 규칙" 참고). 카드에 보이는 `location`/`title`은 바꾸지 않는다. `mapQuery` 코드 자체를 고치는 것은 전체 행사에 영향을 주므로 **사용자 보고 후에만** 진행.
 
 ## 수정 규칙
 
