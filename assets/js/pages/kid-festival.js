@@ -22,6 +22,8 @@ const festivals = Array.isArray(window.KID_FESTIVALS) ? window.KID_FESTIVALS : [
 // 카테고리 기본값: 박물관·도서관 = 실내, 그 외(자연·테마파크·축제·마라톤) = 실외
 // 기본값과 다른 경우만 제목으로 예외 지정
 const VENUE_OVERRIDE = {
+  '[2026 EEBF] 어린이무용 과일·악기·그림책': '실내',
+  '인천 영화 주간 2026': '실내',
   '2026 종로 가족공연축제': '실내',
   '2026 성동구 구립도서관 북 페스티벌': '실외',
   '2026 서울유아독서축제': '실외',
@@ -124,8 +126,8 @@ let currentRegion = 'all';
 let currentCategory = 'all';
 let currentPrice = 'all';
 let currentVenue = 'all';
-let currentYear = 2026;
-let currentMonth = 9; // 1~12
+let currentYear = new Date().getFullYear();
+let currentMonth = new Date().getMonth() + 1; // 1~12, 오늘이 속한 달로 시작
 let hidePast = true;  // 기본: 지난 날짜/종료된 행사 숨김
 let hideAlways = false; // 기본: 상시성 행사도 모두 표시
 let favoriteOnly = false; // 기본: 모든 카드 표시
