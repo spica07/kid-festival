@@ -309,6 +309,7 @@
   .region-badge.gyeonggi { background: #4ECDC4; }
   .region-badge.incheon { background: #FFB347; }
   .region-badge.galaxy { background: #5E35B1; }
+  .region-badge.forest { background: #2E7D32; }
 
   /* 필터 칩은 네 축이 형태를 공유한다. 예전엔 축마다 같은 내용을 따로 적어 두어
      한 곳만 고치면 축끼리 어긋났다. 폭 고정(min-width:104px)도 걷어냈다 —

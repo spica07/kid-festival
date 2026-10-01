@@ -83,7 +83,7 @@ model: inherit
 ```
 
 ### category 허용값
-`'festival'`(축제) · `'museum'`(박물관·과학관·미술관·체험관) · `'themepark'`(테마파크·키즈카페·워터파크·아쿠아리움) · `'nature'`(공원·자연·계곡·갯벌·동물원·식물원) · `'library'`(도서관) · `'marathon'`(마라톤·러닝)
+`'festival'`(축제) · `'museum'`(박물관·과학관·미술관·체험관) · `'themepark'`(테마파크·키즈카페·워터파크·아쿠아리움) · `'nature'`(공원·자연·계곡·갯벌·동물원·식물원) · `'library'`(도서관) · `'marathon'`(마라톤·러닝) · `'galaxy'`(은하수·별보기, region도 `'galaxy'`) · `'forest'`(국립자연휴양림, region도 `'forest'`)
 
 ## 달력 표시 규칙 (매우 중요)
 

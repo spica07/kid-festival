@@ -369,7 +369,7 @@ function dateBoxHtml(f) {
 
 // ----- 카드 정렬: 지역 → 카테고리(축제 먼저) → 가격(무료 먼저) → 가나다 -----
 const REGION_ORDER = ['seoul', 'gyeonggi', 'incheon'];
-const CATEGORY_ORDER = ['festival', 'museum', 'themepark', 'nature', 'library', 'marathon', 'galaxy'];
+const CATEGORY_ORDER = ['festival', 'museum', 'themepark', 'nature', 'library', 'marathon', 'galaxy', 'forest'];
 const rankIn = (order, v) => { const i = order.indexOf(v); return i < 0 ? order.length : i; };
 function regionRank(f) { return rankIn(REGION_ORDER, f.region); }
 function categoryRank(f) {
@@ -473,7 +473,7 @@ function setupFestivalCarousel() {
 const REGION_LABELS = { seoul: '서울', gyeonggi: '경기', incheon: '인천' };
 const CATEGORY_LABELS = {
   festival: '축제', museum: '박물관', themepark: '테마파크',
-  nature: '자연', library: '도서관', marathon: '마라톤', galaxy: '은하수',
+  nature: '자연', library: '도서관', marathon: '마라톤', galaxy: '은하수', forest: '휴양림',
 };
 const PRICE_LABELS = { free: '무료', paid: '유료' };
 const QUICK_LABELS = { today: '오늘', weekend: '이번 주말' };

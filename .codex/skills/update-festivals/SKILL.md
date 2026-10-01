@@ -56,7 +56,7 @@ Web search can miss Korean local events. Use it as support, but rely on direct l
 - Do not invent fees, eligibility, or registration rules. If unclear, set `price: '미정'` or `detail.reservationStatus: 'check'`.
 - Do not delete ended or canceled events automatically. Report deletion or large-status changes to the user first.
 - Keep existing formatting and avoid broad reordering.
-- Use categories from the existing set: `festival`, `museum`, `themepark`, `nature`, `library`, `marathon`.
+- Use categories from the existing set: `festival`, `museum`, `themepark`, `nature`, `library`, `marathon`, `galaxy`, `forest`. (`galaxy`/`forest` entries also use the same value as `region`.)
 - Use `dates` for the relevant days in the visible month, but remember rendering is calculated from `startDate`, `endDate`, and `recur`.
 - For events running 30 days or longer, consider `hideCalendar:true` to avoid crowding the calendar.
 - Add `detail.sourceUrl` and `detail.verifiedAt` for new or substantially updated events.
