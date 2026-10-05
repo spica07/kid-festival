@@ -249,14 +249,32 @@
 
   iframe.hidden { display: none; }
 
+  /* 패밀리 앱(꼬마 예약 달력)으로 가는 링크. 탭 버튼처럼 보이지만 iframe 전환이 아니라 페이지 이동이다. */
+  .tab-link {
+    background: white;
+    border: 2px solid #FFE5F1;
+    padding: 9px 22px;
+    border-radius: 24px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #6B5B95;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    white-space: nowrap;
+  }
+  .tab-link:hover { border-color: #FFB5D8; }
+
   @media (max-width: 600px) {
     .tab-bar {
       padding: 6px 6px; gap: 4px; flex-wrap: nowrap;
       overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
     }
     .tab-bar::-webkit-scrollbar { display: none; }
-    .tab-group { gap: 4px; flex-wrap: nowrap; }
-    .tab-btn { padding: 6px 9px; font-size: 0.75rem; border-width: 1.5px; white-space: nowrap; flex-shrink: 0; }
+    /* 탭이 폭을 넘으면 가운데 정렬 탓에 왼쪽이 잘리므로, 좁은 화면에선 왼쪽부터 쌓고 가로로 넘긴다 */
+    .tab-bar { justify-content: flex-start; }
+    .tab-group { gap: 4px; flex-wrap: nowrap; flex: 0 0 auto; justify-content: flex-start; }
+    .tab-btn, .tab-link { padding: 6px 9px; font-size: 0.75rem; border-width: 1.5px; white-space: nowrap; flex-shrink: 0; }
     .tab-btn.tab-icon { width: 32px; height: 32px; padding: 0; font-size: 0.95rem; flex-shrink: 0; }
     .tab-search-btn { width: 32px; height: 32px; font-size: 0.95rem; border-width: 1.5px; }
     .site-search {
@@ -273,7 +291,7 @@
   @media (max-width: 380px) {
     .tab-bar { gap: 3px; padding: 5px 4px; }
     .tab-group { gap: 3px; }
-    .tab-btn { padding: 5px 7px; font-size: 0.7rem; }
+    .tab-btn, .tab-link { padding: 5px 7px; font-size: 0.7rem; }
     .tab-btn.tab-icon { width: 28px; height: 28px; padding: 0; font-size: 0.85rem; }
     .tab-search-btn { width: 28px; height: 28px; font-size: 0.85rem; }
   }
