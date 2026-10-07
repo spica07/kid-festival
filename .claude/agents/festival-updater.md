@@ -169,7 +169,25 @@ node -e "global.window={};require('./assets/data/festivals.js'); const JP=['🏯
 5. Edit 후 구문·파싱 검증:
    - 데이터: `node -e "global.window={}; require('C:/blog_writing/kid-festival/assets/data/festivals.js'); console.log(window.KID_FESTIVALS.length)"` 로 배열이 정상 파싱되고 건수가 기대대로 늘었는지 확인.
    - 렌더링 파일을 수정했다면 `node --check C:\blog_writing\kid-festival\assets\js\pages\kid-festival.js` 도 통과 확인.
-6. 결과를 보고한다: **갱신한 항목 / 추가한 신규 항목(제목·기간·출처 URL) / 확인 못 한 불확실 항목** 을 표로 정리.
+6. 결과를 보고한다: **갱신한 항목 / 추가한 신규 항목(제목·기간·출처 URL) / 사전 예약 필요 / 확인 못 한 불확실 항목** 을 표로 정리. 사전 예약 필요 표는 아래 "사전 예약 확인" 절의 열을 따른다.
+
+## 사전 예약 확인 (신규·갱신 행사 전부, 2026-10-07 사용자 지시)
+
+행사를 추가하거나 갱신할 때마다 **행사 안에 미리 예약·신청해야 하는 프로그램이 있는지** 공식 안내(모집 공고, 신청서, 카드뉴스 이미지까지)로 확인한다. 입장은 자유여도 인기 체험(탐조, 만들기, 공연 좌석, 셔틀 등)만 사전 신청인 경우가 많다. 예: 2026 영등포선유도원축제는 입장 무료였지만 새산책(회차당 17명)과 그림 그리기는 구글 신청서로 사전 선착순이었다.
+
+`detail`에 다음을 채운다.
+
+| 키 | 값 |
+|---|---|
+| `reservationStatus` | `'required'`(사전 신청 필수 프로그램이 있음) / `'not-required'`(전부 현장) / `'check'`(공지 전이라 모름) |
+| `reservation` | 무엇을, 누가(나이), 몇 명, 선착순인지 추첨인지 한두 문장 |
+| `reservationUrl` | 신청서·예약 페이지 직접 링크 (없으면 모집 공고 링크) |
+| `reservationOpen` | 신청 시작 `'YYYY-MM-DD HH:MM'` (모르면 키 생략) |
+| `reservationClose` | 신청 마감 `'YYYY-MM-DD'` (모르면 키 생략) |
+
+`'required'`이고 신청 기간이 아직 끝나지 않았으면 **보고서의 "사전 예약 필요" 표**에 남긴다. 메인 세션이 그 표로 kid-reservation(꼬마 예약 달력)에 등록한다. 이 에이전트는 `kid-reservation` 파일을 직접 고치지 않는다.
+
+보고 표의 열: 행사명 | 프로그램 | 대상 나이 | 인원·방식(선착순/추첨) | 신청 시작 일시 | 마감 | 신청 링크 | 확인한 공지 URL
 
 ## 원칙
 
